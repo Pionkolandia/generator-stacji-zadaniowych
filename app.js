@@ -1,27 +1,27 @@
 "use strict";
 
 const GAMES = [
-  "Trzy Male Swinki Deluxe",
+  "Trzy Małe Świnki Deluxe",
   "Czerwony Kapturek Deluxe",
-  "Wilk i 7 Kozlatek",
-  "Krolewna Sniezka Deluxe",
-  "Spiaca Krolewna Deluxe",
+  "Wilk i 7 Koźlątek",
+  "Królewna Śnieżka Deluxe",
+  "Śpiąca Królewna Deluxe",
   "Jas i Magiczna Fasola Deluxe",
   "Kamelot Jr",
-  "Madry Zamek",
+  "Mądry Zamek",
   "3 Traki",
-  "Dzien i Noc",
+  "Dzień i Noc",
   "Park Safari Jr",
   "Safari Park Jr",
   "Zwierzaki na Wsi",
   "Misie w Lesie",
-  "Smart Piesel - Bieg po Medal",
+  "Smart Pieseł - Bieg po Medal",
   "Dress Code",
-  "Zabki",
+  "Żabki",
   "Biedroneczki",
   "Apple Puzzler",
   "Potwory - Zabawa w Chowanego",
-  "Kotelki",
+  "Kotełki",
   "Hop do Norki",
   "Kolorowy Kod",
   "Diamentowy Kod",
@@ -31,13 +31,13 @@ const GAMES = [
   "Tajemnicza Wyspa",
   "Akademia Jazdy Konnej",
   "Dinozaury - Tajemnicza Wyspa",
-  "Smoczy Ogien",
-  "Droga do Swiatyni (Smocza Edycja)",
+  "Smoczy Ogień",
+  "Droga do Świątyni (Smocza Edycja)",
   "Piraci w Morzu Ognia",
-  "Spadajace Gwiazdy",
+  "Spadające Gwiazdy",
   "Kwadrylion",
   "Genius Square",
-  "Wyscigowki",
+  "Wyścigówki",
   "IQ Puzzler Pro",
   "IQ Love",
   "IQ Digits",
@@ -47,24 +47,24 @@ const GAMES = [
   "Arka Noego",
   "Zwinne Delfinki",
   "Robaczki",
-  "Kopalnia Zlota",
-  "Na Plazy",
+  "Kopalnia Złota",
+  "Na Plaży",
   "Goool!",
   "Pingwiny - Zabawa w Basenie",
-  "Fabryka Robotow",
-  "Tajemnice Swiatyni"
+  "Fabryka Robotów",
+  "Tajemnice Świątyni"
 ];
 
 const PRESETS = [
   {
     id: "junior",
     name: "Junior",
-    meta: "28 uczniow, 14 stanowisk",
+    meta: "28 uczniów, 14 stanowisk",
     students: 28,
     sequenceMode: "manual",
     games: [
-      "Trzy Male Swinki Deluxe",
-      "Trzy Male Swinki Deluxe",
+      "Trzy Małe Świnki Deluxe",
+      "Trzy Małe Świnki Deluxe",
       "Czerwony Kapturek Deluxe",
       "Czerwony Kapturek Deluxe",
       "Park Safari Jr",
@@ -84,7 +84,7 @@ const PRESETS = [
   {
     id: "master",
     name: "Master",
-    meta: "26 uczniow, 13 stanowisk",
+    meta: "26 uczniów, 13 stanowisk",
     students: 26,
     sequenceMode: "manual",
     games: [
@@ -108,7 +108,7 @@ const PRESETS = [
   {
     id: "ekspert",
     name: "Ekspert",
-    meta: "30 uczniow, 15 stanowisk",
+    meta: "30 uczniów, 15 stanowisk",
     students: 30,
     sequenceMode: "manual",
     games: [
@@ -118,9 +118,9 @@ const PRESETS = [
       "IQ Love",
       "IQ Love",
       "IQ Love",
-      "Kotelki",
-      "Kotelki",
-      "Kotelki",
+      "Kotełki",
+      "Kotełki",
+      "Kotełki",
       "Blokada",
       "Blokada",
       "Blokada",
@@ -212,7 +212,7 @@ function showStep(step) {
   });
 
   $("printArea").classList.toggle("hidden", step !== 4);
-  window.scrollTo({ top: 0, behavior: "smooth" });
+  window.scróllTo({ top: 0, behavior: "smooth" });
 }
 
 function recalc() {
@@ -267,7 +267,7 @@ function buildStationSelects() {
       <label class="field">
         <span>Stanowisko ${index + 1}</span>
         <select aria-label="Gra na stanowisku ${index + 1}">
-          <option value=""${!state.games[index] ? " selected" : ""} disabled>Wybierz gre</option>
+          <option value=""${!state.games[index] ? " selected" : ""} disabled>Wybierz grę</option>
           ${optionsHTML(state.games[index])}
         </select>
       </label>
@@ -290,13 +290,13 @@ function addCustomGame() {
   note.classList.remove("hidden");
 
   if (name.length < 2) {
-    note.textContent = "Wpisz nazwe gry - co najmniej 2 znaki.";
+    note.textContent = "Wpisz nazwę gry - co najmniej 2 znaki.";
     return;
   }
 
   const exists = allGames().some((game) => game.toLowerCase() === name.toLowerCase());
   if (exists) {
-    note.textContent = `"${name}" jest juz na liscie.`;
+    note.textContent = `"${name}" jest już na liście.`;
     return;
   }
 
@@ -411,7 +411,7 @@ function stationBlock(stationIndex, starts, isB) {
     <div class="print-station">
       <span class="station-tag">STACJA ${stationIndex + 1}</span>
       <div class="print-game">${escapeHTML(state.games[stationIndex])}</div>
-      <div class="task-label">Wykonaj zadania w kolejnosci:</div>
+      <div class="task-label">Wykonaj zadania w kolejności:</div>
       <div class="seq">${sequence.map((item) => `<b>${item}</b>`).join("")}</div>
       <div class="results">
         Zadania: <span class="blank"></span><br>
@@ -431,21 +431,21 @@ function cardHTML(pairNumber, player, stationIndexes) {
   return `
     <article class="${cardClass}">
       <header class="card-head">
-        <div class="card-title">STACJE ZADANIOWE<small>Karta gracza - Szkola jest SMART!</small></div>
+        <div class="card-title">STACJE ZADANIOWE<small>Karta gracza - Szkoła jest SMART!</small></div>
         <div class="card-meta">
           <span class="pill pair">Para nr ${pairNumber}</span>
           <span class="pill ${isB ? "b" : "a"}">${playerLabel}</span>
-          <span class="name-line">Imie i nazwisko: <span class="blank"></span></span>
+          <span class="name-line">Imię i nazwisko: <span class="blank"></span></span>
         </div>
       </header>
       <div class="stations-3">
         ${stationIndexes.map((stationIndex) => stationBlock(stationIndex, starts, isB)).join("")}
       </div>
       <div class="card-total">
-        <div class="total-box">Laczna liczba zadan: <span class="blank"></span></div>
-        <div class="total-box">Laczny czas: <span class="blank"></span> min : sek</div>
+        <div class="total-box">Łączna liczba zadań: <span class="blank"></span></div>
+        <div class="total-box">Łączny czas: <span class="blank"></span> min : sek</div>
       </div>
-      ${isC ? `<p class="trio-note">Para 3-osobowa: role gracza i sedziego rotuja - kazdy gra w 2 z 3 rund.</p>` : ""}
+      ${isC ? `<p class="trio-note">Para 3-osobowa: róle gracza i sędziego rotują - każdy gra w 2 z 3 rund.</p>` : ""}
     </article>
   `;
 }
@@ -475,11 +475,11 @@ function teacherSheetHTML() {
 
   return `
     <section class="teacher-sheet">
-      <h3>Sciagawka dla nauczyciela</h3>
-      <p class="teacher-sub">Stacje zadaniowe - ${state.students} uczniow - ${state.pairs} par - ${state.stations} stanowisk</p>
+      <h3>Ściągawka dla nauczyciela</h3>
+      <p class="teacher-sub">Stacje zadaniowe - ${state.students} uczniów - ${state.pairs} par - ${state.stations} stanowisk</p>
       <p class="teacher-rules">
-        <strong>Przebieg:</strong> w kazdej parze najpierw gra Gracz A, a Gracz B sedziuje i pilnuje czasu. Po 3 rundach nastepuje zamiana rol. Jedna runda: 5 zadan, limit 4-5 min. Sedzia zatwierdza kazde zadanie przed przejsciem dalej.
-        <strong>Punktacja:</strong> 1 pkt za zadanie, bonus za komplet: ponizej 2:00 +3, 2:01-3:30 +2, 3:31-5:00 +1. Remis rozstrzyga laczny czas.
+        <strong>Przebieg:</strong> w każdej parze najpierw gra Gracz A, a Gracz B sędziuje i pilnuje czasu. Po 3 rundach następuje zamiana ról. Jedna runda: 5 zadań, limit 4-5 min. Sędzia zatwierdza każde zadanie przed przejściem dalej.
+        <strong>Punktacja:</strong> 1 pkt za zadanie, bonus za komplet: poniżej 2:00 +3, 2:01-3:30 +2, 3:31-5:00 +1. Remis rozstrzyga łączny czas.
       </p>
       <div class="teacher-grid">
         <table>
@@ -491,7 +491,7 @@ function teacherSheetHTML() {
             <thead><tr><th>Para</th><th>Runda 1</th><th>Runda 2</th><th>Runda 3</th></tr></thead>
             <tbody>${rotationRows}</tbody>
           </table>
-          <p class="teacher-note">Przed lekcja: wydrukuj karty, potnij po jednej na gracza, przy stanowiskach przygotuj gry w pozycji startowej i ustal wyrazny sygnal konca rundy.</p>
+          <p class="teacher-note">Przed lekcją: wydrukuj karty, potnij po jednej na gracza, przy stanowiskach przygotuj gry w pozycji startowej i ustal wyraźny sygnał końca rundy.</p>
         </div>
       </div>
     </section>
@@ -524,7 +524,7 @@ function renderPrintArea() {
   pages += `<div class="sheet page">${teacherSheetHTML()}</div>`;
 
   $("printArea").innerHTML = `
-    <p class="notice info preview-note">Podglad wydruku: ${cards.length} kart gracza i sciagawka nauczyciela.</p>
+    <p class="notice info preview-note">Podglad wydruku: ${cards.length} kart gracza i ściągawka nauczyciela.</p>
     ${pages}
   `;
   renderSummary(cards.length);
@@ -583,7 +583,7 @@ function initEvents() {
 
   $("toStep4").addEventListener("click", () => {
     if (!rangesValid()) {
-      window.alert("Uzupelnij poprawne numery startowe dla obu graczy.");
+      window.alert("Uzupełnij poprawne numery startowe dla obu graczy.");
       return;
     }
     renderPrintArea();

@@ -1,11 +1,11 @@
 # Generator stacji zadaniowych
 
-Statyczna strona internetowa dla programu **Szkola jest SMART!**. Aplikacja pozwala nauczycielowi przygotowac karty graczy i sciagawke do druku dla zajec opartych na stacjach zadaniowych.
+Statyczna strona internetowa dla programu **Szkoła jest SMART!**. Aplikacja pozwala nauczycielowi przygotować karty graczy i ściągawkę do druku dla zajęć opartych na stacjach zadaniowych.
 
 ## Co zawiera
 
-- kreator w 4 krokach: klasa, gry, zakresy zadan, podglad i druk,
-- gotowe presety Junior, Master i Ekspert na podstawie przykladowych PDF-ow,
+- kreator w 4 krokach: klasa, gry, zakresy zadań, podgląd i druk,
+- gotowe presety Junior, Master i Ekspert na podstawie przykładowych PDF-ów,
 - obsluge niestandardowych gier,
 - karty graczy A/B/C oraz arkusz nauczyciela,
 - tryb wydruku A4 z ukladaniem kart po 3 na stronie.
@@ -16,4 +16,4 @@ Statyczna strona internetowa dla programu **Szkola jest SMART!**. Aplikacja pozw
 python3 -m http.server 4173
 ```
 
-Nastepnie otworz `http://localhost:4173`.
+Następnie otwórz `http://localhost:4173`.
