@@ -80,28 +80,6 @@ const PRESETS = [
     startA: [5, 5, 5, 5, 9, 9, 1, 1, 11, 11, 5, 5, 5, 5]
   },
   {
-    id: "master",
-    name: "Master",
-    meta: "26 uczniów, 13 stanowisk",
-    students: 26,
-    games: [
-      "Apple Puzzler",
-      "Apple Puzzler",
-      "Diamentowy Kod",
-      "Diamentowy Kod",
-      "Diamentowy Kod",
-      "IQ Gears",
-      "Tajemnicza Wyspa",
-      "Tajemnicza Wyspa",
-      "IQ Puzzler Pro",
-      "IQ Puzzler Pro",
-      "IQ Focus",
-      "IQ Focus",
-      "IQ Gears"
-    ],
-    startA: [4, 4, 4, 4, 4, 4, 4, 4, 2, 2, 2, 2, 2]
-  },
-  {
     id: "ekspert",
     name: "Ekspert",
     meta: "30 uczniów, 15 stanowisk",
@@ -124,6 +102,28 @@ const PRESETS = [
       "Hop do Norki"
     ],
     startA: Array(15).fill(3)
+  },
+  {
+    id: "master",
+    name: "Master",
+    meta: "26 uczniów, 13 stanowisk",
+    students: 26,
+    games: [
+      "Apple Puzzler",
+      "Apple Puzzler",
+      "Diamentowy Kod",
+      "Diamentowy Kod",
+      "Diamentowy Kod",
+      "IQ Gears",
+      "Tajemnicza Wyspa",
+      "Tajemnicza Wyspa",
+      "IQ Puzzler Pro",
+      "IQ Puzzler Pro",
+      "IQ Focus",
+      "IQ Focus",
+      "IQ Gears"
+    ],
+    startA: [4, 4, 4, 4, 4, 4, 4, 4, 2, 2, 2, 2, 2]
   }
 ];
 
