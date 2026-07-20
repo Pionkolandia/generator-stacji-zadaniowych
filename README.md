@@ -8,6 +8,7 @@ Statyczna strona internetowa dla programu **Szkoła jest SMART!**. Aplikacja poz
 - gotowe presety Junior, Master i Ekspert na podstawie przykładowych PDF-ów,
 - obsługę niestandardowych gier,
 - automatyczne zadania Gracza B liczone zawsze jako start Gracza A + 1,
+- automatyczną rotację, która pilnuje, aby jedna karta gracza miała 3 różne gry na 3 różnych stacjach,
 - karty graczy A/B/C oraz arkusz nauczyciela,
 - tryb wydruku A4 z układaniem kart po 3 na stronie,
 - pełnoekranowy stoper dla grupy A i grupy B z własnym czasem, presetami i sygnałem końca.

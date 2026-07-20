@@ -135,6 +135,7 @@ const state = {
   games: [],
   startA: [],
   startB: [],
+  rotationOffsets: [0, 1, 2],
   customGames: []
 };
 
@@ -275,11 +276,13 @@ function buildStationSelects() {
     row.querySelector("select").addEventListener("change", (event) => {
       state.games[index] = event.target.value;
       markDuplicates();
+      updateRotationNotice();
     });
     grid.appendChild(row);
   }
 
   markDuplicates();
+  updateRotationNotice();
 }
 
 function addCustomGame() {
@@ -323,6 +326,69 @@ function markDuplicates() {
 
   $("dupNote").classList.toggle("hidden", !hasDuplicate);
   $("emptyNote").classList.add("hidden");
+}
+
+function gameKey(game) {
+  return String(game || "").trim().toLocaleLowerCase("pl-PL");
+}
+
+function routeHasUniqueGames(offsets) {
+  if (offsets.length !== 3 || state.stations < 3) return false;
+  for (let pairIndex = 0; pairIndex < state.pairs; pairIndex += 1) {
+    const stationIndexes = offsets.map((offset) => (pairIndex + offset) % state.stations);
+    const stationSet = new Set(stationIndexes);
+    const gameSet = new Set(stationIndexes.map((stationIndex) => gameKey(state.games[stationIndex])));
+    if (stationSet.size !== 3 || gameSet.size !== 3) return false;
+  }
+  return true;
+}
+
+function findRotationOffsets() {
+  if (!allStationsChosen()) return null;
+  const uniqueGames = new Set(state.games.map(gameKey));
+  if (uniqueGames.size < 3) return null;
+
+  const candidates = [];
+  for (let second = 1; second < state.stations; second += 1) {
+    for (let third = 1; third < state.stations; third += 1) {
+      if (third === second) continue;
+      candidates.push([0, second, third]);
+    }
+  }
+
+  candidates.sort((left, right) => {
+    const leftScore = Math.max(left[1], left[2]) * 100 + left[1] + left[2];
+    const rightScore = Math.max(right[1], right[2]) * 100 + right[1] + right[2];
+    return leftScore - rightScore;
+  });
+
+  return candidates.find(routeHasUniqueGames) || null;
+}
+
+function ensureRotation() {
+  const offsets = findRotationOffsets();
+  if (!offsets) return false;
+  state.rotationOffsets = offsets;
+  return true;
+}
+
+function updateRotationNotice() {
+  const note = $("rotationNote");
+  if (!note) return;
+  if (!allStationsChosen()) {
+    note.classList.add("hidden");
+    note.textContent = "";
+    return;
+  }
+
+  if (ensureRotation()) {
+    note.classList.add("hidden");
+    note.textContent = "";
+    return;
+  }
+
+  note.textContent = "Nie da się ułożyć 3 rund bez powtórzenia gry na jednej karcie. Dodaj więcej różnych tytułów albo zmień kolejność stanowisk.";
+  note.classList.remove("hidden");
 }
 
 function syncBFromA() {
@@ -391,11 +457,7 @@ function allStationsChosen() {
 }
 
 function stationsForPair(pairIndex) {
-  return [
-    pairIndex,
-    (pairIndex + 1) % state.stations,
-    (pairIndex + 2) % state.stations
-  ];
+  return state.rotationOffsets.map((offset) => (pairIndex + offset) % state.stations);
 }
 
 function stationBlock(stationIndex, starts, isB) {
@@ -444,6 +506,7 @@ function cardHTML(pairNumber, player, stationIndexes) {
 }
 
 function teacherSheetHTML() {
+  ensureRotation();
   const stationRows = Array.from({ length: state.stations }, (_, index) => `
     <tr>
       <td><strong>${index + 1}</strong></td>
@@ -471,7 +534,7 @@ function teacherSheetHTML() {
       <h3>Ściągawka dla nauczyciela</h3>
       <p class="teacher-sub">Stacje zadaniowe - ${state.students} uczniów - ${state.pairs} par - ${state.stations} stanowisk</p>
       <p class="teacher-rules">
-        <strong>Przebieg:</strong> w każdej parze najpierw gra Gracz A, a Gracz B sędziuje i pilnuje czasu. Po 3 rundach następuje zamiana ról. Jedna runda: 5 zadań, limit 4-5 min. Sędzia zatwierdza każde zadanie przed przejściem dalej.
+        <strong>Przebieg:</strong> w każdej parze najpierw gra Gracz A, a Gracz B sędziuje i pilnuje czasu. Po 3 rundach następuje zamiana ról. Jedna runda: 5 zadań, limit 4-5 min. Sędzia zatwierdza każde zadanie przed przejściem dalej. Rotacja dobiera dla każdej pary 3 różne stanowiska i 3 różne gry.
         <strong>Punktacja:</strong> 1 pkt za zadanie, bonus za komplet: poniżej 2:00 +3, 2:01-3:30 +2, 3:31-5:00 +1. Remis rozstrzyga łączny czas.
       </p>
       <div class="teacher-grid">
@@ -500,6 +563,13 @@ function renderSummary(cardsCount) {
 }
 
 function renderPrintArea() {
+  if (!ensureRotation()) {
+    $("rotationNote").textContent = "Nie da się wygenerować poprawnych kart: każda osoba musi dostać 3 różne gry. Dodaj więcej różnych tytułów albo zmień kolejność stanowisk.";
+    $("rotationNote").classList.remove("hidden");
+    showStep(2);
+    return;
+  }
+
   const cards = [];
   for (let pairIndex = 0; pairIndex < state.pairs; pairIndex += 1) {
     const stationIndexes = stationsForPair(pairIndex);
@@ -748,6 +818,10 @@ function initEvents() {
       $("emptyNote").classList.remove("hidden");
       return;
     }
+    if (!ensureRotation()) {
+      updateRotationNotice();
+      return;
+    }
     buildRangeTable();
     showStep(3);
   });
@@ -756,6 +830,11 @@ function initEvents() {
   $("toStep4").addEventListener("click", () => {
     if (!rangesValid()) {
       window.alert("Uzupełnij poprawne numery startowe dla obu graczy.");
+      return;
+    }
+    if (!ensureRotation()) {
+      updateRotationNotice();
+      showStep(2);
       return;
     }
     renderPrintArea();
@@ -784,10 +863,20 @@ function initEvents() {
         showStep(2);
       }
       if (target === 3 && allStationsChosen()) {
+        if (!ensureRotation()) {
+          updateRotationNotice();
+          showStep(2);
+          return;
+        }
         buildRangeTable();
         showStep(3);
       }
       if (target === 4 && rangesValid() && allStationsChosen()) {
+        if (!ensureRotation()) {
+          updateRotationNotice();
+          showStep(2);
+          return;
+        }
         renderPrintArea();
         showStep(4);
       }

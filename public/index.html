@@ -100,8 +100,9 @@
             </div>
 
             <div class="station-grid" id="stationGrid"></div>
-            <p class="notice warning hidden" id="dupNote">Ten sam tytuł pojawia się na kilku stanowiskach. To jest poprawne, jeśli masz odpowiednią liczbę egzemplarzy.</p>
+            <p class="notice warning hidden" id="dupNote">Ten sam tytuł pojawia się na kilku stanowiskach. To jest poprawne, jeśli masz odpowiednią liczbę egzemplarzy. Generator ułoży rotację tak, żeby jedna karta nie powtarzała tej samej gry.</p>
             <p class="notice warning hidden" id="emptyNote">Każde stanowisko musi mieć wybraną grę.</p>
+            <p class="notice warning hidden" id="rotationNote"></p>
 
             <div class="actions">
               <button class="btn ghost" id="back1" type="button">Wstecz</button>
@@ -115,7 +116,7 @@
               <h2>Ustaw numery zadań na stanowiskach</h2>
             </div>
 
-            <p class="hint">Sekwencja zawsze ma 5 zadań co 2 numery. Wpisujesz tylko start Gracza A, a Gracz B dostaje automatycznie zadania o jeden numer wyżej, na przykład A: 2, 4, 6, 8, 10 oraz B: 3, 5, 7, 9, 11.</p>
+            <p class="hint">Sekwencja zawsze ma 5 zadań co 2 numery. Wpisujesz tylko start Gracza A, a Gracz B dostaje automatycznie zadania o jeden numer wyżej, na przykład A: 2, 4, 6, 8, 10 oraz B: 3, 5, 7, 9, 11. Rotacja dobiera trzy różne gry dla każdej pary.</p>
 
             <div class="table-wrap">
               <table class="range-table">
