@@ -47,22 +47,15 @@
           <section class="panel" id="panel1" data-panel="1">
             <div class="panel-heading">
               <p class="eyebrow">Krok 1</p>
-              <h2>Ustaw klasę albo wybierz gotowy preset</h2>
+              <h2>Dostosuj lub stwórz swój zestaw stacji zadaniowych</h2>
             </div>
 
             <div class="preset-grid" id="presetGrid" aria-label="Gotowe presety"></div>
 
-            <div class="field-grid two">
+            <div class="field-grid">
               <label class="field">
                 <span>Liczba uczniów</span>
                 <input type="number" id="students" min="6" max="40" step="1" value="20" inputmode="numeric">
-              </label>
-              <label class="field">
-                <span>Tryb sekwencji B</span>
-                <select id="sequenceMode">
-                  <option value="autoPlus">B = A + 1</option>
-                  <option value="manual">Wpisuję ręcznie</option>
-                </select>
               </label>
             </div>
 
@@ -122,7 +115,7 @@
               <h2>Ustaw numery zadań na stanowiskach</h2>
             </div>
 
-            <p class="hint">Sekwencja zawsze ma 5 zadań co 2 numery, na przykład 4, 6, 8, 10, 12. W trybie automatycznym Gracz B dostaje zakres A + 1.</p>
+            <p class="hint">Sekwencja zawsze ma 5 zadań co 2 numery. Wpisujesz tylko start Gracza A, a Gracz B dostaje automatycznie zadania o jeden numer wyżej, na przykład A: 2, 4, 6, 8, 10 oraz B: 3, 5, 7, 9, 11.</p>
 
             <div class="table-wrap">
               <table class="range-table">

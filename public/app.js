@@ -61,7 +61,6 @@ const PRESETS = [
     name: "Junior",
     meta: "28 uczniów, 14 stanowisk",
     students: 28,
-    sequenceMode: "manual",
     games: [
       "Trzy Małe Świnki Deluxe",
       "Trzy Małe Świnki Deluxe",
@@ -78,15 +77,13 @@ const PRESETS = [
       "Biedroneczki",
       "Biedroneczki"
     ],
-    startA: [5, 5, 5, 5, 9, 9, 1, 1, 11, 11, 5, 5, 5, 5],
-    startB: [6, 6, 6, 6, 10, 10, 2, 2, 11, 11, 6, 6, 6, 6]
+    startA: [5, 5, 5, 5, 9, 9, 1, 1, 11, 11, 5, 5, 5, 5]
   },
   {
     id: "master",
     name: "Master",
     meta: "26 uczniów, 13 stanowisk",
     students: 26,
-    sequenceMode: "manual",
     games: [
       "Apple Puzzler",
       "Apple Puzzler",
@@ -102,15 +99,13 @@ const PRESETS = [
       "IQ Focus",
       "IQ Gears"
     ],
-    startA: [4, 4, 4, 4, 4, 4, 4, 4, 2, 2, 2, 2, 2],
-    startB: [5, 5, 5, 5, 5, 5, 5, 5, 3, 3, 3, 3, 3]
+    startA: [4, 4, 4, 4, 4, 4, 4, 4, 2, 2, 2, 2, 2]
   },
   {
     id: "ekspert",
     name: "Ekspert",
     meta: "30 uczniów, 15 stanowisk",
     students: 30,
-    sequenceMode: "manual",
     games: [
       "IQ Digits",
       "IQ Digits",
@@ -128,8 +123,7 @@ const PRESETS = [
       "Hop do Norki",
       "Hop do Norki"
     ],
-    startA: Array(15).fill(3),
-    startB: Array(15).fill(2)
+    startA: Array(15).fill(3)
   }
 ];
 
@@ -141,7 +135,6 @@ const state = {
   games: [],
   startA: [],
   startB: [],
-  sequenceMode: "autoPlus",
   customGames: []
 };
 
@@ -196,14 +189,13 @@ function applyPreset(id) {
   if (!preset) return;
 
   state.students = preset.students;
-  state.sequenceMode = preset.sequenceMode;
   state.games = [...preset.games];
   state.startA = [...preset.startA];
-  state.startB = [...preset.startB];
+  state.startB = preset.startA.map((start) => start + 1);
 
   $("students").value = preset.students;
-  $("sequenceMode").value = preset.sequenceMode;
   recalc();
+  syncBFromA();
   buildStationSelects();
   markDuplicates();
 }
@@ -333,9 +325,8 @@ function markDuplicates() {
   $("emptyNote").classList.add("hidden");
 }
 
-function syncBFromMode() {
-  state.sequenceMode = $("sequenceMode").value;
-  if (state.sequenceMode !== "autoPlus") return;
+function syncBFromA() {
+  state.startB.length = state.stations;
   for (let index = 0; index < state.stations; index += 1) {
     const value = parseInt(state.startA[index], 10);
     state.startB[index] = Number.isFinite(value) ? value + 1 : NaN;
@@ -347,11 +338,10 @@ function buildRangeTable() {
   state.startB.length = state.stations;
 
   for (let index = 0; index < state.stations; index += 1) {
-    if (!Number.isFinite(parseInt(state.startA[index], 10))) state.startA[index] = 1;
-    if (!Number.isFinite(parseInt(state.startB[index], 10))) state.startB[index] = state.startA[index] + 1;
+    if (!Number.isFinite(parseInt(state.startA[index], 10))) state.startA[index] = 2;
   }
 
-  syncBFromMode();
+  syncBFromA();
 
   $("rangeBody").innerHTML = state.games.map((game, index) => `
     <tr>
@@ -359,7 +349,7 @@ function buildRangeTable() {
       <td class="game-name">${escapeHTML(game)}</td>
       <td><input type="number" min="1" max="200" value="${state.startA[index]}" data-kind="a" data-index="${index}" aria-label="Start A, stanowisko ${index + 1}"></td>
       <td><span class="seq-preview" id="previewA${index}">${seqText(seqFrom(state.startA[index]))}</span></td>
-      <td><input type="number" min="1" max="200" value="${state.startB[index]}" data-kind="b" data-index="${index}" ${state.sequenceMode === "autoPlus" ? "readonly" : ""} aria-label="Start B, stanowisko ${index + 1}"></td>
+      <td><input type="number" min="1" max="201" value="${state.startB[index]}" data-kind="b" data-index="${index}" readonly aria-label="Start B, stanowisko ${index + 1}"></td>
       <td><span class="seq-preview b" id="previewB${index}">${seqText(seqFrom(state.startB[index]))}</span></td>
     </tr>
   `).join("");
@@ -374,16 +364,11 @@ function handleRangeInput(event) {
   const kind = event.target.dataset.kind;
   const value = parseInt(event.target.value, 10);
 
-  if (kind === "a") {
-    state.startA[index] = value;
-    if (state.sequenceMode === "autoPlus") {
-      state.startB[index] = Number.isFinite(value) ? value + 1 : NaN;
-      const bInput = document.querySelector(`input[data-kind="b"][data-index="${index}"]`);
-      if (bInput) bInput.value = Number.isFinite(state.startB[index]) ? state.startB[index] : "";
-    }
-  } else {
-    state.startB[index] = value;
-  }
+  if (kind !== "a") return;
+  state.startA[index] = value;
+  state.startB[index] = Number.isFinite(value) ? value + 1 : NaN;
+  const bInput = document.querySelector(`input[data-kind="b"][data-index="${index}"]`);
+  if (bInput) bInput.value = Number.isFinite(state.startB[index]) ? state.startB[index] : "";
 
   updateRangePreview(index);
 }
@@ -394,7 +379,7 @@ function updateRangePreview(index) {
 }
 
 function rangesValid() {
-  syncBFromMode();
+  syncBFromA();
   for (let index = 0; index < state.stations; index += 1) {
     if (!seqFrom(state.startA[index]) || !seqFrom(state.startB[index])) return false;
   }
@@ -742,10 +727,6 @@ async function downloadHtml() {
 
 function initEvents() {
   $("students").addEventListener("input", recalc);
-  $("sequenceMode").addEventListener("change", () => {
-    state.sequenceMode = $("sequenceMode").value;
-    if (!$("panel3").classList.contains("hidden")) buildRangeTable();
-  });
 
   $("toStep2").addEventListener("click", () => {
     recalc();
@@ -788,8 +769,6 @@ function initEvents() {
     state.games = [];
     state.startA = [];
     state.startB = [];
-    $("sequenceMode").value = "autoPlus";
-    state.sequenceMode = "autoPlus";
     recalc();
     showStep(1);
   });
