@@ -33,6 +33,7 @@
               <dd>pary</dd>
             </div>
           </dl>
+          <button class="timer-launch" id="openTimerBtn" type="button">Otwórz duży stoper</button>
         </aside>
 
         <section class="generator-panel">
@@ -80,8 +81,8 @@
               </div>
             </div>
 
-            <p class="notice warning hidden" id="oddNote">Nieparzysta liczba uczniów: ostatnia para bedzie 3-osobowa i dostanie karte Gracza C.</p>
-            <p class="notice warning hidden" id="minNote">Do rotacji potrzebne sa co najmniej 3 stanowiska, czyli minimum 6 uczniów.</p>
+            <p class="notice warning hidden" id="oddNote">Nieparzysta liczba uczniów: ostatnia para będzie 3-osobowa i dostanie kartę Gracza C.</p>
+            <p class="notice warning hidden" id="minNote">Do rotacji potrzebne są co najmniej 3 stanowiska, czyli minimum 6 uczniów.</p>
 
             <div class="actions">
               <button class="btn primary" id="toStep2" type="button">Przejdź do gier</button>
@@ -106,8 +107,8 @@
             </div>
 
             <div class="station-grid" id="stationGrid"></div>
-            <p class="notice warning hidden" id="dupNote">Ten sam tytuł pojawia sie na kilku stanowiskach. To jest poprawne, jesli masz odpowiednią liczbę egzemplarzy.</p>
-            <p class="notice warning hidden" id="emptyNote">Każde stanowisko musi miec wybrana grę.</p>
+            <p class="notice warning hidden" id="dupNote">Ten sam tytuł pojawia się na kilku stanowiskach. To jest poprawne, jeśli masz odpowiednią liczbę egzemplarzy.</p>
+            <p class="notice warning hidden" id="emptyNote">Każde stanowisko musi mieć wybraną grę.</p>
 
             <div class="actions">
               <button class="btn ghost" id="back1" type="button">Wstecz</button>
@@ -150,7 +151,7 @@
           <section class="panel hidden" id="panel4" data-panel="4">
             <div class="panel-heading">
               <p class="eyebrow">Krok 4</p>
-              <h2>Podglad jest gotowy do druku</h2>
+              <h2>Podgląd jest gotowy do druku</h2>
             </div>
 
             <div class="summary-grid" id="summaryGrid"></div>
@@ -159,14 +160,73 @@
               <button class="btn ghost" id="back3" type="button">Wstecz</button>
               <button class="btn secondary" id="downloadHtmlBtn" type="button">Pobierz HTML</button>
               <button class="btn primary" id="printBtn" type="button">Drukuj / zapisz PDF</button>
+              <button class="btn secondary" id="openTimerBtn2" type="button">Duży stoper</button>
               <button class="btn ghost" id="restartBtn" type="button">Zacznij od nowa</button>
             </div>
           </section>
         </section>
       </section>
 
-      <section id="printArea" class="print-area hidden" aria-label="Podglad wydruku"></section>
+      <section id="printArea" class="print-area hidden" aria-label="Podgląd wydruku"></section>
     </main>
+
+    <section class="timer-overlay hidden" id="timerOverlay" role="dialog" aria-modal="true" aria-labelledby="timerTitle">
+      <div class="timer-shell">
+        <header class="timer-top">
+          <div>
+            <p class="eyebrow">Stoper lekcyjny</p>
+            <h2 id="timerTitle">Czas dla grupy <span id="timerGroupTitle">A</span></h2>
+          </div>
+          <button class="timer-close" id="closeTimerBtn" type="button" aria-label="Zamknij stoper">×</button>
+        </header>
+
+        <div class="timer-settings" aria-label="Ustawienia stopera">
+          <div class="timer-group-switch" role="group" aria-label="Wybór grupy">
+            <button class="timer-group active" type="button" data-timer-group="A">Grupa A</button>
+            <button class="timer-group" type="button" data-timer-group="B">Grupa B</button>
+          </div>
+
+          <label class="timer-field">
+            <span>Runda</span>
+            <input type="text" id="timerRound" value="Runda 1" maxlength="24">
+          </label>
+
+          <label class="timer-field">
+            <span>Minuty</span>
+            <input type="number" id="timerMinutes" min="0" max="99" value="5" inputmode="numeric">
+          </label>
+
+          <label class="timer-field">
+            <span>Sekundy</span>
+            <input type="number" id="timerSeconds" min="0" max="59" value="0" inputmode="numeric">
+          </label>
+
+          <label class="timer-check">
+            <input type="checkbox" id="timerSound" checked>
+            <span>Sygnał końca</span>
+          </label>
+        </div>
+
+        <div class="timer-presets" aria-label="Szybkie ustawienia czasu">
+          <button type="button" data-preset-seconds="240">4 min</button>
+          <button type="button" data-preset-seconds="300">5 min</button>
+          <button type="button" data-preset-seconds="840">14 min</button>
+          <button type="button" data-preset-seconds="900">15 min</button>
+        </div>
+
+        <div class="timer-display-wrap" aria-live="polite">
+          <div class="timer-round" id="timerRoundLabel">Runda 1</div>
+          <div class="timer-display" id="timerDisplay">05:00</div>
+          <div class="timer-status" id="timerStatus">Gotowy</div>
+        </div>
+
+        <div class="timer-actions">
+          <button class="btn primary" id="timerStartPause" type="button">Start</button>
+          <button class="btn ghost" id="timerReset" type="button">Reset</button>
+          <button class="btn secondary" id="timerNextGroup" type="button">Przełącz A/B</button>
+        </div>
+      </div>
+    </section>
 
     <script src="/app.js" defer></script>
   </body>

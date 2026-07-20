@@ -145,6 +145,14 @@ const state = {
   customGames: []
 };
 
+const timerState = {
+  group: "A",
+  totalSeconds: 300,
+  remainingSeconds: 300,
+  running: false,
+  intervalId: null
+};
+
 const CARDS_PER_PAGE = 3;
 const $ = (id) => document.getElementById(id);
 
@@ -212,7 +220,7 @@ function showStep(step) {
   });
 
   $("printArea").classList.toggle("hidden", step !== 4);
-  window.scróllTo({ top: 0, behavior: "smooth" });
+  window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
 function recalc() {
@@ -445,7 +453,7 @@ function cardHTML(pairNumber, player, stationIndexes) {
         <div class="total-box">Łączna liczba zadań: <span class="blank"></span></div>
         <div class="total-box">Łączny czas: <span class="blank"></span> min : sek</div>
       </div>
-      ${isC ? `<p class="trio-note">Para 3-osobowa: róle gracza i sędziego rotują - każdy gra w 2 z 3 rund.</p>` : ""}
+      ${isC ? `<p class="trio-note">Para 3-osobowa: role gracza i sędziego rotują - każdy gra w 2 z 3 rund.</p>` : ""}
     </article>
   `;
 }
@@ -524,10 +532,193 @@ function renderPrintArea() {
   pages += `<div class="sheet page">${teacherSheetHTML()}</div>`;
 
   $("printArea").innerHTML = `
-    <p class="notice info preview-note">Podglad wydruku: ${cards.length} kart gracza i ściągawka nauczyciela.</p>
+    <p class="notice info preview-note">Podgląd wydruku: ${cards.length} kart gracza i ściągawka nauczyciela.</p>
     ${pages}
   `;
   renderSummary(cards.length);
+}
+
+function clampTimerInput(value, min, max) {
+  const number = parseInt(value, 10);
+  if (!Number.isFinite(number)) return min;
+  return Math.min(Math.max(number, min), max);
+}
+
+function formatTimer(seconds) {
+  const safeSeconds = Math.max(0, seconds);
+  const mins = Math.floor(safeSeconds / 60);
+  const secs = safeSeconds % 60;
+  return `${String(mins).padStart(2, "0")}:${String(secs).padStart(2, "0")}`;
+}
+
+function getConfiguredTimerSeconds() {
+  const minutes = clampTimerInput($("timerMinutes").value, 0, 99);
+  const seconds = clampTimerInput($("timerSeconds").value, 0, 59);
+  const total = minutes * 60 + seconds;
+  return total > 0 ? total : 1;
+}
+
+function setTimerDuration(totalSeconds) {
+  const minutes = Math.floor(totalSeconds / 60);
+  const seconds = totalSeconds % 60;
+  $("timerMinutes").value = minutes;
+  $("timerSeconds").value = seconds;
+  timerState.totalSeconds = totalSeconds;
+  if (!timerState.running) {
+    timerState.remainingSeconds = totalSeconds;
+  }
+  updateTimerDisplay();
+}
+
+function updateTimerDisplay() {
+  $("timerDisplay").textContent = formatTimer(timerState.remainingSeconds);
+  $("timerGroupTitle").textContent = timerState.group;
+  $("timerRoundLabel").textContent = $("timerRound").value.trim() || "Runda";
+  $("timerOverlay").dataset.group = timerState.group;
+  $("timerStartPause").textContent = timerState.running ? "Pauza" : "Start";
+  document.querySelectorAll("[data-timer-group]").forEach((button) => {
+    button.classList.toggle("active", button.dataset.timerGroup === timerState.group);
+  });
+}
+
+function setTimerStatus(text) {
+  $("timerStatus").textContent = text;
+}
+
+function playTimerSound() {
+  const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+  if (!$("timerSound").checked || !AudioContextClass) return;
+  const context = new AudioContextClass();
+  const oscillator = context.createOscillator();
+  const gain = context.createGain();
+  oscillator.type = "sine";
+  oscillator.frequency.setValueAtTime(880, context.currentTime);
+  gain.gain.setValueAtTime(0.001, context.currentTime);
+  gain.gain.exponentialRampToValueAtTime(0.35, context.currentTime + 0.03);
+  gain.gain.exponentialRampToValueAtTime(0.001, context.currentTime + 0.7);
+  oscillator.connect(gain);
+  gain.connect(context.destination);
+  oscillator.start();
+  oscillator.stop(context.currentTime + 0.75);
+}
+
+function stopTimerInterval() {
+  if (timerState.intervalId) {
+    window.clearInterval(timerState.intervalId);
+    timerState.intervalId = null;
+  }
+}
+
+function finishTimer() {
+  stopTimerInterval();
+  timerState.running = false;
+  timerState.remainingSeconds = 0;
+  setTimerStatus(`Koniec czasu dla grupy ${timerState.group}`);
+  $("timerOverlay").classList.add("timer-done");
+  playTimerSound();
+  updateTimerDisplay();
+}
+
+function tickTimer() {
+  timerState.remainingSeconds -= 1;
+  if (timerState.remainingSeconds <= 0) {
+    finishTimer();
+    return;
+  }
+  updateTimerDisplay();
+}
+
+function startPauseTimer() {
+  if (timerState.running) {
+    timerState.running = false;
+    stopTimerInterval();
+    setTimerStatus("Pauza");
+    updateTimerDisplay();
+    return;
+  }
+
+  if (timerState.remainingSeconds <= 0) {
+    timerState.remainingSeconds = getConfiguredTimerSeconds();
+  }
+
+  timerState.totalSeconds = getConfiguredTimerSeconds();
+  timerState.running = true;
+  $("timerOverlay").classList.remove("timer-done");
+  setTimerStatus(`Odmierzam czas dla grupy ${timerState.group}`);
+  updateTimerDisplay();
+  timerState.intervalId = window.setInterval(tickTimer, 1000);
+}
+
+function resetTimer() {
+  stopTimerInterval();
+  timerState.running = false;
+  timerState.totalSeconds = getConfiguredTimerSeconds();
+  timerState.remainingSeconds = timerState.totalSeconds;
+  $("timerOverlay").classList.remove("timer-done");
+  setTimerStatus("Gotowy");
+  updateTimerDisplay();
+}
+
+function setTimerGroup(group) {
+  timerState.group = group;
+  $("timerOverlay").classList.remove("timer-done");
+  setTimerStatus(timerState.running ? `Odmierzam czas dla grupy ${group}` : "Gotowy");
+  updateTimerDisplay();
+}
+
+function openTimer() {
+  timerState.totalSeconds = getConfiguredTimerSeconds();
+  if (!timerState.running) {
+    timerState.remainingSeconds = timerState.totalSeconds;
+  }
+  $("timerOverlay").classList.remove("hidden");
+  document.body.classList.add("timer-open");
+  setTimerStatus(timerState.running ? `Odmierzam czas dla grupy ${timerState.group}` : "Gotowy");
+  updateTimerDisplay();
+}
+
+function closeTimer() {
+  $("timerOverlay").classList.add("hidden");
+  document.body.classList.remove("timer-open");
+}
+
+function initTimerEvents() {
+  ["openTimerBtn", "openTimerBtn2"].forEach((id) => {
+    const button = $(id);
+    if (button) button.addEventListener("click", openTimer);
+  });
+
+  $("closeTimerBtn").addEventListener("click", closeTimer);
+  $("timerStartPause").addEventListener("click", startPauseTimer);
+  $("timerReset").addEventListener("click", resetTimer);
+  $("timerNextGroup").addEventListener("click", () => setTimerGroup(timerState.group === "A" ? "B" : "A"));
+  $("timerRound").addEventListener("input", updateTimerDisplay);
+
+  ["timerMinutes", "timerSeconds"].forEach((id) => {
+    $(id).addEventListener("input", () => {
+      if (!timerState.running) resetTimer();
+    });
+  });
+
+  document.querySelectorAll("[data-timer-group]").forEach((button) => {
+    button.addEventListener("click", () => setTimerGroup(button.dataset.timerGroup));
+  });
+
+  document.querySelectorAll("[data-preset-seconds]").forEach((button) => {
+    button.addEventListener("click", () => {
+      stopTimerInterval();
+      timerState.running = false;
+      $("timerOverlay").classList.remove("timer-done");
+      setTimerDuration(Number(button.dataset.presetSeconds));
+      setTimerStatus("Gotowy");
+    });
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && !$("timerOverlay").classList.contains("hidden")) {
+      closeTimer();
+    }
+  });
 }
 
 async function downloadHtml() {
@@ -602,6 +793,8 @@ function initEvents() {
     recalc();
     showStep(1);
   });
+
+  initTimerEvents();
 
   document.querySelectorAll("[data-step-target]").forEach((chip) => {
     chip.addEventListener("click", () => {
