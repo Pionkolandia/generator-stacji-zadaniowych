@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Generator kart stacji zadaniowych dla nauczycieli - Szkola jest SMART.">
+    <meta name="theme-color" content="#f7f4ee">
+    <title>Generator stacji zadaniowych | Szkola jest SMART!</title>
+    <link rel="icon" href="/public/assets/logo-szkola-jest-smart.png">
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <main class="app">
+      <section class="workspace app-ui" aria-label="Generator stacji zadaniowych">
+        <aside class="brand-panel" aria-label="Szkola jest SMART">
+          <img class="brand-image" src="/public/assets/logo-szkola-jest-smart.png" alt="Program Szkola jest SMART">
+          <div class="brand-copy">
+            <p class="eyebrow">Generator kart</p>
+            <h1>Stacje zadaniowe</h1>
+            <p>Przygotuj komplet kart graczy, rotacje stanowisk i sciagawke nauczyciela do wydruku na A4.</p>
+          </div>
+          <dl class="lesson-stats">
+            <div>
+              <dt>Rundy</dt>
+              <dd>3 + 3</dd>
+            </div>
+            <div>
+              <dt>Zadania</dt>
+              <dd>5 na runde</dd>
+            </div>
+            <div>
+              <dt>Tryb</dt>
+              <dd>pary</dd>
+            </div>
+          </dl>
+        </aside>
+
+        <section class="generator-panel">
+          <nav class="stepper" aria-label="Kroki generatora">
+            <button class="step-chip active" type="button" data-step-target="1"><span>1</span> Klasa</button>
+            <button class="step-chip" type="button" data-step-target="2"><span>2</span> Gry</button>
+            <button class="step-chip" type="button" data-step-target="3"><span>3</span> Zadania</button>
+            <button class="step-chip" type="button" data-step-target="4"><span>4</span> Druk</button>
+          </nav>
+
+          <section class="panel" id="panel1" data-panel="1">
+            <div class="panel-heading">
+              <p class="eyebrow">Krok 1</p>
+              <h2>Ustaw klase albo wybierz gotowy preset</h2>
+            </div>
+
+            <div class="preset-grid" id="presetGrid" aria-label="Gotowe presety"></div>
+
+            <div class="field-grid two">
+              <label class="field">
+                <span>Liczba uczniow</span>
+                <input type="number" id="students" min="6" max="40" step="1" value="20" inputmode="numeric">
+              </label>
+              <label class="field">
+                <span>Tryb sekwencji B</span>
+                <select id="sequenceMode">
+                  <option value="autoPlus">B = A + 1</option>
+                  <option value="manual">Wpisuje recznie</option>
+                </select>
+              </label>
+            </div>
+
+            <div class="calc-strip" aria-live="polite">
+              <div class="calc-box">
+                <strong id="calcPairs">10</strong>
+                <span>par / druzyn</span>
+              </div>
+              <div class="calc-box">
+                <strong id="calcStations">10</strong>
+                <span>stanowisk</span>
+              </div>
+              <div class="calc-box">
+                <strong id="calcCards">20</strong>
+                <span>kart gracza</span>
+              </div>
+            </div>
+
+            <p class="notice warning hidden" id="oddNote">Nieparzysta liczba uczniow: ostatnia para bedzie 3-osobowa i dostanie karte Gracza C.</p>
+            <p class="notice warning hidden" id="minNote">Do rotacji potrzebne sa co najmniej 3 stanowiska, czyli minimum 6 uczniow.</p>
+
+            <div class="actions">
+              <button class="btn primary" id="toStep2" type="button">Przejdz do gier</button>
+            </div>
+          </section>
+
+          <section class="panel hidden" id="panel2" data-panel="2">
+            <div class="panel-heading">
+              <p class="eyebrow">Krok 2</p>
+              <h2>Przypisz gre do kazdego stanowiska</h2>
+            </div>
+
+            <div class="custom-add">
+              <label class="field" for="customGame">
+                <span>Dopisz wlasna gre</span>
+              </label>
+              <div class="custom-row">
+                <input type="text" id="customGame" maxlength="60" placeholder="np. IQ Circuit" autocomplete="off">
+                <button class="btn secondary" id="addCustomBtn" type="button">Dodaj</button>
+              </div>
+              <p class="notice info hidden" id="customNote"></p>
+            </div>
+
+            <div class="station-grid" id="stationGrid"></div>
+            <p class="notice warning hidden" id="dupNote">Ten sam tytul pojawia sie na kilku stanowiskach. To jest poprawne, jesli masz odpowiednia liczbe egzemplarzy.</p>
+            <p class="notice warning hidden" id="emptyNote">Kazde stanowisko musi miec wybrana gre.</p>
+
+            <div class="actions">
+              <button class="btn ghost" id="back1" type="button">Wstecz</button>
+              <button class="btn primary" id="toStep3" type="button">Przejdz do zakresow</button>
+            </div>
+          </section>
+
+          <section class="panel hidden" id="panel3" data-panel="3">
+            <div class="panel-heading">
+              <p class="eyebrow">Krok 3</p>
+              <h2>Ustaw numery zadan na stanowiskach</h2>
+            </div>
+
+            <p class="hint">Sekwencja zawsze ma 5 zadan co 2 numery, na przyklad 4, 6, 8, 10, 12. W trybie automatycznym Gracz B dostaje zakres A + 1.</p>
+
+            <div class="table-wrap">
+              <table class="range-table">
+                <thead>
+                  <tr>
+                    <th>Stan.</th>
+                    <th>Gra</th>
+                    <th>Start A</th>
+                    <th>Zadania A</th>
+                    <th>Start B</th>
+                    <th>Zadania B</th>
+                  </tr>
+                </thead>
+                <tbody id="rangeBody"></tbody>
+              </table>
+            </div>
+
+            <p class="notice info">Wyższy numer startowy oznacza trudniejszy zestaw. Sprawdz, czy ostatnie zadanie miesci sie w ksiazeczce danej gry.</p>
+
+            <div class="actions">
+              <button class="btn ghost" id="back2" type="button">Wstecz</button>
+              <button class="btn primary" id="toStep4" type="button">Generuj karty</button>
+            </div>
+          </section>
+
+          <section class="panel hidden" id="panel4" data-panel="4">
+            <div class="panel-heading">
+              <p class="eyebrow">Krok 4</p>
+              <h2>Podglad jest gotowy do druku</h2>
+            </div>
+
+            <div class="summary-grid" id="summaryGrid"></div>
+
+            <div class="actions">
+              <button class="btn ghost" id="back3" type="button">Wstecz</button>
+              <button class="btn secondary" id="downloadHtmlBtn" type="button">Pobierz HTML</button>
+              <button class="btn primary" id="printBtn" type="button">Drukuj / zapisz PDF</button>
+              <button class="btn ghost" id="restartBtn" type="button">Zacznij od nowa</button>
+            </div>
+          </section>
+        </section>
+      </section>
+
+      <section id="printArea" class="print-area hidden" aria-label="Podglad wydruku"></section>
+    </main>
+
+    <script src="/app.js" defer></script>
+  </body>
+</html>

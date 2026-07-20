@@ -1,0 +1,16 @@
+{
+  "name": "generator-stacji-zadaniowych",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Generator kart stacji zadaniowych dla programu Szkola jest SMART.",
+  "scripts": {
+    "start": "python3 -m http.server 4173",
+    "dev": "python3 -m http.server 4173"
+  },
+  "keywords": [
+    "edukacja",
+    "stacje-zadaniowe",
+    "smartgames"
+  ],
+  "license": "UNLICENSED"
+}
