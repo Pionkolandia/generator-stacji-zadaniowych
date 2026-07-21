@@ -202,6 +202,8 @@ function applyPreset(id) {
 }
 
 function showStep(step) {
+  document.querySelector(".workspace").classList.toggle("equal-height", step === 1);
+
   document.querySelectorAll("[data-panel]").forEach((panel) => {
     panel.classList.toggle("hidden", Number(panel.dataset.panel) !== step);
   });

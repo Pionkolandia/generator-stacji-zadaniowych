@@ -62,6 +62,19 @@ button {
   align-items: start;
 }
 
+.workspace.equal-height {
+  align-items: stretch;
+}
+
+.workspace.equal-height .brand-panel {
+  display: flex;
+  flex-direction: column;
+}
+
+.workspace.equal-height .timer-launch {
+  margin-top: auto;
+}
+
 .brand-panel,
 .generator-panel,
 .panel,
