@@ -123,6 +123,30 @@ async function initAccount() {
     window.addEventListener("station-game-added", (event) => {
       if (currentUser && event.detail?.title) persistGame(event.detail.title, false);
     });
+    window.addEventListener("station-save-set-request", handleSaveSetRequest);
+  }
+
+  function handleSaveSetRequest() {
+    openAccount();
+    if (!currentUser) {
+      setMessage(ui.authMessage, "Zaloguj się, aby zapisać swój zestaw stacji.");
+      ui.authEmail.focus();
+      return;
+    }
+
+    showAccountTab("sets");
+    if (!ui.savedSetName.value) {
+      const date = new Intl.DateTimeFormat("pl-PL", {
+        day: "2-digit",
+        month: "2-digit",
+        year: "numeric"
+      }).format(new Date());
+      ui.savedSetName.value = `Zestaw ${date}`;
+      ui.savedSetName.select();
+    } else {
+      ui.savedSetName.focus();
+    }
+    setMessage(ui.libraryMessage, "Nadaj nazwę i zapisz aktualny zestaw.");
   }
 
   function openAccount() {

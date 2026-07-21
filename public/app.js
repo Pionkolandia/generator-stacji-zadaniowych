@@ -773,25 +773,6 @@ function initTimerEvents() {
   });
 }
 
-async function downloadHtml() {
-  renderPrintArea();
-  let css = "";
-  try {
-    const response = await fetch("/styles.css");
-    css = await response.text();
-  } catch (_error) {
-    css = "";
-  }
-  const html = `<!doctype html><html lang="pl"><head><meta charset="utf-8"><title>Stacje zadaniowe - wydruk</title><style>${css}</style></head><body><main class="app">${$("printArea").outerHTML}</main></body></html>`;
-  const blob = new Blob([html], { type: "text/html;charset=utf-8" });
-  const url = URL.createObjectURL(blob);
-  const link = document.createElement("a");
-  link.href = url;
-  link.download = "stacje-zadaniowe-wydruk.html";
-  link.click();
-  URL.revokeObjectURL(url);
-}
-
 function initEvents() {
   $("students").addEventListener("input", recalc);
 
@@ -840,7 +821,9 @@ function initEvents() {
   $("back3").addEventListener("click", () => showStep(3));
 
   $("printBtn").addEventListener("click", () => window.print());
-  $("downloadHtmlBtn").addEventListener("click", downloadHtml);
+  $("saveSetBtn").addEventListener("click", () => {
+    window.dispatchEvent(new CustomEvent("station-save-set-request"));
+  });
   $("restartBtn").addEventListener("click", () => {
     state.games = [];
     state.startA = [];
