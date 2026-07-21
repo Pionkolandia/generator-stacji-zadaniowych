@@ -44,7 +44,10 @@
               <strong id="accountBarTitle">Twoje konto</strong>
               <span id="accountBarSubtitle">Zaloguj się, aby zapisywać gry i zestawy.</span>
             </div>
-            <button class="account-trigger" id="accountTrigger" type="button">Zaloguj się</button>
+            <div class="account-bar-actions">
+              <button class="account-trigger" id="accountTrigger" type="button">Zaloguj się</button>
+              <button class="info-tip" type="button" aria-label="Informacja o koncie nauczyciela" data-help="Konto pozwala zapisywać własne gry i zestawy oraz wracać do nich na dowolnym urządzeniu.">i</button>
+            </div>
           </header>
 
           <nav class="stepper" aria-label="Kroki generatora">
@@ -57,7 +60,10 @@
           <section class="panel" id="panel1" data-panel="1">
             <div class="panel-heading">
               <p class="eyebrow">Krok 1</p>
-              <h2>Dostosuj lub stwórz swój zestaw stacji zadaniowych</h2>
+              <div class="heading-with-help">
+                <h2>Dostosuj lub stwórz swój zestaw stacji zadaniowych</h2>
+                <button class="info-tip" type="button" aria-label="Informacja o ustawieniu klasy" data-help="Wybierz gotowy zestaw albo podaj liczbę uczniów. Generator automatycznie obliczy liczbę par, stanowisk i kart.">i</button>
+              </div>
             </div>
 
             <p class="notice info hidden" id="editingSetNotice" aria-live="polite"></p>
@@ -68,7 +74,10 @@
               <div class="saved-presets-head">
                 <div>
                   <p class="eyebrow">Twoja biblioteka</p>
-                  <h3 id="savedSetsTitle">Zapisane zestawy</h3>
+                  <div class="heading-with-help compact">
+                    <h3 id="savedSetsTitle">Zapisane zestawy</h3>
+                    <button class="info-tip" type="button" aria-label="Informacja o zapisanych zestawach" data-help="Wczytaj wcześniejszy zestaw, zmień liczbę uczniów, gry lub zadania, a potem zapisz poprawioną wersję.">i</button>
+                  </div>
                 </div>
                 <button class="btn ghost" id="manageSetsBtn" type="button">Zarządzaj</button>
               </div>
@@ -76,10 +85,10 @@
             </section>
 
             <div class="field-grid">
-              <label class="field">
-                <span>Liczba uczniów</span>
+              <div class="field">
+                <span class="label-with-help"><label for="students">Liczba uczniów</label> <button class="info-tip" type="button" aria-label="Informacja o liczbie uczniów" data-help="Jedno stanowisko przypada na jedną parę. Przy nieparzystej klasie ostatnia drużyna będzie trzyosobowa.">i</button></span>
                 <input type="number" id="students" min="6" max="40" step="1" value="20" inputmode="numeric">
-              </label>
+              </div>
             </div>
 
             <div class="calc-strip" aria-live="polite">
@@ -108,13 +117,16 @@
           <section class="panel hidden" id="panel2" data-panel="2">
             <div class="panel-heading">
               <p class="eyebrow">Krok 2</p>
-              <h2>Przypisz grę do każdego stanowiska</h2>
+              <div class="heading-with-help">
+                <h2>Przypisz grę do każdego stanowiska</h2>
+                <button class="info-tip" type="button" aria-label="Informacja o przypisywaniu gier" data-help="Wybierz grę dla każdego stanowiska. Generator ułoży rotację tak, aby uczeń w kolejnych rundach trafiał do różnych gier.">i</button>
+              </div>
             </div>
 
             <div class="custom-add">
-              <label class="field" for="customGame">
-                <span>Dopisz własną grę</span>
-              </label>
+              <div class="field">
+                <span class="label-with-help"><label for="customGame">Dopisz własną grę</label> <button class="info-tip" type="button" aria-label="Informacja o własnych grach" data-help="Dodaj tytuł, którego nie ma na liście. Po zalogowaniu gra zostanie zachowana w Twojej bibliotece.">i</button></span>
+              </div>
               <div class="custom-row">
                 <input type="text" id="customGame" maxlength="60" placeholder="np. IQ Circuit" autocomplete="off">
                 <button class="btn secondary" id="addCustomBtn" type="button">Dodaj</button>
@@ -136,7 +148,10 @@
           <section class="panel hidden" id="panel3" data-panel="3">
             <div class="panel-heading">
               <p class="eyebrow">Krok 3</p>
-              <h2>Ustaw numery zadań na stanowiskach</h2>
+              <div class="heading-with-help">
+                <h2>Ustaw numery zadań na stanowiskach</h2>
+                <button class="info-tip" type="button" aria-label="Informacja o numerach zadań" data-help="Podajesz tylko pierwszy numer Gracza A. Kolejne zadania rosną co dwa, a Gracz B automatycznie otrzymuje numery o jeden wyższe.">i</button>
+              </div>
             </div>
 
             <p class="hint">Sekwencja zawsze ma 5 zadań co 2 numery. Wpisujesz tylko start Gracza A, a Gracz B dostaje automatycznie zadania o jeden numer wyżej, na przykład A: 2, 4, 6, 8, 10 oraz B: 3, 5, 7, 9, 11. Rotacja dobiera trzy różne gry dla każdej pary.</p>
@@ -147,9 +162,9 @@
                   <tr>
                     <th>Stan.</th>
                     <th>Gra</th>
-                    <th>Start A</th>
+                    <th><span class="table-help">Start A <button class="info-tip inverse" type="button" aria-label="Informacja o starcie Gracza A" data-help="Pierwszy numer zadania Gracza A na danym stanowisku.">i</button></span></th>
                     <th>Zadania A</th>
-                    <th>Start B</th>
+                    <th><span class="table-help">Start B <button class="info-tip inverse" type="button" aria-label="Informacja o starcie Gracza B" data-help="Ten numer jest ustawiany automatycznie jako Start A plus jeden.">i</button></span></th>
                     <th>Zadania B</th>
                   </tr>
                 </thead>
@@ -168,17 +183,20 @@
           <section class="panel hidden" id="panel4" data-panel="4">
             <div class="panel-heading">
               <p class="eyebrow">Krok 4</p>
-              <h2>Podgląd jest gotowy do druku</h2>
+              <div class="heading-with-help">
+                <h2>Podgląd jest gotowy do druku</h2>
+                <button class="info-tip" type="button" aria-label="Informacja o podglądzie wydruku" data-help="Sprawdź karty uczniów i ściągawkę nauczyciela. Następnie wydrukuj je albo zapisz jako plik PDF.">i</button>
+              </div>
             </div>
 
             <div class="summary-grid" id="summaryGrid"></div>
 
             <div class="actions">
               <button class="btn ghost" id="back3" type="button">Wstecz</button>
-              <button class="btn secondary" id="saveSetBtn" type="button">Zapisz mój zestaw</button>
-              <button class="btn primary" id="printBtn" type="button">Drukuj / zapisz PDF</button>
-              <button class="btn secondary" id="openTimerBtn2" type="button">Duży stoper</button>
-              <button class="btn ghost" id="restartBtn" type="button">Zacznij od nowa</button>
+              <span class="action-with-help"><button class="btn secondary" id="saveSetBtn" type="button">Zapisz mój zestaw</button><button class="info-tip" type="button" aria-label="Informacja o zapisywaniu zestawu" data-help="Zapisuje liczbę uczniów, wybrane gry i numery zadań na Twoim koncie.">i</button></span>
+              <span class="action-with-help"><button class="btn primary" id="printBtn" type="button">Drukuj / zapisz PDF</button><button class="info-tip" type="button" aria-label="Informacja o drukowaniu" data-help="Otwiera okno drukowania. Możesz wybrać drukarkę albo opcję zapisu do PDF.">i</button></span>
+              <span class="action-with-help"><button class="btn secondary" id="openTimerBtn2" type="button">Duży stoper</button><button class="info-tip" type="button" aria-label="Informacja o dużym stoperze" data-help="Otwiera pełnoekranowe odliczanie czasu dla grup A i B.">i</button></span>
+              <span class="action-with-help"><button class="btn ghost" id="restartBtn" type="button">Zacznij od nowa</button><button class="info-tip" type="button" aria-label="Informacja o rozpoczynaniu od nowa" data-help="Czyści bieżące ustawienia i wraca do początku generatora.">i</button></span>
             </div>
           </section>
         </section>
@@ -192,36 +210,42 @@
         <header class="timer-top">
           <div>
             <p class="eyebrow">Stoper lekcyjny</p>
-            <h2 id="timerTitle">Czas dla grupy <span id="timerGroupTitle">A</span></h2>
+            <div class="heading-with-help">
+              <h2 id="timerTitle">Czas dla grupy <span id="timerGroupTitle">A</span></h2>
+              <button class="info-tip inverse" type="button" aria-label="Informacja o stoperze" data-help="Ustaw czas rundy, wybierz grupę i uruchom odliczanie widoczne dla całej klasy.">i</button>
+            </div>
           </div>
           <button class="timer-close" id="closeTimerBtn" type="button" aria-label="Zamknij stoper">×</button>
         </header>
 
         <div class="timer-settings" aria-label="Ustawienia stopera">
-          <div class="timer-group-switch" role="group" aria-label="Wybór grupy">
-            <button class="timer-group active" type="button" data-timer-group="A">Grupa A</button>
-            <button class="timer-group" type="button" data-timer-group="B">Grupa B</button>
+          <div class="timer-setting-block">
+            <span class="timer-label-with-help">Aktywna grupa <button class="info-tip inverse" type="button" aria-label="Informacja o wyborze grupy" data-help="Kolor i nazwa wskazują grupę, dla której właśnie odmierzasz czas.">i</button></span>
+            <div class="timer-group-switch" role="group" aria-label="Wybór grupy">
+              <button class="timer-group active" type="button" data-timer-group="A">Grupa A</button>
+              <button class="timer-group" type="button" data-timer-group="B">Grupa B</button>
+            </div>
           </div>
 
-          <label class="timer-field">
-            <span>Runda</span>
+          <div class="timer-field">
+            <span class="label-with-help"><label for="timerRound">Runda</label> <button class="info-tip inverse" type="button" aria-label="Informacja o nazwie rundy" data-help="Wpisz nazwę etapu, na przykład Runda 1 albo Zmiana stanowisk.">i</button></span>
             <input type="text" id="timerRound" value="Runda 1" maxlength="24">
-          </label>
+          </div>
 
-          <label class="timer-field">
-            <span>Minuty</span>
+          <div class="timer-field">
+            <span class="label-with-help"><label for="timerMinutes">Minuty</label> <button class="info-tip inverse" type="button" aria-label="Informacja o czasie" data-help="Ustaw czas ręcznie albo użyj jednego z gotowych przycisków poniżej.">i</button></span>
             <input type="number" id="timerMinutes" min="0" max="99" value="5" inputmode="numeric">
-          </label>
+          </div>
 
           <label class="timer-field">
             <span>Sekundy</span>
             <input type="number" id="timerSeconds" min="0" max="59" value="0" inputmode="numeric">
           </label>
 
-          <label class="timer-check">
+          <div class="timer-check">
             <input type="checkbox" id="timerSound" checked>
-            <span>Sygnał końca</span>
-          </label>
+            <span class="label-with-help"><label for="timerSound">Sygnał końca</label> <button class="info-tip inverse" type="button" aria-label="Informacja o sygnale końca" data-help="Po zakończeniu odliczania stoper odtworzy krótki sygnał dźwiękowy.">i</button></span>
+          </div>
         </div>
 
         <div class="timer-presets" aria-label="Szybkie ustawienia czasu">
@@ -238,9 +262,9 @@
         </div>
 
         <div class="timer-actions">
-          <button class="btn primary" id="timerStartPause" type="button">Start</button>
-          <button class="btn ghost" id="timerReset" type="button">Reset</button>
-          <button class="btn secondary" id="timerNextGroup" type="button">Przełącz A/B</button>
+          <span class="action-with-help"><button class="btn primary" id="timerStartPause" type="button">Start</button><button class="info-tip inverse" type="button" aria-label="Informacja o uruchomieniu stopera" data-help="Uruchamia odliczanie. Ten sam przycisk pozwala je później zatrzymać i wznowić.">i</button></span>
+          <span class="action-with-help"><button class="btn ghost" id="timerReset" type="button">Reset</button><button class="info-tip inverse" type="button" aria-label="Informacja o resecie stopera" data-help="Przywraca ustawiony czas od początku bieżącej rundy.">i</button></span>
+          <span class="action-with-help"><button class="btn secondary" id="timerNextGroup" type="button">Przełącz A/B</button><button class="info-tip inverse" type="button" aria-label="Informacja o zmianie grupy" data-help="Kończy pracę jednej grupy i przełącza stoper na drugą grupę.">i</button></span>
         </div>
       </div>
     </section>
@@ -250,7 +274,10 @@
         <header class="account-top">
           <div>
             <p class="eyebrow">Szkoła jest SMART!</p>
-            <h2 id="accountTitle">Konto nauczyciela</h2>
+            <div class="heading-with-help">
+              <h2 id="accountTitle">Konto nauczyciela</h2>
+              <button class="info-tip" type="button" aria-label="Informacja o koncie nauczyciela" data-help="Po zalogowaniu możesz tworzyć własną bibliotekę gier oraz zapisywać i edytować zestawy stacji.">i</button>
+            </div>
           </div>
           <button class="account-close" id="closeAccountBtn" type="button" aria-label="Zamknij konto">×</button>
         </header>
@@ -298,7 +325,10 @@
           <section class="account-tab-panel" data-account-panel="games">
             <div class="account-section-head">
               <div>
-                <h3>Moja biblioteka gier</h3>
+                <div class="heading-with-help compact">
+                  <h3>Moja biblioteka gier</h3>
+                  <button class="info-tip" type="button" aria-label="Informacja o bibliotece gier" data-help="Dodane tutaj tytuły pojawią się razem z główną listą podczas przypisywania gier do stanowisk.">i</button>
+                </div>
                 <p>Dodane tytuły pojawią się na liście wyboru stanowisk.</p>
               </div>
             </div>
@@ -315,7 +345,10 @@
           <section class="account-tab-panel hidden" data-account-panel="sets">
             <div class="account-section-head">
               <div>
-                <h3>Moje zestawy stacji</h3>
+                <div class="heading-with-help compact">
+                  <h3>Moje zestawy stacji</h3>
+                  <button class="info-tip" type="button" aria-label="Informacja o zestawach stacji" data-help="Zapisany zestaw przechowuje liczbę uczniów, gry i zadania. Możesz go później wczytać, poprawić lub usunąć.">i</button>
+                </div>
                 <p>Zapisz aktualnie ustawioną klasę, gry i numery zadań.</p>
               </div>
             </div>

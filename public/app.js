@@ -137,6 +137,96 @@ const timerState = {
 const CARDS_PER_PAGE = 3;
 const $ = (id) => document.getElementById(id);
 
+function initHelpTips() {
+  const buttons = Array.from(document.querySelectorAll(".info-tip[data-help]"));
+  if (!buttons.length) return;
+
+  const popover = document.createElement("div");
+  popover.id = "helpPopover";
+  popover.className = "help-popover";
+  popover.setAttribute("role", "tooltip");
+  popover.hidden = true;
+  document.body.appendChild(popover);
+
+  let activeButton = null;
+  let pinned = false;
+
+  function positionPopover() {
+    if (!activeButton || popover.hidden) return;
+
+    const gap = 8;
+    const edge = 12;
+    const anchor = activeButton.getBoundingClientRect();
+    const width = popover.offsetWidth;
+    const height = popover.offsetHeight;
+    const centeredLeft = anchor.left + (anchor.width - width) / 2;
+    const left = Math.min(Math.max(centeredLeft, edge), window.innerWidth - width - edge);
+    const below = anchor.bottom + gap;
+    const top = below + height <= window.innerHeight - edge
+      ? below
+      : Math.max(edge, anchor.top - height - gap);
+
+    popover.style.left = `${Math.round(left)}px`;
+    popover.style.top = `${Math.round(top)}px`;
+  }
+
+  function showHelp(button, shouldPin = false) {
+    if (activeButton && activeButton !== button) {
+      activeButton.setAttribute("aria-expanded", "false");
+    }
+
+    activeButton = button;
+    pinned = shouldPin;
+    popover.textContent = button.dataset.help;
+    popover.hidden = false;
+    button.setAttribute("aria-expanded", "true");
+    positionPopover();
+  }
+
+  function hideHelp() {
+    if (activeButton) activeButton.setAttribute("aria-expanded", "false");
+    activeButton = null;
+    pinned = false;
+    popover.hidden = true;
+  }
+
+  buttons.forEach((button) => {
+    button.setAttribute("aria-describedby", popover.id);
+    button.setAttribute("aria-expanded", "false");
+    button.addEventListener("mouseenter", () => {
+      if (!pinned) showHelp(button);
+    });
+    button.addEventListener("mouseleave", () => {
+      if (!pinned) hideHelp();
+    });
+    button.addEventListener("focus", () => {
+      if (!pinned) showHelp(button);
+    });
+    button.addEventListener("blur", () => {
+      if (!pinned) hideHelp();
+    });
+    button.addEventListener("click", (event) => {
+      event.preventDefault();
+      event.stopPropagation();
+      if (activeButton === button && pinned) {
+        hideHelp();
+      } else {
+        showHelp(button, true);
+      }
+    });
+  });
+
+  document.addEventListener("click", hideHelp);
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") hideHelp();
+  });
+  window.addEventListener("resize", positionPopover);
+  window.addEventListener("scroll", () => {
+    if (pinned) positionPopover();
+    else hideHelp();
+  }, true);
+}
+
 function escapeHTML(value) {
   return String(value)
     .replace(/&/g, "&amp;")
@@ -915,6 +1005,7 @@ window.StationApp = {
 };
 
 function boot() {
+  initHelpTips();
   renderPresets();
   recalc();
   initEvents();

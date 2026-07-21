@@ -212,6 +212,14 @@ h3 {
   white-space: nowrap;
 }
 
+.account-bar .account-bar-actions {
+  display: flex;
+  flex: 0 0 auto;
+  grid-auto-flow: column;
+  align-items: center;
+  gap: 8px;
+}
+
 .account-trigger {
   flex: 0 0 auto;
   min-height: 38px;
@@ -290,6 +298,91 @@ h3 {
 
 .panel-heading {
   margin-bottom: 18px;
+}
+
+.heading-with-help,
+.label-with-help,
+.table-help,
+.timer-label-with-help {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: 7px;
+}
+
+.heading-with-help {
+  align-items: flex-start;
+}
+
+.heading-with-help h2,
+.heading-with-help h3 {
+  min-width: 0;
+}
+
+.heading-with-help.compact {
+  gap: 6px;
+}
+
+.info-tip {
+  display: inline-grid;
+  width: 22px;
+  height: 22px;
+  min-width: 22px;
+  min-height: 22px;
+  flex: 0 0 22px;
+  place-items: center;
+  border: 1px solid rgba(38, 71, 223, 0.42);
+  border-radius: 50%;
+  padding: 0;
+  background: #fff;
+  color: var(--blue-deep);
+  font-size: 0.75rem;
+  font-weight: 950;
+  line-height: 1;
+  text-transform: none;
+  box-shadow: none;
+}
+
+.info-tip:hover,
+.info-tip[aria-expanded="true"] {
+  border-color: var(--blue);
+  background: var(--blue);
+  color: #fff;
+}
+
+.info-tip.inverse {
+  border-color: rgba(255, 255, 255, 0.62);
+  background: rgba(255, 255, 255, 0.14);
+  color: #fff;
+}
+
+.info-tip.inverse:hover,
+.info-tip.inverse[aria-expanded="true"] {
+  background: #fff;
+  color: var(--blue-deep);
+}
+
+.help-popover {
+  position: fixed;
+  z-index: 200;
+  width: min(280px, calc(100vw - 24px));
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: var(--radius);
+  padding: 10px 12px;
+  background: var(--ink);
+  color: #fff;
+  box-shadow: 0 16px 40px rgba(24, 33, 63, 0.3);
+  font-size: 0.82rem;
+  font-weight: 650;
+  line-height: 1.4;
+  pointer-events: none;
+}
+
+.action-with-help {
+  display: inline-flex;
+  min-width: 0;
+  align-items: center;
+  gap: 6px;
 }
 
 .preset-grid {
@@ -1238,6 +1331,18 @@ button:focus-visible {
   align-items: end;
 }
 
+.timer-setting-block {
+  display: grid;
+  gap: 6px;
+}
+
+.timer-label-with-help {
+  color: rgba(255, 255, 255, 0.86);
+  font-size: 0.82rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
 .timer-group-switch {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -1348,6 +1453,15 @@ button:focus-visible {
   font-size: 1.15rem;
 }
 
+.timer-actions .action-with-help {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+}
+
+.timer-actions .action-with-help .btn {
+  width: 100%;
+}
+
 @keyframes timerPulse {
   from {
     filter: saturate(1);
@@ -1409,6 +1523,10 @@ button:focus-visible {
     white-space: normal;
   }
 
+  .account-bar .account-bar-actions {
+    align-self: center;
+  }
+
   .auth-form,
   .inline-form,
   .admin-stats {
@@ -1437,6 +1555,10 @@ button:focus-visible {
     grid-template-columns: 1fr;
   }
 
+  .timer-actions .action-with-help {
+    width: 100%;
+  }
+
   .timer-display {
     font-size: clamp(5.4rem, 28vw, 9rem);
   }
@@ -1454,6 +1576,7 @@ button:focus-visible {
 
   .app-ui,
   .timer-overlay,
+  .help-popover,
   .preview-note {
     display: none !important;
   }
