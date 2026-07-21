@@ -60,6 +60,8 @@
               <h2>Dostosuj lub stwórz swój zestaw stacji zadaniowych</h2>
             </div>
 
+            <p class="notice info hidden" id="editingSetNotice" aria-live="polite"></p>
+
             <div class="preset-grid" id="presetGrid" aria-label="Gotowe presety"></div>
 
             <section class="saved-presets hidden" id="savedSetsSection" aria-labelledby="savedSetsTitle">
@@ -322,7 +324,10 @@
                 <span>Nazwa zestawu</span>
                 <input type="text" id="savedSetName" maxlength="60" placeholder="np. Zestaw na poniedziałek" required>
               </label>
-              <button class="btn primary" type="submit">Zapisz aktualny zestaw</button>
+              <div class="inline-form-actions">
+                <button class="btn primary" id="saveSetSubmitBtn" type="submit">Zapisz aktualny zestaw</button>
+                <button class="btn ghost hidden" id="cancelSetEditBtn" type="button">Anuluj edycję</button>
+              </div>
             </form>
             <div class="account-list" id="savedSetsList"></div>
           </section>

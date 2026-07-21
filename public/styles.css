@@ -1083,6 +1083,12 @@ button:focus-visible {
   margin-bottom: 16px;
 }
 
+.inline-form-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
 .account-list {
   display: grid;
   border-top: 1px solid var(--line);
@@ -1407,6 +1413,10 @@ button:focus-visible {
   .inline-form,
   .admin-stats {
     grid-template-columns: 1fr;
+  }
+
+  .inline-form-actions .btn {
+    flex: 1 1 180px;
   }
 
   .account-actions {

@@ -183,6 +183,8 @@ function applyPreset(id) {
   const preset = PRESETS.find((item) => item.id === id);
   if (!preset) return;
 
+  window.dispatchEvent(new CustomEvent("station-set-edit-cancel"));
+
   state.students = preset.students;
   state.games = [...preset.games];
   state.startA = [...preset.startA];
@@ -825,6 +827,7 @@ function initEvents() {
     window.dispatchEvent(new CustomEvent("station-save-set-request"));
   });
   $("restartBtn").addEventListener("click", () => {
+    window.dispatchEvent(new CustomEvent("station-set-edit-cancel"));
     state.games = [];
     state.startA = [];
     state.startB = [];

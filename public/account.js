@@ -75,6 +75,9 @@ async function initAccount() {
     gamesList: document.getElementById("accountGamesList"),
     saveSetForm: document.getElementById("saveSetForm"),
     savedSetName: document.getElementById("savedSetName"),
+    saveSetSubmit: document.getElementById("saveSetSubmitBtn"),
+    cancelSetEdit: document.getElementById("cancelSetEditBtn"),
+    editingSetNotice: document.getElementById("editingSetNotice"),
     savedSetsList: document.getElementById("savedSetsList"),
     libraryMessage: document.getElementById("libraryMessage"),
     savedSetsSection: document.getElementById("savedSetsSection"),
@@ -88,6 +91,7 @@ async function initAccount() {
   let userGames = [];
   let savedSets = [];
   let isAdmin = false;
+  let editingSetId = null;
 
   ui.bar.classList.remove("hidden");
   bindEvents();
@@ -111,6 +115,7 @@ async function initAccount() {
     ui.logout.addEventListener("click", () => signOut(auth).catch(handleAccountError));
     ui.gameForm.addEventListener("submit", addGame);
     ui.saveSetForm.addEventListener("submit", saveCurrentSet);
+    ui.cancelSetEdit.addEventListener("click", cancelSetEdit);
     ui.manageSets.addEventListener("click", () => {
       openAccount();
       showAccountTab("sets");
@@ -124,6 +129,7 @@ async function initAccount() {
       if (currentUser && event.detail?.title) persistGame(event.detail.title, false);
     });
     window.addEventListener("station-save-set-request", handleSaveSetRequest);
+    window.addEventListener("station-set-edit-cancel", cancelSetEdit);
   }
 
   function handleSaveSetRequest() {
@@ -135,6 +141,13 @@ async function initAccount() {
     }
 
     showAccountTab("sets");
+    if (editingSetId) {
+      ui.savedSetName.focus();
+      ui.savedSetName.select();
+      setMessage(ui.libraryMessage, "Zmień nazwę lub zapisz poprawiony zestaw.");
+      return;
+    }
+
     if (!ui.savedSetName.value) {
       const date = new Intl.DateTimeFormat("pl-PL", {
         day: "2-digit",
@@ -265,6 +278,7 @@ async function initAccount() {
     setMessage(ui.libraryMessage, "");
 
     if (!currentUser) {
+      setEditingSet(null);
       userGames = [];
       savedSets = [];
       window.StationApp?.setUserGames([]);
@@ -381,18 +395,29 @@ async function initAccount() {
       return;
     }
     const name = ui.savedSetName.value.trim().replace(/\s+/g, " ");
+    const wasEditing = Boolean(editingSetId);
     try {
-      await addDoc(setsCollection(), {
+      const data = {
         name,
         students: currentSet.students,
         games: currentSet.games,
         startA: currentSet.startA,
-        createdAt: serverTimestamp(),
         updatedAt: serverTimestamp()
-      });
-      ui.savedSetName.value = "";
+      };
+
+      if (editingSetId) {
+        await setDoc(doc(db, "users", currentUser.uid, "savedSets", editingSetId), data, { merge: true });
+      } else {
+        const savedSetRef = await addDoc(setsCollection(), {
+          ...data,
+          createdAt: serverTimestamp()
+        });
+        editingSetId = savedSetRef.id;
+      }
+
+      setEditingSet({ id: editingSetId, name });
       await loadSavedSets();
-      setMessage(ui.libraryMessage, "Zestaw został zapisany.");
+      setMessage(ui.libraryMessage, wasEditing ? "Zmiany w zestawie zostały zapisane." : "Zestaw został zapisany.");
     } catch (error) {
       setMessage(ui.libraryMessage, friendlyError(error), true);
     }
@@ -414,10 +439,11 @@ async function initAccount() {
       const meta = document.createElement("span");
       meta.textContent = `${savedSet.students} uczniów, ${savedSet.games.length} stanowisk`;
       copy.append(title, meta);
-      const load = actionButton("Wczytaj", "", () => loadSet(savedSet));
+      const load = actionButton("Edytuj", "", () => loadSet(savedSet));
       const remove = actionButton("Usuń", "danger", async () => {
         if (!window.confirm(`Usunąć zestaw „${savedSet.name}”?`)) return;
         await deleteDoc(doc(db, "users", currentUser.uid, "savedSets", savedSet.id));
+        if (editingSetId === savedSet.id) setEditingSet(null);
         await loadSavedSets();
       });
       const actions = document.createElement("div");
@@ -450,7 +476,31 @@ async function initAccount() {
       setMessage(ui.libraryMessage, "Nie udało się wczytać tego zestawu.", true);
       return;
     }
+    setEditingSet(savedSet);
     closeAccount();
+  }
+
+  function setEditingSet(savedSet) {
+    editingSetId = savedSet?.id || null;
+    const isEditing = Boolean(editingSetId);
+    ui.savedSetName.value = isEditing ? String(savedSet.name || "") : "";
+    ui.saveSetSubmit.textContent = isEditing ? "Zapisz zmiany" : "Zapisz aktualny zestaw";
+    ui.cancelSetEdit.classList.toggle("hidden", !isEditing);
+    ui.editingSetNotice.textContent = isEditing ? `Edytujesz zestaw: ${savedSet.name || "Bez nazwy"}` : "";
+    ui.editingSetNotice.classList.toggle("hidden", !isEditing);
+
+    const printSaveButton = document.getElementById("saveSetBtn");
+    if (printSaveButton) {
+      printSaveButton.textContent = isEditing ? "Zapisz zmiany" : "Zapisz mój zestaw";
+    }
+  }
+
+  function cancelSetEdit() {
+    const wasEditing = Boolean(editingSetId);
+    setEditingSet(null);
+    if (wasEditing && !ui.overlay.classList.contains("hidden")) {
+      setMessage(ui.libraryMessage, "Edycja została zakończona. Bieżące ustawienia możesz zapisać jako nowy zestaw.");
+    }
   }
 
   async function loadAdminStats() {
