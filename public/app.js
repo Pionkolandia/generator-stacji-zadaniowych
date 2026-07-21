@@ -1,58 +1,66 @@
 "use strict";
 
 const GAMES = [
-  "Trzy Małe Świnki Deluxe",
-  "Czerwony Kapturek Deluxe",
-  "Wilk i 7 Koźlątek",
-  "Królewna Śnieżka Deluxe",
-  "Śpiąca Królewna Deluxe",
-  "Jas i Magiczna Fasola Deluxe",
-  "Kamelot Jr",
-  "Mądry Zamek",
-  "3 Traki",
-  "Dzień i Noc",
-  "Park Safari Jr",
-  "Safari Park Jr",
-  "Zwierzaki na Wsi",
-  "Misie w Lesie",
-  "Smart Pieseł - Bieg po Medal",
-  "Dress Code",
-  "Żabki",
-  "Biedroneczki",
-  "Apple Puzzler",
-  "Potwory - Zabawa w Chowanego",
-  "Kotełki",
-  "Hop do Norki",
-  "Kolorowy Kod",
-  "Diamentowy Kod",
-  "Antywirus",
-  "Blokada",
-  "Gwiezdna Ucieczka",
-  "Tajemnicza Wyspa",
-  "Akademia Jazdy Konnej",
-  "Dinozaury - Tajemnicza Wyspa",
-  "Smoczy Ogień",
-  "Droga do Świątyni (Smocza Edycja)",
-  "Piraci w Morzu Ognia",
-  "Spadające Gwiazdy",
-  "Kwadrylion",
-  "Genius Square",
-  "Wyścigówki",
-  "IQ Puzzler Pro",
-  "IQ Love",
-  "IQ Digits",
-  "IQ Gears",
-  "IQ Focus",
-  "IQ Fit",
+  "Antywirus Mutacja",
   "Arka Noego",
-  "Zwinne Delfinki",
-  "Robaczki",
-  "Kopalnia Złota",
-  "Na Plaży",
+  "Atomowe Zagadki",
+  "Baszty i Maszty",
+  "Chess Peace",
+  "Dinozaury Tajemnicza Wyspa",
+  "Droga do Świątyni. Smocza edycja.",
+  "Dropzone – strefa zrzutu",
+  "Dziura w Całym",
+  "Gnomki i domki",
   "Goool!",
-  "Pingwiny - Zabawa w Basenie",
-  "Fabryka Robotów",
-  "Tajemnice Świątyni"
+  "IQ Bubbles",
+  "IQ Link",
+  "IQ Matrix",
+  "IQ Noodles",
+  "IQ Perplex",
+  "IQ Six Pro",
+  "IQ Stars",
+  "IQ Stixx",
+  "IQ Waves",
+  "IQ XOXO",
+  "Jaś i Małgosia",
+  "Kopalnia Złota",
+  "Kości Pamięci",
+  "Królewna Śnieżka",
+  "Królicza Norka",
+  "Kubik",
+  "Kulki do Kwadratu",
+  "Kwadrylion",
+  "Logic Lane",
+  "Łowcy Duchów",
+  "Magiczny Las",
+  "Misie w Lesie",
+  "Na Plaży",
+  "Owieczki",
+  "Parada Pingwinów",
+  "Parking Puzzler",
+  "Pingwiny na Lodzie",
+  "Pingwiny – Zabawa w Basenie",
+  "Piraci w Morzu Ognia",
+  "Plug & Play Ball",
+  "Plug & Play Puzzler",
+  "Psiaki na Spacerze",
+  "Ptasie Figle",
+  "Rafa Koralowa",
+  "Robaczki",
+  "Rozgryź to!",
+  "Spadające Gwiazdy",
+  "Strachy na Lachy",
+  "Śpiąca Królewna",
+  "Tajemnice Świątyni",
+  "Take Off",
+  "Trzy Bałwanki",
+  "Ucieczka z Atlantydy",
+  "Ucieczka z lochu",
+  "Wilk i 7 Koźlątek",
+  "Zgrane Rybki",
+  "ZigZag Puzzler",
+  "Zwinne Delfinki",
+  "Żółwim Tempem"
 ];
 
 const PRESETS = [
@@ -62,20 +70,13 @@ const PRESETS = [
     meta: "28 uczniów, 14 stanowisk",
     students: 28,
     games: [
-      "Trzy Małe Świnki Deluxe",
-      "Trzy Małe Świnki Deluxe",
-      "Czerwony Kapturek Deluxe",
-      "Czerwony Kapturek Deluxe",
-      "Park Safari Jr",
-      "Safari Park Jr",
-      "3 Traki",
-      "3 Traki",
-      "Dress Code",
-      "Dress Code",
-      "Kamelot Jr",
-      "Kamelot Jr",
-      "Biedroneczki",
-      "Biedroneczki"
+      "Wilk i 7 Koźlątek", "Wilk i 7 Koźlątek",
+      "Królewna Śnieżka", "Królewna Śnieżka",
+      "Trzy Bałwanki", "Trzy Bałwanki",
+      "Gnomki i domki", "Gnomki i domki",
+      "Misie w Lesie", "Misie w Lesie",
+      "Jaś i Małgosia", "Jaś i Małgosia",
+      "Owieczki", "Owieczki"
     ],
     startA: [5, 5, 5, 5, 9, 9, 1, 1, 11, 11, 5, 5, 5, 5]
   },
@@ -85,21 +86,11 @@ const PRESETS = [
     meta: "30 uczniów, 15 stanowisk",
     students: 30,
     games: [
-      "IQ Digits",
-      "IQ Digits",
-      "IQ Digits",
-      "IQ Love",
-      "IQ Love",
-      "IQ Love",
-      "Kotełki",
-      "Kotełki",
-      "Kotełki",
-      "Blokada",
-      "Blokada",
-      "Blokada",
-      "Hop do Norki",
-      "Hop do Norki",
-      "Hop do Norki"
+      "IQ Matrix", "IQ Matrix", "IQ Matrix",
+      "IQ Perplex", "IQ Perplex", "IQ Perplex",
+      "IQ Six Pro", "IQ Six Pro", "IQ Six Pro",
+      "Antywirus Mutacja", "Antywirus Mutacja", "Antywirus Mutacja",
+      "Kwadrylion", "Kwadrylion", "Kwadrylion"
     ],
     startA: Array(15).fill(3)
   },
@@ -109,19 +100,13 @@ const PRESETS = [
     meta: "26 uczniów, 13 stanowisk",
     students: 26,
     games: [
-      "Apple Puzzler",
-      "Apple Puzzler",
-      "Diamentowy Kod",
-      "Diamentowy Kod",
-      "Diamentowy Kod",
-      "IQ Gears",
-      "Tajemnicza Wyspa",
-      "Tajemnicza Wyspa",
-      "IQ Puzzler Pro",
-      "IQ Puzzler Pro",
-      "IQ Focus",
-      "IQ Focus",
-      "IQ Gears"
+      "Atomowe Zagadki", "Atomowe Zagadki",
+      "Chess Peace", "Chess Peace",
+      "Logic Lane", "Logic Lane",
+      "IQ Stars", "IQ Stars",
+      "IQ XOXO", "IQ XOXO",
+      "ZigZag Puzzler", "ZigZag Puzzler",
+      "Kubik"
     ],
     startA: [4, 4, 4, 4, 4, 4, 4, 4, 2, 2, 2, 2, 2]
   }
@@ -136,7 +121,9 @@ const state = {
   startA: [],
   startB: [],
   rotationOffsets: [0, 1, 2],
-  customGames: []
+  customGames: [],
+  userGames: [],
+  catalogGames: [...GAMES]
 };
 
 const timerState = {
@@ -169,7 +156,14 @@ function seqText(seq) {
 }
 
 function allGames() {
-  return [...state.customGames, ...GAMES];
+  const games = [...state.userGames, ...state.customGames, ...state.catalogGames];
+  const seen = new Set();
+  return games.filter((game) => {
+    const key = gameKey(game);
+    if (!key || seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  });
 }
 
 function renderPresets() {
@@ -310,6 +304,7 @@ function addCustomGame() {
   input.value = "";
   buildStationSelects();
   input.focus();
+  window.dispatchEvent(new CustomEvent("station-game-added", { detail: { title: name } }));
 }
 
 function markDuplicates() {
@@ -886,11 +881,59 @@ function initEvents() {
   });
 }
 
+function refreshGameChoices() {
+  if (!$('panel2').classList.contains('hidden')) {
+    buildStationSelects();
+  }
+}
+
+window.StationApp = {
+  getCurrentSet() {
+    const games = Array.from({ length: state.stations }, (_, index) => state.games[index] || "");
+    const startA = Array.from({ length: state.stations }, (_, index) => Number(state.startA[index]) || 1);
+    return {
+      students: state.students,
+      stations: state.stations,
+      games,
+      startA,
+      complete: games.every(Boolean)
+    };
+  },
+  loadSet(savedSet) {
+    const students = Number(savedSet?.students);
+    if (!Number.isInteger(students) || students < 6 || students > 40) return false;
+
+    $("students").value = students;
+    recalc();
+    if (!Array.isArray(savedSet.games) || savedSet.games.length !== state.stations) return false;
+
+    state.games = savedSet.games.map((game) => String(game || "").trim());
+    state.startA = Array.from({ length: state.stations }, (_, index) => {
+      const value = Number(savedSet.start_a?.[index] ?? savedSet.startA?.[index]);
+      return Number.isInteger(value) && value > 0 ? value : 1;
+    });
+    syncBFromA();
+    buildStationSelects();
+    showStep(1);
+    return true;
+  },
+  setCatalogGames(games) {
+    if (!Array.isArray(games) || !games.length) return;
+    state.catalogGames = games.map((game) => String(game).trim()).filter(Boolean);
+    refreshGameChoices();
+  },
+  setUserGames(games) {
+    state.userGames = Array.isArray(games) ? games.map((game) => String(game).trim()).filter(Boolean) : [];
+    refreshGameChoices();
+  }
+};
+
 function boot() {
   renderPresets();
   recalc();
   initEvents();
   showStep(1);
+  window.dispatchEvent(new CustomEvent("station-app-ready"));
 }
 
 boot();

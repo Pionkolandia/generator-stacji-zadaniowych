@@ -39,6 +39,14 @@
         </aside>
 
         <section class="generator-panel">
+          <header class="account-bar hidden" id="accountBar">
+            <div>
+              <strong id="accountBarTitle">Twoje konto</strong>
+              <span id="accountBarSubtitle">Zaloguj się, aby zapisywać gry i zestawy.</span>
+            </div>
+            <button class="account-trigger" id="accountTrigger" type="button">Zaloguj się</button>
+          </header>
+
           <nav class="stepper" aria-label="Kroki generatora">
             <button class="step-chip active" type="button" data-step-target="1"><span>1</span> Klasa</button>
             <button class="step-chip" type="button" data-step-target="2"><span>2</span> Gry</button>
@@ -53,6 +61,17 @@
             </div>
 
             <div class="preset-grid" id="presetGrid" aria-label="Gotowe presety"></div>
+
+            <section class="saved-presets hidden" id="savedSetsSection" aria-labelledby="savedSetsTitle">
+              <div class="saved-presets-head">
+                <div>
+                  <p class="eyebrow">Twoja biblioteka</p>
+                  <h3 id="savedSetsTitle">Zapisane zestawy</h3>
+                </div>
+                <button class="btn ghost" id="manageSetsBtn" type="button">Zarządzaj</button>
+              </div>
+              <div class="preset-grid saved-preset-grid" id="savedPresetGrid"></div>
+            </section>
 
             <div class="field-grid">
               <label class="field">
@@ -224,6 +243,107 @@
       </div>
     </section>
 
+    <section class="account-overlay hidden" id="accountOverlay" role="dialog" aria-modal="true" aria-labelledby="accountTitle">
+      <div class="account-shell">
+        <header class="account-top">
+          <div>
+            <p class="eyebrow">Szkoła jest SMART!</p>
+            <h2 id="accountTitle">Konto nauczyciela</h2>
+          </div>
+          <button class="account-close" id="closeAccountBtn" type="button" aria-label="Zamknij konto">×</button>
+        </header>
+
+        <div id="authView">
+          <p class="account-intro">Zaloguj się, aby przechowywać własne gry i gotowe zestawy stacji.</p>
+          <button class="google-button" id="googleLoginBtn" type="button">
+            <span aria-hidden="true">G</span>
+            Kontynuuj z Google
+          </button>
+          <div class="account-divider"><span>lub użyj e-maila</span></div>
+          <form class="auth-form" id="authForm">
+            <label class="field">
+              <span>Adres e-mail</span>
+              <input type="email" id="authEmail" autocomplete="email" required>
+            </label>
+            <label class="field">
+              <span>Hasło</span>
+              <input type="password" id="authPassword" minlength="8" autocomplete="current-password" required>
+            </label>
+            <div class="account-actions">
+              <button class="btn primary" id="emailLoginBtn" type="submit">Zaloguj się</button>
+              <button class="btn secondary" id="emailSignupBtn" type="button">Załóż konto</button>
+              <button class="text-button" id="resetPasswordBtn" type="button">Nie pamiętam hasła</button>
+            </div>
+          </form>
+          <p class="account-message hidden" id="authMessage" aria-live="polite"></p>
+        </div>
+
+        <div class="hidden" id="libraryView">
+          <div class="account-identity">
+            <div>
+              <span>Zalogowano jako</span>
+              <strong id="accountEmail"></strong>
+            </div>
+            <button class="btn ghost" id="logoutBtn" type="button">Wyloguj się</button>
+          </div>
+
+          <nav class="account-tabs" aria-label="Sekcje konta">
+            <button class="active" type="button" data-account-tab="games">Moje gry</button>
+            <button type="button" data-account-tab="sets">Moje zestawy</button>
+            <button class="hidden" id="adminTabButton" type="button" data-account-tab="admin">Administrator</button>
+          </nav>
+
+          <section class="account-tab-panel" data-account-panel="games">
+            <div class="account-section-head">
+              <div>
+                <h3>Moja biblioteka gier</h3>
+                <p>Dodane tytuły pojawią się na liście wyboru stanowisk.</p>
+              </div>
+            </div>
+            <form class="inline-form" id="accountGameForm">
+              <label class="field">
+                <span>Nazwa gry</span>
+                <input type="text" id="accountGameTitle" maxlength="60" placeholder="np. IQ Circuit" required>
+              </label>
+              <button class="btn secondary" type="submit">Dodaj grę</button>
+            </form>
+            <div class="account-list" id="accountGamesList"></div>
+          </section>
+
+          <section class="account-tab-panel hidden" data-account-panel="sets">
+            <div class="account-section-head">
+              <div>
+                <h3>Moje zestawy stacji</h3>
+                <p>Zapisz aktualnie ustawioną klasę, gry i numery zadań.</p>
+              </div>
+            </div>
+            <form class="inline-form" id="saveSetForm">
+              <label class="field">
+                <span>Nazwa zestawu</span>
+                <input type="text" id="savedSetName" maxlength="60" placeholder="np. Zestaw na poniedziałek" required>
+              </label>
+              <button class="btn primary" type="submit">Zapisz aktualny zestaw</button>
+            </form>
+            <div class="account-list" id="savedSetsList"></div>
+          </section>
+
+          <section class="account-tab-panel hidden" data-account-panel="admin">
+            <div class="account-section-head">
+              <div>
+                <h3>Panel administratora</h3>
+                <p>Podstawowe informacje o korzystaniu z aplikacji.</p>
+              </div>
+            </div>
+            <div class="admin-stats" id="adminStats"></div>
+          </section>
+
+          <p class="account-message hidden" id="libraryMessage" aria-live="polite"></p>
+        </div>
+      </div>
+    </section>
+
+    <script src="/firebase-config.js"></script>
     <script src="/app.js" defer></script>
+    <script type="module" src="/account.js"></script>
   </body>
 </html>

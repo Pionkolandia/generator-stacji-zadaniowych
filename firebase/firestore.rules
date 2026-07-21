@@ -1,0 +1,36 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function signedIn() {
+      return request.auth != null;
+    }
+
+    function owns(userId) {
+      return signedIn() && request.auth.uid == userId;
+    }
+
+    function isAdmin() {
+      return signedIn()
+        && request.auth.token.email == 'wiechowscy@gmail.com'
+        && request.auth.token.email_verified == true;
+    }
+
+    match /users/{userId} {
+      allow get: if owns(userId) || isAdmin();
+      allow list: if isAdmin();
+      allow create: if owns(userId)
+        && request.resource.data.email == request.auth.token.email;
+      allow update: if owns(userId)
+        && request.resource.data.email == request.auth.token.email;
+
+      match /games/{gameId} {
+        allow read, create, update, delete: if owns(userId);
+      }
+
+      match /savedSets/{setId} {
+        allow read, create, update, delete: if owns(userId);
+      }
+    }
+  }
+}
