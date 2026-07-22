@@ -80,11 +80,6 @@ async function initAccount() {
     wishlistList: document.getElementById("wishlistGamesList"),
     wishlistGamesCount: document.getElementById("wishlistGamesCount"),
     wishlistCopiesCount: document.getElementById("wishlistCopiesCount"),
-    wishlistDocumentType: document.getElementById("wishlistDocumentType"),
-    wishlistBuyerName: document.getElementById("wishlistBuyerName"),
-    wishlistContact: document.getElementById("wishlistContact"),
-    wishlistNotes: document.getElementById("wishlistNotes"),
-    printWishlist: document.getElementById("printWishlistBtn"),
     saveSetForm: document.getElementById("saveSetForm"),
     savedSetName: document.getElementById("savedSetName"),
     saveSetSubmit: document.getElementById("saveSetSubmitBtn"),
@@ -134,7 +129,6 @@ async function initAccount() {
     ui.resetPassword.addEventListener("click", sendPasswordReset);
     ui.logout.addEventListener("click", () => signOut(auth).catch(handleAccountError));
     ui.gameForm.addEventListener("submit", addGame);
-    ui.printWishlist.addEventListener("click", printWishlistDocument);
     ui.saveSetForm.addEventListener("submit", saveCurrentSet);
     ui.cancelSetEdit.addEventListener("click", cancelSetEdit);
     ui.manageSets?.addEventListener("click", () => {
@@ -390,9 +384,6 @@ async function initAccount() {
     if (ui.barTitle) ui.barTitle.textContent = "Moje materiały";
     if (ui.barSubtitle) ui.barSubtitle.textContent = currentUser.email || "Konto nauczyciela";
     if (ui.trigger) ui.trigger.textContent = "Otwórz konto";
-    if (ui.wishlistContact && !ui.wishlistContact.value) {
-      ui.wishlistContact.value = currentUser.email || "";
-    }
     ui.adminTab.classList.toggle("hidden", !isAdmin);
     await Promise.all([loadUserGames(), loadSavedSets(), isAdmin ? loadAdminStats() : Promise.resolve()]);
     if (isAccountPage) {
@@ -570,7 +561,7 @@ async function initAccount() {
     const checkbox = document.createElement("input");
     checkbox.type = "checkbox";
     checkbox.checked = selected;
-    checkbox.setAttribute("aria-label", mode === "owned" ? `Mam grę ${game.title}` : `Chcę kupić grę ${game.title}`);
+    checkbox.setAttribute("aria-label", mode === "owned" ? `Mam grę ${game.title}` : `Dodaj grę ${game.title} do moich celów`);
     const checkmark = document.createElement("span");
     checkmark.textContent = "✓";
     checkLabel.append(checkbox, checkmark);
@@ -610,7 +601,7 @@ async function initAccount() {
     quantityInput.inputMode = "numeric";
     quantityInput.value = String(selectedQuantity || 1);
     quantityInput.disabled = !selected;
-    quantityInput.setAttribute("aria-label", `${mode === "owned" ? "Posiadane" : "Planowane"} egzemplarze gry ${game.title}`);
+    quantityInput.setAttribute("aria-label", `${mode === "owned" ? "Posiadane" : "Docelowe"} egzemplarze gry ${game.title}`);
     quantity.append(quantityInput);
 
     checkbox.addEventListener("change", async () => {
@@ -676,90 +667,8 @@ async function initAccount() {
     const wantedGames = catalogGames.filter((game) => (gameByTitle(game.title)?.wishlistQuantity || 0) > 0);
     const wantedCopies = wantedGames.reduce((sum, game) => sum + gameByTitle(game.title).wishlistQuantity, 0);
     ui.wishlistGamesCount.textContent = `${wantedGames.length} z ${catalogGames.length} gier`;
-    ui.wishlistCopiesCount.textContent = `${wantedCopies} ${wantedCopies === 1 ? "sztuka do zamówienia" : "sztuk do zamówienia"}`;
-    ui.printWishlist.disabled = !wantedGames.length;
+    ui.wishlistCopiesCount.textContent = `${wantedCopies} ${wantedCopies === 1 ? "planowany egzemplarz" : "planowanych egzemplarzy"}`;
     catalogGames.forEach((game) => ui.wishlistList.append(catalogCard(game, "wishlist")));
-  }
-
-  function escapeDocumentText(value) {
-    return String(value || "")
-      .replaceAll("&", "&amp;")
-      .replaceAll("<", "&lt;")
-      .replaceAll(">", "&gt;")
-      .replaceAll('"', "&quot;")
-      .replaceAll("'", "&#039;");
-  }
-
-  function printWishlistDocument() {
-    const selectedGames = catalogGames.map((game) => ({
-      ...game,
-      quantity: gameByTitle(game.title)?.wishlistQuantity || 0
-    })).filter((game) => game.quantity > 0);
-    if (!selectedGames.length) {
-      setMessage(ui.libraryMessage, "Najpierw zaznacz co najmniej jedną grę na liście życzeń.", true);
-      return;
-    }
-
-    const printWindow = window.open("", "wishlist-document", "width=980,height=760");
-    if (!printWindow) {
-      setMessage(ui.libraryMessage, "Przeglądarka zablokowała okno wydruku. Zezwól tej stronie na otwieranie okien.", true);
-      return;
-    }
-
-    const isOrder = ui.wishlistDocumentType.value === "order";
-    const documentTitle = isOrder ? "Lista do zamówienia" : "Prośba o wycenę";
-    const buyer = ui.wishlistBuyerName.value.trim() || "........................................................";
-    const contact = ui.wishlistContact.value.trim() || currentUser?.email || "........................................................";
-    const notes = ui.wishlistNotes.value.trim() || "Proszę o informację o dostępności, terminie realizacji oraz kosztach dostawy.";
-    const totalCopies = selectedGames.reduce((sum, game) => sum + game.quantity, 0);
-    const date = new Intl.DateTimeFormat("pl-PL", { day: "2-digit", month: "2-digit", year: "numeric" }).format(new Date());
-    const rows = selectedGames.map((game, index) => `
-      <tr>
-        <td>${index + 1}</td>
-        <td><strong>${escapeDocumentText(game.title)}</strong></td>
-        <td class="quantity">${game.quantity}</td>
-        <td><a href="${escapeDocumentText(game.url)}">Zobacz produkt</a></td>
-      </tr>
-    `).join("");
-
-    printWindow.document.write(`<!doctype html>
-      <html lang="pl"><head><meta charset="utf-8"><title>${documentTitle}</title>
-      <style>
-        @page { size: A4; margin: 14mm; }
-        * { box-sizing: border-box; }
-        body { margin: 0; color: #18213f; font-family: Arial, sans-serif; font-size: 12px; }
-        header { display: flex; align-items: center; justify-content: space-between; gap: 20px; border-bottom: 3px solid #2647df; padding-bottom: 12px; }
-        header img { width: 180px; height: auto; }
-        h1 { margin: 0; color: #142c91; font-size: 27px; }
-        .date { margin-top: 5px; color: #5d6787; text-align: right; }
-        .details { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 18px 0; }
-        .detail { border: 1px solid #d8deef; padding: 10px; }
-        .detail span { display: block; margin-bottom: 3px; color: #5d6787; font-size: 10px; font-weight: bold; text-transform: uppercase; }
-        table { width: 100%; border-collapse: collapse; }
-        th { background: #2647df; color: white; text-align: left; }
-        th, td { border: 1px solid #d8deef; padding: 8px; }
-        tbody tr:nth-child(even) { background: #f4f7ff; }
-        .quantity { width: 74px; font-size: 15px; font-weight: bold; text-align: center; }
-        a { color: #142c91; }
-        .summary { margin: 12px 0; padding: 10px; background: #e8edff; color: #142c91; font-weight: bold; }
-        .notes { margin-top: 16px; border-top: 1px solid #d8deef; padding-top: 12px; white-space: pre-wrap; }
-        footer { margin-top: 22px; color: #5d6787; font-size: 10px; }
-      </style></head><body>
-      <header>
-        <img src="${window.location.origin}/assets/logo-szkola-jest-smart.png" alt="Szkoła jest SMART">
-        <div><h1>${documentTitle}</h1><div class="date">Data: ${date}</div></div>
-      </header>
-      <section class="details">
-        <div class="detail"><span>Zamawiający / placówka</span>${escapeDocumentText(buyer)}</div>
-        <div class="detail"><span>Dane kontaktowe</span>${escapeDocumentText(contact)}</div>
-      </section>
-      <table><thead><tr><th>Lp.</th><th>Gra</th><th>Liczba sztuk</th><th>Informacje</th></tr></thead><tbody>${rows}</tbody></table>
-      <div class="summary">Razem: ${selectedGames.length} ${selectedGames.length === 1 ? "tytuł" : "tytułów"}, ${totalCopies} ${totalCopies === 1 ? "sztuka" : "sztuk"}.</div>
-      <div class="notes"><strong>Uwagi:</strong><br>${escapeDocumentText(notes)}</div>
-      <footer>Dokument wygenerowany w aplikacji Stacje zadaniowe - Szkoła jest SMART!</footer>
-      <script>window.addEventListener("load", () => { window.focus(); window.print(); });<\/script>
-      </body></html>`);
-    printWindow.document.close();
   }
 
   async function loadSavedSets() {

@@ -372,42 +372,18 @@
               <div>
                 <div class="heading-with-help compact">
                   <h3>Lista życzeń</h3>
-                  <button class="info-tip" type="button" aria-label="Informacja o liście życzeń" data-help="Zaznacz gry, które chcesz kupić, i podaj planowaną liczbę sztuk. Lista jest zapisywana na Twoim koncie.">i</button>
+                  <button class="info-tip" type="button" aria-label="Informacja o liście życzeń" data-help="Zaznacz gry, które chciałbyś mieć w przyszłości. To prywatna lista celów zapisywana wyłącznie na Twoim koncie.">i</button>
                 </div>
-                <p>Przygotuj listę gier do wyceny lub zamówienia i zapisz ją jako PDF.</p>
+                <p>Zapisuj gry, które chciałbyś mieć w swojej kolekcji w przyszłości.</p>
               </div>
             </div>
+            <p class="notice info wishlist-purpose-note" role="note">
+              <strong>Lista wyłącznie do użytku własnego.</strong>
+              Pomaga zapamiętać Twoje cele i nie służy do składania zamówień. Aplikacja nie wysyła tej listy do sklepu ani żadnego sprzedawcy.
+            </p>
             <div class="collection-summary wishlist-summary" aria-live="polite">
               <strong id="wishlistGamesCount">0 z 60 gier</strong>
-              <span id="wishlistCopiesCount">0 sztuk do zamówienia</span>
-            </div>
-            <div class="wishlist-document-settings">
-              <label class="field">
-                <span>Rodzaj dokumentu</span>
-                <select id="wishlistDocumentType">
-                  <option value="quote">Prośba o wycenę</option>
-                  <option value="order">Lista do zamówienia</option>
-                </select>
-              </label>
-              <label class="field">
-                <span>Zamawiający / placówka</span>
-                <input type="text" id="wishlistBuyerName" maxlength="80" placeholder="np. Szkoła Podstawowa nr 1">
-              </label>
-              <label class="field">
-                <span>Dane kontaktowe</span>
-                <input type="text" id="wishlistContact" maxlength="100" placeholder="e-mail lub telefon">
-              </label>
-              <label class="field wishlist-notes-field">
-                <span>Uwagi</span>
-                <textarea id="wishlistNotes" maxlength="300" rows="2" placeholder="np. proszę o podanie kosztu dostawy i terminu realizacji"></textarea>
-              </label>
-            </div>
-            <div class="wishlist-toolbar">
-              <span>Po zaznaczeniu gier dokument będzie gotowy do wydruku.</span>
-              <span class="action-with-help">
-                <button class="btn secondary" id="printWishlistBtn" type="button" disabled>Drukuj / zapisz PDF</button>
-                <button class="info-tip" type="button" aria-label="Informacja o dokumencie listy życzeń" data-help="Tworzy czytelną listę tytułów i ilości. W oknie drukowania wybierz drukarkę albo zapis do PDF.">i</button>
-              </span>
+              <span id="wishlistCopiesCount">0 planowanych egzemplarzy</span>
             </div>
             <div class="game-collection-grid wishlist-grid" id="wishlistGamesList"></div>
           </section>
