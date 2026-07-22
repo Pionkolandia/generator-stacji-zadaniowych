@@ -1575,6 +1575,31 @@ button:focus-visible {
   color: var(--orange-deep);
 }
 
+.small-button.primary {
+  border-color: var(--blue);
+  background: var(--blue);
+  color: #fff;
+}
+
+.custom-title-edit {
+  display: grid;
+  grid-column: 1 / -1;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 10px;
+  align-items: center;
+  width: 100%;
+}
+
+.custom-title-edit input {
+  min-height: 38px;
+  padding: 7px 10px;
+}
+
+.custom-title-edit-actions {
+  display: flex;
+  gap: 8px;
+}
+
 .admin-stats {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -1897,6 +1922,10 @@ button:focus-visible {
 
   .account-list-actions {
     justify-content: flex-start;
+  }
+
+  .custom-title-edit {
+    grid-template-columns: 1fr;
   }
 
   .timer-settings,

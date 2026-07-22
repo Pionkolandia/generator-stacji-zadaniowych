@@ -526,16 +526,87 @@ async function initAccount() {
         await saveGameState(game.title, value, game.wishlistQuantity);
         setMessage(ui.libraryMessage, `Zapisano liczbę egzemplarzy: ${game.title}.`);
       }, "custom-quantity");
+      const edit = actionButton("Edytuj", "", () => editCustomGameTitle(row, game));
       const remove = actionButton("Usuń", "danger", async () => {
         if (!window.confirm(`Usunąć grę „${game.title}” z Twojej kolekcji?`)) return;
         await saveGameState(game.title, 0, game.wishlistQuantity);
       });
       const actions = document.createElement("div");
       actions.className = "account-list-actions";
-      actions.append(quantity, remove);
+      actions.append(quantity, edit, remove);
       row.append(copy, actions);
       ui.customGamesList.append(row);
     });
+  }
+
+  function editCustomGameTitle(row, game) {
+    const form = document.createElement("form");
+    form.className = "custom-title-edit";
+    const input = document.createElement("input");
+    input.type = "text";
+    input.maxLength = 60;
+    input.required = true;
+    input.value = game.title;
+    input.setAttribute("aria-label", `Nowa nazwa gry ${game.title}`);
+    const actions = document.createElement("div");
+    actions.className = "custom-title-edit-actions";
+    const save = document.createElement("button");
+    save.className = "small-button primary";
+    save.type = "submit";
+    save.textContent = "Zapisz";
+    const cancel = actionButton("Anuluj", "", renderGames);
+    actions.append(save, cancel);
+    form.append(input, actions);
+    row.replaceChildren(form);
+    input.focus();
+    input.select();
+
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      save.disabled = true;
+      input.disabled = true;
+      const result = await renameCustomGame(game, input.value);
+      if (!result.ok) {
+        save.disabled = false;
+        input.disabled = false;
+        setMessage(ui.libraryMessage, result.message, true);
+        input.focus();
+        return;
+      }
+      setMessage(ui.libraryMessage, `Zmieniono nazwę na „${result.title}”.`);
+    });
+  }
+
+  async function renameCustomGame(game, rawTitle) {
+    const title = String(rawTitle || "").trim().replace(/\s+/g, " ");
+    if (title.length < 2) {
+      return { ok: false, message: "Wpisz nazwę gry - co najmniej 2 znaki." };
+    }
+    if (titleHasBlockedContent(title)) {
+      return {
+        ok: false,
+        message: "Wpisz neutralną nazwę gry bez niedozwolonych słów, adresów stron i adresów e-mail."
+      };
+    }
+    const conflict = conflictingTitle(title, game.id);
+    if (conflict) {
+      return {
+        ok: false,
+        message: `Ten tytuł jest już dostępny jako „${conflict}”. Wybierz inną nazwę.`
+      };
+    }
+    if (title === game.title) {
+      renderGames();
+      return { ok: true, title };
+    }
+
+    await setDoc(doc(db, "users", currentUser.uid, "games", game.id), {
+      title,
+      normalizedTitle: normalizeTitle(title),
+      updatedAt: serverTimestamp()
+    }, { merge: true });
+    await loadUserGames();
+    return { ok: true, title };
   }
 
   function normalizeTitle(title) {
@@ -590,12 +661,12 @@ async function initAccount() {
       && titleDistance(leftKey, rightKey) <= allowedDistance;
   }
 
-  function conflictingTitle(title) {
+  function conflictingTitle(title, ignoredGameId = "") {
     for (const game of catalogGames) {
       const variants = [game.title, ...(Array.isArray(game.aliases) ? game.aliases : [])];
       if (variants.some((variant) => titlesConflict(title, variant))) return game.title;
     }
-    return userGames.find((game) => titlesConflict(title, game.title))?.title || "";
+    return userGames.find((game) => game.id !== ignoredGameId && titlesConflict(title, game.title))?.title || "";
   }
 
   function titleHasBlockedContent(title) {
