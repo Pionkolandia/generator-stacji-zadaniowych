@@ -1284,6 +1284,7 @@ button:focus-visible {
 }
 
 .collection-game {
+  position: relative;
   display: grid;
   min-width: 0;
   min-height: 76px;
@@ -1292,7 +1293,7 @@ button:focus-visible {
   border: 1px solid var(--line);
   border-radius: var(--radius);
   background: #fff;
-  overflow: hidden;
+  overflow: visible;
   transition: border-color 120ms ease, background-color 120ms ease;
 }
 
@@ -1364,14 +1365,35 @@ button:focus-visible {
   place-items: center;
   border-radius: 4px;
   background: #fff;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .collection-preview img {
+  position: relative;
+  z-index: 1;
   display: block;
   width: 100%;
   height: 100%;
+  border: 1px solid rgba(216, 222, 239, 0.7);
+  border-radius: 4px;
+  background: #fff;
   object-fit: contain;
+  transform-origin: left center;
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .collection-game:hover,
+  .collection-game:focus-within {
+    z-index: 12;
+  }
+
+  .collection-preview:hover img,
+  .collection-product:focus-visible .collection-preview img {
+    z-index: 20;
+    box-shadow: 0 14px 36px rgba(24, 33, 63, 0.3);
+    transform: scale(2.45);
+  }
 }
 
 .collection-game.image-missing .collection-preview::after {
