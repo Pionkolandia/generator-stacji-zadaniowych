@@ -73,6 +73,8 @@ async function initAccount() {
     gameForm: document.getElementById("accountGameForm"),
     gameTitle: document.getElementById("accountGameTitle"),
     gamesList: document.getElementById("accountGamesList"),
+    customGamesList: document.getElementById("customGamesList"),
+    ownedGamesCount: document.getElementById("ownedGamesCount"),
     saveSetForm: document.getElementById("saveSetForm"),
     savedSetName: document.getElementById("savedSetName"),
     saveSetSubmit: document.getElementById("saveSetSubmitBtn"),
@@ -89,6 +91,7 @@ async function initAccount() {
 
   let currentUser = null;
   let userGames = [];
+  const catalogGames = window.StationApp?.getCatalogGames() || [];
   let savedSets = [];
   let isAdmin = false;
   let editingSetId = null;
@@ -126,7 +129,9 @@ async function initAccount() {
     });
 
     window.addEventListener("station-game-added", (event) => {
-      if (currentUser && event.detail?.title) persistGame(event.detail.title, false);
+      if (currentUser && event.detail?.title) {
+        persistGame(event.detail.title, false).catch(handleAccountError);
+      }
     });
     window.addEventListener("station-save-set-request", handleSaveSetRequest);
     window.addEventListener("station-set-edit-cancel", cancelSetEdit);
@@ -325,7 +330,14 @@ async function initAccount() {
 
   async function loadUserGames() {
     const snapshot = await getDocs(query(gamesCollection(), orderBy("title")));
-    userGames = snapshot.docs.map((item) => ({ id: item.id, ...item.data() }));
+    userGames = snapshot.docs.map((item) => {
+      const data = item.data();
+      return {
+        id: item.id,
+        ...data,
+        normalizedTitle: data.normalizedTitle || normalizeTitle(data.title)
+      };
+    });
     window.StationApp?.setUserGames(userGames.map((game) => game.title));
     renderGames();
   }
@@ -350,16 +362,87 @@ async function initAccount() {
       if (showFeedback) setMessage(ui.libraryMessage, "Gra została dodana.");
     } catch (error) {
       if (showFeedback) setMessage(ui.libraryMessage, friendlyError(error), true);
+      else throw error;
     }
   }
 
   function renderGames() {
     ui.gamesList.replaceChildren();
-    if (!userGames.length) {
-      ui.gamesList.append(emptyMessage("Nie masz jeszcze własnych gier."));
+    const ownedKeys = new Set(userGames.map((game) => game.normalizedTitle));
+    const catalogKeys = new Set(catalogGames.map((game) => normalizeTitle(game.title)));
+    const ownedCatalogCount = catalogGames.filter((game) => ownedKeys.has(normalizeTitle(game.title))).length;
+    ui.ownedGamesCount.textContent = `${ownedCatalogCount} z ${catalogGames.length} gier`;
+
+    catalogGames.forEach((game) => {
+      const row = document.createElement("div");
+      const normalizedTitle = normalizeTitle(game.title);
+      const isOwned = ownedKeys.has(normalizedTitle);
+      row.className = `collection-game${isOwned ? " owned" : ""}`;
+
+      const checkLabel = document.createElement("label");
+      checkLabel.className = "collection-check";
+      const checkbox = document.createElement("input");
+      checkbox.type = "checkbox";
+      checkbox.checked = isOwned;
+      checkbox.setAttribute("aria-label", `Mam grę ${game.title}`);
+      const checkmark = document.createElement("span");
+      checkmark.textContent = "✓";
+      checkLabel.append(checkbox, checkmark);
+
+      const link = document.createElement("a");
+      link.className = "collection-product";
+      link.href = game.url;
+      link.target = "_blank";
+      link.rel = "noopener noreferrer";
+      link.setAttribute("aria-label", `${game.title} - zobacz na stronie Iuvi Games`);
+      const preview = document.createElement("span");
+      preview.className = "collection-preview";
+      const image = document.createElement("img");
+      image.src = game.image;
+      image.alt = "";
+      image.loading = "lazy";
+      image.width = 54;
+      image.height = 54;
+      image.addEventListener("error", () => row.classList.add("image-missing"));
+      preview.append(image);
+      const copy = document.createElement("span");
+      copy.className = "collection-product-copy";
+      const title = document.createElement("strong");
+      title.textContent = game.title;
+      const productHint = document.createElement("span");
+      productHint.textContent = "Podgląd w Iuvi Games ↗";
+      copy.append(title, productHint);
+      link.append(preview, copy);
+
+      checkbox.addEventListener("change", async () => {
+        checkbox.disabled = true;
+        try {
+          if (checkbox.checked) {
+            await persistGame(game.title, false);
+            setMessage(ui.libraryMessage, `Dodano do kolekcji: ${game.title}.`);
+          } else {
+            await removeGameByTitle(game.title);
+            setMessage(ui.libraryMessage, `Usunięto z kolekcji: ${game.title}.`);
+          }
+        } catch (error) {
+          checkbox.checked = !checkbox.checked;
+          checkbox.disabled = false;
+          handleAccountError(error);
+        }
+      });
+
+      row.append(checkLabel, link);
+      ui.gamesList.append(row);
+    });
+
+    ui.customGamesList.replaceChildren();
+    const customGames = userGames.filter((game) => !catalogKeys.has(game.normalizedTitle));
+    if (!customGames.length) {
+      ui.customGamesList.append(emptyMessage("Nie masz dodatkowych gier spoza katalogu."));
       return;
     }
-    userGames.forEach((game) => {
+
+    customGames.forEach((game) => {
       const row = document.createElement("div");
       row.className = "account-list-row";
       const copy = document.createElement("div");
@@ -368,7 +451,7 @@ async function initAccount() {
       title.textContent = game.title;
       copy.append(title);
       const remove = actionButton("Usuń", "danger", async () => {
-        if (!window.confirm(`Usunąć grę „${game.title}” z Twojej biblioteki?`)) return;
+        if (!window.confirm(`Usunąć grę „${game.title}” z Twojej kolekcji?`)) return;
         await deleteDoc(doc(db, "users", currentUser.uid, "games", game.id));
         await loadUserGames();
       });
@@ -376,8 +459,19 @@ async function initAccount() {
       actions.className = "account-list-actions";
       actions.append(remove);
       row.append(copy, actions);
-      ui.gamesList.append(row);
+      ui.customGamesList.append(row);
     });
+  }
+
+  function normalizeTitle(title) {
+    return String(title || "").trim().replace(/\s+/g, " ").toLocaleLowerCase("pl-PL");
+  }
+
+  async function removeGameByTitle(title) {
+    const normalizedTitle = normalizeTitle(title);
+    const matches = userGames.filter((game) => game.normalizedTitle === normalizedTitle);
+    await Promise.all(matches.map((game) => deleteDoc(doc(db, "users", currentUser.uid, "games", game.id))));
+    await loadUserGames();
   }
 
   async function loadSavedSets() {

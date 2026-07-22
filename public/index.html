@@ -134,6 +134,18 @@
               <p class="notice info hidden" id="customNote"></p>
             </div>
 
+            <div class="collection-randomizer">
+              <div>
+                <strong>Losowanie z mojej kolekcji</strong>
+                <span id="stationCollectionCount">Brak zaznaczonych gier</span>
+              </div>
+              <span class="action-with-help">
+                <button class="btn primary" id="randomizeStationsBtn" type="button">Losuj stacje</button>
+                <button class="info-tip" type="button" aria-label="Informacja o losowaniu stanowisk" data-help="Wypełnia wszystkie stanowiska losowo wyłącznie grami zaznaczonymi w Twojej kolekcji.">i</button>
+              </span>
+            </div>
+            <p class="notice info hidden" id="randomizeNote" aria-live="polite"></p>
+
             <div class="station-grid" id="stationGrid"></div>
             <p class="notice warning hidden" id="dupNote">Ten sam tytuł pojawia się na kilku stanowiskach. To jest poprawne, jeśli masz odpowiednią liczbę egzemplarzy. Generator ułoży rotację tak, żeby jedna karta nie powtarzała tej samej gry.</p>
             <p class="notice warning hidden" id="emptyNote">Każde stanowisko musi mieć wybraną grę.</p>
@@ -326,20 +338,32 @@
             <div class="account-section-head">
               <div>
                 <div class="heading-with-help compact">
-                  <h3>Moja biblioteka gier</h3>
-                  <button class="info-tip" type="button" aria-label="Informacja o bibliotece gier" data-help="Dodane tutaj tytuły pojawią się razem z główną listą podczas przypisywania gier do stanowisk.">i</button>
+                  <h3>Moja kolekcja gier</h3>
+                  <button class="info-tip" type="button" aria-label="Informacja o kolekcji gier" data-help="Zaznaczone tytuły pojawią się na początku list stanowisk i posłużą do automatycznego losowania gier.">i</button>
                 </div>
-                <p>Dodane tytuły pojawią się na liście wyboru stanowisk.</p>
+                <p>Zaznacz gry, które masz. Tytuł lub miniatura otworzą oficjalną stronę produktu.</p>
               </div>
             </div>
-            <form class="inline-form" id="accountGameForm">
-              <label class="field">
-                <span>Nazwa gry</span>
-                <input type="text" id="accountGameTitle" maxlength="60" placeholder="np. IQ Circuit" required>
-              </label>
-              <button class="btn secondary" type="submit">Dodaj grę</button>
-            </form>
-            <div class="account-list" id="accountGamesList"></div>
+            <div class="collection-summary" aria-live="polite">
+              <strong id="ownedGamesCount">0 z 60 gier</strong>
+              <span>Zaznaczone gry są zapisywane automatycznie.</span>
+            </div>
+            <div class="game-collection-grid" id="accountGamesList"></div>
+
+            <section class="custom-library" aria-labelledby="customLibraryTitle">
+              <div>
+                <h4 id="customLibraryTitle">Gra spoza katalogu</h4>
+                <p>Dodaj własny tytuł, jeśli nie ma go na liście powyżej.</p>
+              </div>
+              <form class="inline-form" id="accountGameForm">
+                <label class="field">
+                  <span>Nazwa gry</span>
+                  <input type="text" id="accountGameTitle" maxlength="60" placeholder="np. własna gra logiczna" required>
+                </label>
+                <button class="btn secondary" type="submit">Dodaj grę</button>
+              </form>
+              <div class="account-list" id="customGamesList"></div>
+            </section>
           </section>
 
           <section class="account-tab-panel hidden" data-account-panel="sets">
@@ -380,6 +404,7 @@
       </div>
     </section>
 
+    <script src="/game-catalog.js"></script>
     <script src="/firebase-config.js"></script>
     <script src="/app.js" defer></script>
     <script type="module" src="/account.js"></script>

@@ -63,6 +63,10 @@ const GAMES = [
   "Żółwim Tempem"
 ];
 
+const GAME_CATALOG = Array.isArray(window.STATION_GAME_CATALOG) && window.STATION_GAME_CATALOG.length
+  ? window.STATION_GAME_CATALOG
+  : GAMES.map((title) => ({ title, url: "", image: "" }));
+
 const PRESETS = [
   {
     id: "junior",
@@ -256,6 +260,25 @@ function allGames() {
   });
 }
 
+function collectionGames() {
+  const seen = new Set();
+  return state.userGames.filter((game) => {
+    const key = gameKey(game);
+    if (!key || seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  });
+}
+
+function updateCollectionSummary() {
+  const count = collectionGames().length;
+  const summary = $("stationCollectionCount");
+  if (!summary) return;
+  summary.textContent = count
+    ? `${count} ${count === 1 ? "gra" : count < 5 ? "gry" : "gier"} w kolekcji`
+    : "Brak zaznaczonych gier";
+}
+
 function renderPresets() {
   $("presetGrid").innerHTML = PRESETS.map((preset) => `
     <button class="preset-card" type="button" data-preset="${preset.id}">
@@ -335,11 +358,23 @@ function recalc() {
   state.startB.length = state.stations;
 }
 
-function optionsHTML(selected) {
-  return allGames().map((game) => {
+function optionItemsHTML(games, selected) {
+  return games.map((game) => {
     const option = escapeHTML(game);
     return `<option value="${option}"${selected === game ? " selected" : ""}>${option}</option>`;
   }).join("");
+}
+
+function optionsHTML(selected) {
+  const ownedKeys = new Set(collectionGames().map(gameKey));
+  const ownedGames = allGames().filter((game) => ownedKeys.has(gameKey(game)));
+  const otherGames = allGames().filter((game) => !ownedKeys.has(gameKey(game)));
+
+  if (!ownedGames.length) return optionItemsHTML(otherGames, selected);
+  return `
+    <optgroup label="Moja kolekcja">${optionItemsHTML(ownedGames, selected)}</optgroup>
+    <optgroup label="Pozostałe gry">${optionItemsHTML(otherGames, selected)}</optgroup>
+  `;
 }
 
 function buildStationSelects() {
@@ -397,6 +432,64 @@ function addCustomGame() {
   buildStationSelects();
   input.focus();
   window.dispatchEvent(new CustomEvent("station-game-added", { detail: { title: name } }));
+}
+
+function shuffledGames(games) {
+  const shuffled = [...games];
+  for (let index = shuffled.length - 1; index > 0; index -= 1) {
+    const target = Math.floor(Math.random() * (index + 1));
+    [shuffled[index], shuffled[target]] = [shuffled[target], shuffled[index]];
+  }
+  return shuffled;
+}
+
+function randomAssignment(games) {
+  if (games.length >= state.stations) return shuffledGames(games).slice(0, state.stations);
+
+  const result = [];
+  for (let index = 0; index < state.stations; index += 1) {
+    const recent = new Set(result.slice(-2).map(gameKey));
+    const candidates = games.filter((game) => !recent.has(gameKey(game)));
+    const pool = candidates.length ? candidates : games;
+    result.push(pool[Math.floor(Math.random() * pool.length)]);
+  }
+  return result;
+}
+
+function setRandomizeNote(message, error = false) {
+  const note = $("randomizeNote");
+  note.textContent = message;
+  note.classList.toggle("info", !error);
+  note.classList.toggle("warning", error);
+  note.classList.toggle("hidden", !message);
+}
+
+function randomizeStations() {
+  const games = collectionGames();
+  if (games.length < 3) {
+    setRandomizeNote("Zaznacz na koncie co najmniej 3 różne gry, aby generator mógł ułożyć rotację bez powtórzeń.", true);
+    return;
+  }
+
+  const previousGames = [...state.games];
+  let matched = false;
+  for (let attempt = 0; attempt < 300; attempt += 1) {
+    state.games = randomAssignment(games);
+    if (ensureRotation()) {
+      matched = true;
+      break;
+    }
+  }
+
+  if (!matched) {
+    state.games = previousGames;
+    buildStationSelects();
+    setRandomizeNote("Z tej kolekcji nie udało się ułożyć rotacji bez powtórzeń. Zaznacz więcej różnych gier.", true);
+    return;
+  }
+
+  buildStationSelects();
+  setRandomizeNote(`Wylosowano ${state.stations} stanowisk z Twojej kolekcji.`, false);
 }
 
 function markDuplicates() {
@@ -876,6 +969,7 @@ function initEvents() {
   $("back1").addEventListener("click", () => showStep(1));
 
   $("addCustomBtn").addEventListener("click", addCustomGame);
+  $("randomizeStationsBtn").addEventListener("click", randomizeStations);
   $("customGame").addEventListener("keydown", (event) => {
     if (event.key === "Enter") {
       event.preventDefault();
@@ -964,6 +1058,9 @@ function refreshGameChoices() {
 }
 
 window.StationApp = {
+  getCatalogGames() {
+    return GAME_CATALOG.map((game) => ({ ...game }));
+  },
   getCurrentSet() {
     const games = Array.from({ length: state.stations }, (_, index) => state.games[index] || "");
     const startA = Array.from({ length: state.stations }, (_, index) => Number(state.startA[index]) || 1);
@@ -1000,6 +1097,7 @@ window.StationApp = {
   },
   setUserGames(games) {
     state.userGames = Array.isArray(games) ? games.map((game) => String(game).trim()).filter(Boolean) : [];
+    updateCollectionSummary();
     refreshGameChoices();
   }
 };
@@ -1008,6 +1106,7 @@ function boot() {
   initHelpTips();
   renderPresets();
   recalc();
+  updateCollectionSummary();
   initEvents();
   showStep(1);
   window.dispatchEvent(new CustomEvent("station-app-ready"));

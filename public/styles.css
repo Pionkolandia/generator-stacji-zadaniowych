@@ -606,6 +606,29 @@ button:focus-visible {
   margin-top: 8px;
 }
 
+.collection-randomizer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin: 0 0 16px;
+  border-block: 1px solid var(--line);
+  padding: 14px 0;
+}
+
+.collection-randomizer > div {
+  display: grid;
+}
+
+.collection-randomizer strong {
+  color: var(--blue-deep);
+}
+
+.collection-randomizer span:not(.action-with-help) {
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
 .station-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(245px, 1fr));
@@ -997,7 +1020,7 @@ button:focus-visible {
 }
 
 .account-shell {
-  width: min(760px, 100%);
+  width: min(1120px, 100%);
   max-height: calc(100vh - 24px);
   overflow-y: auto;
   border: 1px solid var(--line);
@@ -1180,6 +1203,172 @@ button:focus-visible {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
+}
+
+.collection-summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  margin-bottom: 14px;
+  border-block: 1px solid var(--line);
+  padding: 10px 0;
+}
+
+.collection-summary strong {
+  color: var(--blue-deep);
+}
+
+.collection-summary span {
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+.game-collection-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.collection-game {
+  display: grid;
+  min-width: 0;
+  min-height: 76px;
+  grid-template-columns: 32px minmax(0, 1fr);
+  align-items: center;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: #fff;
+  overflow: hidden;
+  transition: border-color 120ms ease, background-color 120ms ease;
+}
+
+.collection-game.owned {
+  border-color: rgba(18, 128, 96, 0.5);
+  background: var(--green-soft);
+}
+
+.collection-check {
+  display: grid;
+  height: 100%;
+  place-items: center;
+  border-right: 1px solid var(--line);
+  cursor: pointer;
+}
+
+.collection-check input {
+  position: absolute;
+  width: 1px;
+  min-height: 1px;
+  opacity: 0;
+}
+
+.collection-check span {
+  display: grid;
+  width: 22px;
+  height: 22px;
+  place-items: center;
+  border: 2px solid var(--line);
+  border-radius: 4px;
+  background: #fff;
+  color: transparent;
+  font-size: 0.78rem;
+  font-weight: 950;
+}
+
+.collection-check input:checked + span {
+  border-color: var(--green);
+  background: var(--green);
+  color: #fff;
+}
+
+.collection-check input:focus-visible + span {
+  outline: 3px solid rgba(242, 106, 33, 0.36);
+  outline-offset: 2px;
+}
+
+.collection-product {
+  display: grid;
+  min-width: 0;
+  grid-template-columns: 54px minmax(0, 1fr);
+  align-items: center;
+  gap: 9px;
+  padding: 7px 9px;
+  color: inherit;
+  text-decoration: none;
+}
+
+.collection-preview {
+  position: relative;
+  display: grid;
+  width: 54px;
+  height: 54px;
+  place-items: center;
+  border-radius: 4px;
+  background: #fff;
+  overflow: hidden;
+}
+
+.collection-preview img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.collection-game.image-missing .collection-preview::after {
+  color: var(--muted);
+  content: "Brak zdjęcia";
+  font-size: 0.58rem;
+  line-height: 1.1;
+  text-align: center;
+}
+
+.collection-game.image-missing .collection-preview img {
+  display: none;
+}
+
+.collection-product-copy {
+  display: grid;
+  min-width: 0;
+}
+
+.collection-product-copy strong {
+  overflow: hidden;
+  color: var(--blue-deep);
+  font-size: 0.82rem;
+  line-height: 1.2;
+  text-overflow: ellipsis;
+}
+
+.collection-product-copy span {
+  margin-top: 3px;
+  color: var(--muted);
+  font-size: 0.66rem;
+}
+
+.collection-product:hover .collection-product-copy strong {
+  color: var(--orange-deep);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.custom-library {
+  margin-top: 24px;
+  border-top: 1px solid var(--line);
+  padding-top: 18px;
+}
+
+.custom-library h4 {
+  margin: 0;
+  color: var(--blue-deep);
+  font-size: 1rem;
+}
+
+.custom-library > div:first-child p {
+  margin: 4px 0 14px;
+  color: var(--muted);
+  font-size: 0.82rem;
 }
 
 .account-list {
@@ -1483,6 +1672,10 @@ button:focus-visible {
   .brand-image {
     max-height: 310px;
   }
+
+  .game-collection-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 @media (max-width: 680px) {
@@ -1512,6 +1705,16 @@ button:focus-visible {
   }
 
   .custom-row {
+    grid-template-columns: 1fr;
+  }
+
+  .collection-randomizer,
+  .collection-summary {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .game-collection-grid {
     grid-template-columns: 1fr;
   }
 
