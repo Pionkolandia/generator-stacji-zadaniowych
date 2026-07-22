@@ -616,6 +616,18 @@ button:focus-visible {
   margin-top: 8px;
 }
 
+.custom-auth-note {
+  margin: 7px 0 0;
+  color: var(--orange-deep);
+  font-size: 0.82rem;
+  font-weight: 750;
+}
+
+.custom-auth-note a {
+  color: var(--blue-deep);
+  font-weight: 900;
+}
+
 .collection-randomizer {
   display: flex;
   align-items: center;

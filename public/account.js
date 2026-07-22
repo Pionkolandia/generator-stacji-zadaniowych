@@ -140,10 +140,12 @@ async function initAccount() {
       button.addEventListener("click", () => showAccountTab(button.dataset.accountTab));
     });
 
-    window.addEventListener("station-game-added", (event) => {
-      if (currentUser && event.detail?.title) {
-        persistGame(event.detail.title, false).catch(handleAccountError);
-      }
+    window.addEventListener("station-private-game-request", (event) => {
+      const complete = event.detail?.complete;
+      if (typeof complete !== "function") return;
+      persistGame(event.detail?.title, false)
+        .then(complete)
+        .catch((error) => complete({ ok: false, message: friendlyError(error) }));
     });
     window.addEventListener("station-save-set-request", handleSaveSetRequest);
     window.addEventListener("station-set-edit-cancel", cancelSetEdit);
@@ -363,6 +365,9 @@ async function initAccount() {
     setMessage(ui.libraryMessage, "");
 
     if (!currentUser) {
+      window.dispatchEvent(new CustomEvent("station-auth-changed", {
+        detail: { authenticated: false }
+      }));
       setEditingSet(null);
       userGames = [];
       savedSets = [];
@@ -386,6 +391,9 @@ async function initAccount() {
     if (ui.trigger) ui.trigger.textContent = "Otwórz konto";
     ui.adminTab.classList.toggle("hidden", !isAdmin);
     await Promise.all([loadUserGames(), loadSavedSets(), isAdmin ? loadAdminStats() : Promise.resolve()]);
+    window.dispatchEvent(new CustomEvent("station-auth-changed", {
+      detail: { authenticated: true }
+    }));
     if (isAccountPage) {
       const requestedTab = window.location.hash.slice(1);
       if (["games", "wishlist", "sets", "admin"].includes(requestedTab)) showAccountTab(requestedTab);
@@ -422,7 +430,7 @@ async function initAccount() {
       return {
         id: item.id,
         ...data,
-        normalizedTitle: data.normalizedTitle || normalizeTitle(data.title),
+        normalizedTitle: normalizeTitle(data.title),
         ownedQuantity: storedQuantity(data.ownedQuantity, 1),
         wishlistQuantity: storedQuantity(data.wishlistQuantity, 0)
       };
@@ -440,25 +448,46 @@ async function initAccount() {
 
   async function persistGame(rawTitle, showFeedback) {
     const title = String(rawTitle || "").trim().replace(/\s+/g, " ");
-    if (title.length < 2 || !currentUser) return;
+    if (!currentUser) {
+      const message = "Zaloguj się, aby dodać grę do prywatnej kolekcji.";
+      if (showFeedback) setMessage(ui.libraryMessage, message, true);
+      return { ok: false, message };
+    }
+    if (title.length < 2) {
+      const message = "Wpisz nazwę gry - co najmniej 2 znaki.";
+      if (showFeedback) setMessage(ui.libraryMessage, message, true);
+      return { ok: false, message };
+    }
+    if (titleHasBlockedContent(title)) {
+      const message = "Wpisz neutralną nazwę gry bez niedozwolonych słów, adresów stron i adresów e-mail.";
+      if (showFeedback) setMessage(ui.libraryMessage, message, true);
+      return { ok: false, message };
+    }
+    const conflict = conflictingTitle(title);
+    if (conflict) {
+      const message = `Ten tytuł jest już dostępny jako „${conflict}”. Wybierz istniejącą grę zamiast tworzyć duplikat.`;
+      if (showFeedback) setMessage(ui.libraryMessage, message, true);
+      return { ok: false, message };
+    }
     const existing = gameByTitle(title);
     if (existing?.ownedQuantity > 0) {
       if (showFeedback) setMessage(ui.libraryMessage, "Ta gra jest już w Twojej bibliotece.");
-      return;
+      return { ok: false, message: "Ta gra jest już w Twojej bibliotece." };
     }
     try {
       await saveGameState(title, 1, existing?.wishlistQuantity || 0);
       ui.gameTitle.value = "";
       if (showFeedback) setMessage(ui.libraryMessage, "Gra została dodana.");
+      return { ok: true, title };
     } catch (error) {
       if (showFeedback) setMessage(ui.libraryMessage, friendlyError(error), true);
       else throw error;
+      return { ok: false, message: friendlyError(error) };
     }
   }
 
   function renderGames() {
     ui.gamesList.replaceChildren();
-    const catalogKeys = new Set(catalogGames.map((game) => normalizeTitle(game.title)));
     const ownedCatalog = catalogGames.filter((game) => (gameByTitle(game.title)?.ownedQuantity || 0) > 0);
     const ownedCatalogCount = ownedCatalog.length;
     const ownedCopies = userGames.reduce((sum, game) => sum + game.ownedQuantity, 0);
@@ -474,7 +503,12 @@ async function initAccount() {
     renderWishlist();
 
     ui.customGamesList.replaceChildren();
-    const customGames = userGames.filter((game) => !catalogKeys.has(game.normalizedTitle) && game.ownedQuantity > 0);
+    const customGames = userGames.filter((game) => (
+      !catalogGames.some((catalogGame) => {
+        const variants = [catalogGame.title, ...(Array.isArray(catalogGame.aliases) ? catalogGame.aliases : [])];
+        return variants.some((variant) => titlesConflict(game.title, variant));
+      }) && game.ownedQuantity > 0
+    ));
     if (!customGames.length) {
       ui.customGamesList.append(emptyMessage("Nie masz dodatkowych gier spoza katalogu."));
       return;
@@ -505,7 +539,68 @@ async function initAccount() {
   }
 
   function normalizeTitle(title) {
-    return String(title || "").trim().replace(/\s+/g, " ").toLocaleLowerCase("pl-PL");
+    return titleWords(title).map((word) => TITLE_NUMBER_ALIASES[word] || word).join("");
+  }
+
+  const TITLE_NUMBER_ALIASES = Object.freeze({
+    zero: "0", jeden: "1", jedna: "1", jedno: "1", dwa: "2", dwie: "2", trzy: "3",
+    cztery: "4", piec: "5", szesc: "6", siedem: "7", osiem: "8", dziewiec: "9", dziesiec: "10"
+  });
+
+  const BLOCKED_TITLE_WORDS = new Set([
+    "chuj", "chuja", "dupa", "jebac", "jebany", "kurwa", "kurwy", "pizda", "skurwysyn",
+    "bitch", "fuck", "shit"
+  ]);
+
+  function titleWords(value) {
+    return String(value || "")
+      .normalize("NFKD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .replace(/ł/g, "l")
+      .replace(/Ł/g, "L")
+      .toLocaleLowerCase("pl-PL")
+      .match(/[a-z0-9]+/g) || [];
+  }
+
+  function titleDistance(left, right) {
+    const previous = Array.from({ length: right.length + 1 }, (_, index) => index);
+    for (let leftIndex = 1; leftIndex <= left.length; leftIndex += 1) {
+      const current = [leftIndex];
+      for (let rightIndex = 1; rightIndex <= right.length; rightIndex += 1) {
+        current[rightIndex] = Math.min(
+          current[rightIndex - 1] + 1,
+          previous[rightIndex] + 1,
+          previous[rightIndex - 1] + (left[leftIndex - 1] === right[rightIndex - 1] ? 0 : 1)
+        );
+      }
+      previous.splice(0, previous.length, ...current);
+    }
+    return previous[right.length];
+  }
+
+  function titlesConflict(left, right) {
+    const leftKey = normalizeTitle(left);
+    const rightKey = normalizeTitle(right);
+    if (!leftKey || !rightKey) return false;
+    if (leftKey === rightKey) return true;
+    const longest = Math.max(leftKey.length, rightKey.length);
+    const allowedDistance = longest >= 14 ? 2 : longest >= 6 ? 1 : 0;
+    return allowedDistance > 0
+      && Math.abs(leftKey.length - rightKey.length) <= allowedDistance
+      && titleDistance(leftKey, rightKey) <= allowedDistance;
+  }
+
+  function conflictingTitle(title) {
+    for (const game of catalogGames) {
+      const variants = [game.title, ...(Array.isArray(game.aliases) ? game.aliases : [])];
+      if (variants.some((variant) => titlesConflict(title, variant))) return game.title;
+    }
+    return userGames.find((game) => titlesConflict(title, game.title))?.title || "";
+  }
+
+  function titleHasBlockedContent(title) {
+    if (/(?:https?:\/\/|www\.|\S+@\S+)/i.test(title)) return true;
+    return titleWords(title).some((word) => BLOCKED_TITLE_WORDS.has(word));
   }
 
   function storedQuantity(value, fallback) {
@@ -515,13 +610,12 @@ async function initAccount() {
   }
 
   function gameByTitle(title) {
-    const normalizedTitle = normalizeTitle(title);
-    return userGames.find((game) => game.normalizedTitle === normalizedTitle);
+    return userGames.find((game) => titlesConflict(title, game.title));
   }
 
   async function saveGameState(title, ownedQuantity, wishlistQuantity) {
     const normalizedTitle = normalizeTitle(title);
-    const matches = userGames.filter((game) => game.normalizedTitle === normalizedTitle);
+    const matches = userGames.filter((game) => titlesConflict(title, game.title));
     const owned = storedQuantity(ownedQuantity, 0);
     const wanted = storedQuantity(wishlistQuantity, 0);
 

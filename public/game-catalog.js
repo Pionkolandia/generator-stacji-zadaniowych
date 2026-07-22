@@ -1,6 +1,12 @@
 "use strict";
 
-window.STATION_GAME_CATALOG = [
+window.STATION_GAME_CATALOG = Object.freeze([
+  {
+    "title": "3 Traki",
+    "aliases": ["Trucky 3", "Trzy Traki"],
+    "url": "https://iuvigames.pl/produkt/3-traki/",
+    "image": "/assets/games/3-traki.png"
+  },
   {
     "title": "Antywirus Mutacja",
     "url": "https://iuvigames.pl/produkt/antywirus_mutacja/",
@@ -301,4 +307,4 @@ window.STATION_GAME_CATALOG = [
     "url": "https://iuvigames.pl/produkt/zolwim_tempem/",
     "image": "/assets/games/zolwim_tempem.png"
   }
-];
+].map((game) => Object.freeze(game)));

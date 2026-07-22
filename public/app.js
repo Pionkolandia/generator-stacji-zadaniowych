@@ -1,6 +1,7 @@
 "use strict";
 
-const GAMES = [
+const GAMES = Object.freeze([
+  "3 Traki",
   "Antywirus Mutacja",
   "Arka Noego",
   "Atomowe Zagadki",
@@ -61,11 +62,35 @@ const GAMES = [
   "ZigZag Puzzler",
   "Zwinne Delfinki",
   "Żółwim Tempem"
-];
+]);
 
-const GAME_CATALOG = Array.isArray(window.STATION_GAME_CATALOG) && window.STATION_GAME_CATALOG.length
-  ? window.STATION_GAME_CATALOG
-  : GAMES.map((title) => ({ title, url: "", image: "" }));
+const GAME_CATALOG = Object.freeze((
+  Array.isArray(window.STATION_GAME_CATALOG) && window.STATION_GAME_CATALOG.length
+    ? window.STATION_GAME_CATALOG
+    : GAMES.map((title) => ({ title, url: "", image: "" }))
+).map((game) => Object.freeze({ ...game })));
+
+const TITLE_NUMBER_ALIASES = Object.freeze({
+  zero: "0",
+  jeden: "1",
+  jedna: "1",
+  jedno: "1",
+  dwa: "2",
+  dwie: "2",
+  trzy: "3",
+  cztery: "4",
+  piec: "5",
+  szesc: "6",
+  siedem: "7",
+  osiem: "8",
+  dziewiec: "9",
+  dziesiec: "10"
+});
+
+const BLOCKED_TITLE_WORDS = new Set([
+  "chuj", "chuja", "dupa", "jebac", "jebany", "kurwa", "kurwy", "pizda", "skurwysyn",
+  "bitch", "fuck", "shit"
+]);
 
 const PRESETS = [
   {
@@ -125,10 +150,11 @@ const state = {
   startA: [],
   startB: [],
   rotationOffsets: [0, 1, 2],
+  isAuthenticated: false,
   customGames: [],
   userGames: [],
   userInventory: [],
-  catalogGames: [...GAMES]
+  catalogGames: GAMES
 };
 
 const timerState = {
@@ -429,30 +455,141 @@ function buildStationSelects() {
   updateRotationNotice();
 }
 
-function addCustomGame() {
+function titleWords(value) {
+  return String(value || "")
+    .normalize("NFKD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/ł/g, "l")
+    .replace(/Ł/g, "L")
+    .toLocaleLowerCase("pl-PL")
+    .match(/[a-z0-9]+/g) || [];
+}
+
+function titleKey(value) {
+  return titleWords(value).map((word) => TITLE_NUMBER_ALIASES[word] || word).join("");
+}
+
+function titleDistance(left, right) {
+  const previous = Array.from({ length: right.length + 1 }, (_, index) => index);
+  for (let leftIndex = 1; leftIndex <= left.length; leftIndex += 1) {
+    const current = [leftIndex];
+    for (let rightIndex = 1; rightIndex <= right.length; rightIndex += 1) {
+      current[rightIndex] = Math.min(
+        current[rightIndex - 1] + 1,
+        previous[rightIndex] + 1,
+        previous[rightIndex - 1] + (left[leftIndex - 1] === right[rightIndex - 1] ? 0 : 1)
+      );
+    }
+    previous.splice(0, previous.length, ...current);
+  }
+  return previous[right.length];
+}
+
+function titlesConflict(left, right) {
+  const leftKey = titleKey(left);
+  const rightKey = titleKey(right);
+  if (!leftKey || !rightKey) return false;
+  if (leftKey === rightKey) return true;
+  const longest = Math.max(leftKey.length, rightKey.length);
+  const allowedDistance = longest >= 14 ? 2 : longest >= 6 ? 1 : 0;
+  return allowedDistance > 0
+    && Math.abs(leftKey.length - rightKey.length) <= allowedDistance
+    && titleDistance(leftKey, rightKey) <= allowedDistance;
+}
+
+function conflictingGameTitle(name) {
+  for (const game of GAME_CATALOG) {
+    const variants = [game.title, ...(Array.isArray(game.aliases) ? game.aliases : [])];
+    if (variants.some((variant) => titlesConflict(name, variant))) return game.title;
+  }
+  return [...state.userGames, ...state.customGames].find((game) => titlesConflict(name, game)) || "";
+}
+
+function titleHasBlockedContent(name) {
+  if (/(?:https?:\/\/|www\.|\S+@\S+)/i.test(name)) return true;
+  return titleWords(name).some((word) => BLOCKED_TITLE_WORDS.has(word));
+}
+
+function setCustomGameAccess(authenticated) {
+  state.isAuthenticated = Boolean(authenticated);
   const input = $("customGame");
+  const button = $("addCustomBtn");
+  const status = $("customAuthText");
+  const link = $("customAuthLink");
+  input.disabled = !state.isAuthenticated;
+  button.disabled = !state.isAuthenticated;
+  status.textContent = state.isAuthenticated
+    ? "Własny tytuł zostanie zapisany tylko w Twojej prywatnej kolekcji. Oficjalny katalog 61 gier pozostaje bez zmian."
+    : "Własne tytuły można dodawać dopiero po zalogowaniu.";
+  link.classList.toggle("hidden", state.isAuthenticated);
+  if (!state.isAuthenticated && state.customGames.length) {
+    state.customGames = [];
+    refreshGameChoices();
+  }
+}
+
+function savePrivateGame(name) {
+  return new Promise((resolve) => {
+    let completed = false;
+    const timeout = window.setTimeout(() => {
+      if (!completed) resolve({ ok: false, message: "Nie udało się połączyć z kontem. Odśwież stronę i zaloguj się ponownie." });
+    }, 8000);
+    const complete = (result) => {
+      if (completed) return;
+      completed = true;
+      window.clearTimeout(timeout);
+      resolve(result || { ok: false });
+    };
+    window.dispatchEvent(new CustomEvent("station-private-game-request", { detail: { title: name, complete } }));
+  });
+}
+
+async function addCustomGame() {
+  const input = $("customGame");
+  const button = $("addCustomBtn");
   const note = $("customNote");
   const name = input.value.trim().replace(/\s+/g, " ");
 
   note.classList.remove("hidden");
+
+  if (!state.isAuthenticated) {
+    note.textContent = "Zaloguj się, aby dodać własny tytuł do prywatnej kolekcji.";
+    return;
+  }
 
   if (name.length < 2) {
     note.textContent = "Wpisz nazwę gry - co najmniej 2 znaki.";
     return;
   }
 
-  const exists = allGames().some((game) => game.toLowerCase() === name.toLowerCase());
-  if (exists) {
-    note.textContent = `"${name}" jest już na liście.`;
+  if (titleHasBlockedContent(name)) {
+    note.textContent = "Wpisz neutralną nazwę gry bez niedozwolonych słów, adresów stron i adresów e-mail.";
     return;
   }
 
-  state.customGames.unshift(name);
-  note.textContent = `Dodano "${name}".`;
+  const conflict = conflictingGameTitle(name);
+  if (conflict) {
+    note.textContent = `Ten tytuł jest już dostępny jako „${conflict}”. Wybierz go z listy zamiast tworzyć duplikat.`;
+    return;
+  }
+
+  input.disabled = true;
+  button.disabled = true;
+  note.textContent = "Zapisywanie w prywatnej kolekcji...";
+  const result = await savePrivateGame(name);
+  input.disabled = false;
+  button.disabled = false;
+  if (!result?.ok) {
+    note.textContent = result?.message || "Nie udało się zapisać gry. Spróbuj ponownie.";
+    input.focus();
+    return;
+  }
+
+  state.customGames.unshift(result.title || name);
+  note.textContent = `Dodano „${result.title || name}” do Twojej prywatnej kolekcji.`;
   input.value = "";
   buildStationSelects();
   input.focus();
-  window.dispatchEvent(new CustomEvent("station-game-added", { detail: { title: name } }));
 }
 
 function shuffledGames(games) {
@@ -528,7 +665,7 @@ function markDuplicates() {
 }
 
 function gameKey(game) {
-  return String(game || "").trim().toLocaleLowerCase("pl-PL");
+  return titleKey(game);
 }
 
 function routeHasUniqueGames(offsets) {
@@ -985,13 +1122,17 @@ function initEvents() {
   });
   $("back1").addEventListener("click", () => showStep(1));
 
-  $("addCustomBtn").addEventListener("click", addCustomGame);
+  $("addCustomBtn").addEventListener("click", () => addCustomGame());
   $("randomizeStationsBtn").addEventListener("click", randomizeStations);
   $("customGame").addEventListener("keydown", (event) => {
     if (event.key === "Enter") {
       event.preventDefault();
       addCustomGame();
     }
+  });
+
+  window.addEventListener("station-auth-changed", (event) => {
+    setCustomGameAccess(event.detail?.authenticated);
   });
 
   $("toStep3").addEventListener("click", () => {
@@ -1106,11 +1247,6 @@ window.StationApp = {
     buildStationSelects();
     showStep(1);
     return true;
-  },
-  setCatalogGames(games) {
-    if (!Array.isArray(games) || !games.length) return;
-    state.catalogGames = games.map((game) => String(game).trim()).filter(Boolean);
-    refreshGameChoices();
   },
   setUserGames(games) {
     const inventory = Array.isArray(games) ? games.map((game) => {
