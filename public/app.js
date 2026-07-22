@@ -1,6 +1,6 @@
 "use strict";
 
-const GAMES = Object.freeze([
+const FALLBACK_GAMES = Object.freeze([
   "3 Traki",
   "Antywirus Mutacja",
   "Arka Noego",
@@ -67,8 +67,10 @@ const GAMES = Object.freeze([
 const GAME_CATALOG = Object.freeze((
   Array.isArray(window.STATION_GAME_CATALOG) && window.STATION_GAME_CATALOG.length
     ? window.STATION_GAME_CATALOG
-    : GAMES.map((title) => ({ title, url: "", image: "" }))
+    : FALLBACK_GAMES.map((title) => ({ title, url: "", image: "" }))
 ).map((game) => Object.freeze({ ...game })));
+
+const GAMES = Object.freeze(GAME_CATALOG.map((game) => game.title));
 
 const TITLE_NUMBER_ALIASES = Object.freeze({
   zero: "0",
@@ -519,7 +521,7 @@ function setCustomGameAccess(authenticated) {
   input.disabled = !state.isAuthenticated;
   button.disabled = !state.isAuthenticated;
   status.textContent = state.isAuthenticated
-    ? "Własny tytuł zostanie zapisany tylko w Twojej prywatnej kolekcji. Oficjalny katalog 61 gier pozostaje bez zmian."
+    ? "Własny tytuł zostanie zapisany tylko w Twojej prywatnej kolekcji. Oficjalny katalog SmartGames pozostaje bez zmian."
     : "Własne tytuły można dodawać dopiero po zalogowaniu.";
   link.classList.toggle("hidden", state.isAuthenticated);
   if (!state.isAuthenticated && state.customGames.length) {
