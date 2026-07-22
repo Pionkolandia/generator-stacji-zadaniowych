@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Konto nauczyciela programu Szkoła jest SMART.">
+    <meta name="theme-color" content="#f7f4ee">
+    <title>Konto nauczyciela | Szkoła jest SMART!</title>
+    <link rel="icon" type="image/png" sizes="256x256" href="/assets/favicon.png">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" href="/assets/favicon.png">
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body class="account-page">
+    <main class="account-page-main">
+      <a class="account-back-link" href="/" aria-label="Wróć do generatora">← Wróć do generatora</a>
+
+      <section class="account-overlay account-page-overlay" id="accountOverlay" aria-labelledby="accountTitle">
+        <div class="account-shell">
+          <header class="account-top">
+            <div>
+              <p class="eyebrow">Szkoła jest SMART!</p>
+              <div class="heading-with-help">
+                <h1 id="accountTitle">Konto nauczyciela</h1>
+                <button class="info-tip" type="button" aria-label="Informacja o koncie nauczyciela" data-help="Zarządzaj kolekcją gier, listą życzeń i zapisanymi zestawami stacji.">i</button>
+              </div>
+            </div>
+            <a class="account-close" id="closeAccountBtn" href="/" aria-label="Wróć do generatora">×</a>
+          </header>
+
+          <div id="authView">
+            <p class="account-intro">Zaloguj się, aby przechowywać własne gry, listę życzeń i gotowe zestawy stacji.</p>
+            <button class="google-button" id="googleLoginBtn" type="button">
+              <span aria-hidden="true">G</span>
+              Kontynuuj z Google
+            </button>
+            <div class="account-divider"><span>lub użyj e-maila</span></div>
+            <form class="auth-form" id="authForm">
+              <label class="field">
+                <span>Adres e-mail</span>
+                <input type="email" id="authEmail" autocomplete="email" required>
+              </label>
+              <label class="field">
+                <span>Hasło</span>
+                <input type="password" id="authPassword" minlength="8" autocomplete="current-password" required>
+              </label>
+              <div class="account-actions">
+                <button class="btn primary" id="emailLoginBtn" type="submit">Zaloguj się</button>
+                <button class="btn secondary" id="emailSignupBtn" type="button">Załóż konto</button>
+                <button class="text-button" id="resetPasswordBtn" type="button">Nie pamiętam hasła</button>
+              </div>
+            </form>
+            <p class="account-message hidden" id="authMessage" aria-live="polite"></p>
+          </div>
+
+          <div class="hidden" id="libraryView">
+            <div class="account-identity">
+              <div>
+                <span>Zalogowano jako</span>
+                <strong id="accountEmail"></strong>
+              </div>
+              <button class="btn ghost" id="logoutBtn" type="button">Wyloguj się</button>
+            </div>
+
+            <nav class="account-tabs" aria-label="Sekcje konta">
+              <button class="active" type="button" data-account-tab="games">Moje gry</button>
+              <button type="button" data-account-tab="wishlist">Lista życzeń</button>
+              <button type="button" data-account-tab="sets">Moje zestawy</button>
+              <button class="hidden" id="adminTabButton" type="button" data-account-tab="admin">Administrator</button>
+            </nav>
+
+            <section class="account-tab-panel" data-account-panel="games">
+              <div class="account-section-head">
+                <div>
+                  <div class="heading-with-help compact">
+                    <h2>Moja kolekcja gier</h2>
+                    <button class="info-tip" type="button" aria-label="Informacja o kolekcji gier" data-help="Zaznacz posiadane gry i wpisz liczbę egzemplarzy. Generator wykorzysta te dane podczas losowania stanowisk.">i</button>
+                  </div>
+                  <p>Zaznacz gry, które masz, i podaj liczbę posiadanych egzemplarzy.</p>
+                </div>
+              </div>
+              <div class="collection-summary" aria-live="polite">
+                <strong id="ownedGamesCount">0 z 60 gier</strong>
+                <span id="ownedCopiesCount">0 posiadanych egzemplarzy</span>
+              </div>
+              <div class="game-collection-grid" id="accountGamesList"></div>
+
+              <section class="custom-library" aria-labelledby="customLibraryTitle">
+                <div>
+                  <h3 id="customLibraryTitle">Gra spoza katalogu</h3>
+                  <p>Dodaj własny tytuł, jeśli nie ma go na liście powyżej.</p>
+                </div>
+                <form class="inline-form" id="accountGameForm">
+                  <label class="field">
+                    <span>Nazwa gry</span>
+                    <input type="text" id="accountGameTitle" maxlength="60" placeholder="np. własna gra logiczna" required>
+                  </label>
+                  <button class="btn secondary" type="submit">Dodaj grę</button>
+                </form>
+                <div class="account-list" id="customGamesList"></div>
+              </section>
+            </section>
+
+            <section class="account-tab-panel hidden" data-account-panel="wishlist">
+              <div class="account-section-head">
+                <div>
+                  <div class="heading-with-help compact">
+                    <h2>Lista życzeń</h2>
+                    <button class="info-tip" type="button" aria-label="Informacja o liście życzeń" data-help="Zaznacz gry, które chcesz kupić, i podaj planowaną liczbę sztuk. Lista jest zapisywana na Twoim koncie.">i</button>
+                  </div>
+                  <p>Przygotuj listę gier do wyceny lub zamówienia i zapisz ją jako PDF.</p>
+                </div>
+              </div>
+              <div class="collection-summary wishlist-summary" aria-live="polite">
+                <strong id="wishlistGamesCount">0 z 60 gier</strong>
+                <span id="wishlistCopiesCount">0 sztuk do zamówienia</span>
+              </div>
+              <div class="wishlist-document-settings">
+                <label class="field">
+                  <span>Rodzaj dokumentu</span>
+                  <select id="wishlistDocumentType">
+                    <option value="quote">Prośba o wycenę</option>
+                    <option value="order">Lista do zamówienia</option>
+                  </select>
+                </label>
+                <label class="field">
+                  <span>Zamawiający / placówka</span>
+                  <input type="text" id="wishlistBuyerName" maxlength="80" placeholder="np. Szkoła Podstawowa nr 1">
+                </label>
+                <label class="field">
+                  <span>Dane kontaktowe</span>
+                  <input type="text" id="wishlistContact" maxlength="100" placeholder="e-mail lub telefon">
+                </label>
+                <label class="field wishlist-notes-field">
+                  <span>Uwagi</span>
+                  <textarea id="wishlistNotes" maxlength="300" rows="2" placeholder="np. proszę o podanie kosztu dostawy i terminu realizacji"></textarea>
+                </label>
+              </div>
+              <div class="wishlist-toolbar">
+                <span>Po zaznaczeniu gier dokument będzie gotowy do wydruku.</span>
+                <span class="action-with-help">
+                  <button class="btn secondary" id="printWishlistBtn" type="button" disabled>Drukuj / zapisz PDF</button>
+                  <button class="info-tip" type="button" aria-label="Informacja o dokumencie listy życzeń" data-help="Tworzy czytelną listę tytułów i ilości. W oknie drukowania wybierz drukarkę albo zapis do PDF.">i</button>
+                </span>
+              </div>
+              <div class="game-collection-grid wishlist-grid" id="wishlistGamesList"></div>
+            </section>
+
+            <section class="account-tab-panel hidden" data-account-panel="sets">
+              <div class="account-section-head">
+                <div>
+                  <div class="heading-with-help compact">
+                    <h2>Moje zestawy stacji</h2>
+                    <button class="info-tip" type="button" aria-label="Informacja o zestawach stacji" data-help="Wczytaj zapisany zestaw do generatora, zmień uczniów, gry lub zadania i zapisz poprawioną wersję.">i</button>
+                  </div>
+                  <p>Zapisuj i edytuj gotowe konfiguracje stacji.</p>
+                </div>
+              </div>
+              <p class="notice info hidden" id="editingSetNotice" aria-live="polite"></p>
+              <form class="inline-form" id="saveSetForm">
+                <label class="field">
+                  <span>Nazwa zestawu</span>
+                  <input type="text" id="savedSetName" maxlength="60" placeholder="np. Zestaw na poniedziałek" required>
+                </label>
+                <div class="inline-form-actions">
+                  <button class="btn primary" id="saveSetSubmitBtn" type="submit">Zapisz aktualny zestaw</button>
+                  <button class="btn ghost hidden" id="cancelSetEditBtn" type="button">Anuluj edycję</button>
+                </div>
+              </form>
+              <div class="account-list" id="savedSetsList"></div>
+            </section>
+
+            <section class="account-tab-panel hidden" data-account-panel="admin">
+              <div class="account-section-head">
+                <div>
+                  <h2>Panel administratora</h2>
+                  <p>Podstawowe informacje o korzystaniu z aplikacji.</p>
+                </div>
+              </div>
+              <div class="admin-stats" id="adminStats"></div>
+            </section>
+
+            <p class="account-message hidden" id="libraryMessage" aria-live="polite"></p>
+          </div>
+
+          <section class="hidden" id="savedSetsSection" aria-hidden="true">
+            <div id="savedPresetGrid"></div>
+            <button id="manageSetsBtn" type="button">Moje zestawy</button>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <script src="/game-catalog.js"></script>
+    <script src="/firebase-config.js"></script>
+    <script type="module" src="/account.js"></script>
+  </body>
+</html>

@@ -127,6 +127,7 @@ const state = {
   rotationOffsets: [0, 1, 2],
   customGames: [],
   userGames: [],
+  userInventory: [],
   catalogGames: [...GAMES]
 };
 
@@ -270,12 +271,32 @@ function collectionGames() {
   });
 }
 
+function collectionInventory() {
+  const inventory = new Map();
+  state.userInventory.forEach((item) => {
+    const title = String(item?.title || "").trim();
+    const key = gameKey(title);
+    const quantity = Math.max(0, Math.min(99, Number(item?.quantity) || 0));
+    if (!key || !quantity) return;
+    const existing = inventory.get(key);
+    if (existing) existing.quantity += quantity;
+    else inventory.set(key, { title, quantity });
+  });
+  return Array.from(inventory.values());
+}
+
+function collectionCopies() {
+  return collectionInventory().flatMap((item) => Array.from({ length: item.quantity }, () => item.title));
+}
+
 function updateCollectionSummary() {
-  const count = collectionGames().length;
+  const inventory = collectionInventory();
+  const count = inventory.length;
+  const copies = inventory.reduce((sum, item) => sum + item.quantity, 0);
   const summary = $("stationCollectionCount");
   if (!summary) return;
   summary.textContent = count
-    ? `${count} ${count === 1 ? "gra" : count < 5 ? "gry" : "gier"} w kolekcji`
+    ? `${count} ${count === 1 ? "tytuł" : count < 5 ? "tytuły" : "tytułów"}, ${copies} ${copies === 1 ? "egzemplarz" : "egzemplarzy"}`
     : "Brak zaznaczonych gier";
 }
 
@@ -444,16 +465,7 @@ function shuffledGames(games) {
 }
 
 function randomAssignment(games) {
-  if (games.length >= state.stations) return shuffledGames(games).slice(0, state.stations);
-
-  const result = [];
-  for (let index = 0; index < state.stations; index += 1) {
-    const recent = new Set(result.slice(-2).map(gameKey));
-    const candidates = games.filter((game) => !recent.has(gameKey(game)));
-    const pool = candidates.length ? candidates : games;
-    result.push(pool[Math.floor(Math.random() * pool.length)]);
-  }
-  return result;
+  return shuffledGames(games).slice(0, state.stations);
 }
 
 function setRandomizeNote(message, error = false) {
@@ -465,16 +477,21 @@ function setRandomizeNote(message, error = false) {
 }
 
 function randomizeStations() {
-  const games = collectionGames();
-  if (games.length < 3) {
+  const titles = collectionGames();
+  const copies = collectionCopies();
+  if (titles.length < 3) {
     setRandomizeNote("Zaznacz na koncie co najmniej 3 różne gry, aby generator mógł ułożyć rotację bez powtórzeń.", true);
+    return;
+  }
+  if (copies.length < state.stations) {
+    setRandomizeNote(`Masz ${copies.length} egzemplarzy gier, a potrzeba ${state.stations}. Zwiększ liczbę posiadanych sztuk w koncie nauczyciela.`, true);
     return;
   }
 
   const previousGames = [...state.games];
   let matched = false;
   for (let attempt = 0; attempt < 300; attempt += 1) {
-    state.games = randomAssignment(games);
+    state.games = randomAssignment(copies);
     if (ensureRotation()) {
       matched = true;
       break;
@@ -1096,7 +1113,19 @@ window.StationApp = {
     refreshGameChoices();
   },
   setUserGames(games) {
-    state.userGames = Array.isArray(games) ? games.map((game) => String(game).trim()).filter(Boolean) : [];
+    const inventory = Array.isArray(games) ? games.map((game) => {
+      if (game && typeof game === "object") {
+        return {
+          title: String(game.title || "").trim(),
+          quantity: Math.max(0, Math.min(99, Number(game.quantity) || 0))
+        };
+      }
+      return { title: String(game || "").trim(), quantity: 1 };
+    }).filter((item) => item.title && item.quantity > 0) : [];
+    state.userInventory = inventory;
+    state.userGames = inventory.map((item) => item.title).filter((game, index, list) => (
+      list.findIndex((candidate) => gameKey(candidate) === gameKey(game)) === index
+    ));
     updateCollectionSummary();
     refreshGameChoices();
   }

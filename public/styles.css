@@ -221,14 +221,17 @@ h3 {
 }
 
 .account-trigger {
+  display: inline-flex;
   flex: 0 0 auto;
   min-height: 38px;
+  align-items: center;
   border: 0;
   border-radius: 999px;
   padding: 8px 14px;
   background: var(--blue);
   color: #fff;
   font-weight: 900;
+  text-decoration: none;
 }
 
 .stepper {
@@ -463,7 +466,8 @@ h3 {
 }
 
 input,
-select {
+select,
+textarea {
   width: 100%;
   border: 1px solid var(--line);
   border-radius: var(--radius);
@@ -473,12 +477,18 @@ select {
   padding: 9px 12px;
 }
 
+textarea {
+  resize: vertical;
+  font: inherit;
+}
+
 select {
   text-overflow: ellipsis;
 }
 
 input:focus,
 select:focus,
+textarea:focus,
 button:focus-visible {
   outline: 3px solid rgba(242, 106, 33, 0.36);
   outline-offset: 2px;
@@ -1008,6 +1018,49 @@ button:focus-visible {
   overflow: hidden;
 }
 
+.account-page-main {
+  width: min(1180px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 24px 0 64px;
+}
+
+.account-back-link {
+  display: inline-flex;
+  min-height: 42px;
+  align-items: center;
+  margin-bottom: 14px;
+  color: var(--blue-deep);
+  font-weight: 900;
+  text-decoration: none;
+}
+
+.account-back-link:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.account-page .account-overlay {
+  position: static;
+  display: block;
+  overflow: visible;
+  padding: 0;
+  background: transparent;
+}
+
+.account-page .account-shell {
+  width: 100%;
+  max-height: none;
+  overflow: visible;
+}
+
+.account-page .account-top h1 {
+  font-size: clamp(2rem, 4vw, 3.1rem);
+}
+
+.account-page .account-close {
+  text-decoration: none;
+}
+
 .account-overlay {
   position: fixed;
   inset: 0;
@@ -1167,7 +1220,7 @@ button:focus-visible {
 
 .account-tabs {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap: 8px;
   margin: 18px 0;
 }
@@ -1234,7 +1287,7 @@ button:focus-visible {
   display: grid;
   min-width: 0;
   min-height: 76px;
-  grid-template-columns: 32px minmax(0, 1fr);
+  grid-template-columns: 32px minmax(0, 1fr) 62px;
   align-items: center;
   border: 1px solid var(--line);
   border-radius: var(--radius);
@@ -1246,6 +1299,11 @@ button:focus-visible {
 .collection-game.owned {
   border-color: rgba(18, 128, 96, 0.5);
   background: var(--green-soft);
+}
+
+.wishlist-grid .collection-game.wanted {
+  border-color: rgba(242, 106, 33, 0.56);
+  background: var(--orange-soft);
 }
 
 .collection-check {
@@ -1351,6 +1409,79 @@ button:focus-visible {
   color: var(--orange-deep);
   text-decoration: underline;
   text-underline-offset: 2px;
+}
+
+.collection-quantity {
+  display: grid;
+  align-self: stretch;
+  align-content: center;
+  gap: 3px;
+  border-left: 1px solid var(--line);
+  padding: 6px;
+  color: var(--muted);
+  font-size: 0.62rem;
+  font-weight: 900;
+  text-align: center;
+}
+
+.collection-quantity input {
+  min-height: 34px;
+  padding: 4px;
+  font-size: 0.82rem;
+  font-weight: 900;
+  text-align: center;
+}
+
+.collection-quantity input:disabled {
+  background: #f3f4f8;
+  color: #9299ad;
+}
+
+.wishlist-document-settings {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr 1.2fr;
+  gap: 10px;
+  margin-bottom: 14px;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 14px;
+}
+
+.wishlist-notes-field {
+  grid-column: 1 / -1;
+}
+
+.wishlist-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  margin-bottom: 14px;
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
+.wishlist-toolbar .action-with-help {
+  flex: 0 0 auto;
+}
+
+.wishlist-summary strong {
+  color: var(--orange-deep);
+}
+
+.custom-quantity {
+  display: inline-grid;
+  grid-template-columns: auto 64px;
+  align-items: center;
+  gap: 7px;
+  color: var(--muted);
+  font-size: 0.76rem;
+  font-weight: 800;
+}
+
+.custom-quantity input {
+  min-height: 36px;
+  padding: 6px;
+  text-align: center;
 }
 
 .custom-library {
@@ -1732,8 +1863,18 @@ button:focus-visible {
 
   .auth-form,
   .inline-form,
-  .admin-stats {
+  .admin-stats,
+  .wishlist-document-settings {
     grid-template-columns: 1fr;
+  }
+
+  .wishlist-notes-field {
+    grid-column: auto;
+  }
+
+  .wishlist-toolbar {
+    align-items: flex-start;
+    flex-direction: column;
   }
 
   .inline-form-actions .btn {

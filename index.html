@@ -45,7 +45,7 @@
               <span id="accountBarSubtitle">Zaloguj się, aby zapisywać gry i zestawy.</span>
             </div>
             <div class="account-bar-actions">
-              <button class="account-trigger" id="accountTrigger" type="button">Zaloguj się</button>
+              <a class="account-trigger" id="accountTrigger" href="/konto.html">Zaloguj się</a>
               <button class="info-tip" type="button" aria-label="Informacja o koncie nauczyciela" data-help="Konto pozwala zapisywać własne gry i zestawy oraz wracać do nich na dowolnym urządzeniu.">i</button>
             </div>
           </header>
@@ -330,6 +330,7 @@
 
           <nav class="account-tabs" aria-label="Sekcje konta">
             <button class="active" type="button" data-account-tab="games">Moje gry</button>
+            <button type="button" data-account-tab="wishlist">Lista życzeń</button>
             <button type="button" data-account-tab="sets">Moje zestawy</button>
             <button class="hidden" id="adminTabButton" type="button" data-account-tab="admin">Administrator</button>
           </nav>
@@ -346,7 +347,7 @@
             </div>
             <div class="collection-summary" aria-live="polite">
               <strong id="ownedGamesCount">0 z 60 gier</strong>
-              <span>Zaznaczone gry są zapisywane automatycznie.</span>
+              <span id="ownedCopiesCount">0 posiadanych egzemplarzy</span>
             </div>
             <div class="game-collection-grid" id="accountGamesList"></div>
 
@@ -364,6 +365,51 @@
               </form>
               <div class="account-list" id="customGamesList"></div>
             </section>
+          </section>
+
+          <section class="account-tab-panel hidden" data-account-panel="wishlist">
+            <div class="account-section-head">
+              <div>
+                <div class="heading-with-help compact">
+                  <h3>Lista życzeń</h3>
+                  <button class="info-tip" type="button" aria-label="Informacja o liście życzeń" data-help="Zaznacz gry, które chcesz kupić, i podaj planowaną liczbę sztuk. Lista jest zapisywana na Twoim koncie.">i</button>
+                </div>
+                <p>Przygotuj listę gier do wyceny lub zamówienia i zapisz ją jako PDF.</p>
+              </div>
+            </div>
+            <div class="collection-summary wishlist-summary" aria-live="polite">
+              <strong id="wishlistGamesCount">0 z 60 gier</strong>
+              <span id="wishlistCopiesCount">0 sztuk do zamówienia</span>
+            </div>
+            <div class="wishlist-document-settings">
+              <label class="field">
+                <span>Rodzaj dokumentu</span>
+                <select id="wishlistDocumentType">
+                  <option value="quote">Prośba o wycenę</option>
+                  <option value="order">Lista do zamówienia</option>
+                </select>
+              </label>
+              <label class="field">
+                <span>Zamawiający / placówka</span>
+                <input type="text" id="wishlistBuyerName" maxlength="80" placeholder="np. Szkoła Podstawowa nr 1">
+              </label>
+              <label class="field">
+                <span>Dane kontaktowe</span>
+                <input type="text" id="wishlistContact" maxlength="100" placeholder="e-mail lub telefon">
+              </label>
+              <label class="field wishlist-notes-field">
+                <span>Uwagi</span>
+                <textarea id="wishlistNotes" maxlength="300" rows="2" placeholder="np. proszę o podanie kosztu dostawy i terminu realizacji"></textarea>
+              </label>
+            </div>
+            <div class="wishlist-toolbar">
+              <span>Po zaznaczeniu gier dokument będzie gotowy do wydruku.</span>
+              <span class="action-with-help">
+                <button class="btn secondary" id="printWishlistBtn" type="button" disabled>Drukuj / zapisz PDF</button>
+                <button class="info-tip" type="button" aria-label="Informacja o dokumencie listy życzeń" data-help="Tworzy czytelną listę tytułów i ilości. W oknie drukowania wybierz drukarkę albo zapis do PDF.">i</button>
+              </span>
+            </div>
+            <div class="game-collection-grid wishlist-grid" id="wishlistGamesList"></div>
           </section>
 
           <section class="account-tab-panel hidden" data-account-panel="sets">
