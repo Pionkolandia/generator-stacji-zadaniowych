@@ -98,48 +98,49 @@ const PRESETS = [
   {
     id: "junior",
     name: "Junior",
-    meta: "28 uczniów, 14 stanowisk",
+    meta: "Przedszkole–1 klasa · 28 uczniów, 14 stanowisk",
     students: 28,
     games: [
-      "Wilk i 7 Koźlątek", "Wilk i 7 Koźlątek",
-      "Królewna Śnieżka", "Królewna Śnieżka",
-      "Trzy Bałwanki", "Trzy Bałwanki",
-      "Gnomki i domki", "Gnomki i domki",
-      "Misie w Lesie", "Misie w Lesie",
-      "Jaś i Małgosia", "Jaś i Małgosia",
-      "Owieczki", "Owieczki"
+      "Trzy Małe Świnki", "Trzy Małe Świnki",
+      "Czerwony Kapturek", "Czerwony Kapturek",
+      "3 Traki", "3 Traki",
+      "Dress Code – modnie i wygodnie", "Dress Code – modnie i wygodnie",
+      "Park Safari Jr", "Park Safari Jr",
+      "Kamelot Junior", "Kamelot Junior",
+      "Biedroneczki", "Biedroneczki"
     ],
-    startA: [5, 5, 5, 5, 9, 9, 1, 1, 11, 11, 5, 5, 5, 5]
+    startA: Array(14).fill(2)
   },
   {
     id: "ekspert",
     name: "Ekspert",
-    meta: "30 uczniów, 15 stanowisk",
-    students: 30,
+    meta: "Klasy 2–8 · 42 uczniów, 21 stanowisk",
+    students: 42,
     games: [
-      "IQ Matrix", "IQ Matrix", "IQ Matrix",
-      "IQ Perplex", "IQ Perplex", "IQ Perplex",
-      "IQ Six Pro", "IQ Six Pro", "IQ Six Pro",
-      "Antywirus Mutacja", "Antywirus Mutacja", "Antywirus Mutacja",
-      "Kwadrylion", "Kwadrylion", "Kwadrylion"
+      "IQ Digits", "IQ Digits", "IQ Digits",
+      "IQ Love", "IQ Love", "IQ Love",
+      "Kotełki", "Kotełki", "Kotełki",
+      "Hop Do Norki", "Hop Do Norki", "Hop Do Norki",
+      "Blokada", "Blokada", "Blokada",
+      "SMART Pieseł", "SMART Pieseł", "SMART Pieseł",
+      "Potwory – Zabawa w Chowanego", "Potwory – Zabawa w Chowanego", "Potwory – Zabawa w Chowanego"
     ],
-    startA: Array(15).fill(3)
+    startA: Array(21).fill(2)
   },
   {
     id: "master",
     name: "Master",
-    meta: "26 uczniów, 13 stanowisk",
-    students: 26,
+    meta: "Klasa 7 wzwyż · 36 uczniów, 18 stanowisk",
+    students: 36,
     games: [
-      "Atomowe Zagadki", "Atomowe Zagadki",
-      "Chess Peace", "Chess Peace",
-      "Logic Lane", "Logic Lane",
-      "IQ Stars", "IQ Stars",
-      "IQ XOXO", "IQ XOXO",
-      "ZigZag Puzzler", "ZigZag Puzzler",
-      "Kubik"
+      "Diamentowy Kod", "Diamentowy Kod", "Diamentowy Kod",
+      "Tajemnicza Wyspa", "Tajemnicza Wyspa", "Tajemnicza Wyspa",
+      "Jabłko Puzzler", "Jabłko Puzzler", "Jabłko Puzzler",
+      "IQ Puzzler Pro", "IQ Puzzler Pro", "IQ Puzzler Pro",
+      "IQ Focus", "IQ Focus", "IQ Focus",
+      "IQ Gears", "IQ Gears", "IQ Gears"
     ],
-    startA: [4, 4, 4, 4, 4, 4, 4, 4, 2, 2, 2, 2, 2]
+    startA: Array(18).fill(2)
   }
 ];
 
@@ -378,7 +379,7 @@ function showStep(step) {
 
 function recalc() {
   const value = parseInt($("students").value, 10);
-  const valid = Number.isFinite(value) && value >= 6 && value <= 40;
+  const valid = Number.isFinite(value) && value >= 6 && value <= 42;
 
   $("minNote").classList.toggle("hidden", !(Number.isFinite(value) && value < 6));
 
@@ -1234,7 +1235,7 @@ window.StationApp = {
   },
   loadSet(savedSet) {
     const students = Number(savedSet?.students);
-    if (!Number.isInteger(students) || students < 6 || students > 40) return false;
+    if (!Number.isInteger(students) || students < 6 || students > 42) return false;
 
     $("students").value = students;
     recalc();
