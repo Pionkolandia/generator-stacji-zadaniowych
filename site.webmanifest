@@ -1,0 +1,20 @@
+{
+  "id": "/",
+  "name": "Generator stacji zadaniowych – Szkoła jest SMART!",
+  "short_name": "Stacje zadaniowe",
+  "description": "Generator kart graczy i rotacji stanowisk dla nauczycieli.",
+  "lang": "pl-PL",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#f7f4ee",
+  "theme_color": "#f7f4ee",
+  "icons": [
+    {
+      "src": "/assets/favicon.png",
+      "sizes": "256x256",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
