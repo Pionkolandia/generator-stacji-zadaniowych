@@ -97,8 +97,11 @@ button {
 .brand-image {
   display: block;
   width: 100%;
+  max-width: 100%;
+  height: auto;
   aspect-ratio: 1640 / 856;
-  object-fit: cover;
+  flex: 0 0 auto;
+  object-fit: contain;
   background: #fff;
   border-bottom: 1px solid var(--line);
 }
@@ -1839,10 +1842,6 @@ button:focus-visible {
 
   .brand-panel {
     position: static;
-  }
-
-  .brand-image {
-    max-height: 310px;
   }
 
   .game-collection-grid {
