@@ -180,6 +180,58 @@ h3 {
   font-weight: 900;
 }
 
+.program-links {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  padding: 16px 20px 0;
+}
+
+.program-link {
+  display: grid;
+  min-width: 0;
+  min-height: 58px;
+  align-content: center;
+  justify-items: center;
+  border: 1px solid var(--blue);
+  border-radius: var(--radius);
+  padding: 8px 10px;
+  text-align: center;
+  text-decoration: none;
+  transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+.program-link:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 18px rgba(38, 71, 223, 0.16);
+}
+
+.program-link:focus-visible {
+  outline: 3px solid var(--orange);
+  outline-offset: 3px;
+}
+
+.program-link.primary {
+  background: var(--blue);
+  color: #fff;
+}
+
+.program-link.secondary {
+  background: #fff;
+  color: var(--blue-deep);
+}
+
+.program-link strong {
+  line-height: 1.15;
+}
+
+.program-link small {
+  margin-top: 2px;
+  font-size: 0.66rem;
+  line-height: 1.1;
+  opacity: 0.78;
+}
+
 .generator-panel {
   min-width: 0;
   overflow: hidden;
