@@ -238,6 +238,7 @@
 .schools-table td {
   color: var(--ink);
   font-size: 0.9rem;
+  white-space: pre-line;
 }
 
 .schools-table td:first-child {

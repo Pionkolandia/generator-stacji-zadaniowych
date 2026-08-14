@@ -36,7 +36,7 @@ async function init() {
   const response = await fetch("/schools-data.json?v=20260814-1");
   if (!response.ok) throw new Error(`Błąd pobierania danych: ${response.status}`);
 
-  schools = (await response.json()).filter(isValidSchool);
+  schools = groupSchools((await response.json()).filter(isValidSchool));
   populateProvinces();
   populateCounties();
   bindEvents();
@@ -50,8 +50,56 @@ function isValidSchool(school) {
     && school.name.trim();
 }
 
+function groupSchools(entries) {
+  const groups = new Map();
+
+  entries.forEach((school) => {
+    const base = String(school.number).match(/\d+/)?.[0] || school.number;
+    if (!groups.has(base)) groups.set(base, []);
+    groups.get(base).push(school);
+  });
+
+  return [...groups.entries()].map(([base, variants]) => {
+    const labeledVariants = variants.map((variant, index) => ({
+      ...variant,
+      label: variantLabel(variant.number, index),
+      displayNumber: variants.length > 1
+        ? `#${base} ${variantLabel(variant.number, index)}`
+        : variant.number
+    }));
+
+    return {
+      number: combineVariants(labeledVariants, "displayNumber", false),
+      name: combineVariants(labeledVariants, "name"),
+      city: combineVariants(labeledVariants, "city"),
+      province: combineVariants(labeledVariants, "province"),
+      type: combineVariants(labeledVariants, "type"),
+      county: combineVariants(labeledVariants, "county"),
+      variants: labeledVariants
+    };
+  });
+}
+
+function variantLabel(number, index) {
+  const suffix = String(number).match(/\d+\s*([a-z])$/i)?.[1];
+  return (suffix || String.fromCharCode(65 + index)).toUpperCase();
+}
+
+function combineVariants(variants, field, addLabels = true) {
+  const values = variants.map((variant) => variant[field] || "—");
+  if (values.every((value) => value === values[0])) return values[0];
+  return variants.map((variant) => {
+    const value = variant[field] || "—";
+    return addLabels ? `${variant.label}: ${value}` : value;
+  }).join("\n");
+}
+
+function allVariants() {
+  return schools.flatMap((school) => school.variants);
+}
+
 function populateProvinces() {
-  const provinces = [...new Set(schools.map((school) => school.province).filter(Boolean))].sort(collator.compare);
+  const provinces = [...new Set(allVariants().map((school) => school.province).filter(Boolean))].sort(collator.compare);
   const fragment = document.createDocumentFragment();
 
   provinces.forEach((province) => {
@@ -74,7 +122,7 @@ function populateCounties() {
 
   if (!province) return;
 
-  const counties = [...new Set(schools
+  const counties = [...new Set(allVariants()
     .filter((school) => school.province === province)
     .map((school) => school.county)
     .filter(Boolean))].sort(collator.compare);
@@ -131,10 +179,12 @@ function applyFilters() {
   const county = ui.county.value;
 
   filteredSchools = schools.filter((school) => {
-    const matchesProvince = !province || school.province === province;
-    const matchesCounty = !county || school.county === county;
-    const matchesQuery = !query || normalize(`${school.name} ${school.city}`).includes(query);
-    return matchesProvince && matchesCounty && matchesQuery;
+    return school.variants.some((variant) => {
+      const matchesProvince = !province || variant.province === province;
+      const matchesCounty = !county || variant.county === county;
+      const matchesQuery = !query || normalize(`${variant.name} ${variant.city}`).includes(query);
+      return matchesProvince && matchesCounty && matchesQuery;
+    });
   });
 
   const pages = Math.max(1, Math.ceil(filteredSchools.length / PAGE_SIZE));
