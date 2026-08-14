@@ -1244,6 +1244,16 @@ button:focus-visible {
   gap: 12px;
 }
 
+.auth-name-field {
+  grid-column: 1 / -1;
+}
+
+.auth-name-field small {
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 600;
+}
+
 .account-actions {
   display: flex;
   grid-column: 1 / -1;
@@ -1668,7 +1678,7 @@ button:focus-visible {
 
 .admin-stats {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: minmax(220px, 320px);
   gap: 10px;
 }
 
@@ -1691,6 +1701,87 @@ button:focus-visible {
   font-size: 0.8rem;
   font-weight: 800;
   text-transform: uppercase;
+}
+
+.admin-users-section {
+  margin-top: 28px;
+}
+
+.admin-users-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: 14px;
+}
+
+.admin-users-head p {
+  max-width: 760px;
+  margin: 5px 0 0;
+  color: var(--muted);
+  font-size: 0.84rem;
+}
+
+.admin-users-table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: #fff;
+}
+
+.admin-users-table {
+  width: 100%;
+  min-width: 680px;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.admin-users-table th,
+.admin-users-table td {
+  border-bottom: 1px solid var(--line);
+  padding: 13px 14px;
+  text-align: left;
+  overflow-wrap: anywhere;
+}
+
+.admin-users-table th {
+  background: var(--blue);
+  color: #fff;
+  font-size: 0.76rem;
+  text-transform: uppercase;
+}
+
+.admin-users-table th:nth-child(1),
+.admin-users-table th:nth-child(2) {
+  width: 36%;
+}
+
+.admin-users-table th:nth-child(3) {
+  width: 28%;
+}
+
+.admin-users-table td {
+  color: var(--ink);
+  font-size: 0.88rem;
+}
+
+.admin-users-table td:first-child {
+  color: var(--blue-deep);
+  font-weight: 850;
+}
+
+.admin-users-table tbody tr:nth-child(even) {
+  background: var(--surface-2);
+}
+
+.admin-users-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.admin-users-empty {
+  color: var(--muted) !important;
+  font-weight: 600 !important;
+  text-align: center !important;
 }
 
 .timer-overlay {
@@ -1988,6 +2079,73 @@ button:focus-visible {
 
   .custom-title-edit {
     grid-template-columns: 1fr;
+  }
+
+  .admin-users-table-wrap {
+    overflow: visible;
+    border: 0;
+    background: transparent;
+  }
+
+  .admin-users-table,
+  .admin-users-table tbody,
+  .admin-users-table tr,
+  .admin-users-table td {
+    display: block;
+    width: 100%;
+  }
+
+  .admin-users-table {
+    min-width: 0;
+  }
+
+  .admin-users-table thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+
+  .admin-users-table tr {
+    margin-bottom: 10px;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: #fff;
+  }
+
+  .admin-users-table tbody tr:nth-child(even) {
+    background: #fff;
+  }
+
+  .admin-users-table td {
+    display: grid;
+    grid-template-columns: minmax(112px, 0.45fr) minmax(0, 1fr);
+    gap: 10px;
+    padding: 11px 12px;
+  }
+
+  .admin-users-table td::before {
+    content: attr(data-label);
+    color: var(--muted);
+    font-size: 0.68rem;
+    font-weight: 850;
+    text-transform: uppercase;
+  }
+
+  .admin-users-table td:last-child {
+    border-bottom: 0;
+  }
+
+  .admin-users-empty {
+    display: block !important;
+  }
+
+  .admin-users-empty::before {
+    content: none !important;
   }
 
   .timer-settings,

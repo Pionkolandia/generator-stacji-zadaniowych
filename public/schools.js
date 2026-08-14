@@ -1,12 +1,13 @@
 "use strict";
 
-const PAGE_SIZE = 50;
+const PAGE_SIZE = 100;
 const collator = new Intl.Collator("pl", { sensitivity: "base" });
 
 const ui = {
   form: document.getElementById("schoolsFilters"),
   search: document.getElementById("schoolSearch"),
   province: document.getElementById("provinceFilter"),
+  county: document.getElementById("countyFilter"),
   clear: document.getElementById("clearSchoolFilters"),
   count: document.getElementById("schoolsResultCount"),
   pageInfo: document.getElementById("schoolsPageInfo"),
@@ -37,6 +38,7 @@ async function init() {
 
   schools = (await response.json()).filter(isValidSchool);
   populateProvinces();
+  populateCounties();
   bindEvents();
   applyFilters();
 }
@@ -62,6 +64,32 @@ function populateProvinces() {
   ui.province.append(fragment);
 }
 
+function populateCounties() {
+  const province = ui.province.value;
+  const placeholder = document.createElement("option");
+  placeholder.value = "";
+  placeholder.textContent = province ? "Wszystkie powiaty" : "Najpierw wybierz województwo";
+  ui.county.replaceChildren(placeholder);
+  ui.county.disabled = !province;
+
+  if (!province) return;
+
+  const counties = [...new Set(schools
+    .filter((school) => school.province === province)
+    .map((school) => school.county)
+    .filter(Boolean))].sort(collator.compare);
+  const fragment = document.createDocumentFragment();
+
+  counties.forEach((county) => {
+    const option = document.createElement("option");
+    option.value = county;
+    option.textContent = county;
+    fragment.append(option);
+  });
+
+  ui.county.append(fragment);
+}
+
 function bindEvents() {
   ui.form.addEventListener("submit", (event) => event.preventDefault());
   ui.search.addEventListener("input", () => {
@@ -69,11 +97,17 @@ function bindEvents() {
     applyFilters();
   });
   ui.province.addEventListener("change", () => {
+    populateCounties();
+    currentPage = 1;
+    applyFilters();
+  });
+  ui.county.addEventListener("change", () => {
     currentPage = 1;
     applyFilters();
   });
   ui.clear.addEventListener("click", () => {
     ui.form.reset();
+    populateCounties();
     currentPage = 1;
     applyFilters();
     ui.search.focus();
@@ -94,11 +128,13 @@ function normalize(value) {
 function applyFilters() {
   const query = normalize(ui.search.value);
   const province = ui.province.value;
+  const county = ui.county.value;
 
   filteredSchools = schools.filter((school) => {
     const matchesProvince = !province || school.province === province;
+    const matchesCounty = !county || school.county === county;
     const matchesQuery = !query || normalize(`${school.name} ${school.city}`).includes(query);
-    return matchesProvince && matchesQuery;
+    return matchesProvince && matchesCounty && matchesQuery;
   });
 
   const pages = Math.max(1, Math.ceil(filteredSchools.length / PAGE_SIZE));

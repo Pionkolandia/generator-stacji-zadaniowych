@@ -74,7 +74,7 @@
 
 .schools-filters {
   display: grid;
-  grid-template-columns: minmax(280px, 1.7fr) minmax(220px, 0.8fr) auto;
+  grid-template-columns: minmax(280px, 1.6fr) minmax(190px, 0.7fr) minmax(190px, 0.7fr) auto;
   align-items: end;
   gap: 14px;
   border-top: 1px solid var(--line);
@@ -117,6 +117,12 @@
   box-shadow: 0 0 0 3px rgba(38, 71, 223, 0.12);
 }
 
+.schools-field select:disabled {
+  background: var(--surface-2);
+  color: var(--muted);
+  cursor: not-allowed;
+}
+
 .schools-clear {
   width: auto;
   padding: 0 18px;
@@ -140,6 +146,36 @@
 .schools-results-bar strong {
   color: var(--blue-deep);
   font-size: 1.08rem;
+}
+
+.schools-results-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.schools-download {
+  display: inline-flex;
+  min-height: 34px;
+  align-items: center;
+  border: 1px solid var(--blue);
+  border-radius: 999px;
+  padding: 6px 12px;
+  background: #fff;
+  color: var(--blue-deep);
+  font-size: 0.76rem;
+  font-weight: 850;
+  text-decoration: none;
+}
+
+.schools-download:hover {
+  background: var(--blue);
+  color: #fff;
+}
+
+.schools-download:focus-visible {
+  outline: 3px solid var(--orange);
+  outline-offset: 3px;
 }
 
 .schools-table-wrap {
@@ -294,6 +330,10 @@
   .schools-search-field {
     grid-column: 1 / -1;
   }
+
+  .schools-clear {
+    grid-column: 1 / -1;
+  }
 }
 
 @media (max-width: 640px) {
@@ -334,6 +374,7 @@
   }
 
   .schools-clear {
+    grid-column: auto;
     width: 100%;
   }
 
@@ -343,6 +384,11 @@
     flex-direction: column;
     justify-content: center;
     gap: 2px;
+  }
+
+  .schools-results-actions {
+    width: 100%;
+    justify-content: space-between;
   }
 
   .schools-table-wrap {

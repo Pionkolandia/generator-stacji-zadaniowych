@@ -18,7 +18,7 @@
     <link rel="shortcut icon" href="/favicon.ico">
     <link rel="apple-touch-icon" href="/assets/favicon.png">
     <link rel="stylesheet" href="/styles.css?v=20260806-3">
-    <link rel="stylesheet" href="/schools.css?v=20260814-1">
+    <link rel="stylesheet" href="/schools.css?v=20260814-2">
   </head>
   <body class="schools-page">
     <main class="schools-page-main">
@@ -50,11 +50,20 @@
               <option value="">Wszystkie województwa</option>
             </select>
           </label>
+          <label class="schools-field">
+            <span>Powiat</span>
+            <select id="countyFilter" disabled>
+              <option value="">Najpierw wybierz województwo</option>
+            </select>
+          </label>
           <button class="schools-clear" id="clearSchoolFilters" type="button">Wyczyść filtry</button>
         </form>
 
         <div class="schools-results-bar" aria-live="polite">
-          <strong id="schoolsResultCount">Wczytywanie listy szkół…</strong>
+          <div class="schools-results-actions">
+            <strong id="schoolsResultCount">Wczytywanie listy szkół…</strong>
+            <a class="schools-download" href="/szkoly-w-programie.xlsx" download>Pobierz szkoły</a>
+          </div>
           <span id="schoolsPageInfo"></span>
         </div>
 
@@ -85,6 +94,6 @@
       </section>
     </main>
 
-    <script src="/schools.js?v=20260814-1" defer></script>
+    <script src="/schools.js?v=20260814-2" defer></script>
   </body>
 </html>

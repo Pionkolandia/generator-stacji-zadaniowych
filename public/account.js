@@ -26,14 +26,14 @@ async function initAccount() {
     signInWithEmailAndPassword,
     signInWithPopup,
     signInWithRedirect,
-    signOut
+    signOut,
+    updateProfile
   } = await import("https://www.gstatic.com/firebasejs/12.16.0/firebase-auth.js");
   const {
     addDoc,
     collection,
     deleteDoc,
     doc,
-    getCountFromServer,
     getDoc,
     getDocs,
     getFirestore,
@@ -63,6 +63,7 @@ async function initAccount() {
     authView: document.getElementById("authView"),
     libraryView: document.getElementById("libraryView"),
     authForm: document.getElementById("authForm"),
+    authName: document.getElementById("authName"),
     authEmail: document.getElementById("authEmail"),
     authPassword: document.getElementById("authPassword"),
     signup: document.getElementById("emailSignupBtn"),
@@ -91,7 +92,8 @@ async function initAccount() {
     savedPresetGrid: document.getElementById("savedPresetGrid"),
     manageSets: document.getElementById("manageSetsBtn"),
     adminTab: document.getElementById("adminTabButton"),
-    adminStats: document.getElementById("adminStats")
+    adminStats: document.getElementById("adminStats"),
+    adminUsers: document.getElementById("adminUsersList")
   };
 
   let currentUser = null;
@@ -289,6 +291,7 @@ async function initAccount() {
 
   function authValues() {
     return {
+      name: ui.authName.value.trim().replace(/\s+/g, " "),
       email: ui.authEmail.value.trim().toLowerCase(),
       password: ui.authPassword.value
     };
@@ -308,9 +311,22 @@ async function initAccount() {
   async function signUpWithEmail() {
     if (!ui.authForm.reportValidity()) return;
     setMessage(ui.authMessage, "Tworzenie konta...");
-    const { email, password } = authValues();
+    const { name, email, password } = authValues();
+    if (name.split(" ").filter(Boolean).length < 2) {
+      setMessage(ui.authMessage, "Wpisz imię i nazwisko, aby założyć konto.", true);
+      ui.authName.focus();
+      return;
+    }
     try {
       const credential = await createUserWithEmailAndPassword(auth, email, password);
+      await updateProfile(credential.user, { displayName: name });
+      await setDoc(doc(db, "users", credential.user.uid), {
+        email,
+        displayName: name,
+        fullName: name,
+        createdAt: serverTimestamp(),
+        updatedAt: serverTimestamp()
+      }, { merge: true });
       await sendEmailVerification(credential.user);
       setMessage(ui.libraryMessage, "Konto zostało utworzone. Wysłaliśmy wiadomość z linkiem weryfikacyjnym.");
     } catch (error) {
@@ -406,11 +422,15 @@ async function initAccount() {
   async function ensureUserProfile() {
     const profileRef = doc(db, "users", currentUser.uid);
     const profile = await getDoc(profileRef);
+    const displayName = currentUser.displayName?.trim() || "";
     const data = {
       email: currentUser.email || "",
-      displayName: currentUser.displayName || "",
       updatedAt: serverTimestamp()
     };
+    if (displayName) {
+      data.displayName = displayName;
+      data.fullName = displayName;
+    }
     if (!profile.exists()) data.createdAt = serverTimestamp();
     await setDoc(profileRef, data, { merge: true });
   }
@@ -1008,19 +1028,71 @@ async function initAccount() {
 
   async function loadAdminStats() {
     ui.adminStats.replaceChildren();
+    ui.adminUsers.replaceChildren();
     try {
-      const snapshot = await getCountFromServer(collection(db, "users"));
+      const snapshot = await getDocs(collection(db, "users"));
+      const users = snapshot.docs.map((item) => item.data()).sort((left, right) => {
+        return timestampMillis(right.createdAt) - timestampMillis(left.createdAt);
+      });
       const item = document.createElement("div");
       item.className = "admin-stat";
       const strong = document.createElement("strong");
-      strong.textContent = snapshot.data().count;
+      strong.textContent = users.length;
       const span = document.createElement("span");
       span.textContent = "Założone konta";
       item.append(strong, span);
       ui.adminStats.append(item);
+      ui.adminUsers.replaceChildren(...users.map(createAdminUserRow));
+
+      if (!users.length) {
+        ui.adminUsers.append(createAdminMessageRow("Nie ma jeszcze założonych kont."));
+      }
     } catch (error) {
       ui.adminStats.append(emptyMessage("Nie udało się pobrać statystyk."));
+      ui.adminUsers.append(createAdminMessageRow("Nie udało się pobrać listy kont."));
     }
+  }
+
+  function createAdminUserRow(user) {
+    const row = document.createElement("tr");
+    const values = [
+      ["Imię i nazwisko", user.fullName || user.displayName || "Nie podano"],
+      ["Adres e-mail", user.email || "Brak adresu"],
+      ["Data założenia", formatAccountDate(user.createdAt)]
+    ];
+
+    values.forEach(([label, value]) => {
+      const cell = document.createElement("td");
+      cell.dataset.label = label;
+      cell.textContent = value;
+      row.append(cell);
+    });
+    return row;
+  }
+
+  function createAdminMessageRow(message) {
+    const row = document.createElement("tr");
+    const cell = document.createElement("td");
+    cell.colSpan = 3;
+    cell.className = "admin-users-empty";
+    cell.textContent = message;
+    row.append(cell);
+    return row;
+  }
+
+  function timestampMillis(value) {
+    return typeof value?.toMillis === "function" ? value.toMillis() : 0;
+  }
+
+  function formatAccountDate(value) {
+    if (typeof value?.toDate !== "function") return "Brak danych";
+    return new Intl.DateTimeFormat("pl-PL", {
+      day: "2-digit",
+      month: "2-digit",
+      year: "numeric",
+      hour: "2-digit",
+      minute: "2-digit"
+    }).format(value.toDate());
   }
 
   function showAccountTab(tabName) {

@@ -10,7 +10,7 @@
     <link rel="icon" type="image/png" sizes="256x256" href="/assets/favicon.png">
     <link rel="shortcut icon" href="/favicon.ico">
     <link rel="apple-touch-icon" href="/assets/favicon.png">
-    <link rel="stylesheet" href="/styles.css?v=20260806-3">
+    <link rel="stylesheet" href="/styles.css?v=20260814-2">
   </head>
   <body class="account-page">
     <main class="account-page-main">
@@ -37,6 +37,10 @@
             </button>
             <div class="account-divider"><span>lub użyj e-maila</span></div>
             <form class="auth-form" id="authForm">
+              <label class="field auth-name-field">
+                <span>Imię i nazwisko <small>przy zakładaniu konta</small></span>
+                <input type="text" id="authName" maxlength="80" autocomplete="name" placeholder="np. Anna Kowalska">
+              </label>
               <label class="field">
                 <span>Adres e-mail</span>
                 <input type="email" id="authEmail" autocomplete="email" required>
@@ -155,6 +159,26 @@
                 </div>
               </div>
               <div class="admin-stats" id="adminStats"></div>
+              <section class="admin-users-section" aria-labelledby="adminUsersTitle">
+                <div class="admin-users-head">
+                  <div>
+                    <h3 id="adminUsersTitle">Lista założonych kont</h3>
+                    <p>Imię i nazwisko, adres e-mail oraz data utworzenia konta. Lista jest widoczna wyłącznie dla superadministratora.</p>
+                  </div>
+                </div>
+                <div class="admin-users-table-wrap">
+                  <table class="admin-users-table">
+                    <thead>
+                      <tr>
+                        <th scope="col">Imię i nazwisko</th>
+                        <th scope="col">Adres e-mail</th>
+                        <th scope="col">Data założenia konta</th>
+                      </tr>
+                    </thead>
+                    <tbody id="adminUsersList"></tbody>
+                  </table>
+                </div>
+              </section>
             </section>
 
             <p class="account-message hidden" id="libraryMessage" aria-live="polite"></p>
@@ -170,6 +194,6 @@
 
     <script src="/game-catalog.js?v=20260722-5"></script>
     <script src="/firebase-config.js"></script>
-    <script type="module" src="/account.js?v=20260722-5"></script>
+    <script type="module" src="/account.js?v=20260814-2"></script>
   </body>
 </html>

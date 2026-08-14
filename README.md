@@ -14,7 +14,7 @@ Statyczna strona internetowa dla programu **Szkoła jest SMART!**. Aplikacja poz
 - pełnoekranowy stoper dla grupy A i grupy B z własnym czasem, presetami i sygnałem końca.
 - konta nauczycieli z logowaniem e-mailem i Google,
 - prywatną bibliotekę własnych gier oraz zapisane zestawy stacji,
-- panel administratora z liczbą założonych kont.
+- panel administratora z liczbą założonych kont oraz prywatną listą imion, adresów e-mail i dat rejestracji.
 
 ## Konta i baza danych
 

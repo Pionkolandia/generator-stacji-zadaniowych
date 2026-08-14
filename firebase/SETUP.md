@@ -22,7 +22,7 @@ W `Authentication` → `Settings` → `Authorized domains` należy utrzymywać:
 
 Baza Firestore działa w trybie produkcyjnym w lokalizacji `eur3`. Reguły z pliku `firebase/firestore.rules` są wdrożone.
 
-Reguły zapewniają każdemu użytkownikowi dostęp tylko do jego gier i zestawów. Zweryfikowane konto `wiechowscy@gmail.com` może dodatkowo odczytać liczbę założonych kont.
+Reguły zapewniają każdemu użytkownikowi dostęp tylko do jego profilu, gier i zestawów. Zweryfikowane konto `wiechowscy@gmail.com` może dodatkowo odczytać listę profili użytkowników z imieniem i nazwiskiem, adresem e-mail oraz datą utworzenia konta.
 
 ## 4. Publikacja reguł
 
