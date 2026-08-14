@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Wyszukiwarka szkół i placówek uczestniczących w programie Szkoła jest SMART.">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#fffaf2">
+    <link rel="canonical" href="https://stacjezadaniowe.vercel.app/szkoly">
+    <meta property="og:locale" content="pl_PL">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Lista szkół w programie | Szkoła jest SMART!">
+    <meta property="og:description" content="Znajdź szkołę lub placówkę uczestniczącą w programie Szkoła jest SMART.">
+    <meta property="og:url" content="https://stacjezadaniowe.vercel.app/szkoly">
+    <meta property="og:image" content="https://stacjezadaniowe.vercel.app/assets/logo-szkola-jest-smart.png">
+    <title>Lista szkół w programie | Szkoła jest SMART!</title>
+    <link rel="icon" type="image/png" sizes="256x256" href="/assets/favicon.png">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" href="/assets/favicon.png">
+    <link rel="stylesheet" href="/styles.css?v=20260806-3">
+    <link rel="stylesheet" href="/schools.css?v=20260814-1">
+  </head>
+  <body class="schools-page">
+    <main class="schools-page-main">
+      <header class="schools-topbar">
+        <a class="schools-back-link" href="/" aria-label="Wróć do generatora stacji zadaniowych">
+          <span aria-hidden="true">←</span>
+          Generator stacji
+        </a>
+        <a class="schools-brand" href="/" aria-label="Szkoła jest SMART – strona główna">
+          <img src="/assets/logo-szkola-jest-smart.png" width="1640" height="856" alt="Program Szkoła jest SMART">
+        </a>
+      </header>
+
+      <section class="schools-intro" aria-labelledby="schoolsTitle">
+        <p class="eyebrow">Szkoła jest SMART!</p>
+        <h1 id="schoolsTitle">Lista szkół w programie</h1>
+        <p>Znajdź placówkę po nazwie, miejscowości lub województwie.</p>
+      </section>
+
+      <section class="schools-directory" aria-label="Wyszukiwarka szkół">
+        <form class="schools-filters" id="schoolsFilters" role="search">
+          <label class="schools-field schools-search-field">
+            <span>Nazwa placówki lub miejscowość</span>
+            <input id="schoolSearch" type="search" placeholder="Wpisz nazwę szkoły lub miejscowość" autocomplete="off">
+          </label>
+          <label class="schools-field">
+            <span>Województwo</span>
+            <select id="provinceFilter">
+              <option value="">Wszystkie województwa</option>
+            </select>
+          </label>
+          <button class="schools-clear" id="clearSchoolFilters" type="button">Wyczyść filtry</button>
+        </form>
+
+        <div class="schools-results-bar" aria-live="polite">
+          <strong id="schoolsResultCount">Wczytywanie listy szkół…</strong>
+          <span id="schoolsPageInfo"></span>
+        </div>
+
+        <div class="schools-table-wrap" tabindex="0" aria-label="Tabela szkół w programie">
+          <table class="schools-table">
+            <thead>
+              <tr>
+                <th scope="col">Numer</th>
+                <th scope="col">Nazwa placówki</th>
+                <th scope="col">Miejscowość</th>
+                <th scope="col">Województwo</th>
+                <th scope="col">Typ placówki</th>
+                <th scope="col">Powiat</th>
+              </tr>
+            </thead>
+            <tbody id="schoolsTableBody"></tbody>
+          </table>
+        </div>
+
+        <p class="schools-empty hidden" id="schoolsEmpty">Nie znaleziono placówki pasującej do wybranych kryteriów.</p>
+        <p class="schools-error hidden" id="schoolsError" role="alert">Nie udało się wczytać listy szkół. Odśwież stronę i spróbuj ponownie.</p>
+
+        <nav class="schools-pagination hidden" id="schoolsPagination" aria-label="Strony wyników">
+          <button id="schoolsPrevPage" type="button" aria-label="Poprzednia strona" title="Poprzednia strona">←</button>
+          <span id="schoolsPageNumber">Strona 1</span>
+          <button id="schoolsNextPage" type="button" aria-label="Następna strona" title="Następna strona">→</button>
+        </nav>
+      </section>
+    </main>
+
+    <script src="/schools.js?v=20260814-1" defer></script>
+  </body>
+</html>

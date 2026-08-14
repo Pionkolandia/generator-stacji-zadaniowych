@@ -1,0 +1,5826 @@
+[
+  {
+    "city": "Bełchów",
+    "county": "Łęczyca",
+    "name": "Szkoła podstawowa im. Władysława Broniewskiego w Bełchowie",
+    "number": "#1",
+    "province": "łódzkie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Krzu",
+    "county": "Włocławek",
+    "name": "Szkoła Podstawowa im. M. Konopnickiej w Krzu",
+    "number": "#2",
+    "province": "kujawsko-pomorskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Bielany Wrocławskie",
+    "county": "Wrocław",
+    "name": "Zespół Szkolno-Przedszkolny im. Unicef w Bielanach Wrocławskich",
+    "number": "#3",
+    "province": "dolnośląskie",
+    "type": "Zespół szkół/placówek"
+  },
+  {
+    "city": "Bielsko-Biała",
+    "county": "Bielsko-Biała",
+    "name": "Niepubliczna Szkoła Podstawowa \"Akademia Żaków\" w Bielsku-Białej",
+    "number": "#4",
+    "province": "śląskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Bielsko-Biała",
+    "county": "Bielsko-Biała",
+    "name": "Zespół Szkół Specjalnych nr 1 w Bielsku-Białej",
+    "number": "#5",
+    "province": "śląskie",
+    "type": "Zespół szkół/placówek"
+  },
+  {
+    "city": "Bielsko-Biała",
+    "county": "Bielsko-Biała",
+    "name": "Liceum Ogólnokształcące Katolickiego Towarzystwa Kulturalnego w Bielsku-Białej",
+    "number": "#6",
+    "province": "śląskie",
+    "type": "Szkoła ponadpodstawowa"
+  },
+  {
+    "city": "Bierutów",
+    "county": "Oleśnica",
+    "name": "Szkoła Podstawowa im. I Dywizji Wojska Polskiego im. T. Kościuszki w Bierutowie",
+    "number": "#7",
+    "province": "dolnośląskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Błotnica Strzelecka",
+    "county": "Strzelce Opolskie",
+    "name": "Zespół Placówek Oświatowych w Błotnicy Strzeleckiej",
+    "number": "#8",
+    "province": "opolskie",
+    "type": "Zespół szkół/placówek"
+  },
+  {
+    "city": "Koprzywnica",
+    "county": "Sandomierz",
+    "name": "Niepubliczna Szkoła Podstawowa Montessori Horyzont w Bolechowicach",
+    "number": "#9",
+    "province": "świętokrzyskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Brodnica",
+    "county": "Brodnica",
+    "name": "Zespół Szkół Specjalnych w Brodnicy",
+    "number": "#10",
+    "province": "kujawsko-pomorskie",
+    "type": "Zespół szkół/placówek"
+  },
+  {
+    "city": "Bruki Unisławskie",
+    "county": "Chełmno",
+    "name": "Niepubliczna Szkoła Podstawowa w Brukach Unisławskich",
+    "number": "#11",
+    "province": "kujawsko-pomorskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Brzesko",
+    "county": "Brzesko",
+    "name": "Publiczna Szkoła Podstawowa nr 3 im. Mikołaja Kopernika w Brzesku",
+    "number": "#12",
+    "province": "małopolskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Brzezia Łąka",
+    "county": "Śrem",
+    "name": "Szkoła Podstawowa im. Noblistów Polskich w Brzeziej Łące",
+    "number": "#13",
+    "province": "wielkopolskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Bydgoszcz",
+    "county": "Bydgoszcz",
+    "name": "Kujawsko-Pomorski Specjalny Ośrodek Szkolno-Wychowawczy Nr 1 dla Dzieci i Młodzieży Słabowidzącej i Niewidomej im. Louisa Braille'a w Bydgoszczy",
+    "number": "#14",
+    "province": "kujawsko-pomorskie",
+    "type": "Placówka specjalna"
+  },
+  {
+    "city": "Bytom",
+    "county": "Bytom",
+    "name": "Przedszkole Miejskie nr 40 w Bytomiu",
+    "number": "#15",
+    "province": "śląskie",
+    "type": "Przedszkole"
+  },
+  {
+    "city": "Cedry Małe",
+    "county": "Gdańsk",
+    "name": "Szkoła Podstawowa im. Juliusza Kraziewicza w Cedrach Małych",
+    "number": "#16",
+    "province": "pomorskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Chojnice",
+    "county": "Chojnice",
+    "name": "Zespół Szkolno - Przedszkolny Nr 3 w Chojnicach",
+    "number": "#17",
+    "province": "pomorskie",
+    "type": "Zespół szkół/placówek"
+  },
+  {
+    "city": "Chorzów",
+    "county": "Chorzów",
+    "name": "Przedszkole nr 16 Integracyjne w Chorzowie",
+    "number": "#18",
+    "province": "śląskie",
+    "type": "Przedszkole"
+  },
+  {
+    "city": "Chorzów",
+    "county": "Chorzów",
+    "name": "Szkoła Podstawowa nr 1 w Chorzowie",
+    "number": "#19",
+    "province": "śląskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Chorzów",
+    "county": "Chorzów",
+    "name": "Szkoła Podstawowa nr 5 z Oddziałami Sportowymi im. Janusza Kusocińskiego w Chorzowie",
+    "number": "#20",
+    "province": "śląskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Dąbrowa Chełmińska",
+    "county": "Bydgoszcz",
+    "name": "Zespół szkół im. Celestyna Kamińskiego w Dąbrowie Chełmińskiej",
+    "number": "#21",
+    "province": "kujawsko-pomorskie",
+    "type": "Zespół szkół/placówek"
+  },
+  {
+    "city": "Wiślinka",
+    "county": "Gdańsk",
+    "name": "Szkoła Podstawowa im. Orła Bialego w Czerninie",
+    "number": "#22",
+    "province": "pomorskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Dygowo",
+    "county": "Kołobrzeg",
+    "name": "Szkoła Podstawowa im. Adama Mickiewicza w Dygowie",
+    "number": "#23",
+    "province": "zachodniopomorskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Dziekanów Leśny",
+    "county": "Warszawa Zachodni",
+    "name": "Szkoła Podstawowa im. Marii Konopnickiej w Dziekanowie Leśnym",
+    "number": "#24",
+    "province": "mazowieckie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Dzwono-Sierbowice",
+    "county": "Tarnowskie Góry",
+    "name": "Szkoła Podstawowa nr 3 im. o. Feliksa Wójcika w Dzwono-Sierbowicach",
+    "number": "#25",
+    "province": "śląskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Elbląg",
+    "county": "Elbląg",
+    "name": "Szkoła Podstawowa nr 1 w Elblągu",
+    "number": "#26",
+    "province": "warmińsko-mazurskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Elbląg",
+    "county": "Elbląg",
+    "name": "Szkoła Podstawowa nr 16 w Elblągu",
+    "number": "#27",
+    "province": "warmińsko-mazurskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Gdańsk",
+    "county": "Gdańsk",
+    "name": "Zespół Szkół Specjalnych nr 1 w Gdańsku",
+    "number": "#28",
+    "province": "pomorskie",
+    "type": "Zespół szkół/placówek"
+  },
+  {
+    "city": "Gdańsk",
+    "county": "Gdańsk",
+    "name": "Zespół Szkolno-Przedszkolny nr 1 w Gdańsku",
+    "number": "#29",
+    "province": "pomorskie",
+    "type": "Zespół szkół/placówek"
+  },
+  {
+    "city": "Gdańsk",
+    "county": "Gdańsk",
+    "name": "Zespół Szkół Ogólnokształcących nr 10 w Gdańsku",
+    "number": "#30",
+    "province": "pomorskie",
+    "type": "Zespół szkół/placówek"
+  },
+  {
+    "city": "Gdańsk",
+    "county": "Gdańsk",
+    "name": "Szkoła Podstawowa nr 2 im. Armii Krajowej w Gdańsku",
+    "number": "#31",
+    "province": "pomorskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Gdańsk",
+    "county": "Gdańsk",
+    "name": "Szkoła Podstawowa nr 21 im. kpt. ż. w. Karola Olgierda Borchardta w Gdańsku",
+    "number": "#32",
+    "province": "pomorskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Gdańsk",
+    "county": "Gdańsk",
+    "name": "Zespół Szkół Ogólnokształcących nr 2 w Gdańsku",
+    "number": "#33",
+    "province": "pomorskie",
+    "type": "Zespół szkół/placówek"
+  },
+  {
+    "city": "Gdańsk",
+    "county": "Gdańsk",
+    "name": "V Liceum Ogólnokształcące w Gdańsku",
+    "number": "#34",
+    "province": "pomorskie",
+    "type": "Szkoła ponadpodstawowa"
+  },
+  {
+    "city": "Gdańsk",
+    "county": "Gdańsk",
+    "name": "Publiczna Szkoła Podstawowa \"Olimpijczyk\" z Oddziałami Sportowymi w Gdańsku",
+    "number": "#35",
+    "province": "pomorskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Gdańsk",
+    "county": "Gdańsk",
+    "name": "Szkoła Podstawowa nr 27 im. Dzieci Zjednoczonej Europy w Gdańsku",
+    "number": "#36",
+    "province": "pomorskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Gdańsk",
+    "county": "Gdańsk",
+    "name": "Szkoła Podstawowa nr 92 w Gdańsku",
+    "number": "#37",
+    "province": "pomorskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Gdańsk",
+    "county": "Gdańsk",
+    "name": "Szkoła Podstawowa nr 89 im. Tadeusza Mazowieckiego w Gdańsku",
+    "number": "#38",
+    "province": "pomorskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Gdynia",
+    "county": "Gdynia",
+    "name": "Gdańska Szkoła Szermierki w Gdyni",
+    "number": "#39",
+    "province": "pomorskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Gdańsk",
+    "county": "Gdańsk",
+    "name": "III Społeczna Szkoła Podstawowa STO w Gdańsku",
+    "number": "#40",
+    "province": "pomorskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Gdańsk",
+    "county": "Gdańsk",
+    "name": "Szkoła Podstawowa nr 86 im. prof. Jerzego Sampa w Gdańsku - Wielkopolska",
+    "number": "#41a",
+    "province": "pomorskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Gdańsk",
+    "county": "Gdańsk",
+    "name": "Szkoła Podstawowa nr 86 im. prof. Jerzego Sampa w Gdańsku - filia Świętokrzyska",
+    "number": "#41b",
+    "province": "pomorskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Gdańsk",
+    "county": "Gdańsk",
+    "name": "Szkoła Podstawowa nr 49 im. Księdza Bronisława Komorowskiego w Gdańsku",
+    "number": "#42",
+    "province": "pomorskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Gdańsk",
+    "county": "Gdańsk",
+    "name": "Akademia Dobrej Edukacji w Gdańsku",
+    "number": "#43",
+    "province": "pomorskie",
+    "type": "Inna placówka oświatowa"
+  },
+  {
+    "city": "Gdańsk",
+    "county": "Gdańsk",
+    "name": "Szkoła Podstawowa nr 5 w Gdańsku",
+    "number": "#44",
+    "province": "pomorskie",
+    "type": "Inna placówka oświatowa"
+  },
+  {
+    "city": "Gdańsk",
+    "county": "Gdańsk",
+    "name": "Szkoła Podstawowa nr 1 im. Mariusza Zaruskiego w Gdańsku",
+    "number": "#45",
+    "province": "pomorskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Gdańsk",
+    "county": "Gdańsk",
+    "name": "Szkoła Podstawowa nr 47 w Gdańsku",
+    "number": "#46",
+    "province": "pomorskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Gdańsk",
+    "county": "Gdańsk",
+    "name": "Zespół Szkół Sportowych i Mistrzostwa Sportowego im. Janusza Kusocińskiego w Gdańsku",
+    "number": "#47",
+    "province": "pomorskie",
+    "type": "Zespół szkół/placówek"
+  },
+  {
+    "city": "Gdynia",
+    "county": "Gdynia",
+    "name": "Szkoła Podstawowa nr 40 im. kpt. ż. w. Karola Olgierda Borchardta w Gdyni",
+    "number": "#48",
+    "province": "pomorskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Gdynia",
+    "county": "Gdynia",
+    "name": "Szkoła Podstawowa nr 17 w Gdyni",
+    "number": "#49",
+    "province": "pomorskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Gdynia",
+    "county": "Gdynia",
+    "name": "Zespół Szkół Hotelarsko-Gastronomicznych w Gdyni",
+    "number": "#50",
+    "province": "pomorskie",
+    "type": "Zespół szkół/placówek"
+  },
+  {
+    "city": "Gdynia",
+    "county": "Gdynia",
+    "name": "Szkoła Podstawowa nr 52 w Gdyni",
+    "number": "#51",
+    "province": "pomorskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Gdynia",
+    "county": "Gdynia",
+    "name": "Zespół Szkół Specjalnych nr 17 w Gdyni",
+    "number": "#52",
+    "province": "pomorskie",
+    "type": "Zespół szkół/placówek"
+  },
+  {
+    "city": "Gierałtowice",
+    "county": "Gliwice",
+    "name": "Zespół Szkolno-Przedszkolny im. Michała Szczygła w Gierałtowicach",
+    "number": "#53",
+    "province": "śląskie",
+    "type": "Zespół szkół/placówek"
+  },
+  {
+    "city": "Gliwice",
+    "county": "Gliwice",
+    "name": "Zespół Szkół Ogólnokształcących Specjalnych nr 7 w Gliwicach",
+    "number": "#54",
+    "province": "śląskie",
+    "type": "Zespół szkół/placówek"
+  },
+  {
+    "city": "Wrocław",
+    "county": "Wrocław",
+    "name": "Językowa Szkoła Podstawowa \"Prymus\"",
+    "number": "#55",
+    "province": "dolnośląskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Ostrowąż",
+    "county": "Słupca",
+    "name": "Szkoła Podstawowa im. Kornela Makuszyńskiego w Rzeczycy",
+    "number": "#56",
+    "province": "wielkopolskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Gnojna",
+    "county": "Prudnik",
+    "name": "Publiczna Szkoła Podstawowa im. Gustawa Morcinka w Gnojnej",
+    "number": "#57",
+    "province": "opolskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Jaryszów",
+    "county": "Strzelce Opolskie",
+    "name": "Publiczna Szkoła Podstawowa w Gronowie Górnym",
+    "number": "#58",
+    "province": "opolskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Jedlnia-Letnisko",
+    "county": "Radom",
+    "name": "Publiczna Szkoła Podstawowa im. Jana Brzechwy w Jabłowie",
+    "number": "#59",
+    "province": "mazowieckie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Jaryszów",
+    "county": "Strzelce Opolskie",
+    "name": "Publiczna Szkoła Podstawowa Jaryszów",
+    "number": "#60",
+    "province": "opolskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Drezdenko",
+    "county": "Strzelce-Drezdenko",
+    "name": "Szkoła Podstawowa im. Janusza Korczaka w Józefosławiu",
+    "number": "#61",
+    "province": "lubuskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Józefów",
+    "county": "Otwock",
+    "name": "Szkoła Podstawowa nr 3 im. Łączniczek AK w Józefowie",
+    "number": "#62",
+    "province": "mazowieckie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Kielno",
+    "county": "Wejherowo",
+    "name": "Szkoła Podstawowa z Oddziałami Integracyjnymi im. Bohaterów Westerplatte w Kielnie",
+    "number": "#63",
+    "province": "pomorskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Trzebczyk",
+    "county": "Łęczyca",
+    "name": "Szkoła Podstawowa w Trzebczyku",
+    "number": "#64",
+    "province": "łódzkie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Kobierzyce",
+    "county": "Wrocław",
+    "name": "Szkoła Postawowa im. Polskich Odkrywców i Podróżników w Kobierzycach",
+    "number": "#65",
+    "province": "dolnośląskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "kobiór",
+    "county": "Pszczyna",
+    "name": "Szkoła Podstawowa im. Jana Brzechwy w Kobiórze",
+    "number": "#66",
+    "province": "śląskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Koluszki",
+    "county": "Łódź Wschód",
+    "name": "Szkoła Podstawowa nr 1 im. Tadeusza Kościuszki w Koluszkach",
+    "number": "#67",
+    "province": "łódzkie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Gnieszowice",
+    "county": "Kolbuszowa",
+    "name": "Niepubliczna Szkoła Podstawowa im. Św. Jadwigi Królowej w Gnieszowicach",
+    "number": "#68",
+    "province": "podkarpackie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Kościerzyna",
+    "county": "Kościerzyna",
+    "name": "I Liceum Ogólnokształcące im. Józefa Wybickiego w Kościerzynie",
+    "number": "#69",
+    "province": "pomorskie",
+    "type": "Szkoła ponadpodstawowa"
+  },
+  {
+    "city": "Kościerzyna",
+    "county": "Kościerzyna",
+    "name": "Szkoła Podstawowa nr 6 w Kościerzynie",
+    "number": "#70",
+    "province": "pomorskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Kożuchów",
+    "county": "Nowa Sól",
+    "name": "Przedszkole Miejskie Nr 1 w Kożuchowie",
+    "number": "#71",
+    "province": "lubuskie",
+    "type": "Przedszkole"
+  },
+  {
+    "city": "Kórnik",
+    "county": "Poznań",
+    "name": "Szkoła Podstawowa nr 2 w Kórniku",
+    "number": "#72",
+    "province": "wielkopolskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Kraków",
+    "county": "Kraków",
+    "name": "Szkoła Podstawowa z Oddziałami Integracyjnymi nr 12 im. Janusza Korczaka w Krakowie",
+    "number": "#73",
+    "province": "małopolskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Kraków",
+    "county": "Kraków",
+    "name": "Szkoła Podstawowa nr 47 im. S. Czarnieckiego w Krakowie",
+    "number": "#74",
+    "province": "małopolskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Kraków",
+    "county": "Kraków",
+    "name": "Przedszkole Niepubliczne EkoSkrzat w Krakowie",
+    "number": "#75",
+    "province": "małopolskie",
+    "type": "Przedszkole"
+  },
+  {
+    "city": "Kraków",
+    "county": "Kraków",
+    "name": "Kraków Montessori School w Krakowie",
+    "number": "#76",
+    "province": "małopolskie",
+    "type": "Inna placówka oświatowa"
+  },
+  {
+    "city": "Kraków",
+    "county": "Kraków",
+    "name": "Szkoła Podstawowa nr 25 w Krakowie",
+    "number": "#77",
+    "province": "małopolskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Kraków",
+    "county": "Kraków",
+    "name": "Szkoła Podstawowa z Oddziałami Integracyjnymi nr 98 w Krakówie",
+    "number": "#78",
+    "province": "małopolskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Kraków",
+    "county": "Kraków",
+    "name": "Prywatna Szkoła Podstawowa Salwator w Krakowie",
+    "number": "#79",
+    "province": "małopolskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Krosnowice",
+    "county": "Kłodzko",
+    "name": "Szkoła Podstawowa w Krosnowicach",
+    "number": "#80",
+    "province": "dolnośląskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Byszewo",
+    "county": "Bydgoszcz",
+    "name": "Szkoła Podstawowa im. Marii Konopnickiej w Byszewie",
+    "number": "#81",
+    "province": "kujawsko-pomorskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Kwidzyn",
+    "county": "Kwidzyn",
+    "name": "Szkoła podstawowa nr 4 im. Adama Mickiewicza w Kwidzynie",
+    "number": "#82",
+    "province": "pomorskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Leszno",
+    "county": "Leszno",
+    "name": "Szkoła Podstawowa nr 1 im. Marii Konopnickiej w Lesznie",
+    "number": "#83",
+    "province": "wielkopolskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Leśniewo",
+    "county": "Kartuzy",
+    "name": "Szkoła Podstawowa w Leśniewie",
+    "number": "#84",
+    "province": "pomorskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Szymanków",
+    "county": "Tczew",
+    "name": "Szkoła Podstawowa im. Edyty Czoskówny w Szymankowie",
+    "number": "#85",
+    "province": "pomorskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Lubartów",
+    "county": "Lubartów",
+    "name": "Szkoła podstawowa nr 3 im. Piotra Firleja w Lubartowie",
+    "number": "#86",
+    "province": "lubelskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Lubin",
+    "county": "Lubin",
+    "name": "Szkoła Podstawowa nr 10 im. Władysława Sikorskiego w Lubinie",
+    "number": "#87",
+    "province": "dolnośląskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Lubin",
+    "county": "Lubin",
+    "name": "Szkoła Podstawowa nr 5 w Lubinie",
+    "number": "#88",
+    "province": "dolnośląskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Fanianów",
+    "county": "Łęczyca",
+    "name": "Szkoła Podstawowa im. Prymasa Tysiąclecia Stefana Kardynała Wyszyńskiego w Fanianowie",
+    "number": "#89",
+    "province": "łódzkie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Łochów",
+    "county": "Węgrów",
+    "name": "Szkoła Podstawowa im. Jana Pawła II w Łochowie",
+    "number": "#90",
+    "province": "mazowieckie",
+    "type": "Inna placówka oświatowa"
+  },
+  {
+    "city": "Łódź",
+    "county": "Łódź",
+    "name": "Szkoła Podstawowa nr 206 im. Łódzkich Włókniarek w Łodzi",
+    "number": "#91",
+    "province": "łódzkie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Łódź",
+    "county": "Łódź",
+    "name": "Szkoła Podstawowa nr 184 im. Honorowych Obywateli Miasta Łodzi w Łodzi",
+    "number": "#92",
+    "province": "łódzkie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Majdan Królewski",
+    "county": "Kolbuszowa",
+    "name": "Publiczna Szkoła Podstawowa w Majdanie Królewskim",
+    "number": "#93",
+    "province": "podkarpackie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Jacków",
+    "county": "Wołomin",
+    "name": "Szkoła Podstawowa im. Jana Brzechwy w Jackowie",
+    "number": "#94",
+    "province": "mazowieckie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Meszna",
+    "county": "Bielsko-Biała",
+    "name": "Zespół Szkolno-Przedszkolny w Mesznej",
+    "number": "#95",
+    "province": "śląskie",
+    "type": "Zespół szkół/placówek"
+  },
+  {
+    "city": "Mielec",
+    "county": "Mielec",
+    "name": "Przedszkole Miejskie nr 13 w Mielcu",
+    "number": "#96",
+    "province": "podkarpackie",
+    "type": "Przedszkole"
+  },
+  {
+    "city": "Piaseczno",
+    "county": "Piaseczno",
+    "name": "Zespół Szkolno-Przedszkolny w Książnicach",
+    "number": "#97",
+    "province": "mazowieckie",
+    "type": "Zespół szkół/placówek"
+  },
+  {
+    "city": "Milanówek",
+    "county": "Grodzisk Mazowiecki",
+    "name": "Szkoła Podstawowa nr 1 im. ks. Piotra Skargi w Milanówku",
+    "number": "#98",
+    "province": "mazowieckie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Milicz",
+    "county": "Milicz",
+    "name": "Szkoła Podstawowa nr 2 i Szkoła Muzyczna I Stopnia w Miliczu",
+    "number": "#99",
+    "province": "dolnośląskie",
+    "type": "Szkoła ponadpodstawowa"
+  },
+  {
+    "city": "Kończewice",
+    "county": "Toruń",
+    "name": "Szkoła podstawowa im ks Jana Twardowskiego w Kończewicach",
+    "number": "#100",
+    "province": "kujawsko-pomorskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Miłoszyce",
+    "county": "Oława",
+    "name": "Publiczna Szkoła Podstawowa im. Maratończyków Polskich w Miłoszycach",
+    "number": "#101",
+    "province": "dolnośląskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Mława",
+    "county": "Mława",
+    "name": "Specjalny Ośrodek Szkolno-Wychowawczy im. Janusza Korczaka w Mławie",
+    "number": "#102",
+    "province": "mazowieckie",
+    "type": "Placówka specjalna"
+  },
+  {
+    "city": "Piaseczno",
+    "county": "Piaseczno",
+    "name": "Zespół Szkolno-Przedszkolny w Młochowie",
+    "number": "#103",
+    "province": "mazowieckie",
+    "type": "Zespół szkół/placówek"
+  },
+  {
+    "city": "Mońki",
+    "county": "Mońki",
+    "name": "Zespół Szkół Ogolnoksztalacych i Zawodowych w Mońkach",
+    "number": "#104 a",
+    "province": "podlaskie",
+    "type": "Zespół szkół/placówek"
+  },
+  {
+    "city": "Mońki",
+    "county": "Mońki",
+    "name": "Szkoła Specjalna Przysposabiająca do Pracy w Mońkach",
+    "number": "#104 b",
+    "province": "podlaskie",
+    "type": "Placówka specjalna"
+  },
+  {
+    "city": "Morąg",
+    "county": "Ostróda",
+    "name": "Szkoła Podstawowa nr 1 im. Jana Pawła II w Morągu",
+    "number": "#105",
+    "province": "warmińsko-mazurskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Mosty",
+    "county": "Świecie",
+    "name": "Szkoła Podstawowa im. Piotra Dunina w Mostach",
+    "number": "#106",
+    "province": "kujawsko-pomorskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Mrągowo",
+    "county": "Mrągowo",
+    "name": "Zespół Szkół Specjalnych w Mrągowie",
+    "number": "#107",
+    "province": "warmińsko-mazurskie",
+    "type": "Zespół szkół/placówek"
+  },
+  {
+    "city": "Niepołomice",
+    "county": "Wieliczka",
+    "name": "Szkoła Podstawowa nr 3 w Niepołomicach",
+    "number": "#108",
+    "province": "małopolskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Nowa Wieś",
+    "county": "Nidzica",
+    "name": "Szkoła Podstawowa im. gen Sikorskiego w Nowej Wsi",
+    "number": "#109",
+    "province": "warmińsko-mazurskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Robakowo",
+    "county": "Poznań",
+    "name": "Szkoła Podstawowa im. Powstańców Wielkopolskich w Nowych Skalmierzycach",
+    "number": "#110",
+    "province": "wielkopolskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Skalmierzyce",
+    "county": "Ostrów Wielkopolski",
+    "name": "Szkoła Podstawowa im. Adama Mickiewicza w Skalmierzycach",
+    "number": "#111",
+    "province": "wielkopolskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Nowy Worów",
+    "county": "Pruszków",
+    "name": "Szkoła Podstawowa w Nowym Worowie",
+    "number": "#112",
+    "province": "mazowieckie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Nowy Dwór",
+    "county": "Pruszków",
+    "name": "Szkoła Podstawowa w Nowym Dworze",
+    "number": "#113",
+    "province": "mazowieckie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Strzyboga",
+    "county": "Rawa Mazowiecka",
+    "name": "Szkoła Podstawowa im. Józefa Wybickiego w Strzybodze",
+    "number": "#114",
+    "province": "łódzkie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Nowy Staw",
+    "county": "Malbork",
+    "name": "Zespół Szkolno- Przedszkolny Szkoła Podstawowa nr 2 im. Wincentego Pola w Nowym Stawie",
+    "number": "#115",
+    "province": "pomorskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Lipowa",
+    "county": "Żywiec",
+    "name": "Szkoła Podstawowa im. Gustawa Morcinka w Lipowej",
+    "number": "#116",
+    "province": "śląskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Oleszno",
+    "county": "Włoszczowa",
+    "name": "Zespół Placówek Oświatowych w Olesznie",
+    "number": "#117",
+    "province": "świętokrzyskie",
+    "type": "Zespół szkół/placówek"
+  },
+  {
+    "city": "Oleśnica",
+    "county": "Oleśnica",
+    "name": "Szkoła Podstawowa im. Orła Białego w Sokołowicach",
+    "number": "#118",
+    "province": "dolnośląskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Oleśnica",
+    "county": "Oleśnica",
+    "name": "Szkoła Podstawowa nr 7 im. Jana Pawła II w Oleśnicy",
+    "number": "#119",
+    "province": "dolnośląskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Opole",
+    "county": "Opole",
+    "name": "Szkoła Przysposabiająca do Pracy - Zespół Szkół Specjalnych w Opolu",
+    "number": "#120",
+    "province": "opolskie",
+    "type": "Placówka specjalna"
+  },
+  {
+    "city": "Osiecznica",
+    "county": "Bolesławiec",
+    "name": "Zespół Szkół im. Jana Pawła II w Osiecznicy",
+    "number": "#121",
+    "province": "dolnośląskie",
+    "type": "Zespół szkół/placówek"
+  },
+  {
+    "city": "Ostrołęka",
+    "county": "Ostrołęka",
+    "name": "Społeczna Szkoła Podstawowa Społecznego Towarzystwa Oświatowego im. ks. J. Twardowskiego w Ostrołęce",
+    "number": "#122",
+    "province": "mazowieckie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Ośno Lubuskie",
+    "county": "Słubice",
+    "name": "Szkoła Podstawowa im. Marii Skłodowskiej-Curie w Ośnie Lubuskim",
+    "number": "#123",
+    "province": "lubuskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Pamiątkowo",
+    "county": "Szamotuły",
+    "name": "Szkoła Podstawowa im. Powstańców Wielkopolskich w Pamiątkowie",
+    "number": "#124",
+    "province": "wielkopolskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Piaseczno",
+    "county": "Piaseczno",
+    "name": "Szkoła Podstawowa nr 4 im. Marii Skłodowskiej-Curie w Piasecznie",
+    "number": "#125",
+    "province": "mazowieckie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Pieszyce",
+    "county": "Dzierżoniów",
+    "name": "Szkoła Podstawowa nr 1 im. Pieszyckiej Harcerskiej Organizacji Podziemnej w Pieszycach",
+    "number": "#126",
+    "province": "dolnośląskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Piła",
+    "county": "Piła",
+    "name": "Salezjańska Szkoła Podstawowa im. Jana Pawła II w Pile",
+    "number": "#127",
+    "province": "wielkopolskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Piotrków Trybunalski",
+    "county": "Piotrków Trybunalski",
+    "name": "Zespół Szkół Ponadpodstawowych nr 6 im. Królowej Jadwigi w Piotrkowie Trybunalskim",
+    "number": "#128",
+    "province": "łódzkie",
+    "type": "Szkoła ponadpodstawowa"
+  },
+  {
+    "city": "Podkowa Leśna",
+    "county": "Grodzisk Mazowiecki",
+    "name": "Szkoła Podstawowa im. Bohaterów Warszawy w Podkowie Leśnej",
+    "number": "#129",
+    "province": "mazowieckie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Pogórze",
+    "county": "Gdańsk",
+    "name": "Szkoła podstawowa w Pogórzu",
+    "number": "#130",
+    "province": "pomorskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Police",
+    "county": "Police",
+    "name": "SZKOŁA PODSTAWOWA NR 8 IM. JANA PAWŁA II Z ODDZIAŁAMI DWUJĘZYCZNYMI I SPORTOWYMI W POLICACH",
+    "number": "#131",
+    "province": "zachodniopomorskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Połchowo",
+    "county": "Kartuzy",
+    "name": "Zespół Szkolno-Przedszkolnego w Połchowie",
+    "number": "#132",
+    "province": "pomorskie",
+    "type": "Zespół szkół/placówek"
+  },
+  {
+    "city": "Pomieczyn",
+    "county": "Kartuzy",
+    "name": "Szkoła Podstawowa im. Ks. Bronisława Szymichowskiego w Pomieczynie",
+    "number": "#133",
+    "province": "pomorskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Postoliska",
+    "county": "Piaseczno",
+    "name": "Zespół Szkół w Postoliskach",
+    "number": "#134",
+    "province": "mazowieckie",
+    "type": "Zespół szkół/placówek"
+  },
+  {
+    "city": "Katowice",
+    "county": "Katowice",
+    "name": "Katolicka Szkoła Podstawowa im. Św. Stanisława Kostki",
+    "number": "#135",
+    "province": "śląskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Poznań",
+    "county": "Poznań",
+    "name": "Społeczna Szkoła Podstawowa nr 2 im. Edwarda Raczyńskiego w Poznaniu",
+    "number": "#136",
+    "province": "wielkopolskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Poznań",
+    "county": "Poznań",
+    "name": "Europejska Szkoła Aktywnej Edukacji \"Olimpijczyk\" w Poznaniu",
+    "number": "#137",
+    "province": "wielkopolskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Pruszcz Gdański",
+    "county": "Gdańsk",
+    "name": "Szkoła Podstawowa \"Akademia Dobrej Edukacji\" w Pruszczu Gdańskim",
+    "number": "#138",
+    "province": "pomorskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Pruszcz Gdański",
+    "county": "Gdańsk",
+    "name": "Szkoła Podstawowa nr 4 im. I J Paderewskiego w Pruszczu Gdańskim",
+    "number": "#139",
+    "province": "pomorskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Przejazdowo",
+    "county": "Gdańsk",
+    "name": "Szkoła Podstawowa im. Ziemi Żuławskiej w Przejazdowie",
+    "number": "#140",
+    "province": "pomorskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Pustków Żurawski",
+    "county": "Dębica",
+    "name": "Szkoła Podstawowa im. Romualda Traugutta w Pustkowie Żurawskim",
+    "number": "#141",
+    "province": "podkarpackie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Radlin",
+    "county": "Wodzisław Śląski",
+    "name": "Szkoła Podstawowa nr 3 im. Ziemi Radlińskiej w Radlinie",
+    "number": "#142",
+    "province": "śląskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Babsk",
+    "county": "Skierniewice",
+    "name": "Szkoła Podstawowa im. Fryderyka Chopina w Babsku",
+    "number": "#143",
+    "province": "łódzkie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Reda",
+    "county": "Wejherowo",
+    "name": "Powiatowy Zespół Szkół w Redzie",
+    "number": "#144",
+    "province": "pomorskie",
+    "type": "Zespół szkół/placówek"
+  },
+  {
+    "city": "Reda",
+    "county": "Wejherowo",
+    "name": "Szkoła Podstawowa nr 5 im. Jana Drzeżdżona w Redzie",
+    "number": "#145",
+    "province": "pomorskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Rokiciny",
+    "county": "Tomaszów Mazowiecki",
+    "name": "Szkoła Podstawowa im. Wł. St. Reymonta w Rokicinach",
+    "number": "#146",
+    "province": "łódzkie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Rowne",
+    "county": "Rzeszów",
+    "name": "Szkoła Podstawowa im. Marii i Michała Krukierkow w Rownem",
+    "number": "#147",
+    "province": "podkarpackie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Ruda Śląska",
+    "county": "Ruda Śląska",
+    "name": "Szkoła Podstawowa nr 13 im. Alfreda Szklarskiego w Rudzie Śląskiej",
+    "number": "#148",
+    "province": "śląskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Rybnik",
+    "county": "Rybnik",
+    "name": "Społeczna Szkoła Podstawowa im. Jerzego Kukuczki w Rybniku",
+    "number": "#149",
+    "province": "śląskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Rzeszów",
+    "county": "Rzeszów",
+    "name": "Szkoła Podstawowa im. św. Jana Pawła II Sióstr Prezentek w Rzeszowie",
+    "number": "#150",
+    "province": "podkarpackie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Sieroniowice",
+    "county": "Strzelce Opolskie",
+    "name": "Publiczna Szkoła Podstawowa Szkoła Filialna w Sieroniowicach",
+    "number": "#151",
+    "province": "opolskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Skawina",
+    "county": "Kraków",
+    "name": "Szkoła Podstawowa nr 3 im. Komisji Edukacji Narodowej w Skawinie",
+    "number": "#152",
+    "province": "małopolskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Sobótka",
+    "county": "Wrocław",
+    "name": "Zespół Szkolno- Przedszkolny im. Janusza Korczaka w Sobótce",
+    "number": "#153",
+    "province": "dolnośląskie",
+    "type": "Zespół szkół/placówek"
+  },
+  {
+    "city": "Warpuny",
+    "county": "Mrągowo",
+    "name": "Szkoła Podstawowa im .Ireny Sendlerowej w Warpunach z siedzibą w Zyndakach",
+    "number": "#154",
+    "province": "warmińsko-mazurskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Sosnowiec",
+    "county": "Sosnowiec",
+    "name": "Szkoła Podstawowa nr 38 im. Tadeusza Kościuszki w Sosnowcu",
+    "number": "#155",
+    "province": "śląskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Spytkowice",
+    "county": "Wadowice",
+    "name": "Szkoła Podstawowa nr 2 im. 12 Pułku Piechoty w Spytkowicach",
+    "number": "#156",
+    "province": "małopolskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Starogard Gdański",
+    "county": "Starogard Gdański",
+    "name": "Publiczna Szkoła Podstawowa nr w Starogardzie Gdańskim",
+    "number": "#157",
+    "province": "pomorskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Strawczyn",
+    "county": "Kielce",
+    "name": "Samorządowe Publiczne Przedszkole w Strawczynie",
+    "number": "#158",
+    "province": "świętokrzyskie",
+    "type": "Przedszkole"
+  },
+  {
+    "city": "Strzelce Opolskie",
+    "county": "Strzelce Opolskie",
+    "name": "Publiczna Szkoła Podstawowa nr 7 w Strzelcach Opolskich",
+    "number": "#159",
+    "province": "opolskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Jedlnia-Letnisko",
+    "county": "Radom",
+    "name": "Publiczna Szkoła Podstawowa im. Kornela Makuszyńskiego w Suminie",
+    "number": "#160",
+    "province": "mazowieckie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Działosza",
+    "county": "Kraków",
+    "name": "Szkoła Podstawowa w Działoszy",
+    "number": "#161",
+    "province": "małopolskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Szczecin",
+    "county": "Szczecin",
+    "name": "Szkoła Podstawowa nr 65 w Szczecinie",
+    "number": "#162",
+    "province": "zachodniopomorskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Szczecin",
+    "county": "Szczecin",
+    "name": "Szkoła Podstawowa nr 55 w Szczecinie",
+    "number": "#163",
+    "province": "zachodniopomorskie",
+    "type": "Inna placówka oświatowa"
+  },
+  {
+    "city": "Szczecin",
+    "county": "Szczecin",
+    "name": "Szkoła Podstawowa \"Słoneczna\"",
+    "number": "#164",
+    "province": "zachodniopomorskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Szczecin",
+    "county": "Szczecin",
+    "name": "Pierwsza Szkoła Podstawowa Montessori w Szczecinie",
+    "number": "#165",
+    "province": "zachodniopomorskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Szczecin",
+    "county": "Szczecin",
+    "name": "Szkoła Podstawowa nr 18 im. gen. Józefa Bema w Szczecinie",
+    "number": "#166",
+    "province": "zachodniopomorskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Szczytno",
+    "county": "Szczytno",
+    "name": "Miejskie Przedszkole Nr 1 \"Bajka\" w Szczytnie",
+    "number": "#167",
+    "province": "warmińsko-mazurskie",
+    "type": "Przedszkole"
+  },
+  {
+    "city": "Sztum",
+    "county": "Sztum",
+    "name": "Zespół Szkół im. Jana Kasprowicza w Sztumie",
+    "number": "#168",
+    "province": "pomorskie",
+    "type": "Zespół szkół/placówek"
+  },
+  {
+    "city": "Świecie",
+    "county": "Świecie",
+    "name": "Szkoła Podstawowa nr 7 im. Adama Mickiewicza w Świeciu",
+    "number": "#169",
+    "province": "kujawsko-pomorskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Świętochłowice",
+    "county": "Świętochłowice",
+    "name": "Zespół Szkolno- Przedszkolny w Świętochłowicach",
+    "number": "#170",
+    "province": "śląskie",
+    "type": "Zespół szkół/placówek"
+  },
+  {
+    "city": "Świętochłowice",
+    "county": "Świętochłowice",
+    "name": "Szkoła Podstawowa nr 1 im. Miłośników Ziemi Śląskiej w Świętochłowicach",
+    "number": "#171",
+    "province": "śląskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Tarnowskie Góry",
+    "county": "Tarnowskie Góry",
+    "name": "Zespół Szkolno-Przedszkolny nr 2 w Tarnowskich Górach",
+    "number": "#172",
+    "province": "śląskie",
+    "type": "Zespół szkół/placówek"
+  },
+  {
+    "city": "Tczew",
+    "county": "Tczew",
+    "name": "Niepubliczna Szkoła Podstawowa Montessori w Tczewie",
+    "number": "#173",
+    "province": "pomorskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Toruń",
+    "county": "Toruń",
+    "name": "Szkoła podstawowa nr 24 im. Bohaterów Września 1939 w Toruniu",
+    "number": "#174",
+    "province": "kujawsko-pomorskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Tuczno",
+    "county": "Wałcz",
+    "name": "Szkoła Podstawowa im. Wedlów-Tuczyńskich w Tucznie",
+    "number": "#175",
+    "province": "zachodniopomorskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Tuszów Narodowy",
+    "county": "Mielec",
+    "name": "Zespół szkolno-przedszkolny w Tuszowie Narodowym",
+    "number": "#176",
+    "province": "podkarpackie",
+    "type": "Zespół szkół/placówek"
+  },
+  {
+    "city": "Tychy",
+    "county": "Tychy",
+    "name": "Szkoła Podstawowa im. Josepha Conrada Korzeniowskiego STO w Tychach",
+    "number": "#177",
+    "province": "śląskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Tychy",
+    "county": "Tychy",
+    "name": "Szkoła Podstawowa nr 36 w Tychach",
+    "number": "#178",
+    "province": "śląskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Piaseczno",
+    "county": "Piaseczno",
+    "name": "Zespół Szkolno-Przedszkolny w Podborzu",
+    "number": "#179",
+    "province": "mazowieckie",
+    "type": "Zespół szkół/placówek"
+  },
+  {
+    "city": "Warszawa",
+    "county": "Warszawa",
+    "name": "Przedszkole nr 392 \"Wróbelka Elemelka\" w Warszawie",
+    "number": "#180",
+    "province": "mazowieckie",
+    "type": "Przedszkole"
+  },
+  {
+    "city": "Warszawa",
+    "county": "Warszawa",
+    "name": "Szkoła Podstawowa nr 246 w Warszawie",
+    "number": "#181",
+    "province": "mazowieckie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Warszawa",
+    "county": "Warszawa",
+    "name": "Szkoła Podstawowa nr 374 im. gen. Piotra Szembeka w Warszawie",
+    "number": "#182",
+    "province": "mazowieckie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Warszawa",
+    "county": "Warszawa",
+    "name": "Szkoła Podstawowa nr 362 w Warszawie",
+    "number": "#183",
+    "province": "mazowieckie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Warszawa",
+    "county": "Warszawa",
+    "name": "Przedszkole nr 11 w Warszawie",
+    "number": "#184",
+    "province": "mazowieckie",
+    "type": "Przedszkole"
+  },
+  {
+    "city": "Warszawa",
+    "county": "Warszawa",
+    "name": "Szkoła Podstawowa nr 350 im. Armii Krajowej w Warszawie",
+    "number": "#185",
+    "province": "mazowieckie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Warszawa",
+    "county": "Warszawa",
+    "name": "Szkoła Podstawowa 351 im. B. Prusa w Warszawie",
+    "number": "#186",
+    "province": "mazowieckie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Warszawa",
+    "county": "Warszawa",
+    "name": "Szkoła Podstawowa nr 218 im. Michała Kajki w Warszawie",
+    "number": "#187",
+    "province": "mazowieckie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Warszawa",
+    "county": "Warszawa",
+    "name": "Szkoła Podstawowa nr 75 im. Marii Konopnickiej w Warszawie",
+    "number": "#188",
+    "province": "mazowieckie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Warszawa",
+    "county": "Warszawa",
+    "name": "Społeczna Szkoła Podstawowa nr 1 im. Jana Nowaka- Jeziorańkiego STO w Warszawie",
+    "number": "#189",
+    "province": "mazowieckie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Warszawa",
+    "county": "Warszawa",
+    "name": "Szkoła Podstawowa nr 314 w Warszawie",
+    "number": "#190",
+    "province": "mazowieckie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Warszawa",
+    "county": "Warszawa",
+    "name": "Szkoła Podstawowa nr 88 im. Gabriela Narutowicza w Warszawie",
+    "number": "#191",
+    "province": "mazowieckie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Warszawa",
+    "county": "Warszawa",
+    "name": "Szkoła Podstawowa nr 52 im. Macieja Aleksego Dawidowskiego \"Alka\" w Warszawie",
+    "number": "#192",
+    "province": "mazowieckie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Warszawa",
+    "county": "Warszawa",
+    "name": "Szkoła Podstawowa nr 406 w Warszawie",
+    "number": "#193",
+    "province": "mazowieckie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Warszawa",
+    "county": "Warszawa",
+    "name": "Szkoła Podstawowa z Oddziałami Integracyjnymi nr 216 „Klonowego Liścia„ w Warszawie",
+    "number": "#194",
+    "province": "mazowieckie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Warszawa",
+    "county": "Warszawa",
+    "name": "Publiczne Przedszkole Ali i Asa im. Marka Grechuty w Warszawie",
+    "number": "#195",
+    "province": "mazowieckie",
+    "type": "Przedszkole"
+  },
+  {
+    "city": "Wasilków",
+    "county": "Białystok",
+    "name": "Dwujęzyczna Prywatna Szkoła Podstawowa im. Antoniego Bućko w Wasilkowie",
+    "number": "#196",
+    "province": "podlaskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Wejherowo",
+    "county": "Wejherowo",
+    "name": "Szkoła Podstawowa nr 9 im. gen. Józefa Wybickiego w Wejherowie",
+    "number": "#197",
+    "province": "pomorskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Wejherowo",
+    "county": "Wejherowo",
+    "name": "Dwujęzyczna Szkoła Podstawowa Naja Szkóła w Wejherowie",
+    "number": "#198",
+    "province": "pomorskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Wejherowo",
+    "county": "Wejherowo",
+    "name": "Szkoła Podstawowa nr 5 im. Fryderyka Chopina w Wejherowie",
+    "number": "#199",
+    "province": "pomorskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Węgry",
+    "county": "Węgrów",
+    "name": "Szkoła Podstawowa im. Wincentego Witosa w Węgrach",
+    "number": "#200",
+    "province": "mazowieckie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Widzów",
+    "county": "Bełchatów",
+    "name": "Szkoła Podstawowa im. Ojca Świętego Jana Pawła II w Widzowie",
+    "number": "#201",
+    "province": "łódzkie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Wieliczka",
+    "county": "Wieliczka",
+    "name": "Szkoła Podstawowa nr 6 w Wieliczce",
+    "number": "#202a",
+    "province": "małopolskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Wieliczka",
+    "county": "Wieliczka",
+    "name": "Oddział Przedszkolny przy Szkole Podstawowej nr 6 w Wieliczce",
+    "number": "#202b",
+    "province": "małopolskie",
+    "type": "Przedszkole"
+  },
+  {
+    "city": "Wieliczka",
+    "county": "Wieliczka",
+    "name": "Szkoła Podstawowa im. ks. Karola Wojtyły w Sławkowicach",
+    "number": "#203",
+    "province": "małopolskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Wieliszew",
+    "county": "Legionowo",
+    "name": "Szkoła Podstawowa nr 2 im. Jana Pawła II w Wieliszewie",
+    "number": "#204",
+    "province": "mazowieckie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Wielki Rychnów",
+    "county": "Inowrocław",
+    "name": "Szkoła Podstawowa im. Janusza Korczaka w Wielkim Rychnowie",
+    "number": "#205",
+    "province": "kujawsko-pomorskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Wiślinka",
+    "county": "Gdańsk",
+    "name": "Szkoła Podstawowa im. Orła Białego w Wiślince",
+    "number": "#206",
+    "province": "pomorskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Wodzisław Śląski",
+    "county": "Wodzisław Śląski",
+    "name": "Zespół Szkolno-Przedszkolny nr 1 Wodzisław Śląski",
+    "number": "#207",
+    "province": "śląskie",
+    "type": "Zespół szkół/placówek"
+  },
+  {
+    "city": "Wodzisław Śląski",
+    "county": "Wodzisław Śląski",
+    "name": "Zespół Szkolno-Przedszkolny nr 5 w Wodzisławiu Śląskim",
+    "number": "#208",
+    "province": "śląskie",
+    "type": "Zespół szkół/placówek"
+  },
+  {
+    "city": "Wrocław",
+    "county": "Wrocław",
+    "name": "Szkoła Podstawowa nr 68 we Wrocławiu",
+    "number": "#209",
+    "province": "dolnośląskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Wrocław",
+    "county": "Wrocław",
+    "name": "Szkoła Podstawowa 51 im. Jana Pawła II we Wrocławiu",
+    "number": "#210",
+    "province": "dolnośląskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Zabrze",
+    "county": "Zabrze",
+    "name": "Szkoła Podstawowa nr 7 im. Stanisława Wyspiańskiego w Zabrzu",
+    "number": "#211",
+    "province": "śląskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Zalas",
+    "county": "Kraków",
+    "name": "Szkoła Podstawowa im. Tadeusza Kościuszki w Zalasiu",
+    "number": "#212",
+    "province": "małopolskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Zalesie Górne",
+    "county": "Piaseczno",
+    "name": "Szkoła Podstawowa im. Wspólnej Europy w Zalesiu Górnym",
+    "number": "#213",
+    "province": "mazowieckie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Ząbki",
+    "county": "Wołomin",
+    "name": "Publiczne Przedszkole nr 2 \"Leśny Zakątek\" w Ząbkach",
+    "number": "#214",
+    "province": "mazowieckie",
+    "type": "Przedszkole"
+  },
+  {
+    "city": "Lubin",
+    "county": "Lubin",
+    "name": "Szkoła Podstawowa im. Marii Konopnickiej w Tarnawie Dolnej",
+    "number": "#215",
+    "province": "dolnośląskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Żory",
+    "county": "Żory",
+    "name": "Szkoła Podstawowa nr 14 w Żorach",
+    "number": "#216",
+    "province": "śląskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Żyrardów",
+    "county": "Żyrardów",
+    "name": "Szkoła Podstawowa nr 2 im. Marii Konopnickiej w Żyrardowie",
+    "number": "#217",
+    "province": "mazowieckie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Żyrardów",
+    "county": "Żyrardów",
+    "name": "Specjalny Ośrodek Szkolno-Wychowawczy im. Marii Grzegorzewskiej w Żyrardowie",
+    "number": "#218",
+    "province": "mazowieckie",
+    "type": "Placówka specjalna"
+  },
+  {
+    "city": "Długołęka",
+    "county": "Wrocław",
+    "name": "Szkoła Podstawowa w Długołęce",
+    "number": "#219",
+    "province": "dolnośląskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Kowalewo Pomorskie",
+    "county": "Golub-Dobrzyń",
+    "name": "Przedszkole Publiczne im. Jana Brzechwy w Kowalewie Pomorskim",
+    "number": "#220",
+    "province": "kujawsko-pomorskie",
+    "type": "Przedszkole"
+  },
+  {
+    "city": "Luboń",
+    "county": "Poznań",
+    "name": "Zespół Szkół im. Kryptologów Poznańskich w Luboniu",
+    "number": "#221",
+    "province": "wielkopolskie",
+    "type": "Zespół szkół/placówek"
+  },
+  {
+    "city": "Baszków",
+    "county": "Krotoszyn",
+    "name": "Szkoła Podstawowa im. Powstańców Wielkopolskich w Baszkowie",
+    "number": "#222",
+    "province": "wielkopolskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Kraków",
+    "county": "Kraków",
+    "name": "Szkoła Podstawowa nr 133 w Krakowie",
+    "number": "#223",
+    "province": "małopolskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Lipusz",
+    "county": "Kościerzyna",
+    "name": "Zespół Szkół w Lipuszu",
+    "number": "#224",
+    "province": "pomorskie",
+    "type": "Zespół szkół/placówek"
+  },
+  {
+    "city": "Tczew",
+    "county": "Tczew",
+    "name": "II Liceum Ogólnokształcące im. Jana III Sobieskiego w Tczewie",
+    "number": "#225",
+    "province": "pomorskie",
+    "type": "Szkoła ponadpodstawowa"
+  },
+  {
+    "city": "Pruszcz Gdański",
+    "county": "Gdańsk",
+    "name": "Szkoła Podstawowa nr 4 im. I.J.Paderewskiego w Pruszczu Gdańskim",
+    "number": "#226",
+    "province": "pomorskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Warszawa",
+    "county": "Warszawa",
+    "name": "Społeczna Szkoła Podstawowa nr 10 im. Kardynała Stefana Wyszyńskiego w Warszawie",
+    "number": "#227",
+    "province": "mazowieckie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Węgry",
+    "county": "Węgrów",
+    "name": "Szkoła Podstawowa im. W. Witosa w Węgrach",
+    "number": "#228",
+    "province": "mazowieckie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Spytkowice",
+    "county": "Wadowice",
+    "name": "Szkoła Podstawowa nr 3 im. Ojca Świętego Jana Pawła II w Spytkowicach",
+    "number": "#229",
+    "province": "małopolskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Przasnysz",
+    "county": "Przasnysz",
+    "name": "Biblioteka Pedagogiczna w Ostrołęce Filia w Przasnyszu",
+    "number": "#230",
+    "province": "mazowieckie",
+    "type": "Biblioteka/Mediateka"
+  },
+  {
+    "city": "Kostrzyn nad Odrą",
+    "county": "Gorzów Wielkopolski",
+    "name": "Szkoła Podstawowa nr 2 im. Przyjaciół Ziemi w Kostrzynie nad Odrą",
+    "number": "#231",
+    "province": "lubuskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Kraków",
+    "county": "Kraków",
+    "name": "Zespół Szkolno-Przedszkolny nr 5 w Krakowie",
+    "number": "#232",
+    "province": "małopolskie",
+    "type": "Zespół szkół/placówek"
+  },
+  {
+    "city": "Warszawa",
+    "county": "Warszawa",
+    "name": "Szkoła Podstawowa Specjalna nr 23 im. ks. prof. J. Tischnera w Jastrzębie Zdroju",
+    "number": "#233",
+    "province": "mazowieckie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Kotomierz",
+    "county": "Bydgoszcz",
+    "name": "Szkoła Podstawowa im. S.Żeromskiego w Kotomierzu",
+    "number": "#234",
+    "province": "kujawsko-pomorskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Mrągowo",
+    "county": "Mrągowo",
+    "name": "Szkoła Podstawowa nr 1 im. Mikołaja Kopernika w Mrągowie",
+    "number": "#235",
+    "province": "warmińsko-mazurskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Gdańsk",
+    "county": "Gdańsk",
+    "name": "Szkoła podstawowa nr 4 im. Króla Kazimierza Jagiellończyka w Gdańsku",
+    "number": "#236",
+    "province": "pomorskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Gdynia",
+    "county": "Gdynia",
+    "name": "Szkoła Podstawowa nr 45 w Gdyni",
+    "number": "#237",
+    "province": "pomorskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Gdańsk",
+    "county": "Gdańsk",
+    "name": "Szkoła Podstawowa nr 47 im. Kaszubskiej Brygady Wojsk Ochrony Pogranicza w Gdańsku",
+    "number": "#238",
+    "province": "pomorskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Opoczno",
+    "county": "Opoczno",
+    "name": "Zespół Szkół Prywatnych w Opocznie",
+    "number": "#239",
+    "province": "łódzkie",
+    "type": "Zespół szkół/placówek"
+  },
+  {
+    "city": "Ruda Śląska",
+    "county": "Ruda Śląska",
+    "name": "Szkoła Podstawa nr 2 im. Jana Wyplera w Rudzie Śląskiej",
+    "number": "#240",
+    "province": "śląskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Gdańsk",
+    "county": "Gdańsk",
+    "name": "Zespół Szkolno-Przedszkolny nr 5 w Gdańsku",
+    "number": "#241a",
+    "province": "pomorskie",
+    "type": "Zespół szkół/placówek"
+  },
+  {
+    "city": "Gdańsk",
+    "county": "Gdańsk",
+    "name": "Zespół Szkolno-Przedszkolny nr 5 w Gdańsku",
+    "number": "#241b",
+    "province": "pomorskie",
+    "type": "Zespół szkół/placówek"
+  },
+  {
+    "city": "Ostrów Wielkopolski",
+    "county": "Ostrów Wielkopolski",
+    "name": "Szkoła Podstawowa nr 2 im. Ewarysta Estkowskiego w Ostrowie Wielkopolskim",
+    "number": "#242",
+    "province": "wielkopolskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Świętochłowice",
+    "county": "Świętochłowice",
+    "name": "Przedszkole Miejskie nr 4 w Świętochłowicach",
+    "number": "#243",
+    "province": "śląskie",
+    "type": "Przedszkole"
+  },
+  {
+    "city": "Kryniczno",
+    "county": "Środa Śląska",
+    "name": "Szkoła Podstawowa w Krynicznie",
+    "number": "#244",
+    "province": "dolnośląskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Rumia",
+    "county": "Wejherowo",
+    "name": "Szkoła Podstawowa nr 4 w Rumi",
+    "number": "#245",
+    "province": "pomorskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Cholerzyn",
+    "county": "Kraków",
+    "name": "Szkoła podstawowa im św. Matki Teresy z Kalkuty w Cholerzynie",
+    "number": "#246",
+    "province": "małopolskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Dolsk",
+    "county": "Śrem",
+    "name": "Szkoła Podstawowa im. Janusza Kusociskiego w Dolsku",
+    "number": "#247",
+    "province": "wielkopolskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Sierakowice",
+    "county": "Kartuzy",
+    "name": "Szkoła Podstawowa nr 1 im. Floriana Ceynowy w Sierakowicach",
+    "number": "#248",
+    "province": "pomorskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Poznań",
+    "county": "Poznań",
+    "name": "Publiczna Salezjańska Szkoła Podstawowa im. bł. Piątki Poznańskiej w Poznaniu",
+    "number": "#249",
+    "province": "wielkopolskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Wrocław",
+    "county": "Wrocław",
+    "name": "Zespół Szkolno Przedszkolny nr 9 we Wrocławiu",
+    "number": "#250",
+    "province": "dolnośląskie",
+    "type": "Zespół szkół/placówek"
+  },
+  {
+    "city": "Warszawa",
+    "county": "Warszawa",
+    "name": "Szkoła Podstawowa nr 220 im. S. Kopczyńskiego w Warszawie",
+    "number": "#251",
+    "province": "mazowieckie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Tarnowskie Góry",
+    "county": "Tarnowskie Góry",
+    "name": "Szkoła Podstawowa nr 9 im. Mikołaja Kopernika w Tarnowskich Górach",
+    "number": "#252",
+    "province": "śląskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Mońki",
+    "county": "Mońki",
+    "name": "Szkoła Podstawowa nr 2 w Mońkach",
+    "number": "#253",
+    "province": "podlaskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Warszawa",
+    "county": "Warszawa",
+    "name": "Szkoła Podstawowa nr 322 im. Jana Brzechwy w Warszawie",
+    "number": "#254",
+    "province": "mazowieckie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Prudnik",
+    "county": "Prudnik",
+    "name": "Zespół Szkół w Prudniku",
+    "number": "#255",
+    "province": "opolskie",
+    "type": "Zespół szkół/placówek"
+  },
+  {
+    "city": "Żory",
+    "county": "Żory",
+    "name": "Zespół Szkolno - Przedszkolny nr 5 w Żorach",
+    "number": "#256",
+    "province": "śląskie",
+    "type": "Zespół szkół/placówek"
+  },
+  {
+    "city": "Lipinki Łużyckie",
+    "county": "Żary",
+    "name": "Zespół Szkolno- Przedszkolny w Lipinkach Łużyckich",
+    "number": "#257",
+    "province": "lubuskie",
+    "type": "Zespół szkół/placówek"
+  },
+  {
+    "city": "Świecie",
+    "county": "Świecie",
+    "name": "Zespół Szkół Ponadpodstawowych w Świeciu",
+    "number": "#258",
+    "province": "kujawsko-pomorskie",
+    "type": "Szkoła ponadpodstawowa"
+  },
+  {
+    "city": "Warszawa",
+    "county": "Warszawa",
+    "name": "Szkoła Podstawowa Niepubliczna nr 81",
+    "number": "#259",
+    "province": "mazowieckie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Lędziny",
+    "county": "Bieruń",
+    "name": "Szkoła Podstawowa z Oddziałami Integracyjnymi nr 2 w Lędzinach",
+    "number": "#260",
+    "province": "śląskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Ząbki",
+    "county": "Wołomin",
+    "name": "Szkoła Podstawowa nr 1 im. generała Franciszka Kleeberga w Ząbkach",
+    "number": "#261",
+    "province": "mazowieckie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Warszawa",
+    "county": "Warszawa",
+    "name": "Społeczna Szkoła Podstawowa nr 1 im. Noblistów Polskich",
+    "number": "#262",
+    "province": "mazowieckie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Szczecin",
+    "county": "Szczecin",
+    "name": "Społeczna szkoła podstawowa nr 1 im. Noblistów polskich w Szczecinie",
+    "number": "#263",
+    "province": "zachodniopomorskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Borzęciczki",
+    "county": "Śrem",
+    "name": "Specjalny Ośrodek Szkolno-Wychowawczy im. Janusza Korczaka w Borzęciczkach",
+    "number": "#264",
+    "province": "wielkopolskie",
+    "type": "Placówka specjalna"
+  },
+  {
+    "city": "Dziadowa Kłoda",
+    "county": "Oleśnica",
+    "name": "Zespół Szkół w Dziadowej Kłodzie",
+    "number": "#265",
+    "province": "dolnośląskie",
+    "type": "Zespół szkół/placówek"
+  },
+  {
+    "city": "Pierzchnica",
+    "county": "Kielce",
+    "name": "Oddziały przedszkolne przy Szkole Podstawowej im. Stefana Kardynała Wyszyńskiego w Pierzchnicy",
+    "number": "#266",
+    "province": "świętokrzyskie",
+    "type": "Przedszkole"
+  },
+  {
+    "city": "Gryfów Śląski",
+    "county": "Lwówek Śląski",
+    "name": "Szkoła Podstawowa nr 1 im. Bohaterów Łużyckiej Brygady WOP w Gryfowie Śląskim",
+    "number": "#267",
+    "province": "dolnośląskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Warszawa",
+    "county": "Warszawa",
+    "name": "Warsaw Bilingual School w Warszawie",
+    "number": "#268",
+    "province": "mazowieckie",
+    "type": "Inna placówka oświatowa"
+  },
+  {
+    "city": "Różyca",
+    "county": "Łódź",
+    "name": "Szkoła Podstawowa im. Juliama Tuwima w Różycy",
+    "number": "#269",
+    "province": "łódzkie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Zegrze",
+    "county": "Legionowo",
+    "name": "Szkoła Podstawowa im. Wojska Polskiego w Zegrzu",
+    "number": "#270",
+    "province": "mazowieckie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Skórzewo",
+    "county": "Poznań",
+    "name": "Szkoła Podstawowa nr 2 im. I. J. Paderewskiego w Skórzewie",
+    "number": "#271",
+    "province": "wielkopolskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Lublin",
+    "county": "Lublin",
+    "name": "Zespół Szkół nr 12 w Lublinie",
+    "number": "#272",
+    "province": "lubelskie",
+    "type": "Zespół szkół/placówek"
+  },
+  {
+    "city": "Świętochłowice",
+    "county": "Świętochłowice",
+    "name": "Szkoła podstawowa nr 8 im. Jana III Sobieskiego w Świętochłowicach",
+    "number": "#273",
+    "province": "śląskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Warszawa",
+    "county": "Warszawa",
+    "name": "Chrześcijańska Szkoła Podstawowa Samuel w Warszawie",
+    "number": "#274",
+    "province": "mazowieckie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Ząbki",
+    "county": "Wołomin",
+    "name": "Szkoła Podstawowa nr 4 im. św. Jana Pawła II w Ząbkach",
+    "number": "#275",
+    "province": "mazowieckie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Piaseczno",
+    "county": "Piaseczno",
+    "name": "Zespół Szkolno-Przedszkolny w Szemudzie",
+    "number": "#276",
+    "province": "mazowieckie",
+    "type": "Zespół szkół/placówek"
+  },
+  {
+    "city": "Chronów",
+    "county": "Proszowice",
+    "name": "Publiczna Szkoła Podstawowa w Chronowie",
+    "number": "#277",
+    "province": "małopolskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Police",
+    "county": "Police",
+    "name": "Szkoła Podstawowa nr 5 im. Orła Białego w Policach",
+    "number": "#278",
+    "province": "zachodniopomorskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Warszawa",
+    "county": "Warszawa",
+    "name": "Szkoła Podstawowa z Oddziałami Integracyjnymi nr 318 im. J. Ch. Andersena w Warszawie",
+    "number": "#279",
+    "province": "mazowieckie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Sztum",
+    "county": "Sztum",
+    "name": "Szkoła Podstawowa nr 1 im. Jana Pawła II w Sztumie",
+    "number": "#280",
+    "province": "pomorskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Warszawa",
+    "county": "Warszawa",
+    "name": "Bednarska Szkoła Podstawowa",
+    "number": "#281",
+    "province": "mazowieckie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Szczecin",
+    "county": "Szczecin",
+    "name": "Szkoła Podstawowa nr 8 im. Młodych Europejczyków w Szczecinie",
+    "number": "#282",
+    "province": "zachodniopomorskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Jankowo Zaleśne",
+    "county": "Ostrów Wielkopolski",
+    "name": "Szkoła Podstawowa im. Powstania Wielkopolskiego w Jankowie Zaleśnym",
+    "number": "#283",
+    "province": "wielkopolskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Gdańsk",
+    "county": "Gdańsk",
+    "name": "Szkoła Podstawowa nr 38 im. gen. Stanisława Maczka w Gdańsku",
+    "number": "#284",
+    "province": "pomorskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Poznań",
+    "county": "Poznań",
+    "name": "Szkoła Podstawowa nr 80 im. Kornela Makuszyńskiego w Poznaniu",
+    "number": "#285",
+    "province": "wielkopolskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Warszawa",
+    "county": "Warszawa",
+    "name": "Zespół Szkolno Przedszkolny nr 9 w Warszawie",
+    "number": "#286",
+    "province": "mazowieckie",
+    "type": "Zespół szkół/placówek"
+  },
+  {
+    "city": "Leszno",
+    "county": "Leszno",
+    "name": "Szkoła podstawowa nr 9 im. Ks. Kard. Stefana Wyszyńskiego w Lesznie",
+    "number": "#287",
+    "province": "wielkopolskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Gdynia",
+    "county": "Gdynia",
+    "name": "Gdyńska Szkoła Społeczna w Gdyni",
+    "number": "#288",
+    "province": "pomorskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Gdańsk",
+    "county": "Gdańsk",
+    "name": "Szkoła podstawowa nr 72 im. Obrońców Westerplatte w Gdańsku",
+    "number": "#289",
+    "province": "pomorskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Słupia Wielka",
+    "county": "Środa Wielkopolska",
+    "name": "Szkoła Podstawowa im. J.H.Dąbrowskiego w Słupi Wielkiej",
+    "number": "#290",
+    "province": "wielkopolskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Mosina",
+    "county": "Poznań",
+    "name": "Szkoła Podstawowa nr 1 w Mosinie",
+    "number": "#291",
+    "province": "wielkopolskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Łódź",
+    "county": "Łódź",
+    "name": "Szkoła Podstawowa nr 149 im. Obrońców Westerplatte w Łodzi",
+    "number": "#292",
+    "province": "łódzkie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Błonie",
+    "county": "Warszawa Zachodni",
+    "name": "Zespół szkol nr 1 w Bloniu",
+    "number": "#293",
+    "province": "mazowieckie",
+    "type": "Inna placówka oświatowa"
+  },
+  {
+    "city": "Warszawa",
+    "county": "Warszawa",
+    "name": "Niepubliczna Szkoła Podstawowa im. Juliusza Verne'a w Warszawie",
+    "number": "#294",
+    "province": "mazowieckie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Tanowo",
+    "county": "Police",
+    "name": "Szkoła Podstawowa im. Jerzego Noskiewicza w Tanowie",
+    "number": "#295a",
+    "province": "zachodniopomorskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Pilchowo",
+    "county": "Police",
+    "name": "Szkoła Podstawowa im. Jerzego Noskiewicza filia w Pilchowie",
+    "number": "#295b",
+    "province": "zachodniopomorskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Gryfino",
+    "county": "Gryfino",
+    "name": "Szkoła Podstawowa nr 2 im. kpt. ż. w. Mamerta Stankiewicza w Gryfinie",
+    "number": "#296",
+    "province": "zachodniopomorskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Radom",
+    "county": "Radom",
+    "name": "Publiczna Szkoła Podstawowa Nr 4 z Oddziałami Integracyjnymi im. św. Kazimierza Jagiellończyka w Radomiu",
+    "number": "#297",
+    "province": "mazowieckie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Połczyn",
+    "county": "Świdwin",
+    "name": "Szkoła Podstawowa im. Antoniego Abrahama w Połczynie",
+    "number": "#298",
+    "province": "zachodniopomorskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Mielec",
+    "county": "Mielec",
+    "name": "Przedszkole miejskie nr 3 w Mielcu",
+    "number": "#299",
+    "province": "podkarpackie",
+    "type": "Przedszkole"
+  },
+  {
+    "city": "Jawor",
+    "county": "Jawor",
+    "name": "Szkoła Podstawowa nr 5 im. Janusza Korczaka w Jaworze",
+    "number": "#300",
+    "province": "dolnośląskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Mielec",
+    "county": "Mielec",
+    "name": "Szkoła Podstawowa nr 3 w Mielcu",
+    "number": "#301",
+    "province": "podkarpackie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Toruń",
+    "county": "Toruń",
+    "name": "Szkoła Podstawowa nr 23 w Toruniu",
+    "number": "#302",
+    "province": "kujawsko-pomorskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Piaseczno",
+    "county": "Piaseczno",
+    "name": "Zespół Szkolno-Przedszkolny w Serocku",
+    "number": "#303",
+    "province": "mazowieckie",
+    "type": "Zespół szkół/placówek"
+  },
+  {
+    "city": "Krasocin",
+    "county": "Włoszczowa",
+    "name": "Zespół Placówek Oświatowych im. rtm. Witolda Pileckiego w Krasocinie",
+    "number": "#304",
+    "province": "świętokrzyskie",
+    "type": "Zespół szkół/placówek"
+  },
+  {
+    "city": "Gdańsk",
+    "county": "Gdańsk",
+    "name": "Szkoła Podstawowa nr 70 w Gdańsku",
+    "number": "#305",
+    "province": "pomorskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Tarnowskie Góry",
+    "county": "Tarnowskie Góry",
+    "name": "Zespół Szkolno-Przedszkolny nr 4 w Tarnowskich Górach",
+    "number": "#306",
+    "province": "śląskie",
+    "type": "Zespół szkół/placówek"
+  },
+  {
+    "city": "Wojkowice",
+    "county": "Będzin",
+    "name": "Szkoła Podstawowa nr 1 w Wojkowicach",
+    "number": "#307",
+    "province": "śląskie",
+    "type": "Inna placówka oświatowa"
+  },
+  {
+    "city": "Wojkowice",
+    "county": "Będzin",
+    "name": "Szkoła Podstawowa nr 1 w Wojkowicach",
+    "number": "#308",
+    "province": "śląskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Bytom",
+    "county": "Bytom",
+    "name": "Szkoła podstawowa nr 4 im. Mikołaja Kopernika w Bytomiu",
+    "number": "#309",
+    "province": "śląskie",
+    "type": "Inna placówka oświatowa"
+  },
+  {
+    "city": "Szprotawa",
+    "county": "Żagań",
+    "name": "Szkoła Podstawowa nr 1 w Szprotawie",
+    "number": "#310",
+    "province": "lubuskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Rotmanka",
+    "county": "Gdańsk",
+    "name": "Szkoła Podstawowa im. Karola Wojtyły w Rotmance",
+    "number": "#311",
+    "province": "pomorskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Szprotawa",
+    "county": "Żagań",
+    "name": "Liceum Ogólnokształcące z Oddziałami Dwujęzycznymi w Szprotawie",
+    "number": "#312",
+    "province": "lubuskie",
+    "type": "Szkoła ponadpodstawowa"
+  },
+  {
+    "city": "Żory",
+    "county": "Żory",
+    "name": "Szkoła Podstawowa nr 12 w Zespole Szkół Specjalnych im. Matki Teresy z Kalkuty w Żorach",
+    "number": "#313",
+    "province": "śląskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Mysłowice",
+    "county": "Mysłowice",
+    "name": "Szkoła Podstawowa nr 13 z Oddziałami Integracyjnymi i Dwujęzycznymi w Mysłowicach",
+    "number": "#314",
+    "province": "śląskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Oleśnica",
+    "county": "Oleśnica",
+    "name": "Szkoła Podstawowa nr 3 im. Podróżników i Odkrywców Polskich w Oleśnicy",
+    "number": "#315",
+    "province": "dolnośląskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Szczecin",
+    "county": "Szczecin",
+    "name": "Społeczna Szkoła Podstawowa nr 3 Dębinka",
+    "number": "#316",
+    "province": "zachodniopomorskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Gdańsk",
+    "county": "Gdańsk",
+    "name": "Szkoła podstawowa specjalna nr 26 w Gdańsku",
+    "number": "#317",
+    "province": "pomorskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Świętochłowice",
+    "county": "Świętochłowice",
+    "name": "Szkoła podstawowa nr 4 im. Tadeusza Kościuszki w Świętochłowicach",
+    "number": "#318",
+    "province": "śląskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Łączki Brzeskie",
+    "county": "Brzesko",
+    "name": "Szkoła Podstawowa im. Ks. T. Wiatra w Łączkach Brzeskich",
+    "number": "#319",
+    "province": "małopolskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Rokiciny",
+    "county": "Tomaszów Mazowiecki",
+    "name": "Gminne Przedszkole im. Leśnych Skrzatów w Rokicinach",
+    "number": "#320",
+    "province": "łódzkie",
+    "type": "Przedszkole"
+  },
+  {
+    "city": "Piaseczno",
+    "county": "Piaseczno",
+    "name": "Szkoła Podstawowa nr 1 im. Józefa Piłsudskiego w Piasecznie",
+    "number": "#321",
+    "province": "mazowieckie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Bytyń",
+    "county": "Szamotuły",
+    "name": "Zespół Szkolno-Przedszkolny w Bytyniu",
+    "number": "#322",
+    "province": "wielkopolskie",
+    "type": "Zespół szkół/placówek"
+  },
+  {
+    "city": "Rekowo",
+    "county": "Kartuzy",
+    "name": "Szkoła Podstawowa im. Wiktora Czapiewskiego w Rekowie",
+    "number": "#323",
+    "province": "pomorskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Świątki",
+    "county": "Olsztyn",
+    "name": "Zespol Szkolno-Przedszkolny w Świątkach",
+    "number": "#324",
+    "province": "warmińsko-mazurskie",
+    "type": "Inna placówka oświatowa"
+  },
+  {
+    "city": "Wrocław",
+    "county": "Wrocław",
+    "name": "Szkoła Podstawowa im. gen. Stanisława Maczka we Wrocławiu",
+    "number": "#325",
+    "province": "dolnośląskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Mysiadło",
+    "county": "Piaseczno",
+    "name": "Gminne Przedszkole z Oddziałami Integracyjnymi w Mysiadle",
+    "number": "#326",
+    "province": "mazowieckie",
+    "type": "Przedszkole"
+  },
+  {
+    "city": "Międzyrzecz",
+    "county": "Międzyrzecz",
+    "name": "Szkoła Podstawowa nr 4 w Międzyrzeczu",
+    "number": "#327",
+    "province": "lubuskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Sosnowiec",
+    "county": "Sosnowiec",
+    "name": "Zespół Szkół Ogólnokształcących nr 5 w Sosnowcu",
+    "number": "#328",
+    "province": "śląskie",
+    "type": "Zespół szkół/placówek"
+  },
+  {
+    "city": "Tąpkowice",
+    "county": "Będzin",
+    "name": "Szkoła Podstawowa „Otwarta Szkoła” w Tąpkowicach",
+    "number": "#329",
+    "province": "śląskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Banino",
+    "county": "Kartuzy",
+    "name": "Szkoła Podstawowa nr 2 w Baninie",
+    "number": "#330",
+    "province": "pomorskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Lichnowy",
+    "county": "Malbork",
+    "name": "Szkoła Podstawowa im. Stefana Żeromskiego w Lichnowach",
+    "number": "#331",
+    "province": "pomorskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Susz",
+    "county": "Iława",
+    "name": "Szkoła Podstawowa w Lubnowych",
+    "number": "#332",
+    "province": "warmińsko-mazurskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Radziejów",
+    "county": "Radziejów",
+    "name": "Miejski Zespół Szkół w Radziejowie",
+    "number": "#333",
+    "province": "kujawsko-pomorskie",
+    "type": "Zespół szkół/placówek"
+  },
+  {
+    "city": "Pyskowice",
+    "county": "Gliwice",
+    "name": "Szkoła Podstawowa nr 3 im. Noblistów Polskich w Pyskowicach",
+    "number": "#334",
+    "province": "śląskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Komorów",
+    "county": "Pruszków",
+    "name": "Niepubliczne Przedszkole \"Akademia Malucha\" w Komorowie",
+    "number": "#335",
+    "province": "mazowieckie",
+    "type": "Przedszkole"
+  },
+  {
+    "city": "Kraków",
+    "county": "Kraków",
+    "name": "Szkoła Podstawowa nr 20 w Krakowie",
+    "number": "#336",
+    "province": "małopolskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Kraków",
+    "county": "Kraków",
+    "name": "Szkoła Podstawowa z Oddziałami Integracyjnymi nr 15 w Krakowie",
+    "number": "#337",
+    "province": "małopolskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Szczecin",
+    "county": "Szczecin",
+    "name": "Kreatywna Szkoła Montessori w Szczecinie",
+    "number": "#338",
+    "province": "zachodniopomorskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Raki",
+    "county": "Kielce",
+    "name": "Szkoła Podstawowa im. Bohaterów Powstania Styczniowego w Rakach",
+    "number": "#339",
+    "province": "świętokrzyskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Raciechowice",
+    "county": "Myślenice",
+    "name": "Szkoła Podstawowa im. Jana Kochanowskiego w Raciechowicach",
+    "number": "#340",
+    "province": "małopolskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Chorzów",
+    "county": "Chorzów",
+    "name": "Szkoła Podstawowa Nr 34 im. Sportowców Hajduckich w Chorzowie",
+    "number": "#341",
+    "province": "śląskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Wólka Podleśna",
+    "county": "Legionowo",
+    "name": "Zespół Szkół w Wólce Podleśnej",
+    "number": "#342",
+    "province": "mazowieckie",
+    "type": "Zespół szkół/placówek"
+  },
+  {
+    "city": "Dobroszyce",
+    "county": "Oleśnica",
+    "name": "Szkoła Podstawowa im. Ireny Sendlerowej w Dobroszycach",
+    "number": "#343",
+    "province": "dolnośląskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Paniówki",
+    "county": "Gliwice",
+    "name": "Zespół Szkolno - Przedszkolny w Paniówkach",
+    "number": "#344",
+    "province": "śląskie",
+    "type": "Zespół szkół/placówek"
+  },
+  {
+    "city": "Krzesławice",
+    "county": "Kraków",
+    "name": "Szkoła Podstawowa im. Tadeusza Kościuszki w Krzesławicach",
+    "number": "#345",
+    "province": "małopolskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Chojnów",
+    "county": "Legnica",
+    "name": "Przedszkole Miejskie nr 1 w Chojnowie",
+    "number": "#346",
+    "province": "dolnośląskie",
+    "type": "Przedszkole"
+  },
+  {
+    "city": "Wrocław",
+    "county": "Wrocław",
+    "name": "Niepubliczna Szkołą Podstawowa Specjalna \"Niebieska Kokardka\"",
+    "number": "#347",
+    "province": "dolnośląskie",
+    "type": "Inna placówka oświatowa"
+  },
+  {
+    "city": "Cedry Małe",
+    "county": "Gdańsk",
+    "name": "Przedszkole Samorządowe nr 2 Cedrach Małych",
+    "number": "#348",
+    "province": "pomorskie",
+    "type": "Przedszkole"
+  },
+  {
+    "city": "Kraków",
+    "county": "Kraków",
+    "name": "Przedszkole Prywatne \"Guzikowo\" w Krakowie",
+    "number": "#349",
+    "province": "małopolskie",
+    "type": "Przedszkole"
+  },
+  {
+    "city": "Grodków",
+    "county": "Brzeg",
+    "name": "Publiczna Szkoła Podstawowa nr 1 im. Mikołaja Kopernika w Grodkowie",
+    "number": "#350",
+    "province": "opolskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Sędzin",
+    "county": "Toruń",
+    "name": "Szkoła Podstawowa im. Orła Białego w Sędzinie",
+    "number": "#351",
+    "province": "kujawsko-pomorskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Żywocice",
+    "county": "Kędzierzyn-Koźle",
+    "name": "Publiczna Szkoła Podstawowa im. Jana Pawła II w Żywocicach",
+    "number": "#352",
+    "province": "opolskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Brochów",
+    "county": "Sochaczew",
+    "name": "Szkoła Podstawowa im. Fryderyka Chopina w Brochowie",
+    "number": "#353",
+    "province": "mazowieckie",
+    "type": "Inna placówka oświatowa"
+  },
+  {
+    "city": "Warszawa",
+    "county": "Warszawa",
+    "name": "Szkoła Podstawowa nr 158 im. Jana Kilińskiego",
+    "number": "#354",
+    "province": "mazowieckie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Gdańsk",
+    "county": "Gdańsk",
+    "name": "VIII Liceum Ogólnokształcące im. KEN w Gdańsku",
+    "number": "#355",
+    "province": "pomorskie",
+    "type": "Szkoła ponadpodstawowa"
+  },
+  {
+    "city": "Karczew",
+    "county": "Otwock",
+    "name": "Przedszkole nr 3 Ługuś w Karczewie",
+    "number": "#356",
+    "province": "mazowieckie",
+    "type": "Przedszkole"
+  },
+  {
+    "city": "Wrocław",
+    "county": "Wrocław",
+    "name": "Szkoła Podstawowa Nr 10 we Wrocławiu",
+    "number": "#357a",
+    "province": "dolnośląskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Wrocław",
+    "county": "Wrocław",
+    "name": "Zespół szkolno-przedszkolny nr 3 we Wrocławiu",
+    "number": "#357b",
+    "province": "dolnośląskie",
+    "type": "Zespół szkół/placówek"
+  },
+  {
+    "city": "Zagórze",
+    "county": "Sosnowiec",
+    "name": "Zespół Szkolno-Przedszkolny w Zagórzu",
+    "number": "#358",
+    "province": "śląskie",
+    "type": "Zespół szkół/placówek"
+  },
+  {
+    "city": "Częstochowa",
+    "county": "Częstochowa",
+    "name": "Szkoła Podstawowa nr 14 im. H. Sienkiewicza w Częstochowie",
+    "number": "#359",
+    "province": "śląskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Śrem",
+    "county": "Śrem",
+    "name": "Szkoła Podstawowa nr 4 im. Marii Konopnickiej w Śremie",
+    "number": "#360",
+    "province": "wielkopolskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Rzeplin",
+    "county": "Grójec",
+    "name": "Szkoła Podstawowa im. Jana Pawła II w Rzeplinie",
+    "number": "#361",
+    "province": "mazowieckie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Wrocław",
+    "county": "Wrocław",
+    "name": "Szkoła Podstawowa nr 4 im. gen. Stanisława Maczka we Wrocławiu",
+    "number": "#362",
+    "province": "dolnośląskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Szczecin",
+    "county": "Szczecin",
+    "name": "Szkoła Podstawowa \"Słoneczna\" w Szczecinie",
+    "number": "#363",
+    "province": "zachodniopomorskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Tarnowskie Góry",
+    "county": "Tarnowskie Góry",
+    "name": "Szkoła Podstawowa z Oddziałami Integracyjnymi nr 13 w Tarnowskich Górach",
+    "number": "#364",
+    "province": "śląskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Gliwice",
+    "county": "Gliwice",
+    "name": "Szkoła Podstawowa Żar w Gliwicach",
+    "number": "#365",
+    "province": "śląskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Warszawa",
+    "county": "Warszawa",
+    "name": "Szkoła Podstawowa nr 203 im. Antoniny i Jana Żabińskich w Warszawie",
+    "number": "#366",
+    "province": "mazowieckie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Sucha",
+    "county": "Żywiec",
+    "name": "Zespół Placówek Oświatowych w Suchej",
+    "number": "#367",
+    "province": "śląskie",
+    "type": "Zespół szkół/placówek"
+  },
+  {
+    "city": "Giżycko",
+    "county": "Giżycko",
+    "name": "Szkoła Podstawowa nr 1 im. Jana Pawła II w Giżycku",
+    "number": "#368",
+    "province": "warmińsko-mazurskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Gdańsk",
+    "county": "Gdańsk",
+    "name": "\"Ogród Frre\" w Gdańsku",
+    "number": "#369",
+    "province": "pomorskie",
+    "type": "Inna placówka oświatowa"
+  },
+  {
+    "city": "Staniszewo",
+    "county": "Kartuzy",
+    "name": "Szkoła Podstawowa im. gen. Józefa Piłsudzkiego w Staniszewie",
+    "number": "#370",
+    "province": "pomorskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Rychnowy",
+    "county": "Inowrocław",
+    "name": "Zespół Szkolno- Przedszkolny w Rychnowach",
+    "number": "#371",
+    "province": "kujawsko-pomorskie",
+    "type": "Zespół szkół/placówek"
+  },
+  {
+    "city": "Nowy Targ",
+    "county": "Nowy Targ",
+    "name": "Szkoła Podstawowa nr 5 w Nowym Targu",
+    "number": "#372",
+    "province": "małopolskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Lisewo",
+    "county": "Chełmno",
+    "name": "Szkoła Podstawowa w Lisewie",
+    "number": "#373",
+    "province": "mazowieckie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Koprzywnica",
+    "county": "Sandomierz",
+    "name": "Niepubliczna Szkoła Podstawowa z oddziałami przedszkolnymi w Sierosławiu",
+    "number": "#374",
+    "province": "świętokrzyskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Tuchomie",
+    "county": "Bytów",
+    "name": "Szkoła Podstawowa w Tuchomiu",
+    "number": "#375",
+    "province": "pomorskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Świętochłowice",
+    "county": "Świętochłowice",
+    "name": "Zespół Szkół Ogólnokształcących w Świętochłowicach",
+    "number": "#376",
+    "province": "śląskie",
+    "type": "Zespół szkół/placówek"
+  },
+  {
+    "city": "Subkowy",
+    "county": "Tczew",
+    "name": "Zespół Szkół w Subkowach",
+    "number": "#377",
+    "province": "pomorskie",
+    "type": "Zespół szkół/placówek"
+  },
+  {
+    "city": "Blachownia",
+    "county": "Częstochowa",
+    "name": "Szkoła Podstawowa nr 1 im. Marii Konopnickiej w Blachowni",
+    "number": "#378",
+    "province": "śląskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Niepołomice",
+    "county": "Wieliczka",
+    "name": "Szkoła Podstawowa nr 1 im. Tadeusza Kościuszki w Niepołomicach",
+    "number": "#379",
+    "province": "małopolskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Kłobuck",
+    "county": "Kłobuck",
+    "name": "Szkoła Podstawowa nr 2 im. A. Mickiewicza w Kłobucku",
+    "number": "#380",
+    "province": "śląskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Janów Lubelski",
+    "county": "Janów Lubelski",
+    "name": "Zespół Szkół w Janowie Lubelskim",
+    "number": "#381",
+    "province": "lubelskie",
+    "type": "Zespół szkół/placówek"
+  },
+  {
+    "city": "Kościerzyna",
+    "county": "Kościerzyna",
+    "name": "Powiatowy Zespół Szkół nr 1 w Kościerzynie",
+    "number": "#382",
+    "province": "pomorskie",
+    "type": "Zespół szkół/placówek"
+  },
+  {
+    "city": "Smólnik",
+    "county": "Włocławek",
+    "name": "Szkoła Podstawowa z Oddziałami Integracyjnymi w Smólniku",
+    "number": "#383",
+    "province": "kujawsko-pomorskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Białystok",
+    "county": "Białystok",
+    "name": "CUBUS Szkoła Matematyki w Białymstoku",
+    "number": "#384",
+    "province": "podlaskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Otwock Wielki",
+    "county": "Otwock",
+    "name": "Zespół Szkolno-Przedszkolny w Otwocku Wielkim",
+    "number": "#385",
+    "province": "mazowieckie",
+    "type": "Zespół szkół/placówek"
+  },
+  {
+    "city": "Żórawina",
+    "county": "Wrocław",
+    "name": "Szkoła Podstawowa w Żórawinie",
+    "number": "#386",
+    "province": "dolnośląskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Toruń",
+    "county": "Toruń",
+    "name": "Szkoła Podstawowa nr 13 im. Jana Pawła II w Toruniu",
+    "number": "#387",
+    "province": "kujawsko-pomorskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Gruszów",
+    "county": "Dąbrowa Tarnowska",
+    "name": "Szkoła Podstawowa w Gruszowie",
+    "number": "#388a",
+    "province": "małopolskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Gruszów",
+    "county": "Dąbrowa Tarnowska",
+    "name": "Samorządowe Przedszkole w Gruszowie",
+    "number": "#388b",
+    "province": "małopolskie",
+    "type": "Przedszkole"
+  },
+  {
+    "city": "Rokietnica",
+    "county": "Poznań",
+    "name": "Szkoła Podstawowa im. Jana Brzechwy w Rokietnicy",
+    "number": "#389",
+    "province": "wielkopolskie",
+    "type": "Inna placówka oświatowa"
+  },
+  {
+    "city": "Panda",
+    "county": "Warszawa",
+    "name": "Przedszkole Niepubliczne Panda",
+    "number": "#390",
+    "province": "mazowieckie",
+    "type": "Przedszkole"
+  },
+  {
+    "city": "Kadłub",
+    "county": "Strzelce Opolskie",
+    "name": "Zespół Placówek Oświatowych w Kadłubie",
+    "number": "#391",
+    "province": "opolskie",
+    "type": "Zespół szkół/placówek"
+  },
+  {
+    "city": "Warszawa",
+    "county": "Warszawa",
+    "name": "Szkoła Podstawowa nr 187 im. Adama Mickiewicza",
+    "number": "#392",
+    "province": "mazowieckie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Słupica",
+    "county": "Włoszczowa",
+    "name": "Publiczna Szkoła Podstawowa im. Jana Brzechwy w Słupicy",
+    "number": "#393",
+    "province": "świętokrzyskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Wiele",
+    "county": "Kościerzyna",
+    "name": "Szkoła Podstawowa im. Wicka Rogali w Wielu",
+    "number": "#394",
+    "province": "pomorskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Łęczyce",
+    "county": "Wejherowo",
+    "name": "Zespół Szkolno-Przedszkolny w Łęczycach",
+    "number": "#395",
+    "province": "pomorskie",
+    "type": "Zespół szkół/placówek"
+  },
+  {
+    "city": "Romanów Dolny",
+    "county": "Łowicz",
+    "name": "Szkoła Podstawowa im. 67 Pułku Piechoty w Romanowie Dolnym",
+    "number": "#396",
+    "province": "łódzkie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Gorczenica",
+    "county": "Bydgoszcz",
+    "name": "Szkoła Podstawowa im. Królewny Anny Wazówny w Gorczenicy",
+    "number": "#397",
+    "province": "kujawsko-pomorskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Oleśnica",
+    "county": "Oleśnica",
+    "name": "Szkoła Podstawowa nr 7 im. Armii Krajowej w Oleśnicy",
+    "number": "#398",
+    "province": "dolnośląskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Lublin",
+    "county": "Lublin",
+    "name": "Szkoła Podstawowa Sióstr Urszulanek UR w Lublinie",
+    "number": "#399",
+    "province": "lubelskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Warszawa",
+    "county": "Warszawa",
+    "name": "Szkoła Podstawowa im. K.K Baczyńskiego w Warszawie",
+    "number": "#400",
+    "province": "mazowieckie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Uwieliny",
+    "county": "Grodzisk Mazowiecki",
+    "name": "Szkoła Podstawowa im. Żołnierzy Armii Krajowej- Bohaterów Lasów Chojnowskich w Uwielinach",
+    "number": "#401",
+    "province": "mazowieckie",
+    "type": "Inna placówka oświatowa"
+  },
+  {
+    "city": "Szprotawa",
+    "county": "Żagań",
+    "name": "Szkoła Podstawowa nr 2 im. Wojska Polskiego w Szprotawie",
+    "number": "#402",
+    "province": "lubuskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Pcim",
+    "county": "Myślenice",
+    "name": "Szkoła Podstawowa nr 3 im. Armii Krajowej w Pcimiu",
+    "number": "#403",
+    "province": "małopolskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Witnica",
+    "county": "Gorzów Wielkopolski",
+    "name": "Szkoła Podstawowa nr 2 w Witnicy",
+    "number": "#404",
+    "province": "lubuskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Warszawa",
+    "county": "Warszawa",
+    "name": "Szkoła Podstawowa Specjalna nr 282 w Warszawie",
+    "number": "#405",
+    "province": "mazowieckie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Bydgoszcz",
+    "county": "Bydgoszcz",
+    "name": "Zespół Szkół i Placówek nr 1 w Bydgoszczy - Szkoła Podstawowa nr 62 w Bydgoszczy",
+    "number": "#406",
+    "province": "kujawsko-pomorskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Piastów",
+    "county": "Pruszków",
+    "name": "Przedszkole Miejskie nr 3 z Oddziałami Integracyjnymi w Piastowie",
+    "number": "#407",
+    "province": "mazowieckie",
+    "type": "Przedszkole"
+  },
+  {
+    "city": "Jastrzębie Zdrój",
+    "county": "Jastrzębie-Zdrój",
+    "name": "Publiczne Przedszkole nr 18 w Jastrzębiu-Zdroju",
+    "number": "#408",
+    "province": "śląskie",
+    "type": "Przedszkole"
+  },
+  {
+    "city": "Gdańsk",
+    "county": "Gdańsk",
+    "name": "Szkoła Podstawowa nr 55 im. J. Heweliusza w Gdańsku",
+    "number": "#409",
+    "province": "pomorskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Poznań",
+    "county": "Poznań",
+    "name": "Szkoła Podstwowa nr 80 im. Kornela Makuszyńskiego w Poznaniu",
+    "number": "#410",
+    "province": "wielkopolskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Tarnowskie Góry",
+    "county": "Tarnowskie Góry",
+    "name": "Szkoła Podstawowa nr 14 w Tarnowskich Górach",
+    "number": "#411",
+    "province": "śląskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Skierbieszów",
+    "county": "Zamość",
+    "name": "Szkoła Podstawowa im. Ignacego Mościckiego w Skierbieszowie",
+    "number": "#412",
+    "province": "lubelskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Gdańsk",
+    "county": "Gdańsk",
+    "name": "Szkoła Podstawowa nr 30 w Gdańsku",
+    "number": "#413",
+    "province": "pomorskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Szczecin",
+    "county": "Szczecin",
+    "name": "Szkoła Podstawowa nr 1 im. Bolesława Chrobrego w Szczecinie",
+    "number": "#414",
+    "province": "zachodniopomorskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Zamień",
+    "county": "Pruszków",
+    "name": "Gminne Przedszkole w Zamieniu",
+    "number": "#415",
+    "province": "mazowieckie",
+    "type": "Przedszkole"
+  },
+  {
+    "city": "Gdynia",
+    "county": "Gdynia",
+    "name": "Szkoła Podstawowa nr 33 im. Obrońców Kępy Oksywskiej w Gdyni",
+    "number": "#416",
+    "province": "pomorskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Wola Krakowiańska",
+    "county": "Rzeszów",
+    "name": "Szkoła Podstawowa in. bł. ks. B. Markiewicza w Woli Krakowiańskiej",
+    "number": "#417",
+    "province": "mazowieckie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Szumowo",
+    "county": "Zambrów",
+    "name": "Zespół Szkół w Szumowie",
+    "number": "#418",
+    "province": "podlaskie",
+    "type": "Zespół szkół/placówek"
+  },
+  {
+    "city": "Płock",
+    "county": "Płock",
+    "name": "Miejskie Przedszkole z Oddziałami Integracyjnymi Nr 16 w Płocku",
+    "number": "#419",
+    "province": "mazowieckie",
+    "type": "Przedszkole"
+  },
+  {
+    "city": "Piaseczno",
+    "county": "Piaseczno",
+    "name": "Zespół Szkolno-Przedszkolny w Piasecznie - Przedszkole nr 5",
+    "number": "#420",
+    "province": "mazowieckie",
+    "type": "Przedszkole"
+  },
+  {
+    "city": "Legionowo",
+    "county": "Legionowo",
+    "name": "Szkoła Podstawowa nr 3 im. Janusza Kusocińskiego w Legionowie",
+    "number": "#421",
+    "province": "mazowieckie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Gniezno",
+    "county": "Gniezno",
+    "name": "Szkoła Podstawowa nr 7 im. Powstańców Wielkopolskich 1918/1919 w Gnieźnie",
+    "number": "#422",
+    "province": "wielkopolskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Warszawa",
+    "county": "Warszawa",
+    "name": "Szkoła Podstawowa z Oddziałami Integracyjnymi nr 280 im. Tytusa Chałubińskiego w Warszawie",
+    "number": "#423",
+    "province": "mazowieckie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Chomęcice",
+    "county": "Poznań",
+    "name": "Szkoła Podstawowa im. Arkadego Fiedlera w Chomęcicach",
+    "number": "#424",
+    "province": "wielkopolskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Włynkówko",
+    "county": "Słupsk",
+    "name": "Przedszkole Ekologiczno- Językowe Poziomka we Włynkówku",
+    "number": "#425",
+    "province": "pomorskie",
+    "type": "Przedszkole"
+  },
+  {
+    "city": "Gdańsk",
+    "county": "Gdańsk",
+    "name": "Zespół Szkolno-Przedszkolny nr 6 w Gdańsku",
+    "number": "#426",
+    "province": "pomorskie",
+    "type": "Zespół szkół/placówek"
+  },
+  {
+    "city": "Gdańsk",
+    "county": "Gdańsk",
+    "name": "Szkoła Podstawowa nr 9 przy podmiocie leczniczym Copernicus w Gdańsku",
+    "number": "#427",
+    "province": "pomorskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Luboń",
+    "county": "Poznań",
+    "name": "Szkoła Podstawowa nr 5 im. Jana Pawła II w Luboniu",
+    "number": "#428",
+    "province": "wielkopolskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Leżajsk",
+    "county": "Leżajsk",
+    "name": "Specjalny Ośrodek Szkolno - Wychowawczy im. św. Jana Pawła II w Leżajsku",
+    "number": "#429",
+    "province": "podkarpackie",
+    "type": "Placówka specjalna"
+  },
+  {
+    "city": "Gdańsk",
+    "county": "Gdańsk",
+    "name": "Szkoła Podstawowa nr 52 im. Tadeusza Kościuszki w Gdańsku",
+    "number": "#430",
+    "province": "pomorskie",
+    "type": "Inna placówka oświatowa"
+  },
+  {
+    "city": "Siemianowice Śląskie",
+    "county": "Siemianowice Śląskie",
+    "name": "Zespół Szkolno Przedszkolny w Siemianowicach Śląskich",
+    "number": "#431",
+    "province": "śląskie",
+    "type": "Zespół szkół/placówek"
+  },
+  {
+    "city": "Warszawa",
+    "county": "Warszawa",
+    "name": "Szkoła Podstawowa nr 303 im. Fryderyka Chopina przy Zespole Szkół nr 129 w Warszawie",
+    "number": "#432",
+    "province": "mazowieckie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Wieliczka",
+    "county": "Wieliczka",
+    "name": "Filia Biblioteczna w Śledziejowicach Mediateki - Biblioteki Miejskiej w Wieliczce",
+    "number": "#433",
+    "province": "małopolskie",
+    "type": "Inna placówka oświatowa"
+  },
+  {
+    "city": "Kołobrzeg",
+    "county": "Kołobrzeg",
+    "name": "Szkoła Podstawowa nr 1 z Oddziałami Integracyjnymi im. Bolesława Chrobrego w Kołobrzegu",
+    "number": "#434",
+    "province": "zachodniopomorskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Zelów",
+    "county": "Bełchatów",
+    "name": "Przedszkole Samorządowe nr 4 im. Jana Brzechwy w Zelowie",
+    "number": "#435",
+    "province": "łódzkie",
+    "type": "Przedszkole"
+  },
+  {
+    "city": "Drezdenko",
+    "county": "Strzelce-Drezdenko",
+    "name": "Szkoła Podstawowa im. Janusza Korczaka w Drezdenku",
+    "number": "#436",
+    "province": "lubuskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Nagoszyn",
+    "county": "Dębica",
+    "name": "Zespół Szkół w Nagoszynie",
+    "number": "#437",
+    "province": "podkarpackie",
+    "type": "Zespół szkół/placówek"
+  },
+  {
+    "city": "Nowe Kawkowo",
+    "county": "Olsztyn",
+    "name": "Szkoła Podstawowa w Nowym Kawkowie",
+    "number": "#438",
+    "province": "warmińsko-mazurskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Krasnosielc",
+    "county": "Maków Mazowiecki",
+    "name": "Szkoła Podstawowa im. Edwarda Rolskiego w Drążdżewie",
+    "number": "#439",
+    "province": "mazowieckie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Gliwice",
+    "county": "Gliwice",
+    "name": "Zespół Szkolno-Przedszkolny nr 17 w Gliwicach",
+    "number": "#440",
+    "province": "śląskie",
+    "type": "Zespół szkół/placówek"
+  },
+  {
+    "city": "Zgorzała",
+    "county": "Pruszków",
+    "name": "Gminne Przedszkole w Zamieniu z oddziałami w Zgorzale",
+    "number": "#441",
+    "province": "mazowieckie",
+    "type": "Przedszkole"
+  },
+  {
+    "city": "Biała Rawska",
+    "county": "Rawa Mazowiecka",
+    "name": "Szkoła Podstawowa im. Bohaterów Powstania Warszawskiego w Błażejewicach",
+    "number": "#442",
+    "province": "łódzkie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Bydgoszcz",
+    "county": "Bydgoszcz",
+    "name": "Zespół Szkół nr 33 w Bydgoszczy dla Dzieci i Młodzieży Przewlekle Chorej",
+    "number": "#443",
+    "province": "kujawsko-pomorskie",
+    "type": "Zespół szkół/placówek"
+  },
+  {
+    "city": "Krajenka",
+    "county": "złotowski",
+    "name": "Publiczna Szkoła Podstawowa im. Marii Konopnickiej w Krajence",
+    "number": "#444",
+    "province": "wielkopolskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Stryków",
+    "county": "Zgierz",
+    "name": "Szkoła Podstawowa im. Henryka Sienkiewicza w Niesułkowie",
+    "number": "#445",
+    "province": "łódzkie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Łódź",
+    "county": "Łódź",
+    "name": "Szkoła Podstawowa nr 204 im. Stefana Kardynała Wyszyńskiego w Łodzi",
+    "number": "#446",
+    "province": "łódzkie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Bakałarzewo",
+    "county": "Suwałki",
+    "name": "Szkoła Podstawowa im. Mikołaja Bakałarza w Bakałarzewie",
+    "number": "#447",
+    "province": "podlaskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Siemianowice Śląskie",
+    "county": "Siemianowice Śląskie",
+    "name": "Szkoła Podstawowa nr 16 im. B. Prusa w Siemianowicach Śląskich",
+    "number": "#448",
+    "province": "śląskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Kraków",
+    "county": "Kraków",
+    "name": "Szkoła Podstawowa nr 155 im. Świętej Jadwigi Królowej w Krakowie",
+    "number": "#449",
+    "province": "małopolskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Wieliczka",
+    "county": "Wieliczka",
+    "name": "Mediateka-Biblioteka Miejska w Wieliczce, filia Koźmice Wielkie",
+    "number": "#450",
+    "province": "małopolskie",
+    "type": "Biblioteka/Mediateka"
+  },
+  {
+    "city": "Bytom",
+    "county": "Bytom",
+    "name": "Zespół Szkół Specjalnych Nr 3 w Bytomiu",
+    "number": "#451",
+    "province": "śląskie",
+    "type": "Zespół szkół/placówek"
+  },
+  {
+    "city": "Racibórz",
+    "county": "Racibórz",
+    "name": "Specjalny Ośrodek Szkolno-Wychowawczy dla Niesłyszących i Słabosłyszących w Racibórz",
+    "number": "#452",
+    "province": "śląskie",
+    "type": "Placówka specjalna"
+  },
+  {
+    "city": "Warszawa",
+    "county": "Warszawa",
+    "name": "Prywatna Szkoła Podstawowa nr 62 im. Joanny Kolasińskiej w Warszawie",
+    "number": "#453",
+    "province": "mazowieckie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Trzebiatów",
+    "county": "Gryfice",
+    "name": "Szkoła Podstawowa nr 1 z Oddziałami Integracyjnymi im. Jana Kochanowskiego w Trzebiatowie",
+    "number": "#454",
+    "province": "zachodniopomorskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Mrągowo",
+    "county": "Mrągowo",
+    "name": "Szkoła Podstawowa w Szestnie",
+    "number": "#455",
+    "province": "warmińsko-mazurskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Warszawa",
+    "county": "Warszawa",
+    "name": "Przedszkole nr 140 w Warszawie",
+    "number": "#456",
+    "province": "mazowieckie",
+    "type": "Przedszkole"
+  },
+  {
+    "city": "Warszawa",
+    "county": "Warszawa",
+    "name": "Szkoła Podstawowa nr 397 im. Bohaterów Olszynki Grochowskiej w Warszawie",
+    "number": "#457",
+    "province": "mazowieckie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Żołynia",
+    "county": "Łańcut",
+    "name": "Szkoła Podstawowa im. Św. Jana Kantego w Biedaczowie",
+    "number": "#458",
+    "province": "podkarpackie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Olsztyn",
+    "county": "Olsztyn",
+    "name": "Szkoła Podstawowa nr 12 w Olsztynie",
+    "number": "#459",
+    "province": "warmińsko-mazurskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Tenczynek",
+    "county": "Kraków",
+    "name": "Szkoła Podstawowa im. Władysława Jagiełły w Tenczynku",
+    "number": "#460",
+    "province": "małopolskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Marki",
+    "county": "Wołomin",
+    "name": "Szkoła Podstawowa nr 3 w Markach",
+    "number": "#461",
+    "province": "mazowieckie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Szczecinek",
+    "county": "Szczecinek",
+    "name": "Szkoła Podstawowa nr 4 im. Armii Krajowej w Szczecinku",
+    "number": "#462",
+    "province": "zachodniopomorskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Andrzejewo",
+    "county": "Ostrów Mazowiecka",
+    "name": "Szkoła Podstawowa w Starej Ruskołęce",
+    "number": "#463",
+    "province": "mazowieckie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Łódź",
+    "county": "Łódź",
+    "name": "Szkoła Podstawowa nr 175 im. Henryka Ryla w Łodzi",
+    "number": "#464",
+    "province": "łódzkie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Szczytno",
+    "county": "Szczytno",
+    "name": "Miejskie Przedszkole Nr 9 Kubuś Puchatek w Szczytnie",
+    "number": "#465",
+    "province": "warmińsko-mazurskie",
+    "type": "Przedszkole"
+  },
+  {
+    "city": "Nałęczów",
+    "county": "Puławy",
+    "name": "Szkoła Podstawowa im. Adama Mickiewicza w Piotrowicach",
+    "number": "#466",
+    "province": "lubelskie",
+    "type": "Inna placówka oświatowa"
+  },
+  {
+    "city": "Gdynia",
+    "county": "Gdynia",
+    "name": "Niepubliczne Przedszkole Promyczek w Gdyni",
+    "number": "#467",
+    "province": "pomorskie",
+    "type": "Przedszkole"
+  },
+  {
+    "city": "Poznań",
+    "county": "Poznań",
+    "name": "Szkoła Podstawowa nr 5 im. Romualda Traugutta w Poznaniu",
+    "number": "#468",
+    "province": "wielkopolskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Kraków",
+    "county": "Kraków",
+    "name": "Szkoła Podstawowa z Oddziałami Integracyjnymi nr 22 im. mjr H. Sucharskiego w Krakowie",
+    "number": "#469",
+    "province": "małopolskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Wadowice Górne",
+    "county": "Mielec",
+    "name": "Szkoła Podstawowa im. ks. J. Początka w Wadowicach Dolnych",
+    "number": "#470",
+    "province": "podkarpackie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Kraków",
+    "county": "Kraków",
+    "name": "Szkoła Podstawowa nr 149 im. Marszałka Józefa Piłsudskiego w Krakowie",
+    "number": "#471",
+    "province": "małopolskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Warszawa",
+    "county": "Warszawa",
+    "name": "Zespół szkolno przedszkolny nr 12 Warszawa",
+    "number": "#472",
+    "province": "mazowieckie",
+    "type": "Zespół szkół/placówek"
+  },
+  {
+    "city": "Białystok",
+    "county": "Białystok",
+    "name": "Zespół Szkół Ogólnokształcących i Technicznych w Białymstoku",
+    "number": "#473",
+    "province": "podlaskie",
+    "type": "Zespół szkół/placówek"
+  },
+  {
+    "city": "Kielce",
+    "county": "Kielce",
+    "name": "Szkoła Podstawowa nr 13 im. W. Jagiełły z Oddziałami Dwujęzycznymi w Kielcach - biblioteka",
+    "number": "#474",
+    "province": "świętokrzyskie",
+    "type": "Biblioteka/Mediateka"
+  },
+  {
+    "city": "Wieliczka",
+    "county": "Wieliczka",
+    "name": "Szkoła Podstawowa im. Kapitan AK Jadwigi Beaupre w Sygneczowie - przedszkole",
+    "number": "#475a",
+    "province": "małopolskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Wieliczka",
+    "county": "Wieliczka",
+    "name": "Szkoła Podstawowa im. Kapitan AK Jadwigi Beaupre w Sygneczowie",
+    "number": "#475b",
+    "province": "małopolskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Spytkowice",
+    "county": "Wadowice",
+    "name": "Szkoła Podstawowa nr 1 im. Por. Tadeusza Stefaniszyna w Spytkowicach",
+    "number": "#476",
+    "province": "małopolskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Szczęsne",
+    "county": "Płońsk",
+    "name": "Szkoła Podstawowa w Szczęsnem",
+    "number": "#477",
+    "province": "mazowieckie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Turowo",
+    "county": "Szczecinek",
+    "name": "Szkoła Podstawowa im. Tadeusza Kościuszki w Turowie",
+    "number": "#478",
+    "province": "zachodniopomorskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Bytom",
+    "county": "Bytom",
+    "name": "Szkoła Podstawowa nr 28 im. Królowej Jadwigi w Bytomiu",
+    "number": "#479",
+    "province": "śląskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Białostoczek",
+    "county": "Białystok",
+    "name": "Szkoła Podstawowa im. Wspólnoty Polskiej w Białostoczku /k. Kuria",
+    "number": "#480",
+    "province": "podlaskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Kraków",
+    "county": "Kraków",
+    "name": "Szkoła Podstawowa nr 85 im. ks. K. Jancarza w Krakowie",
+    "number": "#481",
+    "province": "małopolskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Żory",
+    "county": "Żory",
+    "name": "Przedszkole nr 4 im. Marii Konopnickiej w Żorach",
+    "number": "#482",
+    "province": "śląskie",
+    "type": "Przedszkole"
+  },
+  {
+    "city": "Warszawa",
+    "county": "Warszawa",
+    "name": "Szkoła Podstawowa nr 402 im. Haliny Konopackiej w Warszawie",
+    "number": "#483",
+    "province": "mazowieckie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Rafałówka",
+    "county": "Leżajsk",
+    "name": "Szkoła Podstawowa im. Sybiraków w Rafałówce",
+    "number": "#484",
+    "province": "podkarpackie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Warszawa",
+    "county": "Warszawa",
+    "name": "Szkoła Podstawowa z Oddziałami Integracyjnymi nr 41 im. Żołnierzy Armii Krajowej Grupy Bojowej „Krybar” w Warszawie",
+    "number": "#485",
+    "province": "mazowieckie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Pępowo",
+    "county": "Gostyń",
+    "name": "Szkoła Podstawowa im. ppor.Gdańska 117 Klemensa Wickiego w Pępowie",
+    "number": "#486",
+    "province": "wielkopolskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Szczecin",
+    "county": "Szczecin",
+    "name": "Młodzieżowy Ośrodek Wychowawczy im. Janusza Korczaka w Szczecinie",
+    "number": "#487",
+    "province": "zachodniopomorskie",
+    "type": "Placówka specjalna"
+  },
+  {
+    "city": "Białystok",
+    "county": "Białystok",
+    "name": "Ogólnokształcąca Szkoła Muzyczna I stopnia w Białymstoku",
+    "number": "#488",
+    "province": "podlaskie",
+    "type": "Szkoła ponadpodstawowa"
+  },
+  {
+    "city": "Węglówka",
+    "county": "Myślenice",
+    "name": "Szkoła podstawowa im. św. Józefa w Węglówce",
+    "number": "#489",
+    "province": "małopolskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Opaleniska",
+    "county": "Grójec",
+    "name": "Szkoła Podstawowa im. Gen. Bryg. W. Nowiny-Sawickiego w Opaleniskach",
+    "number": "#490",
+    "province": "mazowieckie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Opoczno",
+    "county": "Opoczno",
+    "name": "Szkoła Podstawowa nr 3 im. Henryka Sienkiewicza w Opocznie",
+    "number": "#491",
+    "province": "łódzkie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Ruda Śląska",
+    "county": "Ruda Śląska",
+    "name": "Miejskie Przedszkole nr 9 im. Wesołej Rodzinki w Rudzie Śląskiej",
+    "number": "#492",
+    "province": "śląskie",
+    "type": "Przedszkole"
+  },
+  {
+    "city": "Rogoźnik",
+    "county": "Będzin",
+    "name": "Szkoła Podstawowa im. Juliusza Słowackiego w Rogoźniku",
+    "number": "#493",
+    "province": "śląskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Kraków",
+    "county": "Kraków",
+    "name": "Szkoła Podstawowa nr 142 im. Tadeusza Kościuszki w Krakowie",
+    "number": "#494",
+    "province": "małopolskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Łódź",
+    "county": "Łódź",
+    "name": "Przedszkole Miejskie nr 206 z Oddziałami Integracyjnymi w Łodzi",
+    "number": "#495",
+    "province": "łódzkie",
+    "type": "Przedszkole"
+  },
+  {
+    "city": "Nałęczów",
+    "county": "Puławy",
+    "name": "Szkoła Podstawowa im. B. Prusa w Sadurkach",
+    "number": "#496",
+    "province": "lubelskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Węgrzce Wielkie",
+    "county": "Wieliczka",
+    "name": "Filia biblioteczna w Węgrzcach Wielkich, Mediateka - Biblioteka Miejska w Wieliczce",
+    "number": "#497",
+    "province": "małopolskie",
+    "type": "Biblioteka/Mediateka"
+  },
+  {
+    "city": "Łódź",
+    "county": "Łódź",
+    "name": "Niepubliczna Szkoła Podstawowa Fundacji Oświatowej „Nasza Szkoła” w Łodzi",
+    "number": "#498",
+    "province": "łódzkie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Kielce",
+    "county": "Kielce",
+    "name": "Przedszkole Samorządowe Nr 3 w Kielcach",
+    "number": "#499",
+    "province": "świętokrzyskie",
+    "type": "Przedszkole"
+  },
+  {
+    "city": "Rumia",
+    "county": "Wejherowo",
+    "name": "Szkoła Podstawowa KREATYWNI w Rumi",
+    "number": "#500",
+    "province": "pomorskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "STAWIGUDA",
+    "county": "Olsztyn",
+    "name": "Zespół Szkolno Przedszkolny im. Olimpijczyków Polskich w Stawigudzie",
+    "number": "#501",
+    "province": "warmińsko-mazurskie",
+    "type": "Zespół szkół/placówek"
+  },
+  {
+    "city": "Lębork",
+    "county": "Lębork",
+    "name": "Szkoła Podstawowa nr 5 in. Wojska Polskiego w Lęborku",
+    "number": "#502",
+    "province": "pomorskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Gdynia",
+    "county": "Gdynia",
+    "name": "Przedszkole Dzieci Świata w Gdyni",
+    "number": "#503",
+    "province": "pomorskie",
+    "type": "Przedszkole"
+  },
+  {
+    "city": "Grabiny-Zameczek",
+    "county": "Gdańsk",
+    "name": "Zespół Szkolno-Przedszkolny w Grabinach-Zameczku",
+    "number": "#504",
+    "province": "pomorskie",
+    "type": "Zespół szkół/placówek"
+  },
+  {
+    "city": "Lębork",
+    "county": "Lębork",
+    "name": "Społeczna Językowa Szkoła Podstawowa LTO w Lęborku",
+    "number": "#505",
+    "province": "pomorskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Pajęczno",
+    "county": "Pajęczno",
+    "name": "Szkoła Podstawowa nr 1 im. Juliana Tuwima w Pajęcznie",
+    "number": "#506",
+    "province": "łódzkie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Chudów",
+    "county": "Gliwice",
+    "name": "Zespół szkolno-przedszkolny w Chudowie",
+    "number": "#507",
+    "province": "śląskie",
+    "type": "Zespół szkół/placówek"
+  },
+  {
+    "city": "Białośliwie",
+    "county": "Piła",
+    "name": "Szkoła Podstawowa im. Wiktora Kaji w Białośliwiu",
+    "number": "#508",
+    "province": "wielkopolskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Margonin",
+    "county": "Chodzież",
+    "name": "Szkoła Podstawowa im. Mikołaja Kopernika w Margoninie",
+    "number": "#509",
+    "province": "wielkopolskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Kolno",
+    "county": "Kolno",
+    "name": "Szkoła podstawowa nr 2 im. Henryka Sienkiewicza w Kolnie",
+    "number": "#510",
+    "province": "podlaskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Gdańsk",
+    "county": "Gdańsk",
+    "name": "Przedszkole Wielka Przygoda w Gdańsku",
+    "number": "#511",
+    "province": "pomorskie",
+    "type": "Przedszkole"
+  },
+  {
+    "city": "Słopnice",
+    "county": "Limanowa",
+    "name": "Zespół Szkoły Podstawowej i Przedszkola w Słopnicach",
+    "number": "#512",
+    "province": "małopolskie",
+    "type": "Zespół szkół/placówek"
+  },
+  {
+    "city": "Korsze",
+    "county": "Kętrzyn",
+    "name": "Szkoła Podstawowa im. M. Kopernika w Łankiejmach",
+    "number": "#513",
+    "province": "warmińsko-mazurskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Czeladz",
+    "county": "Będzin",
+    "name": "Szkoła Podstawowa nr 7 im. 1000-lecia Państwa Polskiego w Czeladzi",
+    "number": "#514",
+    "province": "śląskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Marcinkowo",
+    "county": "Mrągowo",
+    "name": "Szkoła Podstawowa w Marcinkowie",
+    "number": "#515",
+    "province": "warmińsko-mazurskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Piecki",
+    "county": "Mrągowo",
+    "name": "Szkoła Podstawowa w Nawiadach",
+    "number": "#516",
+    "province": "warmińsko-mazurskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Oleszyce",
+    "county": "Lubaczów",
+    "name": "Szkoła Podstawowa w Zalesiu",
+    "number": "#517",
+    "province": "podkarpackie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Kraków",
+    "county": "Kraków",
+    "name": "Samorządowe Przedszkole nr 154 im. Janusza Korczaka w Krakowie",
+    "number": "#518",
+    "province": "małopolskie",
+    "type": "Przedszkole"
+  },
+  {
+    "city": "Góra",
+    "county": "Wejherowo",
+    "name": "Szkoła Podstawowa im. Jakuba Wejhera w Górze",
+    "number": "#519",
+    "province": "pomorskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Rzeszów",
+    "county": "Rzeszów",
+    "name": "Szkoła Podstawowa nr 4 im. Stefana „Grota” Roweckiego",
+    "number": "#520",
+    "province": "podkarpackie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Poznań",
+    "county": "Poznań",
+    "name": "Publiczne Przedszkole Wesoła Pszczółka w Poznań",
+    "number": "#521",
+    "province": "wielkopolskie",
+    "type": "Przedszkole"
+  },
+  {
+    "city": "Skomielna Biała",
+    "county": "Myślenice",
+    "name": "Szkoła Podstawowa im. Władysława Orkana w Skomielnej Białej",
+    "number": "#522",
+    "province": "małopolskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Toruń",
+    "county": "Toruń",
+    "name": "Szkoła Podstawowa nr 12 w Toruniu",
+    "number": "#523",
+    "province": "kujawsko-pomorskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Nowy Sącz",
+    "county": "Nowy Sącz",
+    "name": "Szkoła Podstawowa nr 2 im. Jadwigi Królowej w Nowym Sączu",
+    "number": "#524",
+    "province": "małopolskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Trzebinia",
+    "county": "Chrzanów",
+    "name": "Szkoła Podstawowa nr 8 im. Jana Pawła II w Trzebini",
+    "number": "#525",
+    "province": "małopolskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Jedlnia-Letnisko",
+    "county": "Radom",
+    "name": "Publiczna Szkoła Podstawowa im. Henryka Sienkiewicza w Myśliszewicach",
+    "number": "#526",
+    "province": "mazowieckie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Brzezinka",
+    "county": "Oświęcim",
+    "name": "Publiczna Szkoła Podstawowa SPSK im. Św. Antoniego z Padwy w Brzezince",
+    "number": "#527",
+    "province": "małopolskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Duczki",
+    "county": "Wołomin",
+    "name": "Zespół Szkolno- Przedszkolny w Duczkach",
+    "number": "#528",
+    "province": "mazowieckie",
+    "type": "Zespół szkół/placówek"
+  },
+  {
+    "city": "Nowa Wieś Przywidzka",
+    "county": "Gdańsk",
+    "name": "Szkoła Podstawowa w Nowej Wsi Przywidzkiej",
+    "number": "#529",
+    "province": "pomorskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Szczytno",
+    "county": "Szczytno",
+    "name": "Gminne Przedszkole w Szczytnie",
+    "number": "#530",
+    "province": "warmińsko-mazurskie",
+    "type": "Przedszkole"
+  },
+  {
+    "city": "Katowice",
+    "county": "Katowice",
+    "name": "Szkoła Podstawowa nr 58 im. Marii Dąbrowskiej z Oddziałami Integracyjnymi w Katowicach",
+    "number": "#531",
+    "province": "śląskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Szczytno",
+    "county": "Szczytno",
+    "name": "Sportowa Szkoła Podstawowa nr 4 im. Polskich Olimpijczyków w Szczytnie",
+    "number": "#532",
+    "province": "warmińsko-mazurskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Bartoszyce",
+    "county": "Bartoszyce",
+    "name": "Ośrodek Doskonalenia Nauczycieli w Bartoszycach",
+    "number": "#533",
+    "province": "warmińsko-mazurskie",
+    "type": "Inna placówka oświatowa"
+  },
+  {
+    "city": "Orzesze",
+    "county": "Mikołów",
+    "name": "Szkoła Podstawowa nr 6 im. Alfreda Szklarskiego w Orzeszu-Zawiści",
+    "number": "#534",
+    "province": "śląskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Krzeszowice",
+    "county": "Kraków",
+    "name": "Przedszkole Samorzadowe w Krzeszowicach",
+    "number": "#535",
+    "province": "małopolskie",
+    "type": "Przedszkole"
+  },
+  {
+    "city": "Świebodzin",
+    "county": "Świebodzin",
+    "name": "Szkoła Podstawowa nr 3 im. Czesława Niemena w Świebodzinie",
+    "number": "#536",
+    "province": "lubuskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Kraków",
+    "county": "Kraków",
+    "name": "Niepubliczna Szkoła Podstawowa Da Vinci’s International Primary School z Oddziałami Dwujęzycznymi w Krakowie",
+    "number": "#537",
+    "province": "małopolskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Błaszków",
+    "county": "Włoszczowa",
+    "name": "Świetlica wiejska w Błaszkowie",
+    "number": "#538",
+    "province": "świętokrzyskie",
+    "type": "Instytucja kultury"
+  },
+  {
+    "city": "Stąporków",
+    "county": "Końskie",
+    "name": "Publiczna Szkoła Podstawowa nr 2 w Stąporkowie",
+    "number": "#539",
+    "province": "świętokrzyskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Stąporków",
+    "county": "Końskie",
+    "name": "Miejsko Gminny Ośrodek Kultury i Sportu Biblioteka Publiczna w Stąporkowie",
+    "number": "#540",
+    "province": "świętokrzyskie",
+    "type": "Biblioteka/Mediateka"
+  },
+  {
+    "city": "Bogoria",
+    "county": "Staszów",
+    "name": "Gminna Biblioteka Publiczna w Gminnym Ośrodku Kultury w Bogorii",
+    "number": "#541",
+    "province": "świętokrzyskie",
+    "type": "Biblioteka/Mediateka"
+  },
+  {
+    "city": "Wrocław",
+    "county": "Wrocław",
+    "name": "Zespół Szkół nr 16 we Wrocławiu",
+    "number": "#542",
+    "province": "dolnośląskie",
+    "type": "Zespół szkół/placówek"
+  },
+  {
+    "city": "Staszów",
+    "county": "Staszów",
+    "name": "Liceum Ogólnokształcące im. ks. kard. Stefana Wyszyńskiego w Staszowie",
+    "number": "#543",
+    "province": "świętokrzyskie",
+    "type": "Szkoła ponadpodstawowa"
+  },
+  {
+    "city": "Lidzbark Warmiński",
+    "county": "Lidzbark Warmiński",
+    "name": "Miejska Biblioteka Publiczna im. Marcina Kromera w Lidzbarku Warmińskim",
+    "number": "#544",
+    "province": "warmińsko-mazurskie",
+    "type": "Biblioteka/Mediateka"
+  },
+  {
+    "city": "Gdynia",
+    "county": "Gdynia",
+    "name": "Szkoła Podstawowa nr 31 w Gdyni",
+    "number": "#545",
+    "province": "pomorskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Lubin",
+    "county": "Lubin",
+    "name": "Szkoła Podstawowa im. Marii Konopnickiej w Krzeczynie Wielkim",
+    "number": "#546",
+    "province": "dolnośląskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Wałbrzych",
+    "county": "Wałbrzych",
+    "name": "Zespół Szkolno-Przedszkolny nr 6 w Wałbrzychu",
+    "number": "#547",
+    "province": "dolnośląskie",
+    "type": "Zespół szkół/placówek"
+  },
+  {
+    "city": "Siemianowice Śląskie",
+    "county": "Siemianowice Śląskie",
+    "name": "Szkoła Podstawowa nr 4 im. Witolda Budryka w Siemianowicach Śląskich",
+    "number": "#548",
+    "province": "śląskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Jurków",
+    "county": "Brzesko",
+    "name": "Zespół Placówek Oświatowych w Jurkowie",
+    "number": "#549",
+    "province": "małopolskie",
+    "type": "Zespół szkół/placówek"
+  },
+  {
+    "city": "Ornontowice",
+    "county": "Mikołów",
+    "name": "Szkoła Podstawowa im. Karola Miarki w Gminie Ornontowice",
+    "number": "#550",
+    "province": "śląskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Jarocin",
+    "county": "Jarocin",
+    "name": "Niepubliczna Szkoła Podstawowa im. Tadeusza Kościuszki w Jarocinie",
+    "number": "#551",
+    "province": "wielkopolskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Żołynia",
+    "county": "Łańcut",
+    "name": "Szkoła Podstawowa NR 2 im. Batalionów Chłopskich w Żołyni",
+    "number": "#552",
+    "province": "podkarpackie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Warszawa",
+    "county": "Warszawa",
+    "name": "Publiczne Przedszkole Planeta Marzeń w Warszawie",
+    "number": "#553",
+    "province": "mazowieckie",
+    "type": "Przedszkole"
+  },
+  {
+    "city": "Kraków",
+    "county": "Kraków",
+    "name": "Niepubliczna Specjalna Szkoła Podstawowa \"Układanka\" w Krakowie",
+    "number": "#554",
+    "province": "małopolskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Suchoraba",
+    "county": "Wieliczka",
+    "name": "Zespół Szkolno-Przedszkolny w Suchorabie",
+    "number": "#555",
+    "province": "małopolskie",
+    "type": "Zespół szkół/placówek"
+  },
+  {
+    "city": "Wiąg",
+    "county": "Świecie",
+    "name": "Szkoła Podstawowa im. Jana Brzechwy w Wiągu",
+    "number": "#556",
+    "province": "kujawsko-pomorskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Wrocław",
+    "county": "Wrocław",
+    "name": "Podstawowa Szkoła Społeczna \"Niedźwiednik\"",
+    "number": "#557",
+    "province": "dolnośląskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Wieluń",
+    "county": "Wieluń",
+    "name": "Szkoła Podstawowa nr 4 im. Królowej Jadwigi w Wieluniu",
+    "number": "#558",
+    "province": "łódzkie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Trzebinia",
+    "county": "Chrzanów",
+    "name": "Szkoła Podstawowa nr 5 w Trzebini",
+    "number": "#559",
+    "province": "małopolskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Szczecin",
+    "county": "Szczecin",
+    "name": "International Kindergarten of Szczecin w Szczecinie",
+    "number": "#560a",
+    "province": "zachodniopomorskie",
+    "type": "Inna placówka oświatowa"
+  },
+  {
+    "city": "Szczecin",
+    "county": "Szczecin",
+    "name": "International School of Szczecin w Szczecinie",
+    "number": "#560b",
+    "province": "zachodniopomorskie",
+    "type": "Inna placówka oświatowa"
+  },
+  {
+    "city": "Robakowo",
+    "county": "Poznań",
+    "name": "Szkoła Podstawowa im. Powstańców Wielkopolskich w Robakowie",
+    "number": "#561",
+    "province": "wielkopolskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Będzelin",
+    "county": "Tomaszów Mazowiecki",
+    "name": "Szkoła Podstawowa im. Jana Brzechwy w Będzelinie",
+    "number": "#562",
+    "province": "łódzkie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Ostrów Wielkopolski",
+    "county": "Ostrów Wielkopolski",
+    "name": "Szkoła Podstawowa nr 11 im. Mirosława Ferica w Ostrowie Wielkopolskim",
+    "number": "#563",
+    "province": "wielkopolskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Jedlnia-Letnisko",
+    "county": "Radom",
+    "name": "Publiczna Szkoła Podstawowa im. Rodziny Rohlandów w Żabiej Woli",
+    "number": "#564",
+    "province": "mazowieckie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Wrocław",
+    "county": "Wrocław",
+    "name": "Zespół Szkolno-Przedszkolny Nr 1 we Wroclawiu",
+    "number": "#565",
+    "province": "dolnośląskie",
+    "type": "Zespół szkół/placówek"
+  },
+  {
+    "city": "Żywiec",
+    "county": "Żywiec",
+    "name": "Szkoła Podstawowa nr 3 im. A. Mickiewicza w Żywcu",
+    "number": "#566",
+    "province": "śląskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Gdynia",
+    "county": "Gdynia",
+    "name": "Szkoła Podstawowa nr 20 im. 2-go Morskiego Pułku Strzelców w Gdyni",
+    "number": "#567",
+    "province": "pomorskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Chrząstowice",
+    "county": "Opole",
+    "name": "Publiczna Szkoła Podstawowa im. Stanisława Staszica w Chrząstowicach",
+    "number": "#568",
+    "province": "opolskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Lusówko",
+    "county": "Poznań",
+    "name": "Szkoła Podstawowa im. Kawalerów Orderu Uśmiechu w Lusówku",
+    "number": "#569",
+    "province": "wielkopolskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Warszawa",
+    "county": "Warszawa",
+    "name": "Szkoła Podstawowa nr 342 z oddziałami integracyjnymi im. Jana Marcina Szancera w Warszawie",
+    "number": "#570",
+    "province": "mazowieckie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Łańcut",
+    "county": "Łańcut",
+    "name": "Szkoła Podstawowa im. św. Jana Bosko w Wysokiej",
+    "number": "#571",
+    "province": "podkarpackie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Ostrowąż",
+    "county": "Słupca",
+    "name": "Szkoła Podstawowa im. Kornela Makuszyńskiego w Ostrowążu",
+    "number": "#572",
+    "province": "wielkopolskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Starogard Gdański",
+    "county": "Starogard Gdański",
+    "name": "Publiczna Szkoła Podstawowa nr 8 w Starogardzie Gdańskim",
+    "number": "#573",
+    "province": "pomorskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Trzebinia",
+    "county": "Chrzanów",
+    "name": "Szkoła Podstawowa nr 3 im. Ignacego Łukasiewicza w Trzebini",
+    "number": "#574",
+    "province": "małopolskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Trzebinia",
+    "county": "Chrzanów",
+    "name": "Liceum Ogólnokształcące im. Batalionu \"Parasol\" w Trzebini",
+    "number": "#575",
+    "province": "małopolskie",
+    "type": "Szkoła ponadpodstawowa"
+  },
+  {
+    "city": "Głotowo",
+    "county": "Olsztyn",
+    "name": "Niepubliczna Szkoła Podstawowa w Głotowie",
+    "number": "#576",
+    "province": "warmińsko-mazurskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Gliwice",
+    "county": "Gliwice",
+    "name": "Przedszkole Miejskie Nr 6 Gliwice",
+    "number": "#577",
+    "province": "śląskie",
+    "type": "Przedszkole"
+  },
+  {
+    "city": "Rzeszow",
+    "county": "Rzeszów",
+    "name": "Zespół Szkolno-Przedszkolny Nr 2 w Rzeszowie",
+    "number": "#578",
+    "province": "podkarpackie",
+    "type": "Zespół szkół/placówek"
+  },
+  {
+    "city": "Straszęcin",
+    "county": "Dębica",
+    "name": "Szkoła Podstawowa im. Henryka Sienkiewicza w Straszęcinie",
+    "number": "#579",
+    "province": "podkarpackie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Chłopice",
+    "county": "Jarosław",
+    "name": "Szkoła podstawowa im. prof. Stefana Myczkowskiego w Jankowicach",
+    "number": "#580",
+    "province": "podkarpackie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Łebcz",
+    "county": "Puck",
+    "name": "Szkoła Podstawowa im. Polskich Noblistów w Łebczu",
+    "number": "#581",
+    "province": "pomorskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Bielsko-Biała",
+    "county": "Bielsko-Biała",
+    "name": "Szkoła Podstawowa nr 2 Towarzystwa Szkolnego im. Mikołaja Reja",
+    "number": "#582",
+    "province": "śląskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Reda",
+    "county": "Wejherowo",
+    "name": "Szkoła Podstawowa nr 3 im. Stefana Żeromskiego w Redzie",
+    "number": "#583",
+    "province": "pomorskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Miastko",
+    "county": "Bytów",
+    "name": "Powiatowy Młodzieżowy Dom Kultury w Miastku",
+    "number": "#584",
+    "province": "pomorskie",
+    "type": "Instytucja kultury"
+  },
+  {
+    "city": "Gądki",
+    "county": "Poznań",
+    "name": "Szkoła Podstawowa im. Powstańców Wielkopolskich w Robakowie",
+    "number": "#585",
+    "province": "wielkopolskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Błonie",
+    "county": "Warszawa Zachodni",
+    "name": "Przedszkole z Oddziałami Integracyjnymi nr 3 w Błoniu",
+    "number": "#586",
+    "province": "mazowieckie",
+    "type": "Przedszkole"
+  },
+  {
+    "city": "Lubomino",
+    "county": "Lidzbark Warmiński",
+    "name": "Szkoła Podstawowa w Wilczkowie",
+    "number": "#587",
+    "province": "warmińsko-mazurskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Bytom",
+    "county": "Bytom",
+    "name": "Niepubliczne Przedszkole Słoneczna Chatka w Bytomiu",
+    "number": "#588",
+    "province": "śląskie",
+    "type": "Przedszkole"
+  },
+  {
+    "city": "Olsztyn",
+    "county": "Olsztyn",
+    "name": "Przedszkole Bajkowy Dom 2 w Olsztynie",
+    "number": "#589",
+    "province": "warmińsko-mazurskie",
+    "type": "Przedszkole"
+  },
+  {
+    "city": "Kalisz",
+    "county": "Kalisz",
+    "name": "Centrum Rozwoju Osobowości: Świetlica Socjoterapeutyczna KARAN w Kaliszu",
+    "number": "#590",
+    "province": "wielkopolskie",
+    "type": "Instytucja kultury"
+  },
+  {
+    "city": "Piekary Śląskie",
+    "county": "Piekary Śląskie",
+    "name": "Miejska Szkoła Podstawowa nr 12 im. Jana Demarczyka w Piekarach Śląskich",
+    "number": "#591",
+    "province": "śląskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Łęka Opatowska",
+    "county": "Kępno",
+    "name": "Szkoła Podstawowa im. mjr Stanisława Jeziornego w Łęce Opatowskiej",
+    "number": "#592",
+    "province": "łódzkie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Bakałarzewo",
+    "county": "Suwałki",
+    "name": "Szkoła Podstawowa im. Mikołaja Kopernika w Biadkach",
+    "number": "#593",
+    "province": "podlaskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Jastrzębia",
+    "county": "Radom",
+    "name": "Szkoła Podstawowa im. Konfederatów Barskich w Jastrzębi",
+    "number": "#594",
+    "province": "małopolskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Skawina",
+    "county": "Kraków",
+    "name": "Prywatna Szkoła Podstawowa „Royal School” w Skawinie",
+    "number": "#595",
+    "province": "małopolskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Kraków",
+    "county": "Kraków",
+    "name": "Niepubliczne Przedszkole Fistaszki w Krakowie",
+    "number": "#596",
+    "province": "małopolskie",
+    "type": "Przedszkole"
+  },
+  {
+    "city": "Żukowo",
+    "county": "Kartuzy",
+    "name": "Szkoła Podstawowa nr 2 im. Jana Heweliusza w Żukowie",
+    "number": "#597",
+    "province": "pomorskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Dębno",
+    "county": "Brzesko",
+    "name": "Szkoła Podstawowa nr 3 im. Jarosława Dąbrowskiego w Dębnie",
+    "number": "#598",
+    "province": "zachodniopomorskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Bartąg",
+    "county": "Olsztyn",
+    "name": "Szkoła Podstawowa im. 11 Listopada w Rusi",
+    "number": "#599",
+    "province": "warmińsko-mazurskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Warszawa",
+    "county": "Warszawa",
+    "name": "Niepubliczna Szkoła Podstawowa numer 97 w Warszawie",
+    "number": "#600",
+    "province": "mazowieckie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Czarny Bór",
+    "county": "Wałbrzych",
+    "name": "Szkoła Podstawowa im. Józefa Pawlika w Czarnym Borze",
+    "number": "#601",
+    "province": "dolnośląskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Gdańsk",
+    "county": "Gdańsk",
+    "name": "Europejska Szkoła Przyszłości",
+    "number": "#602",
+    "province": "pomorskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Łęgowo",
+    "county": "Gdańsk",
+    "name": "Publiczne Przedszkole Słoneczna Kraina \"Łęgowo\"",
+    "number": "#603",
+    "province": "pomorskie",
+    "type": "Przedszkole"
+  },
+  {
+    "city": "Łaznów",
+    "county": "Tomaszów Mazowiecki",
+    "name": "Szkoła Podstawowa im. Tadeusza Kościuszki w Łaznowie",
+    "number": "#604",
+    "province": "łódzkie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Boruja Kościelna",
+    "county": "Nowy Tomyśl",
+    "name": "Szkoła Podstawowa im. Marii Konopnickiej w Borui Kościelnej",
+    "number": "#605",
+    "province": "wielkopolskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Gniezno",
+    "county": "Gniezno",
+    "name": "Przedszkole nr 8 \"Mali Polanie\" w Gnieźnie",
+    "number": "#606",
+    "province": "wielkopolskie",
+    "type": "Przedszkole"
+  },
+  {
+    "city": "Kamieniec",
+    "county": "Strzelce Opolskie",
+    "name": "Przedszkole Gminne w Zespole Szkolno - Przedszkolnym w Kamieńcu,",
+    "number": "#607",
+    "province": "wielkopolskie",
+    "type": "Przedszkole"
+  },
+  {
+    "city": "Rogoźno",
+    "county": "Oborniki",
+    "name": "Przedszkole nr 2 im. Bajkowy Świat w Rogoźnie",
+    "number": "#608",
+    "province": "wielkopolskie",
+    "type": "Przedszkole"
+  },
+  {
+    "city": "Kolbuszowa",
+    "county": "Kolbuszowa",
+    "name": "Szkoła Podstawowa im. Janka Zawiszy w Przedborzu",
+    "number": "#609",
+    "province": "podkarpackie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Bielawa",
+    "county": "Dzierżoniów",
+    "name": "Szkoła Podstawowa nr 4 z Oddziałami Integracyjnymi w Bielawie",
+    "number": "#610",
+    "province": "dolnośląskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Boguchwała",
+    "county": "Rzeszów",
+    "name": "Szkoła Podstawowa Montessori z Oddziałami Dwujęzycznymi w Boguchwale",
+    "number": "#611",
+    "province": "podkarpackie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Gdynia",
+    "county": "Gdynia",
+    "name": "Przedszkole nr 47 \"Leśna Pętelka\" w Gdyni",
+    "number": "#612",
+    "province": "pomorskie",
+    "type": "Przedszkole"
+  },
+  {
+    "city": "Orzesze",
+    "county": "Mikołów",
+    "name": "Szkoła Podstawowa nr 9 im. Władysława Broniewskiego w Orzeszu",
+    "number": "#613",
+    "province": "śląskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Poznań",
+    "county": "Poznań",
+    "name": "Przedszkole nr 127 w Poznaniu",
+    "number": "#614",
+    "province": "wielkopolskie",
+    "type": "Przedszkole"
+  },
+  {
+    "city": "Gołdap",
+    "county": "Gołdap",
+    "name": "Oddziały Przedszkolne przy Szkole Podstawowej nr 3 im. T. Kościuszki w Gołdapi",
+    "number": "#615",
+    "province": "warmińsko-mazurskie",
+    "type": "Przedszkole"
+  },
+  {
+    "city": "Wałbrzych",
+    "county": "Wałbrzych",
+    "name": "Publiczna Szkoła Podstawowa nr 28 im. Jana Pawła II w Wałbrzychu",
+    "number": "#616",
+    "province": "dolnośląskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Piekary Śląskie",
+    "county": "Piekary Śląskie",
+    "name": "Katolicka Szkoła Podstawowa w Piekarach Śląskich",
+    "number": "#617",
+    "province": "śląskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Wodzisław śląski",
+    "county": "Wodzisław Śląski",
+    "name": "Zespół Szkół Stowarzyszenia Rodzin Katolickich w Wodzisławiu Ślaskim",
+    "number": "#618",
+    "province": "śląskie",
+    "type": "Zespół szkół/placówek"
+  },
+  {
+    "city": "Siercza",
+    "county": "Wieliczka",
+    "name": "Oddziały Przedszkolne przy Szkole Podstawowej im. Królowej Jadwigi w Sierczy",
+    "number": "#619",
+    "province": "małopolskie",
+    "type": "Przedszkole"
+  },
+  {
+    "city": "Racibórz",
+    "county": "Racibórz",
+    "name": "Szkoła Podstawowa nr 18 im. Książąt Raciborskich w Raciborzu",
+    "number": "#620",
+    "province": "śląskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Katowice",
+    "county": "Katowice",
+    "name": "Szkoła Podstawowa nr 28 w Katowicach w ZSP nr 21 w Katowicach",
+    "number": "#621",
+    "province": "śląskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Zabrze",
+    "county": "Zabrze",
+    "name": "Przedszkole Nr 28 im. Janoscha w Zabrzu",
+    "number": "#622",
+    "province": "śląskie",
+    "type": "Przedszkole"
+  },
+  {
+    "city": "Zabrze",
+    "county": "Zabrze",
+    "name": "Przedszkole Nr 8 w Zabrzu",
+    "number": "#623",
+    "province": "śląskie",
+    "type": "Przedszkole"
+  },
+  {
+    "city": "Rybna",
+    "county": "Kraków",
+    "name": "Zespół Szkolno Przedszkolny w Rybnej",
+    "number": "#624",
+    "province": "małopolskie",
+    "type": "Zespół szkół/placówek"
+  },
+  {
+    "city": "Olsztynek",
+    "county": "Olsztyn",
+    "name": "Szkoła Podstawowa w Klebarku Wielkim",
+    "number": "#625",
+    "province": "warmińsko-mazurskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Pruszków",
+    "county": "Pruszków",
+    "name": "Szkoła Podstawowa nr 3 im. Miry Zimińskiej-Sygietyńskiej w Pruszkowie",
+    "number": "#626",
+    "province": "mazowieckie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Legionowo",
+    "county": "Legionowo",
+    "name": "Przedszkole Miejskie nr 1 im. Marii Kownackiej w Legionowie",
+    "number": "#627",
+    "province": "mazowieckie",
+    "type": "Przedszkole"
+  },
+  {
+    "city": "Warszawa",
+    "county": "Warszawa",
+    "name": "Szkoła Podstawowa nr 319 im. Marii Kann w Warszawie",
+    "number": "#628",
+    "province": "mazowieckie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Warszawa",
+    "county": "Warszawa",
+    "name": "Prywatne Szkoły im. Cecylii Plater-Zyberkówny w Warszawie",
+    "number": "#629",
+    "province": "mazowieckie",
+    "type": "Inna placówka oświatowa"
+  },
+  {
+    "city": "Radwanice",
+    "county": "Polkowice",
+    "name": "Zespół Szkolno-Przedszkolny w Radwanicach",
+    "number": "#630",
+    "province": "dolnośląskie",
+    "type": "Zespół szkół/placówek"
+  },
+  {
+    "city": "Sochaczew",
+    "county": "Sochaczew",
+    "name": "Szkoła Podstawowa nr 4 z Oddziałami Integracyjnymi w Sochaczewie",
+    "number": "#631",
+    "province": "mazowieckie",
+    "type": "Inna placówka oświatowa"
+  },
+  {
+    "city": "Nieporęt",
+    "county": "Legionowo",
+    "name": "Liceum Ogólnokształcące im. Stanisława Lema w Stanisławowie Pierwszym",
+    "number": "#632",
+    "province": "mazowieckie",
+    "type": "Szkoła ponadpodstawowa"
+  },
+  {
+    "city": "Bukowsko",
+    "county": "Sanok",
+    "name": "Szkoła Podstawowa im.prof.Juliana Krzyżanowskiego w Bukowsku",
+    "number": "#633",
+    "province": "podkarpackie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Gostomia",
+    "county": "Grodzisk Mazowiecki",
+    "name": "Szkoła Podstawowa im. Janusza Korczaka w Gostomi",
+    "number": "#634",
+    "province": "zachodniopomorskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Mszczonów",
+    "county": "Żyrardów",
+    "name": "Szkoła Podstawowa im. Jana Adama Maklakiewicza w Mszczonowie",
+    "number": "#635",
+    "province": "mazowieckie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Rostarzewo",
+    "county": "Rawicz",
+    "name": "Szkoła Podstawowa im. Krzysztofa Żegockiego w Zespole Przedszkolno-Szkolnym w Rostarzewie",
+    "number": "#636",
+    "province": "wielkopolskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Piaseczno",
+    "county": "Piaseczno",
+    "name": "Szkoła Podstawowa nr 2 im. Ewy Krauze w Piasecznie",
+    "number": "#637",
+    "province": "mazowieckie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Warszawa",
+    "county": "Warszawa",
+    "name": "Szkoła Podstawowa nr 48 im. A. Próchnika w Warszawie",
+    "number": "#638",
+    "province": "mazowieckie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Piaseczno",
+    "county": "Piaseczno",
+    "name": "Przedszkole Nr 11 „Nefrytowy Zakątek” w Piasecznie",
+    "number": "#639",
+    "province": "mazowieckie",
+    "type": "Przedszkole"
+  },
+  {
+    "city": "Kórnik",
+    "county": "Poznań",
+    "name": "Szkoła Podstawowa nr 1 im. Tytusa Działyńskiego w Kórniku",
+    "number": "#640",
+    "province": "wielkopolskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Jamielnik",
+    "county": "Sztum",
+    "name": "Szkoła Podstawowa im. Jana Pawła II w Jamielniku",
+    "number": "#641",
+    "province": "warmińsko-mazurskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Rzeszów",
+    "county": "Rzeszów",
+    "name": "Szkoła Podstawowa nr 24 im. Rudolfa Aurigi w Rzeszowie",
+    "number": "#642",
+    "province": "podkarpackie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Parczew",
+    "county": "Parczew",
+    "name": "Szkoła Podstawowa nr 2 im. Św. Królowej Jadwigi w Parczewie",
+    "number": "#643",
+    "province": "lubelskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Ząbki",
+    "county": "Wołomin",
+    "name": "Szkoła Podstawowa nr 3 im. Małego Powstańca w Ząbkach",
+    "number": "#644",
+    "province": "mazowieckie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Elbląg",
+    "county": "Elbląg",
+    "name": "Przedszkole nr 26 w Elblągu",
+    "number": "#645",
+    "province": "warmińsko-mazurskie",
+    "type": "Przedszkole"
+  },
+  {
+    "city": "Radlin",
+    "county": "Wodzisław Śląski",
+    "name": "Zespół Szkolno-Przedszkolny w Radlinie",
+    "number": "#646",
+    "province": "śląskie",
+    "type": "Zespół szkół/placówek"
+  },
+  {
+    "city": "Pradła",
+    "county": "Zawiercie",
+    "name": "Szkoła Podstawowa im. Batalionów Chłopskich w Pradłach",
+    "number": "#647",
+    "province": "śląskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Radwanice",
+    "county": "Polkowice",
+    "name": "Zespół Szkolno- Przedszkolny w Radwanicach",
+    "number": "#648",
+    "province": "dolnośląskie",
+    "type": "Zespół szkół/placówek"
+  },
+  {
+    "city": "Gdańsk",
+    "county": "Gdańsk",
+    "name": "Przedszkole nr 3 w ZSP nr 8 w Gdańsku",
+    "number": "#649",
+    "province": "pomorskie",
+    "type": "Przedszkole"
+  },
+  {
+    "city": "Warszawa",
+    "county": "Warszawa",
+    "name": "Szkoła Podstawowa nr 366 im. Jana Pawła II w Warszawie",
+    "number": "#650",
+    "province": "mazowieckie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Kielce",
+    "county": "Kielce",
+    "name": "Zespół Szkół Społecznych im. Mikołaja Reja w Kielcach",
+    "number": "#651",
+    "province": "świętokrzyskie",
+    "type": "Zespół szkół/placówek"
+  },
+  {
+    "city": "Szczecin",
+    "county": "Szczecin",
+    "name": "Przedszkole publiczne nr 52 w Szczecinie",
+    "number": "#652",
+    "province": "zachodniopomorskie",
+    "type": "Przedszkole"
+  },
+  {
+    "city": "Styków",
+    "county": "Starachowice",
+    "name": "Zespół Placówek Oświatowych w Stykowie",
+    "number": "#653",
+    "province": "świętokrzyskie",
+    "type": "Zespół szkół/placówek"
+  },
+  {
+    "city": "Strzelce Opolskie",
+    "county": "Strzelce Opolskie",
+    "name": "Szkoła Podstawowa im. Tysiąclecia Państwa Polskiego w Strzelcach Opolskich",
+    "number": "#654",
+    "province": "opolskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Warszawa",
+    "county": "Warszawa",
+    "name": "Ośrodek Szkolno-Wychowawczy dla Głuchych im. Jana Siestrzyńskiego w Warszawie",
+    "number": "#655",
+    "province": "mazowieckie",
+    "type": "Placówka specjalna"
+  },
+  {
+    "city": "Dzierzgoń",
+    "county": "Sztum",
+    "name": "Zespół Szkół im. Cypriana Norwida w Dzierzgoniu",
+    "number": "#656",
+    "province": "pomorskie",
+    "type": "Zespół szkół/placówek"
+  },
+  {
+    "city": "Wrocław",
+    "county": "Wrocław",
+    "name": "Przedszkole nr 140 \"Pod Platanem\" we Wrocławiu",
+    "number": "#657",
+    "province": "dolnośląskie",
+    "type": "Przedszkole"
+  },
+  {
+    "city": "Gdańsk",
+    "county": "Gdańsk",
+    "name": "Szkoła Podstawowa nr 50 im. Emilii Plater w Gdańsku",
+    "number": "#658",
+    "province": "pomorskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Grzegorzew",
+    "county": "Koło",
+    "name": "Zespół Szkolno- Przedszkolny w Grzegorzewie",
+    "number": "#659",
+    "province": "wielkopolskie",
+    "type": "Zespół szkół/placówek"
+  },
+  {
+    "city": "Myślachowice",
+    "county": "Chrzanów",
+    "name": "Szkoła Podstawowa w Myślachowicach",
+    "number": "#660",
+    "province": "małopolskie",
+    "type": "Inna placówka oświatowa"
+  },
+  {
+    "city": "Konstantynów Łódzki",
+    "county": "Pabianice",
+    "name": "Niepubliczne Przedszkole Pokaż Świat w Konstantynowie Łódzkim",
+    "number": "#661",
+    "province": "łódzkie",
+    "type": "Przedszkole"
+  },
+  {
+    "city": "Śladów",
+    "county": "Płońsk",
+    "name": "Szkoła Podstawowa im. Władysława Jagiełły w Śladowie",
+    "number": "#662",
+    "province": "mazowieckie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Warszawa",
+    "county": "Warszawa",
+    "name": "Szkoła Podstawowa nr 2 z oddziałami integracyjnymi w Warszawie",
+    "number": "#663",
+    "province": "mazowieckie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Suchy Las",
+    "county": "Poznań",
+    "name": "World International School w Suchym Lasie",
+    "number": "#664",
+    "province": "wielkopolskie",
+    "type": "Inna placówka oświatowa"
+  },
+  {
+    "city": "Warszawa",
+    "county": "Warszawa",
+    "name": "Szkoła Podstawowa nr 301 im. Janusza Korczaka w Warszawie",
+    "number": "#665",
+    "province": "mazowieckie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Przeryte",
+    "county": "Maków Mazowiecki",
+    "name": "Szkoła Podstawowa z Oddziałami Integracyjnymi im. Leśników Polskich w Przerytem",
+    "number": "#666",
+    "province": "mazowieckie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Wierzbice",
+    "county": "Radom",
+    "name": "Zespół Szkół Specjalnych im.bł.ks. Z. Gorazdowskiego w Wierzbicach",
+    "number": "#667",
+    "province": "dolnośląskie",
+    "type": "Zespół szkół/placówek"
+  },
+  {
+    "city": "Ostrowiec Świętokrzyski",
+    "county": "Ostrowiec Świętokrzyski",
+    "name": "Zespół Szkół Publicznych w Sarnówku",
+    "number": "#668",
+    "province": "świętokrzyskie",
+    "type": "Zespół szkół/placówek"
+  },
+  {
+    "city": "Świecie",
+    "county": "Świecie",
+    "name": "Szkoła Podstawowa nr 8 im. Kazimierza Ecksteina w Świeciu",
+    "number": "#669",
+    "province": "kujawsko-pomorskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Białystok",
+    "county": "Białystok",
+    "name": "Szkoły Zakładu Doskonalenia Zawodowego w Białymstoku",
+    "number": "#670",
+    "province": "podlaskie",
+    "type": "Szkoła ponadpodstawowa"
+  },
+  {
+    "city": "Tarnów",
+    "county": "Tarnów",
+    "name": "Szkoła Podstawowa nr 10 w Tarnowie",
+    "number": "#671",
+    "province": "małopolskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Mysłowice",
+    "county": "Mysłowice",
+    "name": "Szkoła Podstawowa nr 10 z Oddziałami Dwujęzycznymi im. Karola Miarki w Mysłowicach",
+    "number": "#672",
+    "province": "śląskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Darłowo",
+    "county": "Sławno",
+    "name": "Szkoła Podstawowa nr 3 im. Króla Eryka Pomorskiego w Darłowie",
+    "number": "#673",
+    "province": "zachodniopomorskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Gorzów Wielkopolski",
+    "county": "Gorzów Wielkopolski",
+    "name": "Szkoła Podstawowa nr 10 z Oddziałami Integracyjnymi im. Tadeusza Kościuszki w Gorzowie Wielkopolskim",
+    "number": "#674",
+    "province": "lubuskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Niechanowo",
+    "county": "Gniezno",
+    "name": "Szkoła Podstawowa im. Jana Pawła II z oddziałami przedszkolnymi w Jarząbkowie",
+    "number": "#675",
+    "province": "wielkopolskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Bielawa",
+    "county": "Dzierżoniów",
+    "name": "Szkoła Podstawowa nr 10 z Oddziałami Sportowymi im. Polskich Olimpijczyków w Bielawie",
+    "number": "#676",
+    "province": "dolnośląskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Warszawa",
+    "county": "Warszawa",
+    "name": "Szkoła Podstawowa nr 163 im. Batalionu „Zośka” w Warszawie",
+    "number": "#677",
+    "province": "mazowieckie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Szczecin",
+    "county": "Szczecin",
+    "name": "Przedszkole Publiczne nr 41 w Szczecinie",
+    "number": "#678",
+    "province": "zachodniopomorskie",
+    "type": "Przedszkole"
+  },
+  {
+    "city": "Szczecin",
+    "county": "Szczecin",
+    "name": "Przedszkole Publiczne nr 41 FILIA w Szczecinie",
+    "number": "#679",
+    "province": "zachodniopomorskie",
+    "type": "Przedszkole"
+  },
+  {
+    "city": "Dziwnów",
+    "county": "Kamień Pomorski",
+    "name": "Publiczne Przedszkole \"Promyk Słońca\" w Dziwnowie",
+    "number": "#680",
+    "province": "zachodniopomorskie",
+    "type": "Przedszkole"
+  },
+  {
+    "city": "Aleksandrów Kujawski",
+    "county": "Aleksandrów Kujawski",
+    "name": "Publiczna Szkoła Podstawowa Towarzystwa Salezjańskiego w Aleksandrowie Kujawskim",
+    "number": "#237",
+    "province": "kujawsko-pomorskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Warszawa",
+    "county": "Warszawa",
+    "name": "Szkoła Podstawowa Specjalna nr 244 im. Odkrywców Przyrody w Warszawie",
+    "number": "#266",
+    "province": "mazowieckie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Lublin",
+    "county": "Lublin",
+    "name": "Szkoła Podstawowa nr 4 im. Adama Mickiewicza w Lublinie",
+    "number": "#274",
+    "province": "lubelskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Poznań",
+    "county": "Poznań",
+    "name": "Szkoła podstawowa nr 67 z oddziałami sportowymi i dwujęzycznymi im. J.Kuronia w Poznaniu",
+    "number": "#362",
+    "province": "wielkopolskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Siedlce",
+    "county": "Siedlce",
+    "name": "Szkoła Podstawowa nr 3 z Oddziałami Integracyjnymi w Siedlcach",
+    "number": "#681",
+    "province": "mazowieckie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Wasilków",
+    "county": "Białystok",
+    "name": "Szkoła Podstawowa im. Króla Zygmunta Augusta w Wasilkowie",
+    "number": "#682",
+    "province": "podlaskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Mińsk Mazowiecki",
+    "county": "Mińsk Mazowiecki",
+    "name": "Zespół Szkół Specjalnych im. Janiny Porazińskiej w Ignacowie",
+    "number": "#683",
+    "province": "mazowieckie",
+    "type": "Placówka specjalna"
+  },
+  {
+    "city": "Warszawa",
+    "county": "Warszawa",
+    "name": "L Liceum Ogólnokształcące z oddziałami integracyjnymi im. Ruy Barbosy w Warszawie",
+    "number": "#684",
+    "province": "mazowieckie",
+    "type": "Szkoła ponadpodstawowa"
+  },
+  {
+    "city": "Ruda Śląska",
+    "county": "Ruda Śląska",
+    "name": "Szkoła Podstawowa nr 24 im. Powstańców Śląskich w Rudzie Śląskiej",
+    "number": "#685",
+    "province": "śląskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Milanówek",
+    "county": "Grodzisk Mazowiecki",
+    "name": "Społeczne Liceum Ogólnokształcące Nr 5 w Milanówku",
+    "number": "#686",
+    "province": "mazowieckie",
+    "type": "Szkoła ponadpodstawowa"
+  },
+  {
+    "city": "Kulice",
+    "county": "Stargard",
+    "name": "Zespół Kształcenia i Wychowania w Kulicach",
+    "number": "#687",
+    "province": "pomorskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Warszawa",
+    "county": "Warszawa",
+    "name": "Edukacyjne Atelier w Warszawie",
+    "number": "#688",
+    "province": "mazowieckie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Frombork",
+    "county": "Braniewo",
+    "name": "Centrum Kulturalno-Biblioteczne we Fromborku",
+    "number": "#689",
+    "province": "warmińsko-mazurskie",
+    "type": "Biblioteka/Mediateka"
+  },
+  {
+    "city": "Janowiec Kościelny",
+    "county": "Nidzica",
+    "name": "Szkoła Podstawowa im. Zawiszy Czarnego w Waśniewie-Grabowie",
+    "number": "#690",
+    "province": "warmińsko-mazurskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Pyskowice",
+    "county": "Gliwice",
+    "name": "Szkoła Podstawowa nr 5 im. Janusza Korczaka w Pyskowicach",
+    "number": "#691",
+    "province": "śląskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Opatów",
+    "county": "Opatów",
+    "name": "Szkoła Podstawowa nr 1 im. gen. bryg. Stanisława Gano w Opatowie",
+    "number": "#692",
+    "province": "świętokrzyskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Obrzycko",
+    "county": "Szamotuły",
+    "name": "Szkoła Podstawowa im. Powstańców Wielkopolskich w Obrzycku",
+    "number": "#693",
+    "province": "wielkopolskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Kęty",
+    "county": "Oświęcim",
+    "name": "Dom Kultury w Kętach",
+    "number": "#694",
+    "province": "małopolskie",
+    "type": "Instytucja kultury"
+  },
+  {
+    "city": "Nowa Wieś Szlachecka",
+    "county": "Kraków",
+    "name": "Szkoła Podstawowa im. św. Stanisława Kostki w Nowej Wsi Szlacheckiej",
+    "number": "#695",
+    "province": "małopolskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Kraków",
+    "county": "Kraków",
+    "name": "Szkoła Podstawowa z Oddziałami Integracyjnymi nr 105 w Krakowie",
+    "number": "#696",
+    "province": "małopolskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Toruń",
+    "county": "Toruń",
+    "name": "Zespół Szkół nr 26 w Toruniu",
+    "number": "#697",
+    "province": "kujawsko-pomorskie",
+    "type": "Placówka specjalna"
+  },
+  {
+    "city": "Kleszczewo",
+    "county": "Poznań",
+    "name": "Zespół Szkół w Kleszczewie",
+    "number": "#698",
+    "province": "wielkopolskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Biała",
+    "county": "Prudnik",
+    "name": "Zespół Szkolno - Przedszkolny w Wyszynie Szkoła Podstawowa im. Kornela Makuszyńskiego w Wyszynie",
+    "number": "#699",
+    "province": "mazowieckie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Gdów",
+    "county": "Wieliczka",
+    "name": "Szkoła Podstawowa w Marszowicach im. Orła Białego w Gdowie",
+    "number": "#700",
+    "province": "małopolskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Żarówka",
+    "county": "Mielec",
+    "name": "Zespół Szkolno-Przedszkolny w Żarówce",
+    "number": "#701",
+    "province": "podkarpackie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Łaszewo",
+    "county": "Żuromin",
+    "name": "Szkoła Podstawowa im. Jana Pawła II w Łaszewie",
+    "number": "#702",
+    "province": "mazowieckie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Kraków",
+    "county": "Kraków",
+    "name": "Zespół Szkolno - Przedszkolny nr 9 w Krakowie",
+    "number": "#703",
+    "province": "małopolskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Gorlice",
+    "county": "Gorlice",
+    "name": "Miejski Zespół Szkół nr 3 im. św. Jana Kantego w Gorlicach",
+    "number": "#704",
+    "province": "małopolskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Suchorze",
+    "county": "Bytów",
+    "name": "Szkoła Podstawowa im. Marii Konopnickiej w Suchorzu",
+    "number": "#705",
+    "province": "pomorskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Koprzywnica",
+    "county": "Sandomierz",
+    "name": "Punkt przedszkolny Smerfy w Gnieszowicach",
+    "number": "#706",
+    "province": "świętokrzyskie",
+    "type": "Przedszkole"
+  },
+  {
+    "city": "Zembrzyce",
+    "county": "Suski",
+    "name": "Szkoła Podstawowa im. Marii Konopnickiej w Tarnawie Dolnej",
+    "number": "#707",
+    "province": "małopolskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Duchnów",
+    "county": "Otwocki",
+    "name": "Świetlica wiejska w Duchnowie",
+    "number": "#708",
+    "province": "mazowieckie",
+    "type": "Świetlica wiejska"
+  },
+  {
+    "city": "Wrocław",
+    "county": "Wrocław",
+    "name": "Szkoła Podstawowa nr 84 im. Ruchu Obrońców Pokoju we Wrocławiu",
+    "number": "#709",
+    "province": "dolnośląskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Wrocław",
+    "county": "Wrocław",
+    "name": "Szkoła Podstawowa nr 108 im. Juliana Tuwima we Wrocławiu",
+    "number": "#710",
+    "province": "dolnośląskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Marcinkowice",
+    "county": "wałecki",
+    "name": "Szkoła Podstawowa im. Mieszka I w Marcinkowicach",
+    "number": "#711",
+    "province": "zachodniopomorskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Bielsko-Biała",
+    "county": "Bielski",
+    "name": "Szkoła Podstawowa nr 28 im. Gen. Józefa Kustronia w Bielsku Białej",
+    "number": "#712",
+    "province": "śląskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Wiślina",
+    "county": "Gdański",
+    "name": "Szkoła Podstawowa im. Danuty Siedzikówny \"Inki\" w Wiślinie",
+    "number": "#713",
+    "province": "pomorskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Urszulin",
+    "county": "włodawski",
+    "name": "Zespół Szkół w Urszulinie",
+    "number": "#714",
+    "province": "lubelskie",
+    "type": "Szkoła podstawowa"
+  },
+  {
+    "city": "Witnica",
+    "county": "Gorzowski",
+    "name": "Szkoła Podstawowa nr 1  im. Ludzi Pojednania w Witnicy",
+    "number": "#715",
+    "province": "lubuskie",
+    "type": "Szkoła podstawowa"
+  }
+]
