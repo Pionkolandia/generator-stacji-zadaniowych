@@ -22,6 +22,8 @@ Konta użytkowników i zapisane dane korzystają z Firebase Authentication oraz 
 
 Pełna instrukcja uruchomienia bazy, logowania Google i konta administratora znajduje się w `firebase/SETUP.md`. Reguły bezpieczeństwa są zapisane w `firebase/firestore.rules`.
 
+Lista szkół na stronie `/szkoly` zawiera publiczną wyszukiwarkę, statystyki województw oraz chronioną aktualizację z prywatnego Arkusza Google dostępną wyłącznie administratorowi. Plik źródłowy nie jest publicznie udostępniany.
+
 ## Uruchomienie lokalne
 
 ```bash

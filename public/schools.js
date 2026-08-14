@@ -1,6 +1,11 @@
 "use strict";
 
 const PAGE_SIZE = 100;
+const ADMIN_EMAIL = "wiechowscy@gmail.com";
+const SOURCE_SPREADSHEET_ID = "1ujq-NrkerzbKIN8UOtGKis4HeophSZ4o9AwPNfC8NXM";
+const SOURCE_SHEET_ID = 129267205;
+const FIREBASE_VERSION = "12.16.0";
+const CHART_COLORS = ["#2647df", "#128060", "#f26a21", "#18318f"];
 const collator = new Intl.Collator("pl", { sensitivity: "base" });
 
 const ui = {
@@ -18,28 +23,52 @@ const ui = {
   pagination: document.getElementById("schoolsPagination"),
   pageNumber: document.getElementById("schoolsPageNumber"),
   previous: document.getElementById("schoolsPrevPage"),
-  next: document.getElementById("schoolsNextPage")
+  next: document.getElementById("schoolsNextPage"),
+  totalCounter: document.getElementById("schoolsTotalCounter"),
+  provincesCounter: document.getElementById("provincesTotalCounter"),
+  largestProvinceCounter: document.getElementById("largestProvinceCounter"),
+  largestProvinceLabel: document.getElementById("largestProvinceLabel"),
+  provinceChart: document.getElementById("provinceChart"),
+  sync: document.getElementById("syncSchoolsBtn"),
+  syncStatus: document.getElementById("schoolsSyncStatus")
 };
 
 let schools = [];
 let filteredSchools = [];
 let currentPage = 1;
+let onlineSchools = null;
+let currentUser = null;
 
-init().catch((error) => {
+init().catch(showLoadError);
+
+async function init() {
+  bindEvents();
+
+  const response = await fetch("/schools-data.json?v=20260814-1");
+  if (!response.ok) throw new Error(`Błąd pobierania danych: ${response.status}`);
+
+  applySchoolData(await response.json());
+  initializeOnlineSchools().catch((error) => {
+    console.warn("Nie udało się połączyć z aktualizowaną listą szkół.", error);
+  });
+}
+
+function showLoadError(error) {
   console.error("Nie udało się wczytać listy szkół.", error);
   ui.count.textContent = "Lista szkół jest chwilowo niedostępna";
   ui.tableWrap.classList.add("hidden");
   ui.error.classList.remove("hidden");
-});
+}
 
-async function init() {
-  const response = await fetch("/schools-data.json?v=20260814-1");
-  if (!response.ok) throw new Error(`Błąd pobierania danych: ${response.status}`);
+function applySchoolData(entries) {
+  const validEntries = Array.isArray(entries) ? entries.filter(isValidSchool) : [];
+  if (!validEntries.length) return;
 
-  schools = groupSchools((await response.json()).filter(isValidSchool));
+  schools = groupSchools(validEntries);
+  currentPage = 1;
   populateProvinces();
   populateCounties();
-  bindEvents();
+  renderOverview();
   applyFilters();
 }
 
@@ -94,48 +123,32 @@ function combineVariants(variants, field, addLabels = true) {
   }).join("\n");
 }
 
-function allVariants() {
-  return schools.flatMap((school) => school.variants);
-}
-
 function populateProvinces() {
-  const provinces = [...new Set(allVariants().map((school) => school.province).filter(Boolean))].sort(collator.compare);
-  const fragment = document.createDocumentFragment();
+  const selectedProvince = ui.province.value;
+  const placeholder = new Option("Wszystkie województwa", "");
+  const provinces = [...new Set(schools.map((school) => school.variants[0]?.province).filter(Boolean))].sort(collator.compare);
+  const options = provinces.map((province) => new Option(province, province));
 
-  provinces.forEach((province) => {
-    const option = document.createElement("option");
-    option.value = province;
-    option.textContent = province;
-    fragment.append(option);
-  });
-
-  ui.province.append(fragment);
+  ui.province.replaceChildren(placeholder, ...options);
+  if (provinces.includes(selectedProvince)) ui.province.value = selectedProvince;
 }
 
 function populateCounties() {
   const province = ui.province.value;
-  const placeholder = document.createElement("option");
-  placeholder.value = "";
-  placeholder.textContent = province ? "Wszystkie powiaty" : "Najpierw wybierz województwo";
+  const selectedCounty = ui.county.value;
+  const placeholder = new Option(province ? "Wszystkie powiaty" : "Najpierw wybierz województwo", "");
   ui.county.replaceChildren(placeholder);
   ui.county.disabled = !province;
 
   if (!province) return;
 
-  const counties = [...new Set(allVariants()
-    .filter((school) => school.province === province)
-    .map((school) => school.county)
+  const counties = [...new Set(schools
+    .map((school) => school.variants[0])
+    .filter((school) => school?.province === province)
+    .map((school) => school?.county)
     .filter(Boolean))].sort(collator.compare);
-  const fragment = document.createDocumentFragment();
-
-  counties.forEach((county) => {
-    const option = document.createElement("option");
-    option.value = county;
-    option.textContent = county;
-    fragment.append(option);
-  });
-
-  ui.county.append(fragment);
+  ui.county.append(...counties.map((county) => new Option(county, county)));
+  if (counties.includes(selectedCounty)) ui.county.value = selectedCounty;
 }
 
 function bindEvents() {
@@ -162,6 +175,193 @@ function bindEvents() {
   });
   ui.previous.addEventListener("click", () => changePage(currentPage - 1));
   ui.next.addEventListener("click", () => changePage(currentPage + 1));
+  ui.sync.addEventListener("click", syncSchoolsFromGoogle);
+}
+
+function renderOverview() {
+  const counts = new Map();
+
+  schools.forEach((school) => {
+    const province = school.variants.find((variant) => variant.province)?.province;
+    if (province) counts.set(province, (counts.get(province) || 0) + 1);
+  });
+
+  const provinceStats = [...counts.entries()]
+    .map(([province, count]) => ({ province, count }))
+    .sort((a, b) => b.count - a.count || collator.compare(a.province, b.province));
+  const largest = provinceStats[0] || { province: "Brak danych", count: 0 };
+
+  animateCounter(ui.totalCounter, schools.length);
+  animateCounter(ui.provincesCounter, provinceStats.length);
+  animateCounter(ui.largestProvinceCounter, largest.count);
+  ui.largestProvinceLabel.textContent = `Najwięcej: ${largest.province}`;
+
+  const maximum = Math.max(1, largest.count);
+  ui.provinceChart.replaceChildren(...provinceStats.map((stat, index) => createChartRow(stat, maximum, index)));
+}
+
+function createChartRow(stat, maximum, index) {
+  const row = document.createElement("div");
+  row.className = "province-chart-row";
+
+  const label = document.createElement("span");
+  label.className = "province-chart-label";
+  label.textContent = stat.province;
+  label.title = stat.province;
+
+  const track = document.createElement("span");
+  track.className = "province-chart-track";
+  track.setAttribute("aria-hidden", "true");
+
+  const bar = document.createElement("span");
+  bar.className = "province-chart-bar";
+  bar.style.setProperty("--bar-width", `${(stat.count / maximum) * 100}%`);
+  bar.style.setProperty("--bar-color", CHART_COLORS[index % CHART_COLORS.length]);
+  track.append(bar);
+
+  const value = document.createElement("strong");
+  value.className = "province-chart-value";
+  value.textContent = stat.count;
+
+  row.append(label, track, value);
+  return row;
+}
+
+function animateCounter(element, target) {
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    element.textContent = target;
+    return;
+  }
+
+  const startedAt = performance.now();
+  const duration = 650;
+
+  function tick(now) {
+    const progress = Math.min(1, (now - startedAt) / duration);
+    const eased = 1 - ((1 - progress) ** 3);
+    element.textContent = Math.round(target * eased);
+    if (progress < 1) requestAnimationFrame(tick);
+  }
+
+  requestAnimationFrame(tick);
+}
+
+async function initializeOnlineSchools() {
+  const config = window.STATION_APP_CONFIG || {};
+  if (!config.apiKey || !config.authDomain || !config.projectId || !config.appId) return;
+
+  const { initializeApp } = await import(`https://www.gstatic.com/firebasejs/${FIREBASE_VERSION}/firebase-app.js`);
+  const { getAuth, GoogleAuthProvider, onAuthStateChanged, signInWithPopup } = await import(
+    `https://www.gstatic.com/firebasejs/${FIREBASE_VERSION}/firebase-auth.js`
+  );
+  const { doc, getDoc, getFirestore, serverTimestamp, setDoc } = await import(
+    `https://www.gstatic.com/firebasejs/${FIREBASE_VERSION}/firebase-firestore.js`
+  );
+
+  const firebaseApp = initializeApp(config);
+  const auth = getAuth(firebaseApp);
+  const db = getFirestore(firebaseApp);
+  const schoolsDocument = doc(db, "publicData", "schools");
+  onlineSchools = { auth, db, schoolsDocument, GoogleAuthProvider, serverTimestamp, setDoc, signInWithPopup };
+
+  onAuthStateChanged(auth, (user) => {
+    currentUser = user;
+    const isAdmin = Boolean(user?.emailVerified && normalize(user.email) === normalize(ADMIN_EMAIL));
+    ui.sync.classList.toggle("hidden", !isAdmin);
+    if (!isAdmin) ui.syncStatus.textContent = "";
+  });
+
+  const snapshot = await getDoc(schoolsDocument);
+  if (snapshot.exists() && Array.isArray(snapshot.data().rows)) {
+    applySchoolData(snapshot.data().rows);
+  }
+}
+
+async function syncSchoolsFromGoogle() {
+  if (!onlineSchools || !currentUser) return;
+
+  ui.sync.disabled = true;
+  ui.syncStatus.textContent = "Pobieram nowe wpisy…";
+
+  try {
+    const provider = new onlineSchools.GoogleAuthProvider();
+    provider.addScope("https://www.googleapis.com/auth/spreadsheets.readonly");
+    provider.setCustomParameters({ prompt: "select_account" });
+
+    const result = await onlineSchools.signInWithPopup(onlineSchools.auth, provider);
+    if (!result.user.emailVerified || normalize(result.user.email) !== normalize(ADMIN_EMAIL)) {
+      throw new Error("Do aktualizacji listy potrzebne jest konto administratora.");
+    }
+
+    const credential = onlineSchools.GoogleAuthProvider.credentialFromResult(result);
+    if (!credential?.accessToken) throw new Error("Google nie przekazał dostępu do arkusza.");
+
+    const rows = await fetchSchoolsFromGoogle(credential.accessToken);
+    await onlineSchools.setDoc(onlineSchools.schoolsDocument, {
+      rows,
+      sourceRowCount: rows.length,
+      updatedAt: onlineSchools.serverTimestamp(),
+      updatedBy: result.user.email
+    }, { merge: true });
+
+    applySchoolData(rows);
+    ui.syncStatus.textContent = `Zaktualizowano: ${schools.length} szkół.`;
+  } catch (error) {
+    console.error("Nie udało się zaktualizować listy szkół.", error);
+    ui.syncStatus.textContent = syncErrorMessage(error);
+  } finally {
+    ui.sync.disabled = false;
+  }
+}
+
+async function fetchSchoolsFromGoogle(accessToken) {
+  const metadataUrl = `https://sheets.googleapis.com/v4/spreadsheets/${SOURCE_SPREADSHEET_ID}?fields=sheets.properties`;
+  const metadata = await googleApiRequest(metadataUrl, accessToken);
+  const sourceSheet = metadata.sheets?.find((sheet) => sheet.properties?.sheetId === SOURCE_SHEET_ID);
+  if (!sourceSheet?.properties?.title) throw new Error("Nie znaleziono właściwej zakładki w arkuszu.");
+
+  const escapedTitle = sourceSheet.properties.title.replace(/'/g, "''");
+  const range = encodeURIComponent(`'${escapedTitle}'!A:G`);
+  const valuesUrl = `https://sheets.googleapis.com/v4/spreadsheets/${SOURCE_SPREADSHEET_ID}/values/${range}`;
+  const data = await googleApiRequest(valuesUrl, accessToken);
+  const rows = parseSheetRows(data.values || []);
+
+  if (!rows.length) throw new Error("Arkusz nie zawiera żadnych szkół.");
+  return rows;
+}
+
+async function googleApiRequest(url, accessToken) {
+  const response = await fetch(url, {
+    headers: { Authorization: `Bearer ${accessToken}` }
+  });
+  if (response.ok) return response.json();
+
+  const details = await response.json().catch(() => ({}));
+  const error = new Error(details.error?.message || `Błąd usługi Google: ${response.status}`);
+  error.status = response.status;
+  throw error;
+}
+
+function parseSheetRows(values) {
+  return values.slice(1).map((row) => ({
+    number: formatSchoolNumber(row[0]),
+    name: String(row[1] || "").trim(),
+    city: String(row[3] || "").trim(),
+    province: String(row[4] || "").trim(),
+    type: String(row[5] || "").trim(),
+    county: String(row[6] || "").trim()
+  })).filter(isValidSchool);
+}
+
+function formatSchoolNumber(value) {
+  const number = String(value || "").trim().replace(/^#/, "");
+  return number ? `#${number}` : "";
+}
+
+function syncErrorMessage(error) {
+  if (error?.code === "auth/popup-closed-by-user") return "Aktualizacja została anulowana.";
+  if (error?.status === 403) return "Brak dostępu do arkusza lub usługa Arkuszy Google nie jest jeszcze włączona.";
+  return error?.message || "Nie udało się pobrać nowych szkół.";
 }
 
 function normalize(value) {
@@ -179,12 +379,13 @@ function applyFilters() {
   const county = ui.county.value;
 
   filteredSchools = schools.filter((school) => {
-    return school.variants.some((variant) => {
-      const matchesProvince = !province || variant.province === province;
-      const matchesCounty = !county || variant.county === county;
-      const matchesQuery = !query || normalize(`${variant.name} ${variant.city}`).includes(query);
-      return matchesProvince && matchesCounty && matchesQuery;
+    const primary = school.variants[0] || {};
+    const matchesProvince = !province || primary.province === province;
+    const matchesCounty = !county || primary.county === county;
+    const matchesQuery = !query || school.variants.some((variant) => {
+      return normalize(`${variant.name} ${variant.city}`).includes(query);
     });
+    return matchesProvince && matchesCounty && matchesQuery;
   });
 
   const pages = Math.max(1, Math.ceil(filteredSchools.length / PAGE_SIZE));

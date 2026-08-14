@@ -68,6 +68,159 @@
   font-size: 1.05rem;
 }
 
+.schools-overview {
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding: 28px 0 32px;
+}
+
+.schools-overview-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 20px;
+}
+
+.schools-overview-head h2 {
+  margin-top: 4px;
+  color: var(--blue-deep);
+  font-size: 1.65rem;
+}
+
+.schools-sync-area {
+  display: grid;
+  justify-items: end;
+  gap: 6px;
+}
+
+.schools-sync {
+  min-height: 38px;
+  border: 1px solid var(--blue);
+  border-radius: 999px;
+  padding: 7px 14px;
+  background: #fff;
+  color: var(--blue-deep);
+  font-size: 0.78rem;
+  font-weight: 850;
+}
+
+.schools-sync:hover:not(:disabled) {
+  background: var(--blue);
+  color: #fff;
+}
+
+.schools-sync:disabled {
+  cursor: wait;
+  opacity: 0.62;
+}
+
+.schools-sync-status {
+  min-height: 18px;
+  color: var(--muted);
+  font-size: 0.74rem;
+}
+
+.schools-kpis {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.schools-kpi {
+  min-height: 118px;
+  border: 1px solid var(--line);
+  border-top: 5px solid var(--green);
+  border-radius: var(--radius);
+  padding: 18px;
+  background: #fff;
+}
+
+.schools-kpi.primary {
+  border-top-color: var(--blue);
+  background: var(--blue-soft);
+}
+
+.schools-kpi:last-child {
+  border-top-color: var(--orange);
+}
+
+.schools-kpi strong {
+  display: block;
+  color: var(--blue-deep);
+  font-size: 2.45rem;
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+}
+
+.schools-kpi span {
+  display: block;
+  margin-top: 10px;
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 850;
+  text-transform: uppercase;
+}
+
+.province-chart {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 34px;
+  row-gap: 12px;
+}
+
+.province-chart-row {
+  display: grid;
+  grid-template-columns: minmax(140px, 0.62fr) minmax(120px, 1fr) 38px;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+
+.province-chart-label {
+  overflow: hidden;
+  color: var(--ink);
+  font-size: 0.8rem;
+  font-weight: 750;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.province-chart-track {
+  display: block;
+  height: 10px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: var(--surface-2);
+}
+
+.province-chart-bar {
+  display: block;
+  width: var(--bar-width);
+  height: 100%;
+  border-radius: inherit;
+  background: var(--bar-color, var(--blue));
+  transform-origin: left;
+  animation: provinceBarGrow 600ms ease-out both;
+}
+
+.province-chart-value {
+  color: var(--blue-deep);
+  font-size: 0.8rem;
+  font-weight: 900;
+  text-align: right;
+}
+
+@keyframes provinceBarGrow {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
 .schools-directory {
   min-width: 0;
 }
@@ -148,32 +301,7 @@
   font-size: 1.08rem;
 }
 
-.schools-results-actions {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.schools-download {
-  display: inline-flex;
-  min-height: 34px;
-  align-items: center;
-  border: 1px solid var(--blue);
-  border-radius: 999px;
-  padding: 6px 12px;
-  background: #fff;
-  color: var(--blue-deep);
-  font-size: 0.76rem;
-  font-weight: 850;
-  text-decoration: none;
-}
-
-.schools-download:hover {
-  background: var(--blue);
-  color: #fff;
-}
-
-.schools-download:focus-visible {
+.schools-sync:focus-visible {
   outline: 3px solid var(--orange);
   outline-offset: 3px;
 }
@@ -335,6 +463,10 @@
   .schools-clear {
     grid-column: 1 / -1;
   }
+
+  .province-chart {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 640px) {
@@ -365,6 +497,32 @@
     font-size: 0.94rem;
   }
 
+  .schools-overview-head {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .schools-sync-area {
+    width: 100%;
+    justify-items: stretch;
+  }
+
+  .schools-sync {
+    width: 100%;
+  }
+
+  .schools-kpis {
+    grid-template-columns: 1fr;
+  }
+
+  .schools-kpi {
+    min-height: 96px;
+  }
+
+  .province-chart-row {
+    grid-template-columns: minmax(114px, 0.8fr) minmax(80px, 1fr) 34px;
+  }
+
   .schools-filters {
     grid-template-columns: 1fr;
     padding: 18px 0;
@@ -385,11 +543,6 @@
     flex-direction: column;
     justify-content: center;
     gap: 2px;
-  }
-
-  .schools-results-actions {
-    width: 100%;
-    justify-content: space-between;
   }
 
   .schools-table-wrap {

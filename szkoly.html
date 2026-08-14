@@ -18,7 +18,7 @@
     <link rel="shortcut icon" href="/favicon.ico">
     <link rel="apple-touch-icon" href="/assets/favicon.png">
     <link rel="stylesheet" href="/styles.css?v=20260806-3">
-    <link rel="stylesheet" href="/schools.css?v=20260814-3">
+    <link rel="stylesheet" href="/schools.css?v=20260814-4">
   </head>
   <body class="schools-page">
     <main class="schools-page-main">
@@ -36,6 +36,34 @@
         <p class="eyebrow">Szkoła jest SMART!</p>
         <h1 id="schoolsTitle">Lista szkół w programie</h1>
         <p>Znajdź placówkę po nazwie, miejscowości lub województwie.</p>
+      </section>
+
+      <section class="schools-overview" aria-labelledby="schoolsOverviewTitle">
+        <div class="schools-overview-head">
+          <div>
+            <p class="eyebrow">Program w liczbach</p>
+            <h2 id="schoolsOverviewTitle">Szkoły w całej Polsce</h2>
+          </div>
+          <div class="schools-sync-area">
+            <button class="schools-sync hidden" id="syncSchoolsBtn" type="button">Pobierz nowe szkoły</button>
+            <span class="schools-sync-status" id="schoolsSyncStatus" aria-live="polite"></span>
+          </div>
+        </div>
+        <div class="schools-kpis">
+          <div class="schools-kpi primary">
+            <strong id="schoolsTotalCounter">0</strong>
+            <span>Szkół w programie</span>
+          </div>
+          <div class="schools-kpi">
+            <strong id="provincesTotalCounter">0</strong>
+            <span>Województw</span>
+          </div>
+          <div class="schools-kpi">
+            <strong id="largestProvinceCounter">0</strong>
+            <span id="largestProvinceLabel">Największa reprezentacja</span>
+          </div>
+        </div>
+        <div class="province-chart" id="provinceChart" aria-label="Liczba szkół według województw"></div>
       </section>
 
       <section class="schools-directory" aria-label="Wyszukiwarka szkół">
@@ -60,10 +88,7 @@
         </form>
 
         <div class="schools-results-bar" aria-live="polite">
-          <div class="schools-results-actions">
-            <strong id="schoolsResultCount">Wczytywanie listy szkół…</strong>
-            <a class="schools-download" href="/szkoly-w-programie.xlsx" download>Pobierz szkoły</a>
-          </div>
+          <strong id="schoolsResultCount">Wczytywanie listy szkół…</strong>
           <span id="schoolsPageInfo"></span>
         </div>
 
@@ -94,6 +119,7 @@
       </section>
     </main>
 
-    <script src="/schools.js?v=20260814-3" defer></script>
+    <script src="/firebase-config.js"></script>
+    <script src="/schools.js?v=20260814-4" defer></script>
   </body>
 </html>

@@ -22,6 +22,18 @@ W `Authentication` → `Settings` → `Authorized domains` należy utrzymywać:
 
 Baza Firestore działa w trybie produkcyjnym w lokalizacji `eur3`. Reguły z pliku `firebase/firestore.rules` są wdrożone.
 
+## Aktualizacja listy szkół
+
+Publiczna strona odczytuje zatwierdzoną listę z dokumentu `publicData/schools` i korzysta z lokalnej listy jako kopii awaryjnej. Tylko zweryfikowane konto administratora `wiechowscy@gmail.com` może nadpisać ten dokument.
+
+Po zalogowaniu administrator widzi na stronie `/szkoly` przycisk `Pobierz nowe szkoły`. Przycisk prosi Google wyłącznie o dostęp do odczytu prywatnego arkusza, pobiera kolumny potrzebne w katalogu i zapisuje ich publiczną wersję w Firestore. Arkusz źródłowy ani plik Excel nie są udostępniane odwiedzającym.
+
+W projekcie Google Cloud musi być włączona usługa Google Sheets API. Po zmianie reguł należy je ponownie opublikować:
+
+```bash
+firebase deploy --only firestore:rules
+```
+
 Reguły zapewniają każdemu użytkownikowi dostęp tylko do jego profilu, gier i zestawów. Zweryfikowane konto `wiechowscy@gmail.com` może dodatkowo odczytać listę profili użytkowników z imieniem i nazwiskiem, adresem e-mail oraz datą utworzenia konta.
 
 ## 4. Publikacja reguł

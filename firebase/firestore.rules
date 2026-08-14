@@ -16,6 +16,12 @@ service cloud.firestore {
         && request.auth.token.email_verified == true;
     }
 
+    match /publicData/{document} {
+      allow read: if document == 'schools';
+      allow create, update: if isAdmin() && document == 'schools';
+      allow delete: if false;
+    }
+
     match /users/{userId} {
       allow get: if owns(userId) || isAdmin();
       allow list: if isAdmin();
