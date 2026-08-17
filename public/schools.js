@@ -1,6 +1,6 @@
 "use strict";
 
-const PAGE_SIZE = 100;
+const PAGE_SIZE = 200;
 const ADMIN_EMAIL = "wiechowscy@gmail.com";
 const SOURCE_SPREADSHEET_ID = "1ujq-NrkerzbKIN8UOtGKis4HeophSZ4o9AwPNfC8NXM";
 const SOURCE_SHEET_ID = 129267205;
