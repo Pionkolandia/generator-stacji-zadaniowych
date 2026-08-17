@@ -68,6 +68,42 @@
   font-size: 1.05rem;
 }
 
+.schools-registration-notice {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  border-left: 4px solid var(--blue);
+  padding: 16px 18px;
+  background: #f3f7ff;
+  color: var(--ink);
+}
+
+.schools-registration-icon {
+  display: inline-grid;
+  flex: 0 0 28px;
+  width: 28px;
+  height: 28px;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--blue);
+  color: #fff;
+  font-size: 0.88rem;
+  font-weight: 900;
+}
+
+.schools-registration-notice strong {
+  color: var(--blue-deep);
+  font-size: 0.98rem;
+}
+
+.schools-registration-notice p {
+  max-width: 920px;
+  margin: 5px 0 0;
+  color: var(--muted);
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+
 .schools-overview {
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
@@ -495,6 +531,15 @@
 
   .schools-intro > p:last-child {
     font-size: 0.94rem;
+  }
+
+  .schools-registration-notice {
+    gap: 11px;
+    padding: 14px;
+  }
+
+  .schools-registration-notice p {
+    font-size: 0.82rem;
   }
 
   .schools-overview-head {
