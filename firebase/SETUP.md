@@ -24,7 +24,7 @@ Baza Firestore działa w trybie produkcyjnym w lokalizacji `eur3`. Reguły z pli
 
 ## Aktualizacja listy szkół
 
-Publiczna strona odczytuje zatwierdzoną listę z dokumentu `publicData/schools` i korzysta z lokalnej listy jako kopii awaryjnej. Tylko zweryfikowane konto administratora `wiechowscy@gmail.com` może nadpisać ten dokument.
+Publiczna strona odczytuje zatwierdzoną listę z dokumentu `publicData/schools` i korzysta z lokalnej listy jako kopii awaryjnej. Dokument mogą aktualizować wyłącznie zweryfikowane konta `wiechowscy@gmail.com` oraz `jtrychta@iuvi.pl`. Dostęp do panelu superadministratora pozostaje ograniczony do `wiechowscy@gmail.com`.
 
 Po zalogowaniu administrator widzi na stronie `/szkoly` przycisk `Pobierz nowe szkoły`. Przycisk prosi Google wyłącznie o dostęp do odczytu prywatnego arkusza, pobiera kolumny potrzebne w katalogu i zapisuje ich publiczną wersję w Firestore. Arkusz źródłowy ani plik Excel nie są udostępniane odwiedzającym.
 

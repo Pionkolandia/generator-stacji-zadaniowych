@@ -1,7 +1,10 @@
 "use strict";
 
 const PAGE_SIZE = 200;
-const ADMIN_EMAIL = "wiechowscy@gmail.com";
+const SCHOOL_EDITOR_EMAILS = new Set([
+  "wiechowscy@gmail.com",
+  "jtrychta@iuvi.pl"
+]);
 const SOURCE_SPREADSHEET_ID = "1ujq-NrkerzbKIN8UOtGKis4HeophSZ4o9AwPNfC8NXM";
 const SOURCE_SHEET_ID = 129267205;
 const FIREBASE_VERSION = "12.16.0";
@@ -266,9 +269,9 @@ async function initializeOnlineSchools() {
 
   onAuthStateChanged(auth, (user) => {
     currentUser = user;
-    const isAdmin = Boolean(user?.emailVerified && normalize(user.email) === normalize(ADMIN_EMAIL));
-    ui.sync.classList.toggle("hidden", !isAdmin);
-    if (!isAdmin) ui.syncStatus.textContent = "";
+    const canSyncSchools = isSchoolEditor(user);
+    ui.sync.classList.toggle("hidden", !canSyncSchools);
+    if (!canSyncSchools) ui.syncStatus.textContent = "";
   });
 
   const snapshot = await getDoc(schoolsDocument);
@@ -289,8 +292,8 @@ async function syncSchoolsFromGoogle() {
     provider.setCustomParameters({ prompt: "select_account" });
 
     const result = await onlineSchools.signInWithPopup(onlineSchools.auth, provider);
-    if (!result.user.emailVerified || normalize(result.user.email) !== normalize(ADMIN_EMAIL)) {
-      throw new Error("Do aktualizacji listy potrzebne jest konto administratora.");
+    if (!isSchoolEditor(result.user)) {
+      throw new Error("Do aktualizacji listy potrzebne jest uprawnione konto.");
     }
 
     const credential = onlineSchools.GoogleAuthProvider.credentialFromResult(result);
@@ -362,6 +365,13 @@ function syncErrorMessage(error) {
   if (error?.code === "auth/popup-closed-by-user") return "Aktualizacja została anulowana.";
   if (error?.status === 403) return "Brak dostępu do arkusza lub usługa Arkuszy Google nie jest jeszcze włączona.";
   return error?.message || "Nie udało się pobrać nowych szkół.";
+}
+
+function isSchoolEditor(user) {
+  return Boolean(
+    user?.emailVerified
+    && SCHOOL_EDITOR_EMAILS.has(String(user.email || "").trim().toLocaleLowerCase("pl"))
+  );
 }
 
 function normalize(value) {

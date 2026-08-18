@@ -16,9 +16,16 @@ service cloud.firestore {
         && request.auth.token.email_verified == true;
     }
 
+    function canUpdateSchools() {
+      return signedIn()
+        && request.auth.token.email_verified == true
+        && (request.auth.token.email == 'wiechowscy@gmail.com'
+          || request.auth.token.email == 'jtrychta@iuvi.pl');
+    }
+
     match /publicData/{document} {
       allow read: if document == 'schools';
-      allow create, update: if isAdmin() && document == 'schools';
+      allow create, update: if canUpdateSchools() && document == 'schools';
       allow delete: if false;
     }
 
