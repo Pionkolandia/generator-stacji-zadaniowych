@@ -20,7 +20,8 @@ service cloud.firestore {
       return signedIn()
         && request.auth.token.email_verified == true
         && (request.auth.token.email == 'wiechowscy@gmail.com'
-          || request.auth.token.email == 'jtrychta@iuvi.pl');
+          || request.auth.token.email == 'jtrychta@iuvi.pl'
+          || request.auth.token.email == 'vkijowska@ateneum.pl');
     }
 
     match /publicData/{document} {
