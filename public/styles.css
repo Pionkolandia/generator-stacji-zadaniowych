@@ -186,6 +186,11 @@ button {
   text-underline-offset: 3px;
 }
 
+.legal-section code {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
 .legal-contact {
   font-style: normal;
 }
