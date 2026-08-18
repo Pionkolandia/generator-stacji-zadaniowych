@@ -12,16 +12,15 @@ service cloud.firestore {
 
     function isAdmin() {
       return signedIn()
-        && request.auth.token.email == 'wiechowscy@gmail.com'
-        && request.auth.token.email_verified == true;
-    }
-
-    function canUpdateSchools() {
-      return signedIn()
         && request.auth.token.email_verified == true
         && (request.auth.token.email == 'wiechowscy@gmail.com'
           || request.auth.token.email == 'jtrychta@iuvi.pl'
-          || request.auth.token.email == 'vkijowska@ateneum.pl');
+          || request.auth.token.email == 'vkijowska@ateneum.pl'
+          || request.auth.token.email == 'iuvigamespl@gmail.com');
+    }
+
+    function canUpdateSchools() {
+      return isAdmin();
     }
 
     match /publicData/{document} {

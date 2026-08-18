@@ -4,7 +4,8 @@ const PAGE_SIZE = 200;
 const SCHOOL_EDITOR_EMAILS = new Set([
   "wiechowscy@gmail.com",
   "jtrychta@iuvi.pl",
-  "vkijowska@ateneum.pl"
+  "vkijowska@ateneum.pl",
+  "iuvigamespl@gmail.com"
 ]);
 const SOURCE_SPREADSHEET_ID = "1ujq-NrkerzbKIN8UOtGKis4HeophSZ4o9AwPNfC8NXM";
 const SOURCE_SHEET_ID = 129267205;

@@ -2,7 +2,12 @@
 
 const config = window.STATION_APP_CONFIG || {};
 const configured = Boolean(config.apiKey && config.authDomain && config.projectId && config.appId);
-const ADMIN_EMAIL = "wiechowscy@gmail.com";
+const ADMIN_EMAILS = new Set([
+  "wiechowscy@gmail.com",
+  "jtrychta@iuvi.pl",
+  "vkijowska@ateneum.pl",
+  "iuvigamespl@gmail.com"
+]);
 
 if (configured) {
   initAccount().catch((error) => {
@@ -375,7 +380,8 @@ async function initAccount() {
   async function syncSession(user) {
     currentUser = user;
     isAdmin = Boolean(
-      user?.emailVerified && user.email?.toLowerCase() === ADMIN_EMAIL
+      user?.emailVerified
+      && ADMIN_EMAILS.has(String(user.email || "").trim().toLowerCase())
     );
     setMessage(ui.authMessage, "");
     setMessage(ui.libraryMessage, "");
