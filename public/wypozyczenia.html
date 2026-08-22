@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Sprawdź wolne terminy wypożyczeń zestawów Junior, Ekspert i Master w programie Szkoła jest SMART.">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#fffaf2">
+    <link rel="canonical" href="https://stacjezadaniowe.vercel.app/wypozyczenia">
+    <meta property="og:locale" content="pl_PL">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Wypożyczenia zestawów gier | Szkoła jest SMART!">
+    <meta property="og:description" content="Aktualna dostępność zestawów gier w 12 turnusach programu Szkoła jest SMART.">
+    <meta property="og:url" content="https://stacjezadaniowe.vercel.app/wypozyczenia">
+    <meta property="og:image" content="https://stacjezadaniowe.vercel.app/assets/logo-szkola-jest-smart.png">
+    <title>Wypożyczenia zestawów gier | Szkoła jest SMART!</title>
+    <link rel="icon" type="image/png" sizes="256x256" href="/assets/favicon.png">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" href="/assets/favicon.png">
+    <link rel="stylesheet" href="/styles.css?v=20260822-1">
+    <link rel="stylesheet" href="/rentals.css?v=20260822-1">
+  </head>
+  <body class="rentals-page">
+    <main class="rentals-page-main">
+      <header class="rentals-topbar">
+        <a class="rentals-back-link" href="/" aria-label="Wróć do generatora stacji zadaniowych">
+          <span aria-hidden="true">←</span>
+          Generator stacji
+        </a>
+        <a class="rentals-brand" href="/" aria-label="Szkoła jest SMART – strona główna">
+          <img src="/assets/logo-szkola-jest-smart.png" width="1640" height="856" alt="Program Szkoła jest SMART">
+        </a>
+      </header>
+
+      <section class="rentals-intro" aria-labelledby="rentalsTitle">
+        <p class="eyebrow">Szkoła jest SMART!</p>
+        <h1 id="rentalsTitle">Wypożyczenia zestawów gier</h1>
+        <p>Sprawdź dostępność zestawów Junior, Ekspert i Master, a następnie wybierz dogodny termin w formularzu.</p>
+      </section>
+
+      <section class="rentals-overview" aria-labelledby="rentalsOverviewTitle">
+        <div class="rentals-overview-head">
+          <div>
+            <p class="eyebrow">Dostępność 2026/2027</p>
+            <h2 id="rentalsOverviewTitle">Wolne miejsca w programie</h2>
+          </div>
+          <div class="rentals-sync-area">
+            <button class="rentals-sync hidden" id="syncRentalsBtn" type="button">Odśwież z kalendarza</button>
+            <span class="rentals-sync-status" id="rentalsSyncStatus" aria-live="polite"></span>
+          </div>
+        </div>
+
+        <div class="rentals-hero-counter">
+          <div class="rentals-counter-copy">
+            <strong id="rentalsFreeCounter">0</strong>
+            <span>wolnych miejsc</span>
+            <p id="rentalsCounterSummary">Wczytywanie aktualnej dostępności…</p>
+          </div>
+          <div class="rentals-capacity-meter" aria-label="Wykorzystanie wszystkich miejsc">
+            <div class="rentals-capacity-head">
+              <span>Wykorzystanie puli</span>
+              <strong id="rentalsUsagePercent">0%</strong>
+            </div>
+            <span class="rentals-meter-track" aria-hidden="true"><span id="rentalsMeterBar"></span></span>
+            <div class="rentals-capacity-scale">
+              <span><strong id="rentalsReservedCounter">0</strong> zajętych</span>
+              <span><strong>252</strong> wszystkich</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="rentals-kpis">
+          <div class="rentals-kpi"><strong>12</strong><span>turnusów</span></div>
+          <div class="rentals-kpi"><strong>21</strong><span>miejsc w turnusie</span></div>
+          <div class="rentals-kpi"><strong>7</strong><span>zestawów każdego typu</span></div>
+        </div>
+
+        <div class="rentals-actions">
+          <a class="rentals-form-link" href="https://forms.gle/4yJmiWC4kB9HnSFP6" target="_blank" rel="noopener noreferrer">Zgłoś wypożyczenie</a>
+          <p>Zgłoszenie nie gwarantuje rezerwacji. Przyjęcie oraz termin otrzymania zestawu potwierdza organizator wiadomością e-mail.</p>
+        </div>
+      </section>
+
+      <section class="rentals-schedule" aria-labelledby="rentalsScheduleTitle">
+        <div class="rentals-section-head">
+          <div>
+            <p class="eyebrow">12 terminów</p>
+            <h2 id="rentalsScheduleTitle">Dostępność według turnusu</h2>
+          </div>
+          <p id="rentalsUpdatedAt">Dane są wczytywane.</p>
+        </div>
+        <div class="rentals-legend" aria-label="Legenda dostępności">
+          <span><i class="available" aria-hidden="true"></i> Są wolne miejsca</span>
+          <span><i class="limited" aria-hidden="true"></i> Ostatnie miejsca</span>
+          <span><i class="full" aria-hidden="true"></i> Brak miejsc</span>
+        </div>
+        <div class="rentals-grid" id="rentalsGrid"></div>
+        <p class="rentals-error hidden" id="rentalsError" role="alert">Nie udało się wczytać dostępności. Odśwież stronę i spróbuj ponownie.</p>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="site-footer-inner">
+        <strong>Szkoła jest SMART!</strong>
+        <nav aria-label="Informacje o usłudze">
+          <a href="/warunki-korzystania">Warunki korzystania</a>
+          <a href="/polityka-prywatnosci">Polityka prywatności</a>
+          <a href="https://iuvigames.pl/iv-edycja/zalozenia-programu/" target="_blank" rel="noopener noreferrer">Materiały programu</a>
+        </nav>
+      </div>
+    </footer>
+
+    <script src="/firebase-config.js"></script>
+    <script src="/rentals.js?v=20260822-1" defer></script>
+  </body>
+</html>

@@ -24,8 +24,9 @@ service cloud.firestore {
     }
 
     match /publicData/{document} {
-      allow read: if document == 'schools';
-      allow create, update: if canUpdateSchools() && document == 'schools';
+      allow read: if document == 'schools' || document == 'rentals';
+      allow create, update: if canUpdateSchools()
+        && (document == 'schools' || document == 'rentals');
       allow delete: if false;
     }
 
