@@ -892,6 +892,28 @@ textarea {
   padding: 9px 12px;
 }
 
+label[for="students"] {
+  color: #b42318;
+}
+
+#students {
+  border-color: #b42318;
+  background: #d92d20;
+  color: #fff;
+  caret-color: #fff;
+  box-shadow: 0 10px 24px rgba(180, 35, 24, 0.18);
+}
+
+#students:hover {
+  background: #c8271c;
+}
+
+#students:focus {
+  border-color: #7a271a;
+  outline: 3px solid rgba(217, 45, 32, 0.24);
+  outline-offset: 2px;
+}
+
 textarea {
   resize: vertical;
   font: inherit;
