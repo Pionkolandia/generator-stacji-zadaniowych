@@ -18,7 +18,7 @@
     <link rel="shortcut icon" href="/favicon.ico">
     <link rel="apple-touch-icon" href="/assets/favicon.png">
     <link rel="stylesheet" href="/styles.css?v=20260822-1">
-    <link rel="stylesheet" href="/rentals.css?v=20260822-1">
+    <link rel="stylesheet" href="/rentals.css?v=20260828-1">
   </head>
   <body class="rentals-page">
     <main class="rentals-page-main">
@@ -81,6 +81,29 @@
         </div>
       </section>
 
+      <section class="rentals-showcase" aria-labelledby="rentalsShowcaseTitle">
+        <div class="rentals-section-head">
+          <div>
+            <p class="eyebrow">Zestawy w programie</p>
+            <h2 id="rentalsShowcaseTitle">Zobacz, jakie gry wypożyczasz</h2>
+          </div>
+        </div>
+        <div class="rentals-showcase-grid" aria-label="Galeria zestawów do wypożyczenia">
+          <button class="rental-showcase-item" type="button" data-gallery-slide="0" aria-label="Powiększ zestaw Junior">
+            <img src="/assets/rentals/junior.jpg" width="1920" height="1080" loading="lazy" alt="Zestaw Junior: siedem tytułów dla przedszkoli i klas pierwszych">
+            <span>Zestaw Junior</span>
+          </button>
+          <button class="rental-showcase-item" type="button" data-gallery-slide="1" aria-label="Powiększ zestaw Ekspert">
+            <img src="/assets/rentals/expert.jpg" width="1920" height="1080" loading="lazy" alt="Zestaw Ekspert: siedem tytułów dla klas od drugiej do ósmej">
+            <span>Zestaw Ekspert</span>
+          </button>
+          <button class="rental-showcase-item" type="button" data-gallery-slide="2" aria-label="Powiększ zestaw Master">
+            <img src="/assets/rentals/master.jpg" width="1920" height="1080" loading="lazy" alt="Zestaw Master: siedem tytułów dla klas siódmych i starszych">
+            <span>Zestaw Master</span>
+          </button>
+        </div>
+      </section>
+
       <section class="rentals-schedule" aria-labelledby="rentalsScheduleTitle">
         <div class="rentals-section-head">
           <div>
@@ -99,6 +122,24 @@
       </section>
     </main>
 
+    <dialog class="set-gallery-modal" id="setGalleryModal" aria-labelledby="setGalleryTitle">
+      <div class="set-gallery-dialog">
+        <header class="set-gallery-head">
+          <h2 id="setGalleryTitle">Zestaw Junior</h2>
+          <button class="set-gallery-close" id="setGalleryClose" type="button" aria-label="Zamknij podgląd" title="Zamknij">×</button>
+        </header>
+        <div class="set-gallery-stage">
+          <button class="set-gallery-arrow previous" id="setGalleryPrevious" type="button" aria-label="Poprzedni zestaw" title="Poprzedni zestaw">←</button>
+          <figure>
+            <img id="setGalleryImage" src="/assets/rentals/junior.jpg" width="1920" height="1080" alt="Zestaw Junior">
+            <figcaption id="setGalleryCaption">Zestaw Junior</figcaption>
+          </figure>
+          <button class="set-gallery-arrow next" id="setGalleryNext" type="button" aria-label="Następny zestaw" title="Następny zestaw">→</button>
+        </div>
+        <div class="set-gallery-dots" id="setGalleryDots" aria-label="Wybierz zestaw"></div>
+      </div>
+    </dialog>
+
     <footer class="site-footer">
       <div class="site-footer-inner">
         <strong>Szkoła jest SMART!</strong>
@@ -111,6 +152,6 @@
     </footer>
 
     <script src="/firebase-config.js"></script>
-    <script src="/rentals.js?v=20260822-1" defer></script>
+    <script src="/rentals.js?v=20260828-1" defer></script>
   </body>
 </html>

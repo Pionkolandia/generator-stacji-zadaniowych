@@ -16,6 +16,23 @@ const SETS = [
   { key: "expert", label: "Ekspert" },
   { key: "master", label: "Master" }
 ];
+const GALLERY_SLIDES = [
+  {
+    title: "Zestaw Junior",
+    src: "/assets/rentals/junior.jpg",
+    alt: "Zestaw Junior: siedem tytułów dla przedszkoli i klas pierwszych"
+  },
+  {
+    title: "Zestaw Ekspert",
+    src: "/assets/rentals/expert.jpg",
+    alt: "Zestaw Ekspert: siedem tytułów dla klas od drugiej do ósmej"
+  },
+  {
+    title: "Zestaw Master",
+    src: "/assets/rentals/master.jpg",
+    alt: "Zestaw Master: siedem tytułów dla klas siódmych i starszych"
+  }
+];
 
 const ui = {
   free: document.getElementById("rentalsFreeCounter"),
@@ -27,16 +44,28 @@ const ui = {
   grid: document.getElementById("rentalsGrid"),
   error: document.getElementById("rentalsError"),
   sync: document.getElementById("syncRentalsBtn"),
-  syncStatus: document.getElementById("rentalsSyncStatus")
+  syncStatus: document.getElementById("rentalsSyncStatus"),
+  galleryItems: [...document.querySelectorAll("[data-gallery-slide]")],
+  galleryModal: document.getElementById("setGalleryModal"),
+  galleryTitle: document.getElementById("setGalleryTitle"),
+  galleryImage: document.getElementById("setGalleryImage"),
+  galleryCaption: document.getElementById("setGalleryCaption"),
+  galleryClose: document.getElementById("setGalleryClose"),
+  galleryPrevious: document.getElementById("setGalleryPrevious"),
+  galleryNext: document.getElementById("setGalleryNext"),
+  galleryDots: document.getElementById("setGalleryDots")
 };
 
 let currentUser = null;
 let onlineRentals = null;
+let currentGallerySlide = 0;
+let galleryTrigger = null;
 
 init().catch(showLoadError);
 
 async function init() {
   ui.sync.addEventListener("click", syncRentalsFromGoogle);
+  initializeGallery();
 
   const response = await fetch("/rentals-data.json?v=20260822-1");
   if (!response.ok) throw new Error(`Błąd pobierania danych: ${response.status}`);
@@ -44,6 +73,73 @@ async function init() {
 
   initializeOnlineRentals().catch((error) => {
     console.warn("Nie udało się połączyć z aktualizowaną dostępnością wypożyczeń.", error);
+  });
+}
+
+function initializeGallery() {
+  const dots = GALLERY_SLIDES.map((slide, index) => {
+    const dot = document.createElement("button");
+    dot.type = "button";
+    dot.setAttribute("aria-label", `Pokaż ${slide.title}`);
+    dot.addEventListener("click", () => showGallerySlide(index));
+    return dot;
+  });
+  ui.galleryDots.replaceChildren(...dots);
+
+  ui.galleryItems.forEach((item) => {
+    item.addEventListener("click", () => {
+      galleryTrigger = item;
+      openGallery(Number(item.dataset.gallerySlide) || 0);
+    });
+  });
+  ui.galleryClose.addEventListener("click", closeGallery);
+  ui.galleryPrevious.addEventListener("click", () => changeGallerySlide(-1));
+  ui.galleryNext.addEventListener("click", () => changeGallerySlide(1));
+  ui.galleryModal.addEventListener("click", (event) => {
+    if (event.target === ui.galleryModal) closeGallery();
+  });
+  ui.galleryModal.addEventListener("cancel", () => {
+    document.body.classList.remove("gallery-open");
+  });
+  ui.galleryModal.addEventListener("close", () => {
+    document.body.classList.remove("gallery-open");
+    galleryTrigger?.focus();
+  });
+  document.addEventListener("keydown", (event) => {
+    if (!ui.galleryModal.open) return;
+    if (event.key === "ArrowLeft") changeGallerySlide(-1);
+    if (event.key === "ArrowRight") changeGallerySlide(1);
+  });
+}
+
+function openGallery(index) {
+  showGallerySlide(index);
+  document.body.classList.add("gallery-open");
+  ui.galleryModal.showModal();
+  ui.galleryClose.focus();
+}
+
+function closeGallery() {
+  if (ui.galleryModal.open) ui.galleryModal.close();
+}
+
+function changeGallerySlide(direction) {
+  const index = (currentGallerySlide + direction + GALLERY_SLIDES.length) % GALLERY_SLIDES.length;
+  showGallerySlide(index);
+}
+
+function showGallerySlide(index) {
+  currentGallerySlide = Math.max(0, Math.min(GALLERY_SLIDES.length - 1, index));
+  const slide = GALLERY_SLIDES[currentGallerySlide];
+  ui.galleryTitle.textContent = slide.title;
+  ui.galleryCaption.textContent = slide.title;
+  ui.galleryImage.src = slide.src;
+  ui.galleryImage.alt = slide.alt;
+
+  [...ui.galleryDots.children].forEach((dot, dotIndex) => {
+    const active = dotIndex === currentGallerySlide;
+    dot.classList.toggle("active", active);
+    dot.setAttribute("aria-current", active ? "true" : "false");
   });
 }
 
