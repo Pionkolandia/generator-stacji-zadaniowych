@@ -661,7 +661,8 @@ h3 {
 
 .step-resources {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: minmax(180px, 300px);
+  justify-content: start;
   gap: 8px;
   margin: -2px 0 20px;
 }
@@ -2396,7 +2397,7 @@ button:focus-visible {
   }
 
   .step-resources {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: 1fr;
   }
 
   .stepper {

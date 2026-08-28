@@ -147,15 +147,21 @@ const PRESETS = [
 const PRESET_BANNERS = Object.freeze({
   junior: {
     src: "/assets/preset-banners/junior.jpg",
-    alt: "Zestaw Junior: siedem tytułów, każdy po dwa egzemplarze"
+    alt: "Zestaw Junior: siedem tytułów, każdy po dwa egzemplarze",
+    flashcardsLabel: "Fiszki Junior",
+    flashcardsUrl: "https://drive.google.com/file/d/1ZTWVaYoSQuSPtM6kavRtYmz2v0mEXFbz/view"
   },
   ekspert: {
     src: "/assets/preset-banners/expert.jpg",
-    alt: "Zestaw Ekspert: siedem tytułów, każdy po trzy egzemplarze"
+    alt: "Zestaw Ekspert: siedem tytułów, każdy po trzy egzemplarze",
+    flashcardsLabel: "Fiszki Ekspert",
+    flashcardsUrl: "https://drive.google.com/file/d/1CQAJUTQTrxBI5Cq3xv8O_cQ8Ned3JMgR/view"
   },
   master: {
     src: "/assets/preset-banners/master.jpg",
-    alt: "Zestaw Master: siedem tytułów, każdy po trzy egzemplarze"
+    alt: "Zestaw Master: siedem tytułów, każdy po trzy egzemplarze",
+    flashcardsLabel: "Fiszki Master",
+    flashcardsUrl: "https://drive.google.com/file/d/1tgL1EWACxlIFFO0ibp9xuf2kHlQh2hYq/view"
   }
 });
 
@@ -368,15 +374,23 @@ function setActivePreset(id) {
 
   const banner = $("presetBanner");
   const image = $("presetBannerImage");
+  const resource = $("stepPresetResource");
+  const flashcardsLink = $("presetFlashcardsLink");
+  const flashcardsTitle = $("presetFlashcardsTitle");
   const selected = PRESET_BANNERS[state.activePresetId];
   banner.classList.toggle("hidden", !selected);
+  resource.classList.toggle("hidden", !selected);
   if (!selected) {
     image.removeAttribute("src");
     image.alt = "";
+    flashcardsLink.setAttribute("href", "#");
+    flashcardsTitle.textContent = "Fiszki";
     return;
   }
   image.src = selected.src;
   image.alt = selected.alt;
+  flashcardsLink.href = selected.flashcardsUrl;
+  flashcardsTitle.textContent = selected.flashcardsLabel;
 }
 
 function applyPreset(id) {
