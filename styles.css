@@ -443,20 +443,38 @@ h3 {
 }
 
 .program-documents nav {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 5px 12px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 7px;
 }
 
 .program-documents a {
+  display: grid;
+  min-width: 0;
+  min-height: 38px;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 6px 8px;
+  background: #fff;
   color: var(--blue-deep);
   font-size: 0.7rem;
   font-weight: 850;
-  text-underline-offset: 3px;
+  line-height: 1.15;
+  text-align: center;
+  text-decoration: none;
+  transition: border-color 150ms ease, background 150ms ease, transform 150ms ease;
 }
 
 .program-documents a:hover {
-  color: var(--orange-deep);
+  border-color: var(--blue);
+  background: var(--blue-soft);
+  transform: translateY(-1px);
+}
+
+.program-documents a:focus-visible {
+  outline: 3px solid var(--orange);
+  outline-offset: 2px;
 }
 
 .rentals-launch {
