@@ -427,6 +427,38 @@ h3 {
   opacity: 0.78;
 }
 
+.program-documents {
+  margin: 4px 20px 0;
+  padding: 10px 0 2px;
+  border-top: 1px solid var(--line);
+}
+
+.program-documents > strong {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--muted);
+  font-size: 0.68rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.program-documents nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px 12px;
+}
+
+.program-documents a {
+  color: var(--blue-deep);
+  font-size: 0.7rem;
+  font-weight: 850;
+  text-underline-offset: 3px;
+}
+
+.program-documents a:hover {
+  color: var(--orange-deep);
+}
+
 .rentals-launch {
   display: grid;
   width: calc(100% - 40px);
@@ -607,6 +639,58 @@ h3 {
   height: auto;
   aspect-ratio: 4 / 1;
   object-fit: contain;
+}
+
+.step-resources {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+  margin: -2px 0 20px;
+}
+
+.step-resources a {
+  display: grid;
+  min-width: 0;
+  min-height: 54px;
+  align-content: center;
+  justify-items: center;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 8px;
+  background: var(--surface-2);
+  color: var(--blue-deep);
+  text-align: center;
+  text-decoration: none;
+  transition: border-color 150ms ease, background 150ms ease, transform 150ms ease;
+}
+
+.step-resources a:hover {
+  border-color: var(--blue);
+  background: var(--blue-soft);
+  transform: translateY(-1px);
+}
+
+.step-resources a:focus-visible {
+  outline: 3px solid var(--orange);
+  outline-offset: 2px;
+}
+
+.step-resources strong,
+.step-resources span {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.step-resources strong {
+  font-size: 0.79rem;
+  line-height: 1.1;
+}
+
+.step-resources span {
+  margin-top: 2px;
+  color: var(--muted);
+  font-size: 0.67rem;
+  line-height: 1.1;
 }
 
 .heading-with-help,
@@ -2291,6 +2375,10 @@ button:focus-visible {
   .teacher-grid,
   .card-total {
     grid-template-columns: 1fr;
+  }
+
+  .step-resources {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .stepper {
