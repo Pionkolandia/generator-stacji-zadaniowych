@@ -144,6 +144,21 @@ const PRESETS = [
   }
 ];
 
+const PRESET_BANNERS = Object.freeze({
+  junior: {
+    src: "/assets/preset-banners/junior.jpg",
+    alt: "Zestaw Junior: siedem tytułów, każdy po dwa egzemplarze"
+  },
+  ekspert: {
+    src: "/assets/preset-banners/expert.jpg",
+    alt: "Zestaw Ekspert: siedem tytułów, każdy po trzy egzemplarze"
+  },
+  master: {
+    src: "/assets/preset-banners/master.jpg",
+    alt: "Zestaw Master: siedem tytułów, każdy po trzy egzemplarze"
+  }
+});
+
 const state = {
   students: 20,
   pairs: 10,
@@ -152,6 +167,7 @@ const state = {
   games: [],
   startA: [],
   startB: [],
+  activePresetId: "",
   rotationOffsets: [0, 1, 2],
   isAuthenticated: false,
   customGames: [],
@@ -331,7 +347,7 @@ function updateCollectionSummary() {
 
 function renderPresets() {
   $("presetGrid").innerHTML = PRESETS.map((preset) => `
-    <button class="preset-card" type="button" data-preset="${preset.id}">
+    <button class="preset-card" type="button" data-preset="${preset.id}" aria-pressed="false">
       <strong>${escapeHTML(preset.name)}</strong>
       <span>${escapeHTML(preset.meta)}</span>
     </button>
@@ -340,6 +356,27 @@ function renderPresets() {
   document.querySelectorAll("[data-preset]").forEach((button) => {
     button.addEventListener("click", () => applyPreset(button.dataset.preset));
   });
+}
+
+function setActivePreset(id) {
+  state.activePresetId = PRESET_BANNERS[id] ? id : "";
+  document.querySelectorAll("[data-preset]").forEach((button) => {
+    const active = button.dataset.preset === state.activePresetId;
+    button.classList.toggle("active", active);
+    button.setAttribute("aria-pressed", String(active));
+  });
+
+  const banner = $("presetBanner");
+  const image = $("presetBannerImage");
+  const selected = PRESET_BANNERS[state.activePresetId];
+  banner.classList.toggle("hidden", !selected);
+  if (!selected) {
+    image.removeAttribute("src");
+    image.alt = "";
+    return;
+  }
+  image.src = selected.src;
+  image.alt = selected.alt;
 }
 
 function applyPreset(id) {
@@ -352,6 +389,7 @@ function applyPreset(id) {
   state.games = [...preset.games];
   state.startA = [...preset.startA];
   state.startB = preset.startA.map((start) => start + 1);
+  setActivePreset(preset.id);
 
   $("students").value = preset.students;
   recalc();
@@ -645,6 +683,7 @@ function randomizeStations() {
     return;
   }
 
+  setActivePreset("");
   buildStationSelects();
   setRandomizeNote(`Wylosowano ${state.stations} stanowisk z Twojej kolekcji.`, false);
 }
@@ -1173,6 +1212,7 @@ function initEvents() {
   });
   $("restartBtn").addEventListener("click", () => {
     window.dispatchEvent(new CustomEvent("station-set-edit-cancel"));
+    setActivePreset("");
     state.games = [];
     state.startA = [];
     state.startB = [];
@@ -1238,6 +1278,7 @@ window.StationApp = {
     if (!Number.isInteger(students) || students < 6 || students > 42) return false;
 
     $("students").value = students;
+    setActivePreset("");
     recalc();
     if (!Array.isArray(savedSet.games) || savedSet.games.length !== state.stations) return false;
 

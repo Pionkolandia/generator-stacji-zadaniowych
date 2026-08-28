@@ -591,6 +591,24 @@ h3 {
   margin-bottom: 18px;
 }
 
+.preset-banner {
+  width: 100%;
+  margin: 0 0 22px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--surface-2);
+  box-shadow: 0 12px 30px rgba(31, 43, 83, 0.1);
+}
+
+.preset-banner img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 1;
+  object-fit: contain;
+}
+
 .heading-with-help,
 .label-with-help,
 .table-help,
@@ -694,6 +712,12 @@ h3 {
   border-color: var(--blue);
   box-shadow: 0 12px 32px rgba(38, 71, 223, 0.12);
   transform: translateY(-1px);
+}
+
+.preset-card.active {
+  border-color: var(--blue);
+  background: var(--blue-soft);
+  box-shadow: 0 10px 26px rgba(38, 71, 223, 0.16);
 }
 
 .preset-card strong {
