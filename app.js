@@ -1170,6 +1170,14 @@ function initTimerEvents() {
 
 function initEvents() {
   $("students").addEventListener("input", recalc);
+  $("studentsDecrease").addEventListener("click", () => {
+    $("students").stepDown();
+    recalc();
+  });
+  $("studentsIncrease").addEventListener("click", () => {
+    $("students").stepUp();
+    recalc();
+  });
 
   $("toStep2").addEventListener("click", () => {
     recalc();

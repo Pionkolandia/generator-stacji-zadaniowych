@@ -896,22 +896,76 @@ label[for="students"] {
   color: #b42318;
 }
 
-#students {
-  border-color: #b42318;
+.student-count-hint {
+  margin: 0;
+  color: #7a271a;
+  font-size: 0.78rem;
+  font-weight: 650;
+}
+
+.student-stepper {
+  display: grid;
+  grid-template-columns: 64px minmax(0, 1fr) 64px;
+  overflow: hidden;
+  min-height: 58px;
+  border: 2px solid #b42318;
+  border-radius: var(--radius);
   background: #d92d20;
-  color: #fff;
-  caret-color: #fff;
   box-shadow: 0 10px 24px rgba(180, 35, 24, 0.18);
 }
 
+.student-stepper-button {
+  display: grid;
+  place-items: center;
+  border: 0;
+  border-radius: 0;
+  background: #b42318;
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 800;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.student-stepper-button:first-child {
+  border-right: 1px solid rgba(255, 255, 255, 0.42);
+}
+
+.student-stepper-button:last-child {
+  border-left: 1px solid rgba(255, 255, 255, 0.42);
+}
+
+.student-stepper-button:hover {
+  background: #8f1d14;
+}
+
+#students {
+  min-height: 58px;
+  border: 0;
+  border-radius: 0;
+  background: #d92d20;
+  color: #fff;
+  caret-color: #fff;
+  box-shadow: none;
+  text-align: center;
+  font-size: 1.35rem;
+  font-weight: 850;
+  appearance: textfield;
+}
+
+#students::-webkit-inner-spin-button,
+#students::-webkit-outer-spin-button {
+  margin: 0;
+  appearance: none;
+}
+
 #students:hover {
-  background: #c8271c;
+  background: #d92d20;
 }
 
 #students:focus {
-  border-color: #7a271a;
-  outline: 3px solid rgba(217, 45, 32, 0.24);
-  outline-offset: 2px;
+  outline: 3px solid rgba(255, 255, 255, 0.84);
+  outline-offset: -5px;
 }
 
 textarea {

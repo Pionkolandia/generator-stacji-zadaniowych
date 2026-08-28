@@ -75,7 +75,7 @@
         ]
       }
     </script>
-    <link rel="stylesheet" href="/styles.css?v=20260829-8">
+    <link rel="stylesheet" href="/styles.css?v=20260829-9">
   </head>
   <body>
     <main class="app">
@@ -185,8 +185,13 @@
 
             <div class="field-grid">
               <div class="field">
-                <span class="label-with-help"><label for="students">Liczba uczniów</label> <button class="info-tip" type="button" aria-label="Informacja o liczbie uczniów" data-help="Jedno stanowisko przypada na jedną parę. Przy nieparzystej klasie ostatnia drużyna będzie trzyosobowa.">i</button></span>
-                <input type="number" id="students" min="6" max="42" step="1" value="20" inputmode="numeric">
+                <span class="label-with-help"><label id="studentsLabel" for="students">Ustaw liczbę uczniów</label> <button class="info-tip" type="button" aria-label="Informacja o liczbie uczniów" data-help="Jedno stanowisko przypada na jedną parę. Przy nieparzystej klasie ostatnia drużyna będzie trzyosobowa.">i</button></span>
+                <p class="student-count-hint" id="studentsHint">Zmień liczbę przyciskami minus i plus albo wpisz ją ręcznie (od 6 do 42).</p>
+                <div class="student-stepper" role="group" aria-labelledby="studentsLabel" aria-describedby="studentsHint">
+                  <button class="student-stepper-button" id="studentsDecrease" type="button" aria-label="Zmniejsz liczbę uczniów">−</button>
+                  <input type="number" id="students" min="6" max="42" step="1" value="20" inputmode="numeric" aria-describedby="studentsHint">
+                  <button class="student-stepper-button" id="studentsIncrease" type="button" aria-label="Zwiększ liczbę uczniów">+</button>
+                </div>
               </div>
             </div>
 
@@ -571,7 +576,7 @@
 
     <script src="/game-catalog.js?v=20260722-5"></script>
     <script src="/firebase-config.js"></script>
-    <script src="/app.js?v=20260829-2" defer></script>
+    <script src="/app.js?v=20260829-3" defer></script>
     <script type="module" src="/account.js?v=20260818-3"></script>
   </body>
 </html>
