@@ -661,8 +661,7 @@ h3 {
 
 .step-resources {
   display: grid;
-  grid-template-columns: minmax(180px, 300px);
-  justify-content: start;
+  grid-template-columns: 1fr;
   gap: 8px;
   margin: -2px 0 20px;
 }
@@ -673,19 +672,20 @@ h3 {
   min-height: 54px;
   align-content: center;
   justify-items: center;
-  border: 1px solid var(--line);
+  border: 1px solid #b42318;
   border-radius: 6px;
   padding: 8px;
-  background: var(--surface-2);
-  color: var(--blue-deep);
+  background: #d92d20;
+  color: #fff;
   text-align: center;
   text-decoration: none;
-  transition: border-color 150ms ease, background 150ms ease, transform 150ms ease;
+  box-shadow: 0 10px 24px rgba(180, 35, 24, 0.2);
+  transition: background 150ms ease, box-shadow 150ms ease, transform 150ms ease;
 }
 
 .step-resources a:hover {
-  border-color: var(--blue);
-  background: var(--blue-soft);
+  background: #b42318;
+  box-shadow: 0 12px 28px rgba(180, 35, 24, 0.28);
   transform: translateY(-1px);
 }
 
@@ -707,7 +707,7 @@ h3 {
 
 .step-resources span {
   margin-top: 2px;
-  color: var(--muted);
+  color: rgba(255, 255, 255, 0.84);
   font-size: 0.67rem;
   line-height: 1.1;
 }
