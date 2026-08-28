@@ -382,12 +382,37 @@ h3 {
   box-shadow: 0 8px 18px rgba(38, 71, 223, 0.1);
 }
 
+.program-link.resource {
+  border-color: transparent;
+  color: var(--ink);
+}
+
+.program-link.innovation {
+  background: var(--green-soft);
+  color: var(--green);
+  box-shadow: 0 8px 18px rgba(18, 128, 96, 0.12);
+}
+
+.program-link.materials {
+  background: var(--orange-soft);
+  color: var(--orange-deep);
+  box-shadow: 0 8px 18px rgba(242, 106, 33, 0.12);
+}
+
 .program-link.primary:hover {
   box-shadow: 0 12px 24px rgba(38, 71, 223, 0.28);
 }
 
 .program-link.secondary:hover {
   box-shadow: 0 10px 22px rgba(38, 71, 223, 0.18);
+}
+
+.program-link.innovation:hover {
+  box-shadow: 0 10px 22px rgba(18, 128, 96, 0.2);
+}
+
+.program-link.materials:hover {
+  box-shadow: 0 10px 22px rgba(242, 106, 33, 0.2);
 }
 
 .program-link strong {
