@@ -56,17 +56,30 @@
   padding: 38px 0 28px;
 }
 
+.rentals-intro-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(250px, auto);
+  align-items: center;
+  gap: 36px;
+}
+
 .rentals-intro h1 {
   max-width: 980px;
   color: var(--blue-deep);
   font-size: 3.4rem;
 }
 
-.rentals-intro > p:last-child {
+.rentals-intro-copy > p:last-child {
   max-width: 760px;
   margin: 12px 0 0;
   color: var(--muted);
   font-size: 1.05rem;
+}
+
+.rentals-intro-actions {
+  display: grid;
+  min-width: 250px;
+  gap: 10px;
 }
 
 .rentals-overview {
@@ -96,18 +109,18 @@
 
 .rentals-sync-area {
   display: grid;
-  justify-items: end;
+  justify-items: stretch;
   gap: 6px;
 }
 
 .rentals-sync {
-  min-height: 38px;
+  min-height: 48px;
   border: 1px solid var(--blue);
   border-radius: 999px;
-  padding: 7px 14px;
+  padding: 9px 18px;
   background: #fff;
   color: var(--blue-deep);
-  font-size: 0.78rem;
+  font-size: 0.84rem;
   font-weight: 850;
 }
 
@@ -125,6 +138,7 @@
   min-height: 18px;
   color: var(--muted);
   font-size: 0.74rem;
+  text-align: center;
 }
 
 .rentals-hero-counter {
@@ -256,23 +270,17 @@
   text-transform: uppercase;
 }
 
-.rentals-actions {
-  display: flex;
-  align-items: center;
-  gap: 18px;
-  margin-top: 20px;
-}
-
 .rentals-form-link {
   display: inline-flex;
-  min-height: 52px;
+  min-height: 64px;
   flex: 0 0 auto;
   align-items: center;
   justify-content: center;
   border-radius: 999px;
-  padding: 10px 24px;
+  padding: 13px 32px;
   background: var(--orange);
   color: #fff;
+  font-size: 1.05rem;
   font-weight: 900;
   text-decoration: none;
   box-shadow: 0 12px 26px rgba(242, 106, 33, 0.2);
@@ -282,9 +290,12 @@
   background: var(--orange-deep);
 }
 
-.rentals-actions p {
-  max-width: 720px;
-  margin: 0;
+.rentals-reservation-note {
+  max-width: 900px;
+  margin: 20px 0 0;
+  border-left: 3px solid var(--orange);
+  padding: 10px 14px;
+  background: var(--orange-soft);
   color: var(--muted);
   font-size: 0.84rem;
   line-height: 1.5;
@@ -686,17 +697,27 @@ body.gallery-open {
     grid-template-columns: 1fr;
   }
 
-  .rentals-actions,
+  .rentals-intro-layout,
+  .rentals-overview-head,
+  .rentals-section-head {
+    grid-template-columns: 1fr;
+  }
+
   .rentals-overview-head,
   .rentals-section-head {
     align-items: flex-start;
     flex-direction: column;
   }
 
+  .rentals-intro-actions,
   .rentals-sync-area,
   .rentals-sync,
   .rentals-form-link {
     width: 100%;
+  }
+
+  .rentals-intro-actions {
+    min-width: 0;
   }
 
   .rentals-section-head > p {

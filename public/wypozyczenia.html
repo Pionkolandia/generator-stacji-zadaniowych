@@ -18,7 +18,7 @@
     <link rel="shortcut icon" href="/favicon.ico">
     <link rel="apple-touch-icon" href="/assets/favicon.png">
     <link rel="stylesheet" href="/styles.css?v=20260822-1">
-    <link rel="stylesheet" href="/rentals.css?v=20260828-1">
+    <link rel="stylesheet" href="/rentals.css?v=20260828-2">
   </head>
   <body class="rentals-page">
     <main class="rentals-page-main">
@@ -33,9 +33,20 @@
       </header>
 
       <section class="rentals-intro" aria-labelledby="rentalsTitle">
-        <p class="eyebrow">Szkoła jest SMART!</p>
-        <h1 id="rentalsTitle">Wypożyczenia zestawów gier</h1>
-        <p>Sprawdź dostępność zestawów Junior, Ekspert i Master, a następnie wybierz dogodny termin w formularzu.</p>
+        <div class="rentals-intro-layout">
+          <div class="rentals-intro-copy">
+            <p class="eyebrow">Szkoła jest SMART!</p>
+            <h1 id="rentalsTitle">Wypożyczenia zestawów gier</h1>
+            <p>Sprawdź dostępność zestawów Junior, Ekspert i Master, a następnie wybierz dogodny termin w formularzu.</p>
+          </div>
+          <div class="rentals-intro-actions">
+            <a class="rentals-form-link" href="https://forms.gle/4yJmiWC4kB9HnSFP6" target="_blank" rel="noopener noreferrer">Zgłoś wypożyczenie</a>
+            <div class="rentals-sync-area">
+              <button class="rentals-sync hidden" id="syncRentalsBtn" type="button">Pobierz aktualne dane</button>
+              <span class="rentals-sync-status" id="rentalsSyncStatus" aria-live="polite"></span>
+            </div>
+          </div>
+        </div>
       </section>
 
       <section class="rentals-overview" aria-labelledby="rentalsOverviewTitle">
@@ -43,10 +54,6 @@
           <div>
             <p class="eyebrow">Dostępność 2026/2027</p>
             <h2 id="rentalsOverviewTitle">Wolne miejsca w programie</h2>
-          </div>
-          <div class="rentals-sync-area">
-            <button class="rentals-sync hidden" id="syncRentalsBtn" type="button">Odśwież z kalendarza</button>
-            <span class="rentals-sync-status" id="rentalsSyncStatus" aria-live="polite"></span>
           </div>
         </div>
 
@@ -75,10 +82,7 @@
           <div class="rentals-kpi"><strong>7</strong><span>zestawów każdego typu</span></div>
         </div>
 
-        <div class="rentals-actions">
-          <a class="rentals-form-link" href="https://forms.gle/4yJmiWC4kB9HnSFP6" target="_blank" rel="noopener noreferrer">Zgłoś wypożyczenie</a>
-          <p>Zgłoszenie nie gwarantuje rezerwacji. Przyjęcie oraz termin otrzymania zestawu potwierdza organizator wiadomością e-mail.</p>
-        </div>
+        <p class="rentals-reservation-note">Zgłoszenie nie gwarantuje rezerwacji. Przyjęcie oraz termin otrzymania zestawu potwierdza organizator wiadomością e-mail.</p>
       </section>
 
       <section class="rentals-showcase" aria-labelledby="rentalsShowcaseTitle">
