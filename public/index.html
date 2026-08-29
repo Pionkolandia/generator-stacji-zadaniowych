@@ -75,7 +75,7 @@
         ]
       }
     </script>
-    <link rel="stylesheet" href="/styles.css?v=20260829-9">
+    <link rel="stylesheet" href="/styles.css?v=20260829-10">
   </head>
   <body>
     <main class="app">
@@ -169,12 +169,21 @@
 
             <div class="preset-grid" id="presetGrid" aria-label="Gotowe presety"></div>
 
+            <section class="custom-set-entry" aria-labelledby="customSetTitle">
+              <div>
+                <p class="eyebrow">Twoja biblioteka</p>
+                <h3 id="customSetTitle">Nie korzystasz z gotowego pakietu?</h3>
+                <p>Stwórz własny zestaw z gier, które masz. Samodzielnie ustawisz liczbę uczniów i przypiszesz gry do stanowisk.</p>
+              </div>
+              <button class="btn custom-set-button" id="createCustomSetBtn" type="button" aria-pressed="true">Stwórz własny zestaw</button>
+            </section>
+
             <section class="saved-presets hidden" id="savedSetsSection" aria-labelledby="savedSetsTitle">
               <div class="saved-presets-head">
                 <div>
-                  <p class="eyebrow">Twoja biblioteka</p>
+                  <p class="eyebrow">Zapisane</p>
                   <div class="heading-with-help compact">
-                    <h3 id="savedSetsTitle">Zapisane zestawy</h3>
+                    <h3 id="savedSetsTitle">Twoje zapisane zestawy</h3>
                     <button class="info-tip" type="button" aria-label="Informacja o zapisanych zestawach" data-help="Wczytaj wcześniejszy zestaw, zmień liczbę uczniów, gry lub zadania, a potem zapisz poprawioną wersję.">i</button>
                   </div>
                 </div>
@@ -576,7 +585,7 @@
 
     <script src="/game-catalog.js?v=20260722-5"></script>
     <script src="/firebase-config.js"></script>
-    <script src="/app.js?v=20260829-3" defer></script>
+    <script src="/app.js?v=20260829-4" defer></script>
     <script type="module" src="/account.js?v=20260818-3"></script>
   </body>
 </html>

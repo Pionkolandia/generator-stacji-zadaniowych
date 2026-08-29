@@ -862,6 +862,51 @@ h3 {
   min-height: 78px;
 }
 
+.custom-set-entry {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 20px;
+  margin: -4px 0 22px;
+  padding: 18px 20px;
+  border: 2px solid #d92d20;
+  border-radius: var(--radius);
+  background: #fff5f3;
+}
+
+.custom-set-entry .eyebrow {
+  margin-bottom: 4px;
+  color: #b42318;
+}
+
+.custom-set-entry h3 {
+  margin: 0;
+  color: var(--blue-deep);
+  font-size: 1.05rem;
+}
+
+.custom-set-entry p:last-child {
+  margin: 5px 0 0;
+  color: var(--muted);
+  font-size: 0.86rem;
+  font-weight: 600;
+  line-height: 1.45;
+}
+
+.custom-set-button {
+  min-width: 220px;
+  border-color: #d92d20;
+  background: #d92d20;
+  color: #fff;
+}
+
+.custom-set-button:hover,
+.custom-set-button.active {
+  border-color: #b42318;
+  background: #b42318;
+  box-shadow: 0 10px 24px rgba(180, 35, 24, 0.2);
+}
+
 .field-grid {
   display: grid;
   gap: 12px;
@@ -2487,6 +2532,17 @@ button:focus-visible {
 
   .custom-row {
     grid-template-columns: 1fr;
+  }
+
+  .custom-set-entry {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    padding: 16px;
+  }
+
+  .custom-set-button {
+    width: 100%;
+    min-width: 0;
   }
 
   .collection-randomizer,

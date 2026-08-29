@@ -372,6 +372,11 @@ function setActivePreset(id) {
     button.setAttribute("aria-pressed", String(active));
   });
 
+  const customSetButton = $("createCustomSetBtn");
+  const customActive = !state.activePresetId;
+  customSetButton.classList.toggle("active", customActive);
+  customSetButton.setAttribute("aria-pressed", String(customActive));
+
   const banner = $("presetBanner");
   const image = $("presetBannerImage");
   const resource = $("stepPresetResource");
@@ -410,6 +415,18 @@ function applyPreset(id) {
   syncBFromA();
   buildStationSelects();
   markDuplicates();
+}
+
+function createCustomSet() {
+  window.dispatchEvent(new CustomEvent("station-set-edit-cancel"));
+  setActivePreset("");
+  $("students").value = 20;
+  state.games = [];
+  state.startA = [];
+  state.startB = [];
+  recalc();
+  $("students").focus({ preventScroll: true });
+  $("students").scrollIntoView({ behavior: "smooth", block: "center" });
 }
 
 function showStep(step) {
@@ -1178,6 +1195,7 @@ function initEvents() {
     $("students").stepUp();
     recalc();
   });
+  $("createCustomSetBtn").addEventListener("click", createCustomSet);
 
   $("toStep2").addEventListener("click", () => {
     recalc();
