@@ -86,6 +86,44 @@ button {
   color: var(--blue);
 }
 
+.creator-credit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px 14px;
+  margin-top: 20px;
+  padding: 14px 18px;
+  border-radius: var(--radius);
+  background: #17131e;
+  color: #aeb4c4;
+  font-size: 0.8rem;
+  font-weight: 750;
+  text-align: center;
+}
+
+.creator-credit a {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px 14px;
+  color: #fffaf2;
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+
+.creator-credit a span:last-child {
+  color: #66d4ce;
+  border-bottom: 1px solid rgba(102, 212, 206, 0.55);
+}
+
+.creator-credit a:hover,
+.creator-credit a:hover span:last-child {
+  color: #fff;
+  border-color: #fff;
+}
+
 .legal-page-main {
   width: min(900px, calc(100% - 32px));
   margin: 0 auto;
