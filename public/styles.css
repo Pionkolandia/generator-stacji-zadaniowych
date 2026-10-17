@@ -515,6 +515,26 @@ h3 {
   outline-offset: 2px;
 }
 
+.program-documents a.blank-card-download {
+  grid-column: 1 / -1;
+  min-height: 46px;
+  border-color: var(--orange);
+  background: var(--orange-soft);
+  color: var(--orange-deep);
+}
+
+.program-documents a.blank-card-download span {
+  margin-top: 2px;
+  color: var(--muted);
+  font-size: 0.62rem;
+  font-weight: 750;
+}
+
+.program-documents a.blank-card-download:hover {
+  border-color: var(--orange-deep);
+  background: #fff7f0;
+}
+
 .rentals-launch {
   display: grid;
   width: calc(100% - 40px);
